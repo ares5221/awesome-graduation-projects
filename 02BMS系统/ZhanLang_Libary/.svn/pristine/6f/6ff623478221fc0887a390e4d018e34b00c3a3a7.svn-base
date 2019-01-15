@@ -1,0 +1,48 @@
+package zhanlang.entity;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.service.operate.ChooseOperation;
+
+public class ServiceFrame extends JFrame {
+	
+
+	private JPanel contentPane;
+	public static JTextArea jta=new JTextArea();
+	/**
+	 * Launch the application.
+	 */
+
+
+	/**
+	 * Create the frame.
+	 */
+	public ServiceFrame() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 600);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		JScrollPane scr=new JScrollPane(jta,
+                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);;
+		contentPane.add(scr, BorderLayout.CENTER);
+		setContentPane(contentPane);
+		JPanel panel = new JPanel();
+		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
+		flowLayout.setAlignment(FlowLayout.LEFT);
+		contentPane.add(panel, BorderLayout.NORTH);
+		
+		JLabel lblNewLabel = new JLabel("服务器后台数据：");
+		panel.add(lblNewLabel);
+	}
+
+}

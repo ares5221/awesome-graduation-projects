@@ -1,0 +1,677 @@
+
+[2017-9-3 18:14:53]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+用户请求登录:111[2017-9-3 18:15:6]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---selectById
+等待读取实体！
+读取实体成功！--1	image	null	null	null	borrow	inTime	outTime	null
+获取图书----:1	image	null	null	null	borrow	inTime	outTime	null
+根据图书编号查询信息----:1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学
+返回根据图书编号查询信息----:1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---selectByType
+等待读取实体！
+读取实体成功！--1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+获取图书----:1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+我传过来了什么书？=====[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+返回根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---selectByType
+等待读取实体！
+读取实体成功！--1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+获取图书----:1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+我传过来了什么书？=====[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+返回根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第5轮循环！
+读取指令中----
+读取命令成功---selectById
+等待读取实体！
+读取实体成功！--44	image	null	null	null	borrow	inTime	outTime	null
+获取图书----:44	image	null	null	null	borrow	inTime	outTime	null
+根据图书编号查询信息----:44	44.jpg	Effective Java	Joshua Bloch	机械工业出版社	null	2017-08-31	null	镇馆之宝
+返回根据图书编号查询信息----:44	44.jpg	Effective Java	Joshua Bloch	机械工业出版社	null	2017-08-31	null	镇馆之宝
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第6轮循环！
+读取指令中----
+读取命令成功---selectByType
+等待读取实体！
+读取实体成功！--1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+获取图书----:1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+我传过来了什么书？=====[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+返回根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第7轮循环！
+读取指令中----
+读取命令成功---selectById
+等待读取实体！
+读取实体成功！--44	image	null	null	null	borrow	inTime	outTime	null
+获取图书----:44	image	null	null	null	borrow	inTime	outTime	null
+根据图书编号查询信息----:44	44.jpg	Effective Java	Joshua Bloch	机械工业出版社	null	2017-08-31	null	镇馆之宝
+返回根据图书编号查询信息----:44	44.jpg	Effective Java	Joshua Bloch	机械工业出版社	null	2017-08-31	null	镇馆之宝
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第8轮循环！
+读取指令中----
+读取命令成功---selectByType
+等待读取实体！
+读取实体成功！--1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+获取图书----:1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+我传过来了什么书？=====[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+返回根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+调用operation方法成功!
+正在获取对象流！
+Thread-3---111 用户断开！时间是：[2017-9-3 18:15:38]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+
+[2017-9-3 18:21:31]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+用户请求登录:111[2017-9-3 18:21:40]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+Thread-3---111 用户断开！时间是：[2017-9-3 18:21:40]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+
+[2017-9-3 18:51:3]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+用户请求登录:111[2017-9-3 18:51:16]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+Thread-3---111 用户断开！时间是：[2017-9-3 18:51:16]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+
+[2017-9-3 20:36:2]
+
+服务器启动成功！
+
+[2017-9-3 20:36:46]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+1.这是怎么回事？=====[Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234], Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234], Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111], Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123], Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232], Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow], Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456], Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as], Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=刘能, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=admin, password=admin]]
+2.这是怎么回事？Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+让你登录
+用户请求登录:111[2017-9-3 20:37:13]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+
+[2017-9-3 21:13:44]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+1.这是怎么回事？=====[Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234], Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234], Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111], Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123], Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232], Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow], Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456], Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as], Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=刘能, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=admin, password=admin]]
+2.这是怎么回事？Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+让你登录
+用户请求登录:111[2017-9-3 21:13:54]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---selectByType
+等待读取实体！
+读取实体成功！--1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+获取图书----:1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+我传过来了什么书？=====[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+返回根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---selectByType
+等待读取实体！
+读取实体成功！--1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+获取图书----:1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+我传过来了什么书？=====[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+返回根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---selectByType
+等待读取实体！
+读取实体成功！--1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+获取图书----:1	image	张三	null	null	borrow	inTime	outTime	儿童文学
+我传过来了什么书？=====[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+返回根据类型查询书籍信息----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第5轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	image	null	null	null	borrow	inTime	outTime	null
+实现类中的bookList:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 6	6.jpg	将来的你	随便	尚学堂出版社	null	2017-08-31	2017-09-01	青春励志, 7	7.jpg	另一种方式	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 8	8.jpg	秘密	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 9	9.jpg	好吗好的	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 10	10.jpg	刻意练习	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 11	11.jpg	二十到三十岁	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 12	12.jpg	青春不负梦	俞敏洪	尚学堂出版社	null	2017-08-31	null	青春励志, 13	13.jpg	悄悄话	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 14	14.jpg	桃花债	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 15	15.jpg	龙的承诺	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 16	16.jpg	不愿你一人	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 17	17.jpg	阿基米德	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 18	18.jpg	鬼吹灯	随便鬼	尚学堂出版社	null	2017-08-31	null	网络文学, 19	19.jpg	全职高手	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 20	20.jpg	再遇霍承安	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 21	21.jpg	拖延心理学	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 22	22.jpg	墨菲定律	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 23	23.jpg	次第花开	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 24	24.jpg	文明的冲突	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 25	25.jpg	人间词话	王国维	尚学堂出版社	null	2017-08-31	null	人文社科, 26	26.jpg	乌合之众	古斯塔夫.勒庞	尚学堂出版社	null	2017-08-31	null	人文社科, 27	27.jpg	织色入史笺	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 28	28.jpg	乔布斯传	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 29	29.jpg	肖申克的救赎	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 30	30.jpg	犯罪心理	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 31	31.jpg	偷窥者	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 32	32.jpg	梦幻花	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 33	33.jpg	漫长的夜	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 34	34.jpg	摸金传人	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 35	35.jpg	瑚公蝶墓	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 36	36.jpg	红楼梦	曹雪芹	尚学堂出版社	null	2017-08-31	null	古典文学, 37	37.jpg	西游记	吴承恩	尚学堂出版社	null	2017-08-31	null	古典文学, 38	38.jpg	三国演义	罗贯中	尚学堂出版社	null	2017-08-31	null	古典文学, 39	39.jpg	水浒传	施耐庵	尚学堂出版社	null	2017-08-31	null	古典文学, 40	40.jpg	儒林外史	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 41	41.jpg	封神演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 42	42.jpg	山海经	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 43	43.jpg	隋唐演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 44	44.jpg	Effective Java	Joshua Bloch	机械工业出版社	null	2017-08-31	null	镇馆之宝, 54	1	java	a	1	null	1	null	青春文学, 55		天	天	尚学堂	null	2018-9-12	null	热门小说]
+查看可借阅书籍----:[2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 6	6.jpg	将来的你	随便	尚学堂出版社	null	2017-08-31	2017-09-01	青春励志, 7	7.jpg	另一种方式	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 8	8.jpg	秘密	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 9	9.jpg	好吗好的	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 10	10.jpg	刻意练习	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 11	11.jpg	二十到三十岁	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 12	12.jpg	青春不负梦	俞敏洪	尚学堂出版社	null	2017-08-31	null	青春励志, 13	13.jpg	悄悄话	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 14	14.jpg	桃花债	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 15	15.jpg	龙的承诺	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 16	16.jpg	不愿你一人	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 17	17.jpg	阿基米德	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 18	18.jpg	鬼吹灯	随便鬼	尚学堂出版社	null	2017-08-31	null	网络文学, 19	19.jpg	全职高手	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 20	20.jpg	再遇霍承安	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 21	21.jpg	拖延心理学	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 22	22.jpg	墨菲定律	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 23	23.jpg	次第花开	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 24	24.jpg	文明的冲突	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 25	25.jpg	人间词话	王国维	尚学堂出版社	null	2017-08-31	null	人文社科, 26	26.jpg	乌合之众	古斯塔夫.勒庞	尚学堂出版社	null	2017-08-31	null	人文社科, 27	27.jpg	织色入史笺	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 28	28.jpg	乔布斯传	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 29	29.jpg	肖申克的救赎	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 30	30.jpg	犯罪心理	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 31	31.jpg	偷窥者	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 32	32.jpg	梦幻花	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 33	33.jpg	漫长的夜	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 34	34.jpg	摸金传人	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 35	35.jpg	瑚公蝶墓	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 36	36.jpg	红楼梦	曹雪芹	尚学堂出版社	null	2017-08-31	null	古典文学, 37	37.jpg	西游记	吴承恩	尚学堂出版社	null	2017-08-31	null	古典文学, 38	38.jpg	三国演义	罗贯中	尚学堂出版社	null	2017-08-31	null	古典文学, 39	39.jpg	水浒传	施耐庵	尚学堂出版社	null	2017-08-31	null	古典文学, 40	40.jpg	儒林外史	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 41	41.jpg	封神演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 42	42.jpg	山海经	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 43	43.jpg	隋唐演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 44	44.jpg	Effective Java	Joshua Bloch	机械工业出版社	null	2017-08-31	null	镇馆之宝, 54	1	java	a	1	null	1	null	青春文学, 55		天	天	尚学堂	null	2018-9-12	null	热门小说]
+返回查看可借阅书籍----:[2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 6	6.jpg	将来的你	随便	尚学堂出版社	null	2017-08-31	2017-09-01	青春励志, 7	7.jpg	另一种方式	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 8	8.jpg	秘密	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 9	9.jpg	好吗好的	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 10	10.jpg	刻意练习	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 11	11.jpg	二十到三十岁	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 12	12.jpg	青春不负梦	俞敏洪	尚学堂出版社	null	2017-08-31	null	青春励志, 13	13.jpg	悄悄话	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 14	14.jpg	桃花债	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 15	15.jpg	龙的承诺	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 16	16.jpg	不愿你一人	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 17	17.jpg	阿基米德	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 18	18.jpg	鬼吹灯	随便鬼	尚学堂出版社	null	2017-08-31	null	网络文学, 19	19.jpg	全职高手	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 20	20.jpg	再遇霍承安	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 21	21.jpg	拖延心理学	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 22	22.jpg	墨菲定律	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 23	23.jpg	次第花开	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 24	24.jpg	文明的冲突	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 25	25.jpg	人间词话	王国维	尚学堂出版社	null	2017-08-31	null	人文社科, 26	26.jpg	乌合之众	古斯塔夫.勒庞	尚学堂出版社	null	2017-08-31	null	人文社科, 27	27.jpg	织色入史笺	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 28	28.jpg	乔布斯传	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 29	29.jpg	肖申克的救赎	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 30	30.jpg	犯罪心理	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 31	31.jpg	偷窥者	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 32	32.jpg	梦幻花	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 33	33.jpg	漫长的夜	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 34	34.jpg	摸金传人	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 35	35.jpg	瑚公蝶墓	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 36	36.jpg	红楼梦	曹雪芹	尚学堂出版社	null	2017-08-31	null	古典文学, 37	37.jpg	西游记	吴承恩	尚学堂出版社	null	2017-08-31	null	古典文学, 38	38.jpg	三国演义	罗贯中	尚学堂出版社	null	2017-08-31	null	古典文学, 39	39.jpg	水浒传	施耐庵	尚学堂出版社	null	2017-08-31	null	古典文学, 40	40.jpg	儒林外史	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 41	41.jpg	封神演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 42	42.jpg	山海经	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 43	43.jpg	隋唐演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 44	44.jpg	Effective Java	Joshua Bloch	机械工业出版社	null	2017-08-31	null	镇馆之宝, 54	1	java	a	1	null	1	null	青春文学, 55		天	天	尚学堂	null	2018-9-12	null	热门小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第6轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--2	image	null	null	null	borrow	inTime	outTime	null
+获取图书----:2	image	null	null	null	borrow	inTime	outTime	null
+返回是否找到=================找到了
+被借的是这本书2	image	null	null	null	borrow	inTime	outTime	null
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第7轮循环！
+读取指令中----
+读取命令成功---showAlready
+等待读取实体！
+读取实体成功！--Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学
+2	2.png	没头脑	任溶溶	尚学堂出版社	111	2017-08-31	2017-09-03	儿童文学
+3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学
+4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学
+5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学
+6	6.jpg	将来的你	随便	尚学堂出版社	null	2017-08-31	2017-09-01	青春励志
+7	7.jpg	另一种方式	随便	尚学堂出版社	null	2017-08-31	null	青春励志
+8	8.jpg	秘密	随便	尚学堂出版社	null	2017-08-31	null	青春励志
+9	9.jpg	好吗好的	随便	尚学堂出版社	null	2017-08-31	null	青春励志
+10	10.jpg	刻意练习	随便	尚学堂出版社	null	2017-08-31	null	青春励志
+11	11.jpg	二十到三十岁	随便	尚学堂出版社	null	2017-08-31	null	青春励志
+12	12.jpg	青春不负梦	俞敏洪	尚学堂出版社	null	2017-08-31	null	青春励志
+13	13.jpg	悄悄话	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+14	14.jpg	桃花债	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+15	15.jpg	龙的承诺	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+16	16.jpg	不愿你一人	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+17	17.jpg	阿基米德	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+18	18.jpg	鬼吹灯	随便鬼	尚学堂出版社	null	2017-08-31	null	网络文学
+19	19.jpg	全职高手	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+20	20.jpg	再遇霍承安	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+21	21.jpg	拖延心理学	随便	尚学堂出版社	null	2017-08-31	null	人文社科
+22	22.jpg	墨菲定律	随便	尚学堂出版社	null	2017-08-31	null	人文社科
+23	23.jpg	次第花开	随便	尚学堂出版社	null	2017-08-31	null	人文社科
+24	24.jpg	文明的冲突	随便	尚学堂出版社	null	2017-08-31	null	人文社科
+25	25.jpg	人间词话	王国维	尚学堂出版社	null	2017-08-31	null	人文社科
+26	26.jpg	乌合之众	古斯塔夫.勒庞	尚学堂出版社	null	2017-08-31	null	人文社科
+27	27.jpg	织色入史笺	随便	尚学堂出版社	null	2017-08-31	null	人文社科
+28	28.jpg	乔布斯传	随便	尚学堂出版社	null	2017-08-31	null	人文社科
+29	29.jpg	肖申克的救赎	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+30	30.jpg	犯罪心理	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+31	31.jpg	偷窥者	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+32	32.jpg	梦幻花	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+33	33.jpg	漫长的夜	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+34	34.jpg	摸金传人	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+35	35.jpg	瑚公蝶墓	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+36	36.jpg	红楼梦	曹雪芹	尚学堂出版社	null	2017-08-31	null	古典文学
+37	37.jpg	西游记	吴承恩	尚学堂出版社	null	2017-08-31	null	古典文学
+38	38.jpg	三国演义	罗贯中	尚学堂出版社	null	2017-08-31	null	古典文学
+39	39.jpg	水浒传	施耐庵	尚学堂出版社	null	2017-08-31	null	古典文学
+40	40.jpg	儒林外史	随便	尚学堂出版社	null	2017-08-31	null	古典文学
+41	41.jpg	封神演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学
+42	42.jpg	山海经	随便	尚学堂出版社	null	2017-08-31	null	古典文学
+43	43.jpg	隋唐演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学
+44	44.jpg	Effective Java	Joshua Bloch	机械工业出版社	null	2017-08-31	null	镇馆之宝
+54	1	java	a	1	null	1	null	青春文学
+55		天	天	尚学堂	null	2018-9-12	null	热门小说
+查看已借阅书籍----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	111	2017-08-31	2017-09-03	儿童文学]
+返回查看已借阅书籍----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	111	2017-08-31	2017-09-03	儿童文学]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第8轮循环！
+读取指令中----
+读取命令成功---returnById
+等待读取实体！
+读取实体成功！--1	image	null	null	null	111	inTime	outTime	null
+获取图书----:1	image	null	null	null	111	inTime	outTime	null
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+根据图书编号还书是否成功----:true
+返回根据图书编号还书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第9轮循环！
+读取指令中----
+读取命令成功---showAlready
+等待读取实体！
+读取实体成功！--Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+1	1.png	狼王梦	沈石溪	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学
+2	2.png	没头脑	任溶溶	尚学堂出版社	111	2017-08-31	2017-09-03	儿童文学
+3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学
+4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学
+5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学
+6	6.jpg	将来的你	随便	尚学堂出版社	null	2017-08-31	2017-09-01	青春励志
+7	7.jpg	另一种方式	随便	尚学堂出版社	null	2017-08-31	null	青春励志
+8	8.jpg	秘密	随便	尚学堂出版社	null	2017-08-31	null	青春励志
+9	9.jpg	好吗好的	随便	尚学堂出版社	null	2017-08-31	null	青春励志
+10	10.jpg	刻意练习	随便	尚学堂出版社	null	2017-08-31	null	青春励志
+11	11.jpg	二十到三十岁	随便	尚学堂出版社	null	2017-08-31	null	青春励志
+12	12.jpg	青春不负梦	俞敏洪	尚学堂出版社	null	2017-08-31	null	青春励志
+13	13.jpg	悄悄话	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+14	14.jpg	桃花债	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+15	15.jpg	龙的承诺	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+16	16.jpg	不愿你一人	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+17	17.jpg	阿基米德	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+18	18.jpg	鬼吹灯	随便鬼	尚学堂出版社	null	2017-08-31	null	网络文学
+19	19.jpg	全职高手	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+20	20.jpg	再遇霍承安	随便	尚学堂出版社	null	2017-08-31	null	网络文学
+21	21.jpg	拖延心理学	随便	尚学堂出版社	null	2017-08-31	null	人文社科
+22	22.jpg	墨菲定律	随便	尚学堂出版社	null	2017-08-31	null	人文社科
+23	23.jpg	次第花开	随便	尚学堂出版社	null	2017-08-31	null	人文社科
+24	24.jpg	文明的冲突	随便	尚学堂出版社	null	2017-08-31	null	人文社科
+25	25.jpg	人间词话	王国维	尚学堂出版社	null	2017-08-31	null	人文社科
+26	26.jpg	乌合之众	古斯塔夫.勒庞	尚学堂出版社	null	2017-08-31	null	人文社科
+27	27.jpg	织色入史笺	随便	尚学堂出版社	null	2017-08-31	null	人文社科
+28	28.jpg	乔布斯传	随便	尚学堂出版社	null	2017-08-31	null	人文社科
+29	29.jpg	肖申克的救赎	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+30	30.jpg	犯罪心理	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+31	31.jpg	偷窥者	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+32	32.jpg	梦幻花	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+33	33.jpg	漫长的夜	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+34	34.jpg	摸金传人	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+35	35.jpg	瑚公蝶墓	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑
+36	36.jpg	红楼梦	曹雪芹	尚学堂出版社	null	2017-08-31	null	古典文学
+37	37.jpg	西游记	吴承恩	尚学堂出版社	null	2017-08-31	null	古典文学
+38	38.jpg	三国演义	罗贯中	尚学堂出版社	null	2017-08-31	null	古典文学
+39	39.jpg	水浒传	施耐庵	尚学堂出版社	null	2017-08-31	null	古典文学
+40	40.jpg	儒林外史	随便	尚学堂出版社	null	2017-08-31	null	古典文学
+41	41.jpg	封神演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学
+42	42.jpg	山海经	随便	尚学堂出版社	null	2017-08-31	null	古典文学
+43	43.jpg	隋唐演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学
+44	44.jpg	Effective Java	Joshua Bloch	机械工业出版社	null	2017-08-31	null	镇馆之宝
+54	1	java	a	1	null	1	null	青春文学
+55		天	天	尚学堂	null	2018-9-12	null	热门小说
+查看已借阅书籍----:[2	2.png	没头脑	任溶溶	尚学堂出版社	111	2017-08-31	2017-09-03	儿童文学]
+返回查看已借阅书籍----:[2	2.png	没头脑	任溶溶	尚学堂出版社	111	2017-08-31	2017-09-03	儿童文学]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第10轮循环！
+读取指令中----
+读取命令成功---returnById
+等待读取实体！
+读取实体成功！--2	image	null	null	null	111	inTime	outTime	null
+获取图书----:2	image	null	null	null	111	inTime	outTime	null
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+根据图书编号还书是否成功----:true
+返回根据图书编号还书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+1.这是怎么回事？=====[Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234], Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234], Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111], Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123], Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232], Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow], Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456], Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as], Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=刘能, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=admin, password=admin]]
+2.这是怎么回事？Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+2.这是怎么回事？Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+2.这是怎么回事？Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+2.这是怎么回事？Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+2.这是怎么回事？Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+2.这是怎么回事？Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+2.这是怎么回事？Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+2.这是怎么回事？Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+让你登录
+用户请求登录:王五[2017-9-3 21:15:9]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---borrowInfo
+等待读取实体！
+读取实体成功！--null	image	null	null	null	borrow	inTime	outTime	null
+查询所有借出图书信息----:[]
+返回查询所有借出图书信息----:[]
+调用operation方法成功!
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+1.这是怎么回事？=====[Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234], Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234], Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111], Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123], Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232], Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow], Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456], Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as], Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=刘能, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=admin, password=admin]]
+2.这是怎么回事？Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+让你登录
+用户请求登录:111[2017-9-3 21:15:29]
+是否准许登录：------false
+服务器发送----:null
+调用operation方法成功!
+正在获取对象流！
+Thread-3---111 用户断开！时间是：[2017-9-3 21:14:35]
+Thread-4---王五 用户断开！时间是：[2017-9-3 21:15:11]
+Thread-5---111 用户断开！时间是：[2017-9-3 21:15:29]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+服务器回收资源!
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+服务器回收资源!
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+容器删除后：[]
+服务器回收资源!
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+1.这是怎么回事？=====[Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234], Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234], Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111], Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123], Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232], Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow], Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456], Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as], Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=刘能, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=admin, password=admin]]
+2.这是怎么回事？Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+让你登录
+用户请求登录:111[2017-9-3 21:15:41]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	image	null	null	null	borrow	inTime	outTime	null
+实现类中的bookList:[1	1.png	狼王梦	沈石溪	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-03	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 6	6.jpg	将来的你	随便	尚学堂出版社	null	2017-08-31	2017-09-01	青春励志, 7	7.jpg	另一种方式	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 8	8.jpg	秘密	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 9	9.jpg	好吗好的	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 10	10.jpg	刻意练习	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 11	11.jpg	二十到三十岁	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 12	12.jpg	青春不负梦	俞敏洪	尚学堂出版社	null	2017-08-31	null	青春励志, 13	13.jpg	悄悄话	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 14	14.jpg	桃花债	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 15	15.jpg	龙的承诺	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 16	16.jpg	不愿你一人	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 17	17.jpg	阿基米德	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 18	18.jpg	鬼吹灯	随便鬼	尚学堂出版社	null	2017-08-31	null	网络文学, 19	19.jpg	全职高手	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 20	20.jpg	再遇霍承安	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 21	21.jpg	拖延心理学	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 22	22.jpg	墨菲定律	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 23	23.jpg	次第花开	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 24	24.jpg	文明的冲突	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 25	25.jpg	人间词话	王国维	尚学堂出版社	null	2017-08-31	null	人文社科, 26	26.jpg	乌合之众	古斯塔夫.勒庞	尚学堂出版社	null	2017-08-31	null	人文社科, 27	27.jpg	织色入史笺	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 28	28.jpg	乔布斯传	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 29	29.jpg	肖申克的救赎	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 30	30.jpg	犯罪心理	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 31	31.jpg	偷窥者	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 32	32.jpg	梦幻花	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 33	33.jpg	漫长的夜	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 34	34.jpg	摸金传人	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 35	35.jpg	瑚公蝶墓	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 36	36.jpg	红楼梦	曹雪芹	尚学堂出版社	null	2017-08-31	null	古典文学, 37	37.jpg	西游记	吴承恩	尚学堂出版社	null	2017-08-31	null	古典文学, 38	38.jpg	三国演义	罗贯中	尚学堂出版社	null	2017-08-31	null	古典文学, 39	39.jpg	水浒传	施耐庵	尚学堂出版社	null	2017-08-31	null	古典文学, 40	40.jpg	儒林外史	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 41	41.jpg	封神演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 42	42.jpg	山海经	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 43	43.jpg	隋唐演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 44	44.jpg	Effective Java	Joshua Bloch	机械工业出版社	null	2017-08-31	null	镇馆之宝, 54	1	java	a	1	null	1	null	青春文学, 55		天	天	尚学堂	null	2018-9-12	null	热门小说]
+查看可借阅书籍----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-03	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 6	6.jpg	将来的你	随便	尚学堂出版社	null	2017-08-31	2017-09-01	青春励志, 7	7.jpg	另一种方式	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 8	8.jpg	秘密	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 9	9.jpg	好吗好的	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 10	10.jpg	刻意练习	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 11	11.jpg	二十到三十岁	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 12	12.jpg	青春不负梦	俞敏洪	尚学堂出版社	null	2017-08-31	null	青春励志, 13	13.jpg	悄悄话	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 14	14.jpg	桃花债	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 15	15.jpg	龙的承诺	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 16	16.jpg	不愿你一人	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 17	17.jpg	阿基米德	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 18	18.jpg	鬼吹灯	随便鬼	尚学堂出版社	null	2017-08-31	null	网络文学, 19	19.jpg	全职高手	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 20	20.jpg	再遇霍承安	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 21	21.jpg	拖延心理学	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 22	22.jpg	墨菲定律	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 23	23.jpg	次第花开	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 24	24.jpg	文明的冲突	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 25	25.jpg	人间词话	王国维	尚学堂出版社	null	2017-08-31	null	人文社科, 26	26.jpg	乌合之众	古斯塔夫.勒庞	尚学堂出版社	null	2017-08-31	null	人文社科, 27	27.jpg	织色入史笺	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 28	28.jpg	乔布斯传	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 29	29.jpg	肖申克的救赎	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 30	30.jpg	犯罪心理	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 31	31.jpg	偷窥者	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 32	32.jpg	梦幻花	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 33	33.jpg	漫长的夜	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 34	34.jpg	摸金传人	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 35	35.jpg	瑚公蝶墓	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 36	36.jpg	红楼梦	曹雪芹	尚学堂出版社	null	2017-08-31	null	古典文学, 37	37.jpg	西游记	吴承恩	尚学堂出版社	null	2017-08-31	null	古典文学, 38	38.jpg	三国演义	罗贯中	尚学堂出版社	null	2017-08-31	null	古典文学, 39	39.jpg	水浒传	施耐庵	尚学堂出版社	null	2017-08-31	null	古典文学, 40	40.jpg	儒林外史	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 41	41.jpg	封神演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 42	42.jpg	山海经	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 43	43.jpg	隋唐演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 44	44.jpg	Effective Java	Joshua Bloch	机械工业出版社	null	2017-08-31	null	镇馆之宝, 54	1	java	a	1	null	1	null	青春文学, 55		天	天	尚学堂	null	2018-9-12	null	热门小说]
+返回查看可借阅书籍----:[1	1.png	狼王梦	沈石溪	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 2	2.png	没头脑	任溶溶	尚学堂出版社	null	2017-08-31	2017-09-03	儿童文学, 3	3.png	平凡的世界	路瑶	尚学堂出版社	null	null	null	儿童文学, 4	4.jpg	中国历史	陈卫宇	尚学堂出版社	null	2017-08-31	null	儿童文学, 5	5.jpg	我想去看海	张炜	尚学堂出版社	null	2017-08-31	2017-09-01	儿童文学, 6	6.jpg	将来的你	随便	尚学堂出版社	null	2017-08-31	2017-09-01	青春励志, 7	7.jpg	另一种方式	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 8	8.jpg	秘密	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 9	9.jpg	好吗好的	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 10	10.jpg	刻意练习	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 11	11.jpg	二十到三十岁	随便	尚学堂出版社	null	2017-08-31	null	青春励志, 12	12.jpg	青春不负梦	俞敏洪	尚学堂出版社	null	2017-08-31	null	青春励志, 13	13.jpg	悄悄话	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 14	14.jpg	桃花债	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 15	15.jpg	龙的承诺	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 16	16.jpg	不愿你一人	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 17	17.jpg	阿基米德	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 18	18.jpg	鬼吹灯	随便鬼	尚学堂出版社	null	2017-08-31	null	网络文学, 19	19.jpg	全职高手	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 20	20.jpg	再遇霍承安	随便	尚学堂出版社	null	2017-08-31	null	网络文学, 21	21.jpg	拖延心理学	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 22	22.jpg	墨菲定律	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 23	23.jpg	次第花开	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 24	24.jpg	文明的冲突	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 25	25.jpg	人间词话	王国维	尚学堂出版社	null	2017-08-31	null	人文社科, 26	26.jpg	乌合之众	古斯塔夫.勒庞	尚学堂出版社	null	2017-08-31	null	人文社科, 27	27.jpg	织色入史笺	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 28	28.jpg	乔布斯传	随便	尚学堂出版社	null	2017-08-31	null	人文社科, 29	29.jpg	肖申克的救赎	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 30	30.jpg	犯罪心理	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 31	31.jpg	偷窥者	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 32	32.jpg	梦幻花	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 33	33.jpg	漫长的夜	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 34	34.jpg	摸金传人	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 35	35.jpg	瑚公蝶墓	随便	尚学堂出版社	null	2017-08-31	null	恐怖悬疑, 36	36.jpg	红楼梦	曹雪芹	尚学堂出版社	null	2017-08-31	null	古典文学, 37	37.jpg	西游记	吴承恩	尚学堂出版社	null	2017-08-31	null	古典文学, 38	38.jpg	三国演义	罗贯中	尚学堂出版社	null	2017-08-31	null	古典文学, 39	39.jpg	水浒传	施耐庵	尚学堂出版社	null	2017-08-31	null	古典文学, 40	40.jpg	儒林外史	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 41	41.jpg	封神演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 42	42.jpg	山海经	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 43	43.jpg	隋唐演义	随便	尚学堂出版社	null	2017-08-31	null	古典文学, 44	44.jpg	Effective Java	Joshua Bloch	机械工业出版社	null	2017-08-31	null	镇馆之宝, 54	1	java	a	1	null	1	null	青春文学, 55		天	天	尚学堂	null	2018-9-12	null	热门小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--1	image	null	null	null	borrow	inTime	outTime	null
+获取图书----:1	image	null	null	null	borrow	inTime	outTime	null
+返回是否找到=================找到了
+被借的是这本书1	image	null	null	null	borrow	inTime	outTime	null
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+1.这是怎么回事？=====[Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234], Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234], Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111], Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123], Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232], Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow], Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456], Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as], Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=刘能, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=admin, password=admin]]
+2.这是怎么回事？Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+2.这是怎么回事？Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+2.这是怎么回事？Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+2.这是怎么回事？Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+2.这是怎么回事？Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+2.这是怎么回事？Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+2.这是怎么回事？Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+2.这是怎么回事？Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+让你登录
+用户请求登录:王五[2017-9-3 21:16:18]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---borrowInfo
+等待读取实体！
+读取实体成功！--null	image	null	null	null	borrow	inTime	outTime	null
+查询所有借出图书信息----:[[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-03	儿童文学]]
+返回查询所有借出图书信息----:[[1	1.png	狼王梦	沈石溪	尚学堂出版社	111	2017-08-31	2017-09-03	儿童文学]]
+调用operation方法成功!
+正在获取对象流！
+Thread-7---王五 用户断开！时间是：[2017-9-3 21:16:20]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+Thread-6---111 用户断开！时间是：[2017-9-3 21:15:55]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+服务器回收资源!

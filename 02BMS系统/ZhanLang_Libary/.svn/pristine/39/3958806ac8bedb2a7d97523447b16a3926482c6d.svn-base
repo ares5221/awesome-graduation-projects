@@ -1,0 +1,58 @@
+package zhanlang.entity;
+
+
+import java.awt.EventQueue;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+
+import zhanlang.service.operate.ServerListen;
+/**
+ * Service
+ * 服务器入口类
+ * @author lisi
+ *
+ */
+public class Service {
+	public static void main(String[] args) throws IOException {
+		//输出流重定向
+		PrintStream ps=System.out;
+		PrintStream ps1=new PrintStream(new OutputStream() {
+			
+			@Override
+			public void write(int b) throws IOException {
+				// 写入指定的字节，忽略
+			}
+			@Override
+			public void write(byte data[]) throws IOException{
+		        // 追加一行字符串
+				ServiceFrame.jta.append(new String(data));
+		    }
+			@Override
+		    public void write(byte data[], int off, int len) throws IOException {
+		        // 追加一行字符串中指定的部分，这个最重要
+		    	ServiceFrame.jta.append(new String(data, off, len));
+		        // 移动TextArea的光标到最后，实现自动滚动
+		    	ServiceFrame.jta.setCaretPosition(ServiceFrame.jta.getText().length());
+		    }
+		});
+		System.setOut(ps1);
+		System.setErr(ps1);
+		System.out.println("服务器启动成功！");
+		ServerListen sl=new ServerListen();
+		Thread t=new Thread(sl);
+		t.start();
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ServiceFrame frame = new ServiceFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+
+	}
+}

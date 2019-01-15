@@ -1,0 +1,235 @@
+ package com.bjsxt.dao;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+import com.bjsxt.entity.Course;
+import com.bjsxt.entity.Student;
+import com.bjsxt.utils.Utils;
+
+public class StudentDao {
+	
+	public boolean checkStudentLogin(String ID,String password) throws Exception{
+//		解析所有的  然后我们传进去了一个ID
+		Document read = new SAXReader().read(new File("userXML.xml"));
+		Element e = read.elementByID("1");
+		Iterator<Element> it = e.elementIterator();
+		while(it.hasNext()){
+		Element next = it.next();
+			String id = next.attributeValue("ID");
+			String thispassword=next.elementText("password");
+			if(thispassword.equals(password)&&id.equals(ID)){
+				return true;
+			}
+			}
+			return false;
+			
+			
+	}
+	//根据所给id返回一个学生对象
+	public Student getStu(String iD) throws Exception{
+		Student stu;
+		Course course;
+		//新建链表		
+		//解析	
+		Document read = new SAXReader().read(new File("userXML.xml"));
+		Element e = read.elementByID("1");
+		Iterator<Element> it = e.elementIterator();
+		stu=new Student();
+			while(it.hasNext()){
+				//创建学生
+				Element next = it.next();
+				stu.setID(iD);
+				stu.setCourseDown(getDownCourse(iD));
+				stu.setCourseUp(getUpCourse(iD));
+				stu.setName(next.elementText("name"));
+				stu.setAge(next.elementText("age"));
+				stu.setPassword(next.elementText("password"));
+				stu.setSex(next.elementText("sex"));
+				//将两个学生分别各自放在一个表中遍历，然后把属性添加进去
+	}
+		
+		
+		return stu;
+		
+	
+	
+	
+	}
+
+	//获得已选课程
+	public List getDownCourse(String iD) throws Exception{
+		//解析可选课程xml
+		Document read = new SAXReader().read(new File("CourseViewXML.xml"));
+		//首先遍历list获得每个学生相对应的ID，然后根据ID再去找寻对应的课程放入已选课程中
+		List<Course> listc=new ArrayList<>();
+			Element e = read.elementByID(iD);
+			Iterator<Element> it = e.elementIterator();
+			
+			while(it.hasNext()){
+				Element n = it.next();
+				//根据对应学生的ID获得他课程的ID,名称,老师，最大数  添加进课程这个对象
+				String id=n.attributeValue("ID");
+				String name=n.elementText("name");
+				String tname=n.elementText("teacher");
+				String tID=n.element("teacher").attributeValue("ID");
+				String max=n.elementText("maxNum");
+				Course course = new Course(id,name,tname,tID,max);
+				listc.add(course);
+			}
+		return listc;
+	}
+		
+	//获得可选课程
+	public List getUpCourse(String iD) throws Exception{
+		//定义一个链表保存可选课程
+		List<Course> list=new ArrayList<>();
+		//定义一个装ID的东西
+		String[]i=new String[20];
+		//首先解析所有课程  然后根据已选课程的遍历跟所有课程相比较，没有的就装在集合中
+		Document read = new SAXReader().read(new File("courseXML.xml"));
+		Element rt = read.getRootElement();
+		Iterator<Element> it = rt.elementIterator();
+		//获得已选课程
+		List<Course> dlist = getDownCourse(iD);
+		for(int j=0;j<dlist.size();j++){
+			 i[j]=dlist.get(j).getId();	
+		}
+		while(it.hasNext()){
+			Element next = it.next();
+			String id=next.attributeValue("ID");
+			String name=next.elementText("name");
+			String teacher=next.elementText("teacher");
+			String maxNum=next.elementText("maxNum");
+			for(String q:i){
+				if(q!=id&&q!=null){
+					Course c=new Course();
+					//如果id不相等，那么就把课程加进去
+					c.setId(id);
+					c.setName(name);
+					c.setTeacher(teacher);
+					c.setMaxNum(maxNum);
+					list.add(c);
+				}
+			}
+		}
+		
+		
+		return list;
+		
+	}
+		
+	
+	//选课方法
+	public void addSelectCourse(String stuid,String courseid) throws Exception{
+		//添加课程
+		String name=null;
+		String teacher=null;
+		String maxNum=null;
+		Course next=null;
+		//获得可选课程，然后在可选课程中将课程的ID与传过来的id进行比较，相同的添加进去，然后移除，再在已选课程中添加即可
+		List<Course> stulist = getUpCourse(stuid);
+		Iterator<Course> stuli = stulist.iterator();
+			while(stuli.hasNext()){
+			next = stuli.next();
+					if(courseid.equals(next.getId())){
+						name=next.getName();
+						teacher=next.getTeacher();
+						maxNum=next.getMaxNum();
+						break;
+					}
+				}
+			//添加进已选课程链表中
+			List<Course> downc = getDownCourse(stuid);
+			Course cs = new Course();
+			cs.setId(stuid);
+			cs.setName(name);
+			cs.setTeacher(teacher);
+			cs.setMaxNum(maxNum);
+			cs.setTeaId(new StudentDao().getTeacherID(teacher));
+			downc.add(cs);
+			//再在可选中删除即可
+			stulist.remove(next);
+			
+			
+		File file=new File("CourseViewXML.xml");
+		Document read = new SAXReader().read(file);
+		Element root = read.getRootElement();
+		//根节点		
+		List<Element> list = root.elements();
+		//获得是否是添加
+		Element element = list.get(1);
+		Element elemen  = list.get(0);
+		//在已选课中找到对应的学生
+		Element stu = element.elementByID(stuid);
+			//在学生下边添加课程
+			Element c = stu.addElement("Course");
+			c.addAttribute("ID",courseid);
+			c.addElement("name",name);
+			c.addElement("teacher",teacher).addAttribute("ID", getTeacherID(teacher));
+			c.addElement("maxNum",maxNum);
+			//删除学生下边对用的课程
+			Element dstu = elemen.elementByID(stuid);
+			elemen.remove(dstu);
+		new Utils().ToXml(file, read);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public String getTeacherID(String name) throws Exception {
+		//根据老师的名字获得老师的ID	
+		//解析	
+		String tID=null;
+		Document read = new SAXReader().read(new File("userXML.xml"));
+		Element e = read.elementByID("2");
+		Iterator<Element> it = e.elementIterator();
+		while(it.hasNext()){
+			Element next = it.next();
+			tID=next.attributeValue("ID");
+			List<Element> tlist = next.elements();
+			Iterator itt = tlist.iterator();
+			while(itt.hasNext()){
+				Element next2 = (Element) itt.next();
+				if(name.equals(next2.getText())){
+					System.out.println(tID);
+					return tID;
+					
+				}
+			}
+		}
+		
+		return tID;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+

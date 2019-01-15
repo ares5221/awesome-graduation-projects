@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Subjects> 
+  <!-- ID为课程号，name为课程名-->  
+  <subject ID="0001"> 
+    <name>Chinese</name> 
+  </subject>  
+  <subject ID="0002"> 
+    <name>Math</name> 
+  </subject>  
+  <subject ID="0003">
+    <name>English</name>
+  </subject>
+</Subjects>

@@ -1,0 +1,19 @@
+#FullPath{border-bottom:3px solid #FF9900}
+#name{border-bottom:1px solid #D6D6D6}
+#UserInfo{background:#F8F8F8;border:1px solid #D8D8D8}
+#UserInfoHead{background:#EDEDED;border-bottom:1px solid #d8d8d8}
+#UserInfoFoot{background:#EDEDED;border-top:1px solid #d8d8d8}
+.TitleInfo{left:30px;top:6px}
+.TitleLink{right:60px;top:6px;width:120px}
+.TitleTop{right:0;top:5px;height:24px;width:60px}
+#commend_list{border:1px solid #BEC6D9;border-top:none}
+#DescShow{border:1px solid #FF9900;border-top:none}
+
+#auction_list{background:transparent url(../images/menuMain.gif) repeat-x;height:28px;position:relative}
+#auction_list li{float:left;height:25px;margin-right:3px}
+#auction_list li a{background:transparent url(../images/menuWillMain.gif) left top no-repeat;display:block;float:left;height:25px;text-decoration:none}
+#auction_list li a span{background:transparent url(../images/menuWillSide.gif) right top no-repeat;color:#000000;cursor:hand;display:block;float:left;height:18px;padding:7px 20px 0;text-align:center}
+#auction_list li a:hover span{background:transparent url(../images/menuHereSide.gif) right top no-repeat;color:#FFFFFF}
+#auction_list li a:hover,#auction_list li.li_now a{background:transparent url(../images/menuHereMain.gif) left top no-repeat}
+#auction_list li.li_now a span{background:transparent url(../images/menuHereSide.gif) right top no-repeat;color:#FFFFFF;font-weight:bold}
+#main{margin:0 10px 0 210px;border:1px dashed #FFFFFF;text-align:left}

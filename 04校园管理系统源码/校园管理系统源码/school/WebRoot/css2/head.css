@@ -1,0 +1,82 @@
+/* $TopStyle:URL=css/head.css$ */
+
+/* 通用样式表v2.0 */
+body,p,td,input,option,textarea,select{color:#333333;font:12px "Verdana"}
+body,form,ul,li,p,ol{margin:0;padding:0}
+body{background:#fff;text-align:center}
+img{border:0}
+ul{list-style-type:none}
+table{text-align:left}
+.full{margin:0 10px;text-align:left}
+.main{margin:0 auto;text-align:left;width:760px}
+.clear{border-top:1px solid transparent !important;border-top:0;clear:both}
+.debug{border:1px dashed #FF00FF}
+.font14{font-size:14px}
+.fontOrange{color:#FF4E00}
+.b{font-weight:bold}
+.line{line-height:140%;word-break:break-all;word-wrap:break-word}
+.desc{line-height:150%;word-break:break-all;word-wrap:break-word}
+.lineCenter{text-align:center}
+.lineLeft{text-align:left}
+.lineRight{text-align:right}
+a:link,a:visited{color:#1835D1;text-decoration:none}
+a:active,a:hover{color:#FF4e00;text-decoration:underline}
+/* 头部和尾部样式表 */
+#head{font-family:"宋体"}
+#head a:link,#head a:visited,#foot a:link,#foot a:visited{color:#1835D1;text-decoration:none}
+#head a:active,#head a:hover,#foot a:active,#foot a:hover{color:#FF4e00;text-decoration:underline}
+#head{height:80px;margin:0 auto;position:relative;width:760px}
+#head_find{border-top:1px solid #D0D0D0;float:right;margin-top:1px;padding-top:4px;text-align:right;width:516px}
+#head_find li{float:right;margin-left:3px}
+#head_link{float:right;margin:6px 0 2px;width:500px}
+#head_link li{float:right;margin-left:10px}
+#head_logo{left:0;position:absolute;top:0}
+#head_navi{float:right;width:500px}
+#head_navi li{float:right;margin-left:10px}
+#head_url{border-top:1px solid #D0D0D0;color:#808080;float:right;font-family:Verdana;margin-top:1px;padding:2px 21px 0 0;text-align:right;width:516px}
+/* 头部样式表V2 */
+#headV2 a:link,#headV2 a:visited,#foot a:link,#foot a:visited{color:#1835D1;text-decoration:none}
+#headV2 a:active,#headV2 a:hover,#foot a:active,#foot a:hover{color:#FF3300;text-decoration:underline}
+#headV2 #headMenuSimple li a{color:#333;font-family:"宋体"}
+#headV2 #menuFind a{color:#fff;text-decoration:underline}
+#headV2 #menuFind a:hover{color:#ff4e00}
+#foot{margin:10px 0 12px;text-align:center;line-height:150%}
+#foot_link{border-bottom:1px solid #D7D7D7;margin:7px auto;padding-bottom:4px;width:760px}
+#headV2{margin:7px}
+#headMain{width:760px;text-align:right;height:66px;overflow:hidden;position:relative;margin:0 auto}
+#headLogo{position:absolute;top:0;left:0}
+#headLink{background:url(http://pics.paipai.com/common/menu/line.gif) right bottom no-repeat;height:18px;font-family:Verdana}
+#headInfo{padding:4px 40px 0 0;color:#545454;height:20px;text-align:right;font-family:Verdana}
+#headMenu{padding-left:240px}
+#headMenuSimple{margin-left:400px;background:#f0f0f0 url(http://pics.paipai.com/common/menu/menu_left.gif) left no-repeat;height:21px}
+#headMenuSimple ul{background:url(http://pics.paipai.com/common/menu/menu_side.gif) right no-repeat;height:21px;padding-left:7px}
+#headMenuSimple li{float:left;background:url(http://pics.paipai.com/common/menu/menu_main.gif) right no-repeat;padding:5px 7px 0 3px;height:16px}
+#headFind{height:34px;width:760px;margin:0 auto;overflow:hidden}
+#headFindSimple{padding:3px 0}
+#headForm{height:26px;padding:8px 20px 0;text-align:left;color:#fff}
+.findInto{border:1px solid #808080;color:gray;height:16px;width:240px}
+.findGoto{border:none;height:20px;background:url(http://pics.paipai.com/common/menu/find_bg.gif) no-repeat}
+#headV2 #menuItem{height:24px;font-family:"宋体"}
+#headV2 #menuItem a{background:url(http://pics.paipai.com/common/menu/main_left.gif) #EBEBEB left top no-repeat;display:block;float:left;height:24px;text-decoration:none}
+#menuItem a span{background:transparent url(http://pics.paipai.com/common/menu/main_side.gif) right top no-repeat;color:#000000;cursor:hand;display:block;float:left;height:17px;padding:7px 13px 0;text-align:center}
+#menuItem li{float:left;height:24px;margin-right:3px}
+#menuItem li#menuBook a:hover{background:url(http://pics.paipai.com/common/menu/book_left.gif) #1D7D8B left top no-repeat}
+#menuItem li#menuBook a:hover span{background:transparent url(http://pics.paipai.com/common/menu/book_side.gif) right top no-repeat;color:#FFFFFF}
+#menuItem li#menuDigital a:hover{background:url(http://pics.paipai.com/common/menu/digital_left.gif) #8B94A2 left top no-repeat}
+#menuItem li#menuDigital a:hover span{background:transparent url(http://pics.paipai.com/common/menu/digital_side.gif) right top no-repeat;color:#FFFFFF}
+#menuItem li#menuGame a:hover{background:url(http://pics.paipai.com/common/menu/game_left.gif) #784544 left top no-repeat}
+#menuItem li#menuGame a:hover span{background:transparent url(http://pics.paipai.com/common/menu/game_side.gif) right top no-repeat;color:#FFFFFF}
+#menuItem li#menuHome a:hover{background:url(http://pics.paipai.com/common/menu/home_left.gif) #FFA730 left top no-repeat}
+#menuItem li#menuHome a:hover span{background:transparent url(http://pics.paipai.com/common/menu/home_side.gif) right top no-repeat;color:#FFFFFF}
+#menuItem li#menuLady a:hover{background:url(http://pics.paipai.com/common/menu/lady_left.gif) #F0447D left top no-repeat}
+#menuItem li#menuLady a:hover span{background:transparent url(http://pics.paipai.com/common/menu/lady_side.gif) right top no-repeat;color:#FFFFFF}
+#menuItem li#menuQ a:hover{background:url(http://pics.paipai.com/common/menu/q_left.gif) #32C1EC left top no-repeat}
+#menuItem li#menuQ a:hover span{background:transparent url(http://pics.paipai.com/common/menu/q_side.gif) right top no-repeat;color:#FFFFFF}
+#menuItem li#menuSale a:hover{background:url(http://pics.paipai.com/common/menu/sale_left.gif) #97C03D left top no-repeat}
+#menuItem li#menuSale a:hover span{background:transparent url(http://pics.paipai.com/common/menu/sale_side.gif) right top no-repeat;color:#FFFFFF}
+#menuItem li#menuSport a:hover{background:url(http://pics.paipai.com/common/menu/sport_left.gif) #60B900 left top no-repeat}
+#menuItem li#menuSport a:hover span{background:transparent url(http://pics.paipai.com/common/menu/sport_side.gif) right top no-repeat;color:#FFFFFF}
+#menuItem li#menuStudent a:hover{background:url(http://pics.paipai.com/common/menu/student_left.gif) #FF6100 left top no-repeat}
+#menuItem li#menuStudent a:hover span{background:transparent url(http://pics.paipai.com/common/menu/student_side.gif) right top no-repeat;color:#FFFFFF}
+#headFind{background:url(http://pics.paipai.com/common/menu/home_find_left.gif) #FFA730 left top no-repeat}
+#headForm{background:transparent url(http://pics.paipai.com/common/menu/home_find_side.gif) right top no-repeat}

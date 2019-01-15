@@ -1,0 +1,106 @@
+package zhanlang.DAO.Imple;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import zhanlang.DAO.UserDAO;
+import zhanlang.entity.Book;
+import zhanlang.entity.Person;
+import zhanlang.entity.User;
+
+public class UserDAOImple implements UserDAO{
+	DataExchange de = new DataExchange();
+	/**
+	 * 登录
+	 */
+	@Override
+	public User login(String command,Object loginPerson) {
+		try {
+			Object obj = de.doWork(command, loginPerson);
+			if(obj instanceof Person){
+				User user = (User) obj;
+				return user;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	/**
+	 * 显示可借书籍
+	 */
+	public List<Book> showCanAll(String command,Object book) {
+		List<Book> bookList = null;
+		try {
+			Object obj = de.doWork(command, book);
+			if(obj instanceof List){
+				bookList = (List<Book>) obj;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return bookList;
+	}
+
+	
+	@Override
+	/**
+	 * 显示被借出书籍
+	 */
+	public Object showAlready(String command,Object book) {
+		return null;
+	}
+
+	@Override
+	/**
+	 * 通过图书ID借书
+	 */
+	public Object borrowById(String command,Object book) {
+		boolean b4 = false;
+		try {
+			b4=de.doWork(command, book);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return b4;
+	}
+	
+	/**
+	 * 通过id还书
+	 */
+	@Override
+	public Object returnById(String command,Object book) {
+		boolean b5 = false;
+		try {
+			b5=de.doWork(command, book);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return b5;
+	}
+
+	@Override
+	public boolean regester() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void alterInfo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectById() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+}

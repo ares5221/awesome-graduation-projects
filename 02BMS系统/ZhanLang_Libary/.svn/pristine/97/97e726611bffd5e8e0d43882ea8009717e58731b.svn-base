@@ -1,0 +1,198 @@
+package zhanlang.service.operate;
+
+
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.List;
+
+import zhanlang.entity.Book;
+import zhanlang.entity.Person;
+import zhanlang.service.Dao.LibServerDAO;
+import zhanlang.service.Dao.Imple.LibServerDAOimple;
+/**
+ * 功能选择及调用返回类
+ * @author lisi
+ *
+ */
+public class ChooseOperation {
+	Person person;
+	boolean flag;
+	String sb;
+	List<Book> list;
+	List<Book> list1;
+	Book book;
+	
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
+	public String getSb() {
+		return sb;
+	}
+
+	public void setSb(String sb) {
+		this.sb = sb;
+	}
+
+	public boolean isFlag() {
+		return flag;
+	}
+
+	public void setFlag(boolean flag) {
+		this.flag = flag;
+	}
+	
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	
+	//功能选择及调用
+	void operation(String str,ObjectInputStream ois,ObjectOutputStream oos){
+		LibServerDAO lsd=new LibServerDAOimple();
+		if(str!=null) {
+			//用户功能
+			switch (str) {
+			//登录
+			case "login":{
+				person=lsd.login(person);
+				if(person!=null){
+					sb="true";
+				}else{
+					sb="false";
+				}
+				String strReturn=this.getSb();
+				System.out.println("是否准许登录：------"+strReturn);
+				try {
+					oos.writeObject(person);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				//return person;
+			}break;
+			//查看可借阅书籍
+			case "showCanAll":{ 
+				list=lsd.showCanAll();
+				try {
+					oos.writeObject(list);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				//return list;
+			}break;
+			//查看已借阅书籍
+			case "showAlready":{
+			list1=lsd.showAlready();
+			try {
+				oos.writeObject(list1);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			//	return list1;
+			}break;
+			//根据图书编号完成借书
+			case "borrowById":{
+				
+				boolean b=lsd.borrowById(book, person);
+				try {
+					oos.writeObject(b);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			//	return b;
+			}break;
+			//根据图书编号还书
+			case "returnById":{
+				boolean b1=lsd.returnById(book);
+				try {
+					oos.writeObject(b1);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			//	return b1;
+			}break;
+			//注册
+			case "addUser":{
+				boolean b2=lsd.addUser(person);
+				try {
+					oos.writeObject(b2);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			//	return b2;
+			}break;
+			//修改个人信息
+			case "alterInfo":{
+				String property = null;
+				String content = null;
+				boolean b3=lsd.alterInfo(person, property, content);
+				try {
+					oos.writeObject(b3);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			//	return b3;
+			}break;
+			//根据图书编号查询信息
+			case "selectById":{
+				Book book1=lsd.selectById(book);
+				try {
+					oos.writeObject(book1);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			//	return "selectById";
+			}break;
+//=======================================
+			//增加管理员
+			case "addManager":{
+				
+			//	return "true";
+			}break;
+			//删除用户
+			case "deleteUser":{
+				boolean b4=lsd.deleteUser(person);
+				try {
+					oos.writeObject(b4);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			//	return "true";
+			}break;
+			//修改密码
+			case "alterPassword":{
+				
+			//	return "true";
+			}break;
+			//添加图书
+			case "addBook":{
+			
+			//	return "true";
+			}break;
+			//删除图书
+			case "deleteBook":{
+				
+			//	return "true";
+			}break;
+//======================================	
+			default:
+				break;
+			//	return "true";
+			}
+		}
+		//return "true";
+		
+	}
+	
+}

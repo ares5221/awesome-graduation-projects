@@ -1,0 +1,144 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.ManagerDAO;
+import zhanlang.DAO.Imple.DataExchange;
+import zhanlang.DAO.Imple.ManagerDAOImple;
+import zhanlang.DAO.Imple.UserDAOImple;
+import zhanlang.entity.User;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
+
+public class U_RegesterUser extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField user;
+	private JPasswordField pass;
+	private JPasswordField repeatpass;
+
+	/**
+	 * Create the frame.
+	 */
+	public U_RegesterUser() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 671, 404);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
+		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setForeground(new Color(255, 255, 255));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label_1 = new JLabel("注册");
+		label_1.setFont(new Font("黑体", Font.PLAIN, 24));
+		label_1.setBounds(270, 36, 271, 54);
+		contentPane.add(label_1);
+		
+		JLabel label = new JLabel("用户名：");
+		label.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label.setBounds(187, 122, 99, 18);
+		contentPane.add(label);
+		
+		JLabel label_2 = new JLabel("输入密码：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_2.setBounds(187, 172, 85, 18);
+		contentPane.add(label_2);
+		
+		user = new JTextField();
+		user.setBounds(282, 121, 129, 21);
+		contentPane.add(user);
+		user.setColumns(10);
+		
+		JButton button = new JButton("提交");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String userName=user.getText();
+				String password=pass.getText();
+				
+				String command=new String("addUser");
+				
+				User user=new User(userName,password);
+				DataExchange dataChange=new DataExchange();
+				Object object = null;
+				try {
+					object = dataChange.doWork(command, user);
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				if(object!=null){
+					JOptionPane.showMessageDialog(null, "注册成功！");
+				}else{
+					JOptionPane.showMessageDialog(null, "注册失败！");
+				}
+			/*
+*/
+			}
+		});
+		button.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button.setBackground(new Color(211, 211, 211));
+		button.setBounds(193, 277, 66, 23);
+		contentPane.add(button);
+		
+		JLabel lblima = new JLabel("重复密码：");
+		lblima.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		lblima.setBounds(187, 221, 75, 18);
+		contentPane.add(lblima);
+		
+		JButton button_1 = new JButton("重置");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				user.setText("");
+				pass.setText("");
+				repeatpass.setText("");
+			}
+		});
+		button_1.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_1.setBackground(new Color(211, 211, 211));
+		button_1.setBounds(270, 277, 66, 23);
+		contentPane.add(button_1);
+		
+		JButton button_2 = new JButton("返回");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.loginMenuFrame= new LoginMenu();	
+				Client.loginMenuFrame.setVisible(true);	
+				Client.uRegesterFrame.dispose();
+			}
+		});
+		button_2.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_2.setBackground(new Color(211, 211, 211));
+		button_2.setBounds(346, 277, 66, 23);
+		contentPane.add(button_2);
+		
+		pass = new JPasswordField();
+		pass.setBounds(282, 172, 129, 21);
+		contentPane.add(pass);
+		
+		repeatpass = new JPasswordField();
+		repeatpass.setBounds(282, 221, 129, 21);
+		contentPane.add(repeatpass);
+		
+		JLabel label_3 = new JLabel("");
+		label_3.setIcon(new ImageIcon(U_RegesterUser.class.getResource("/bgimg/timg.jpg")));
+		label_3.setBounds(0, 0, 655, 366);
+		contentPane.add(label_3);
+	}
+}

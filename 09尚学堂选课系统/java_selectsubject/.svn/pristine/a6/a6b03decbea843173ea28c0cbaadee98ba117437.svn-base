@@ -1,0 +1,41 @@
+package com.bjsxt.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+public class ManagerDao {
+	
+   //解析管理员
+	public  List getManList(){
+		List<String> adm=new ArrayList();
+		SAXReader saxReader = new SAXReader();
+		Document document;
+		try {
+			// 把xml文件转换成文档对象
+			document = saxReader.read("userXml.xml");
+			// 取得根节点
+			Element rootNode = document.getRootElement();
+			Element adms=rootNode.elementByID("3");
+			List<Element> list=adms.elements();
+			for(Element ele:list){
+				String id=ele.attributeValue("ID");
+				String name=ele.elementText("name");
+				String pass=ele.elementText("password");
+				adm.add(id);
+				adm.add(name);
+				adm.add(pass);
+			}
+		} catch (DocumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return adm;
+	}
+	
+
+}

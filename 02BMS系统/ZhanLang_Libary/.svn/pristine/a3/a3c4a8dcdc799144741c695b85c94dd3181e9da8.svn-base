@@ -1,0 +1,66 @@
+package zhanlang.view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.ManagerDAO;
+import zhanlang.DAO.Imple.ManagerDAOImple;
+import zhanlang.entity.Book;
+import java.awt.Font;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+
+public class M_ShowBorrowMessage extends JFrame {
+
+	private JPanel contentPane;
+	private JTextArea textArea;
+	List<List<Book>> bookBoList = new ArrayList<List<Book>>();//接收到的被借出的书的信息（用户分类）
+	ManagerDAO mdi = new ManagerDAOImple();
+	private JTextArea biaoti;
+	/**
+	 * Create the frame.
+	 */
+	public M_ShowBorrowMessage() {
+		setTitle("借阅信息");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 900, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		textArea = new JTextArea();
+		textArea.setEditable(false);
+		textArea.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+		textArea.setBounds(10, 74, 751, 255);
+		JScrollPane scr=new JScrollPane(textArea,
+                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scr.setBounds(10, 55, 863, 380);
+		contentPane.add(scr);
+		
+		biaoti = new JTextArea();
+		biaoti.setEditable(false);
+		biaoti.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+		biaoti.setBounds(10, 21, 863, 24);
+		contentPane.add(biaoti);
+		
+		//往框框里填被借出的书的信息
+		biaoti.append("     编号\t书名\t作者\t类型\t出版社\t借阅人\t入库时间\t借阅时间");
+				bookBoList = mdi.borrowInfo("borrowInfo", new Book());
+				for(List<Book> bookList : bookBoList){
+					for(Book book : bookList){
+						textArea.append("     "+book.toString() + "\r\n");
+						textArea.append("     ---------------------------------------------------------------------------------------------------------------------------------------"+ "\r\n");
+					}
+				}
+	}
+}

@@ -1,0 +1,83 @@
+package zhanlang.entity;
+
+
+import java.io.Serializable;
+
+enum Gname {
+	vip1,vip2,vip3;
+}
+public class User extends Person implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8509092333555799268L;
+	Grade grade;
+	
+	public User() {
+		super();
+	}
+	public User(String id) {
+		super(id);
+		
+	}
+
+	public User(String iD, String name, String sex, String tel, String age, String address, String userName,
+			String password, Grade grade) {
+		super(iD, name, sex, tel, age, address, userName, password);
+		this.grade = grade;
+	}
+	public User(String userName,String password){
+		super(userName,password);
+	}
+	private class Grade{
+		private Gname gName;//等级名
+		private String canBorrow;//可借图书
+		private String canTime;//可借天数
+		private int discount;
+		public Gname getgName() {
+			return gName;
+		}
+		public void setgName(Gname gName) {
+			this.gName = gName;
+		}
+		public String getCanBorrow() {
+			return canBorrow;
+		}
+		public void setCanBorrow(String canBorrow) {
+			this.canBorrow = canBorrow;
+		}
+		public String getCanTime() {
+			return canTime;
+		}
+		public void setCanTime(String canTime) {
+			this.canTime = canTime;
+		}
+		public int getDiscount() {
+			return discount;
+		}
+		public void setDiscount(int discount) {
+			this.discount = discount;
+		}
+		public Grade() {
+			super();
+		}
+		public Grade(Gname gName) {
+			super();
+			this.gName = gName;
+		}
+		
+	}
+	
+	/*
+	 * 
+	 */
+	private Grade setGrade(String gName){
+//		if("vip1".equals(gName)){
+//			
+//		}
+		return null;
+	}
+	public String toString (){
+		return super.toString();
+	}
+}

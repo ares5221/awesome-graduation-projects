@@ -1,0 +1,11 @@
+package zhanlang.DAO;
+
+public interface ManagerDAO {
+	public boolean login();
+	public void addUser();
+	public void deleteUser();
+	public void alterPassword();
+	public void addBook();
+	public void deleteBook();
+	public void showAlready();
+}

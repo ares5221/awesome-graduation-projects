@@ -1,0 +1,53 @@
+package zhanlang.view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.ManagerDAO;
+import zhanlang.DAO.Imple.ManagerDAOImple;
+import zhanlang.entity.Book;
+
+public class M_ShowBorrowMessage extends JFrame {
+
+	private JPanel contentPane;
+	private JTextArea textArea;
+	List<List<Book>> bookBoList = new ArrayList<List<Book>>();//接收到的被借出的书的信息（用户分类）
+	ManagerDAO mdi = new ManagerDAOImple();
+	/**
+	 * Create the frame.
+	 */
+	public M_ShowBorrowMessage() {
+		setTitle("借阅信息");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 777, 462);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		textArea = new JTextArea();
+		textArea.setBounds(0, 60, 751, 255);
+		contentPane.add(textArea);
+		
+		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setBounds(0, 26, 751, 24);
+		contentPane.add(textArea_1);
+		
+		//往框框里填被借出的书的信息
+				bookBoList = mdi.borrowInfo("borrowInfo", new Book());
+				for(List<Book> bookList : bookBoList){
+					for(Book book : bookList){
+						textArea.append(book.toString() + "\r\n");
+					}
+				}
+
+	}
+}

@@ -1,0 +1,64 @@
+package com.sxt.vo;
+
+import java.io.Serializable;
+
+/**
+ * 
+ * @author Administrator
+ *
+ */
+public class Users implements Serializable{
+//	private static final long serialVersionUID = 1L;
+	private String id;		//用户名（用户标识）
+	private String name;	//昵称
+	private String password;//密码
+	private int adminStatus;  	//是否为管理员状态
+	
+	public Users(){}
+	
+	public Users(String id, String name, String password, int adminStatus){
+		this.id = id;
+		this.name = name;
+		this.password = password;
+		this.adminStatus =adminStatus;
+	}
+	
+	public Users(String id, String password){
+		this.id=id;
+		this.password=password;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
+	public int getAdminStatus() {
+		return adminStatus;
+	}
+
+	public void setAdminStatus(int adminStatus) {
+		this.adminStatus = adminStatus;
+	}
+
+	@Override
+	public String toString() {
+		return "id:" + id + "\tname:" + name + "\tpassword:" + password + "\tadminStatus:" + adminStatus ;
+	}
+	
+}

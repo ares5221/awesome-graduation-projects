@@ -1,0 +1,31 @@
+package zhanlang.service.operate;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class ServerListen implements Runnable{
+	ServerSocket socket;
+	/**
+	 * 监听到一个socket,就创建一个新线程，用来处理一个新用户
+	 */
+	@Override
+	public void run() {
+		try {
+			socket=new ServerSocket(8888);
+			while(true){
+				Socket s = socket.accept();
+				System.out.println(Thread.currentThread().getName()+"---已连接！！！！！！");
+				ListenThread e = new ListenThread(s);
+				Thread t = new Thread(e);
+				t.start();
+				
+				
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		
+	}
+}

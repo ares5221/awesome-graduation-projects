@@ -1,0 +1,117 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.Imple.UserDAOImple;
+import zhanlang.entity.Book;
+
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import java.awt.SystemColor;
+import javax.swing.JSplitPane;
+import javax.swing.JScrollPane;
+import java.awt.Toolkit;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
+
+public class U_BookMessage extends JFrame {
+	
+
+	private JPanel contentPane;
+	static JLabel booklable;
+	/**
+	 * Create the frame.
+	 */
+	public U_BookMessage() {
+		setTitle("书籍信息");
+		/***/
+		setBackground(new Color(189, 183, 107));
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		/**创建用户页面窗体，大小900*600  */
+		setBounds(100, 100,600, 400);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		
+		/**
+		 * 书架上显示的图书的模块。
+		 * 共八个，根据服务器返回的容器的内容，选择性刷入。
+		 */
+		booklable = new JLabel("New label");
+		booklable.setIcon(new ImageIcon(UserMenu.class.getResource("/img/10.jpg")));
+		booklable.setBounds(42, 31, 103, 147);
+		contentPane.add(booklable);
+		
+		JButton button = new JButton("借书");
+		button.setBounds(374, 288, 70, 23);
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				UserDAOImple userImple = new UserDAOImple();
+				Boolean flage = userImple.borrowById("borrowById", new Book(new U_BorrowBook().bookID));
+				if(flage){
+					//借书成功
+					System.out.println("借书成功");
+					JOptionPane.showMessageDialog(null, "借书成功");
+				}else{
+					//借书失败
+					System.out.println("借书失败");
+					JOptionPane.showMessageDialog(null, "借书失败");
+				}
+			}
+		});
+		button.setBounds(126, 375, 70, 23);
+		contentPane.add(button);
+		
+		JButton button_1 = new JButton("还书");
+		button_1.setBounds(229, 375, 70, 23);
+		contentPane.add(button_1);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setFont(new Font("楷体", Font.BOLD, 13));
+		textArea.setEditable(false);
+		textArea.setBounds(189, 21, 336, 289);
+		contentPane.add(textArea);
+		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon(U_BookMessage.class.getResource("/picture/text/借阅按钮.jpg")));
+		btnNewButton.setBounds(322, 329, 93, 23);
+		contentPane.add(btnNewButton);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(U_BookMessage.class.getResource("/picture/text/借书页面背景--1.jpg")));
+		label.setBounds(0, 0, 584, 362);
+		contentPane.add(label);
+		
+		
+		for(Book book : new U_ShowAllBook().bookList){
+			System.out.println("看一下他们的id" + book.getID());
+			System.out.println("接收到的框框的值为：----------" + new U_BorrowBook().bookID);
+			if(book.getID().equals(new U_BorrowBook().bookID)){
+				System.out.println("框框里要输出的：" + book);
+				textArea.append(book.getbName()+"\r\n"+book.getAuthor()+"\r\n"
+						+book.getType()+"\r\n"+book.getPress()+"\r\n"
+						+book.getIntroduce()+"\r\n");
+			}
+		}
+		
+	}
+}

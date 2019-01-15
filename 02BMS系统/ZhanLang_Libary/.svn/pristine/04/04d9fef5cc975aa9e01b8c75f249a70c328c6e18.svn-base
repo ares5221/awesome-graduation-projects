@@ -1,0 +1,131 @@
+package zhanlang.view;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.Imple.UserDAOImple;
+import java.awt.Canvas;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+
+public class UserMenu extends JFrame {
+
+	private JPanel contentPane;
+	static LoginMenu loginFrame;
+	/**
+	 * Launch the application.
+	 */
+/*	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+				 frame = new UserMenu();
+				frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+*/
+	/**
+	 * Create the frame.
+	 */
+	public UserMenu() {
+		setTitle("百战程序员BMS系统");
+		/***/
+		setBackground(new Color(189, 183, 107));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		/**创建用户页面窗体，大小900*600  */
+		setBounds(100, 100,900, 600);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu menu = new JMenu("查看");
+		menuBar.add(menu);
+		
+		JMenuItem menuItem = new JMenuItem("可借书籍");
+		menuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.showAllBookFrame= new U_ShowAllBook();
+				Client.showAllBookFrame.setVisible(true);	
+			}
+		});
+		menu.add(menuItem);
+		
+		JMenuItem menuItem_1 = new JMenuItem("已借书籍");
+		menuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.showCanAllFrame= new U_ShowCanAll();
+				Client.showCanAllFrame.setVisible(true);	
+			}
+		});
+		menu.add(menuItem_1);
+		
+		JMenu menu_1 = new JMenu("借还");
+		menuBar.add(menu_1);
+		
+		JMenuItem menuItem_2 = new JMenuItem("借书");
+		menuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.uBorrowbookFrame= new U_BorrowBook();
+				Client.uBorrowbookFrame.setVisible(true);	
+			}
+		});
+		menu_1.add(menuItem_2);
+		
+		JMenuItem menuItem_3 = new JMenuItem("还书");
+		menuItem_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.uBorrowbookFrame= new U_BorrowBook();
+				Client.uBorrowbookFrame.setVisible(true);	
+			}
+		});
+		menu_1.add(menuItem_3);
+		
+		JMenu menu_2 = new JMenu("用户");
+		menuBar.add(menu_2);
+		
+		JMenuItem menuItem_4 = new JMenuItem("个人信息");
+		menuItem_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.showMessageFrame = new U_ShowMessage();
+				Client.showMessageFrame.setVisible(true);	
+			}
+		});
+		menu_2.add(menuItem_4);
+		
+		JMenu menu_3 = new JMenu("退出");
+		menu_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				loginFrame = new LoginMenu();	
+				loginFrame.setVisible(true);	
+				Client.userMenuFrame.dispose();
+			}
+		});
+		menuBar.add(menu_3);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label_12 = new JLabel("");
+		label_12.setBounds(0, 0, 54, 15);
+		contentPane.add(label_12);
+	}
+}

@@ -1,0 +1,123 @@
+package zhanlang.service.operate;
+
+
+
+import zhanlang.entity.Person;
+import zhanlang.service.Dao.LibServerDAO;
+import zhanlang.service.Dao.Imple.ServerOperation;
+/**
+ * 功能选择及调用返回类
+ * @author lisi
+ *
+ */
+public class ChooseOperation {
+	Person person;
+	boolean flag;
+	StringBuilder sb=new StringBuilder("");
+	
+	
+	public StringBuilder getSb() {
+		return sb;
+	}
+
+	public void setSb(StringBuilder sb) {
+		this.sb = sb;
+	}
+
+	public boolean isFlag() {
+		return flag;
+	}
+
+	public void setFlag(boolean flag) {
+		this.flag = flag;
+	}
+	
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	
+	//功能选择及调用
+	void operation(String str){
+		LibServerDAO lsd=new ServerOperation();
+		if(str!=null) {
+			//用户功能
+			switch (str) {
+			//登录
+			case "login":{
+				person=lsd.login(person);
+				if(person!=null){
+					sb.append("true");
+				}else{
+					sb.append("flase");
+				}
+			}break;
+			//查看可借阅书籍
+			case "showCanAll":{
+				
+			}break;
+			//查看已借阅书籍
+			case "showAlready":{
+				
+			}break;
+			//根据图书编号完成借书
+			case "borrowById":{
+				
+			}break;
+			//根据图书编号还书
+			case "returnById":{
+				
+			}break;
+			//注册
+			case "regester":{
+				
+			}break;
+			//修改个人信息
+			case "alterInfo":{
+				
+			}break;
+			//根据图书编号查询信息
+			case "selectById":{
+				
+			}break;
+			default:
+				break;
+			}
+			//管理员功能
+			switch (str) {
+			//增加用户
+			case " addUser":{
+				
+			}break;
+			//删除用户
+			case "deleteUser":{
+				
+			}break;
+			//修改密码
+			case "alterPassword":{
+				
+			}break;
+			//添加图书
+			case "addBook":{
+				
+			}break;
+			//删除图书
+			case "deleteBook":{
+				
+			}break;
+			//查看借出图书信息
+			case "showAlready":{
+				
+			}break;
+			default:
+				break;
+			}
+		}
+		
+	}
+	
+}

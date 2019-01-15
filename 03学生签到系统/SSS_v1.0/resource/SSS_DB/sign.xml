@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<signs> 
+  <sign ID="1"> 
+    <studentId>2</studentId>  
+    <signInTime>2017-08-31 10:17:30</signInTime>  
+    <signOutTime>2017-08-31 10:18:17</signOutTime>  
+    <dateLog>刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！</dateLog>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="2"> 
+    <studentId>1</studentId>  
+    <signInTime>2017-08-31 10:19:23</signInTime>  
+    <signOutTime>2017-08-31 10:19:40</signOutTime>  
+    <dateLog>张三测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！</dateLog>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="3"> 
+    <studentId>3</studentId>  
+    <signInTime>2017-08-31 14:37:57</signInTime>  
+    <signOutTime>2017-08-31 14:38:28</signOutTime>  
+    <dateLog/>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="4"> 
+    <studentId>4</studentId>  
+    <signInTime>2017-08-31 14:42:19</signInTime>  
+    <signOutTime/>  
+    <dateLog>这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！</dateLog>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="5"> 
+    <studentId>5</studentId>  
+    <signInTime>2017-08-31 14:54:53</signInTime>  
+    <signOutTime>2017-08-31 14:55:37</signOutTime>  
+    <dateLog/>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="6"> 
+    <studentId>6</studentId>  
+    <signInTime>2017-08-31 15:23:55</signInTime>  
+    <signOutTime>2017-08-31 15:24:03</signOutTime>  
+    <dateLog>dxfcgvfgfdvfxgfdgfd</dateLog>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="7"> 
+    <studentId>7</studentId>  
+    <signInTime>2017-08-31 15:26:16</signInTime>  
+    <signOutTime/>  
+    <dateLog>我是一个粉刷匠，粉刷本领强~~！~~</dateLog>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="8"> 
+    <studentId>8</studentId>  
+    <signInTime>2017-09-01 09:05:20</signInTime>  
+    <signOutTime>2017-09-01 09:06:01</signOutTime>  
+    <dateLog>这是测试2017年9月1日 09:05:29</dateLog>  
+    <date>2017-09-01</date> 
+  </sign>  
+  <sign ID="9"> 
+    <studentId>9</studentId>  
+    <signInTime>2017-09-01 10:01:26</signInTime>  
+    <signOutTime>2017-09-01 10:02:17</signOutTime>  
+    <dateLog>这是测试类。测试类，测试类，测试类。233333333333333333333333333333333333333333</dateLog>  
+    <date>2017-09-01</date> 
+  </sign>  
+  <sign ID="10"> 
+    <studentId>10</studentId>  
+    <signInTime>2017-09-01 14:12:43</signInTime>  
+    <signOutTime>2017-09-01 14:13:05</signOutTime>  
+    <dateLog>侧四2017年9月1日 14:12:58</dateLog>  
+    <date>2017-09-01</date> 
+  </sign> 
+</signs>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>booksSystem</display-name>
+  
+   <!-- 配置乱码过滤器 -->
+  
+  <filter>
+  	<filter-name>CharsetFilter</filter-name>
+  	<filter-class>com.bjsxt.filter.CharsetFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>CharsetFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+    <!-- Web项目中配置proxool，并自动加载 -->
+  	<servlet>
+     <servlet-name>ServletConfigurator</servlet-name>
+     <servlet-class>
+		org.logicalcobwebs.proxool.configuration.ServletConfigurator
+     </servlet-class>
+     <init-param>
+      <param-name>propertyFile</param-name>
+      <param-value>WEB-INF/classes/proxool.properties</param-value>
+     </init-param>
+     <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!--  监控 proxool 连接池 -->
+  
+    <servlet>
+	   <servlet-name>AdminServlet</servlet-name>
+	   <servlet-class>org.logicalcobwebs.proxool.admin.servlet.AdminServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	   <servlet-name>AdminServlet</servlet-name>
+	   <url-pattern>/admin.jsp</url-pattern>
+	</servlet-mapping>
+  
+  
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

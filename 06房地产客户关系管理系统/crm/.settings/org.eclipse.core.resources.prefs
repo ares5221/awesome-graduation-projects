@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//WebRoot/view/frame=GBK
+encoding//WebRoot/view/frame/center.html=GBK
+encoding//WebRoot/view/frame/left.html=GBK
+encoding//WebRoot/view/frame/top.html=GBK
+encoding//src/com/bjsxt/crm/dao/impl/LoginDaoImpl.java=gbk
+encoding//src/com/bjsxt/crm/entity/House.java=UTF-8
+encoding//src/com/bjsxt/crm/entity/User.java=UTF-8
+encoding//src/com/bjsxt/crm/service/impl/LoginServiceImpl.java=UTF-8
+encoding//src/com/bjsxt/crm/servlet/BaseServlet.java=UTF-8
+encoding//src/com/bjsxt/crm/servlet/CustomerServlet.java=UTF-8
+encoding//src/com/bjsxt/crm/servlet/HouseServlet.java=UTF-8
+encoding//src/com/bjsxt/crm/servlet/UserServlet.java=UTF-8
+encoding//src/com/bjsxt/crm/util/PageBean.java=UTF-8
+encoding/<project>=UTF-8
+encoding/WebRoot=UTF-8

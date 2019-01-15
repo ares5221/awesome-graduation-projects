@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<signs> 
+  <sign ID="1"> 
+    <studentId>2</studentId>  
+    <signInTime>2017-08-31 10:17:30</signInTime>  
+    <signOutTime>2017-08-31 10:18:17</signOutTime>  
+    <dateLog>刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！</dateLog>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="2"> 
+    <studentId>1</studentId>  
+    <signInTime>2017-08-31 10:19:23</signInTime>  
+    <signOutTime>2017-08-31 10:19:40</signOutTime>  
+    <dateLog>张三测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！刘六测试！</dateLog>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="3"> 
+    <studentId>3</studentId>  
+    <signInTime>2017-08-31 14:37:57</signInTime>  
+    <signOutTime>2017-08-31 14:38:28</signOutTime>  
+    <dateLog/>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="4"> 
+    <studentId>4</studentId>  
+    <signInTime>2017-08-31 14:42:19</signInTime>  
+    <signOutTime/>  
+    <dateLog>这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！这是祁新新的今日梗概！</dateLog>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="5"> 
+    <studentId>5</studentId>  
+    <signInTime>2017-08-31 14:54:53</signInTime>  
+    <signOutTime>2017-08-31 14:55:37</signOutTime>  
+    <dateLog/>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="6"> 
+    <studentId>6</studentId>  
+    <signInTime>2017-08-31 15:23:55</signInTime>  
+    <signOutTime>2017-08-31 15:24:03</signOutTime>  
+    <dateLog>dxfcgvfgfdvfxgfdgfd</dateLog>  
+    <date>2017-08-31</date> 
+  </sign>  
+  <sign ID="7"> 
+    <studentId>7</studentId>  
+    <signInTime>2017-08-31 15:26:16</signInTime>  
+    <signOutTime/>  
+    <dateLog>我是一个粉刷匠，粉刷本领强~~！~~</dateLog>  
+    <date>2017-08-31</date> 
+  </sign> 
+</signs>

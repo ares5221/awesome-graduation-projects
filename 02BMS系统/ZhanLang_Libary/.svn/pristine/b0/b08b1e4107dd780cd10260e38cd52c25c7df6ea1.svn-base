@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<person> 
+  <Users ID="001"> 
+    <user ID="30000"> 
+      <userID>30000</userID>  
+      <name>张涛</name>  
+      <userName>zhangtao001</userName>  
+      <password>1234</password>  
+      <sex>男</sex>  
+      <tel>16755890234</tel>  
+      <address>北京</address> 
+    </user>  
+    <user ID="30001"> 
+      <userID>30001</userID>  
+      <name>李四</name>  
+      <userName>lisi001</userName>  
+      <password>1234</password>  
+      <sex>男</sex>  
+      <tel>13446567668</tel>  
+      <address>上海</address> 
+    </user>  
+    <user ID="30002"> 
+      <userID>30002</userID>  
+      <name>李明</name>  
+      <userName>111</userName>  
+      <password>111</password>  
+      <sex>女</sex>  
+      <tel>1675520234</tel>  
+      <address>天津</address> 
+    </user>  
+    <user> 
+      <userName>3</userName>  
+      <password>123</password> 
+    </user>  
+    <user> 
+      <userName>流</userName>  
+      <password>1123</password> 
+    </user>  
+    <user> 
+      <userName>期</userName>  
+      <password>2222</password> 
+    </user>  
+    <user> 
+      <userName>吧</userName>  
+      <password>123</password> 
+    </user> 
+  </Users>  
+  <Managers ID="002"> 
+    <manager ID="30003"> 
+      <userID>20001</userID>  
+      <userName>王五</userName>  
+      <password>2345</password> 
+    </manager>  
+    <manager ID="30004"> 
+      <userID>20002</userID>  
+      <userName>刘能</userName>  
+      <password>2345</password> 
+    </manager> 
+  </Managers> 
+</person>

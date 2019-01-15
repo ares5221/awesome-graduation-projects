@@ -1,0 +1,412 @@
+package com.bjsxt.swing;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.TextArea;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import com.bjsxt.client.Regex;
+import com.bjsxt.service.Service;
+
+import javax.swing.JButton;
+
+public class Admin extends JFrame implements ActionListener {
+
+	private Socket socket;
+	private PrintWriter pw;
+	private BufferedReader br;
+
+	private JPanel contentPane;
+	private JButton buttonAddStu;
+	private JButton buttonAddTeacher;
+	private JButton buttonSearchInfo;
+	private JLabel laberUserID;
+	private JTextField textUserID;
+	private JLabel laberUserIDRegex;
+	private TextArea textarea;
+	
+	public Admin(Socket s) {
+
+		socket = s;
+		try {
+			pw = new PrintWriter(this.socket.getOutputStream());
+			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+	     double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+	     int x=(int)(width-450)/2;
+	     int y=(int)(height-400)/2;
+		setBounds(x, y, 450, 400);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		buttonAddStu = new JButton("添加学生");
+		buttonAddStu.setBounds(30, 150, 113, 27);
+		buttonAddStu.addActionListener(this);
+		contentPane.add(buttonAddStu);
+
+		buttonAddTeacher = new JButton("添加教师");
+		buttonAddTeacher.setBounds(30, 120, 113, 27);
+		buttonAddTeacher.addActionListener(this);
+		contentPane.add(buttonAddTeacher);
+		
+		buttonSearchInfo = new JButton("查询");
+		buttonSearchInfo.setBounds(250, 50, 140, 40);
+		buttonSearchInfo.setFont(new Font("微软雅黑", 1, 20));
+		buttonSearchInfo.addActionListener(this);
+		contentPane.add(buttonSearchInfo);
+		
+		  laberUserID=new JLabel("用户 I D");
+		 laberUserID.setBounds(30, 30, 140, 40);
+		 laberUserID.setFont(new Font("微软雅黑", 1, 20));
+		 contentPane.add(laberUserID);
+		 
+		  textUserID=new JTextField();
+		 textUserID.setBounds(130, 30, 140, 35);
+		 textUserID.setFont(new Font("新宋体", 1, 18));
+		 contentPane.add(textUserID);
+		 
+		  laberUserIDRegex=new JLabel("用户名不正确");
+		  laberUserIDRegex.setFont(new Font("新宋体", 1, 15));
+		 laberUserIDRegex.setBounds(300, 30, 140, 35);
+		 contentPane.add(laberUserIDRegex);
+		 
+		  textarea=new TextArea();
+		 textarea.setFont(new Font("黑体", 1, 18));
+		textarea.setBounds(140, 150, 180, 120);
+		 contentPane.add(textarea);
+		 
+		new Thread(new AdminRegex()).start();
+		new Thread(new InfoListener()).start();
+	}
+
+	
+	//发送查询用户的信息
+	public void sendSearchInfo() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("查看用户信息,");
+		sb.append(textUserID.getText());
+		Service.send(pw, sb.toString());
+	}
+	
+	/*
+	 * 登录界面的校正线程
+	 * 每0.5秒判定一次
+	 */
+	private class AdminRegex implements Runnable {
+
+		@Override
+		public void run() {
+			while (true) {
+				regex();
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	//校正
+	public void regex() {
+		Regex regex = new Regex();
+		
+		
+		if (!regex.userIDRegex(textUserID.getText())) {
+			laberUserIDRegex.setForeground(Color.RED);
+			laberUserIDRegex.setText("ID2||4||6位数字");
+		} else {
+			laberUserIDRegex.setForeground(Color.GREEN);
+			laberUserIDRegex.setText("ID格式正确");
+		}
+	}
+	
+	
+	
+	/*
+	 * 内部类 在系统初始化的时候，创建一个线程 功能：监听从服务器传来的数据 并对数据进行处理和执行
+	 */
+
+	private class InfoListener implements Runnable {
+
+		@Override
+		public void run() {
+			while (true) {
+				judgeAdmin(Service.listen(br));
+			}
+		}
+
+		/*
+		 * 解析服务器传来的数据 依照标识码分别进行操作
+		 */
+		private void judgeAdmin(String str) {
+			// TODO
+			if(str.startsWith("查看用户信息"))
+			{
+				textarea.setText(dealInfo(str));
+			}
+			if (str.startsWith("添加学生")) {
+				if ("true".equals(dealInfo(str)))
+					JOptionPane.showMessageDialog(null, "添加成功");
+				else
+					JOptionPane.showMessageDialog(null, "添加失败", "添加", JOptionPane.ERROR_MESSAGE);
+			}
+			if (str.startsWith("添加教师")) {
+				if ("true".equals(dealInfo(str)))
+					JOptionPane.showMessageDialog(null, "添加成功");
+				else
+					JOptionPane.showMessageDialog(null, "添加失败", "添加", JOptionPane.ERROR_MESSAGE);
+			}
+		}
+
+		/*
+		 * 将获得的字符串进行处理 按“,”分开，丢掉标识码 返回有用的信息
+		 */
+		private String dealInfo(String str) {
+			String[] sArr = str.split(",");
+			return sArr[1];
+		}
+	}
+
+	/*
+	 * 内部类 当点击添加时创建 功能:创建一个新窗口，输入具体信息并提供提交功能
+	 * 
+	 */
+	private class Submit extends JFrame implements ActionListener {
+		private JTextField textID;
+		private JLabel IDRegex;
+		private JTextField textName;
+		private JLabel nameRegex;
+		private JTextField textPW;
+		private JLabel PWRegex;
+		private JTextField textAge;
+		private JLabel ageRegex;
+		private JTextField textSex;
+		private JLabel sexRegex;
+		private JButton buttonSubmit;
+		private String str;
+
+		public Submit(String str) {
+			this.str = str;
+			double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		     double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+		     int x=(int)(width-310)/2;
+		     int y=(int)(height-260)/2;
+			setBounds(x, y, 310, 260);
+			contentPane = new JPanel();
+			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+			setContentPane(contentPane);
+			contentPane.setLayout(null);
+
+			buttonSubmit = new JButton("添加");
+			buttonSubmit.setBounds(100, 180, 80, 20);
+			buttonSubmit.addActionListener(this);
+			contentPane.add(buttonSubmit);
+
+			textID = new JTextField();
+			textID.setBounds(70, 20, 80, 20);
+			contentPane.add(textID);
+			JLabel labelID = new JLabel("I  D");
+			labelID.setBounds(40, 20, 80, 20);
+			contentPane.add(labelID);
+			IDRegex = new JLabel("");
+			IDRegex.setBounds(170, 20, 150, 20);
+			contentPane.add(IDRegex);
+
+			textName = new JTextField();
+			textName.setBounds(70, 50, 80, 20);
+			contentPane.add(textName);
+			JLabel labelName = new JLabel("姓名");
+			labelName.setBounds(40, 50, 80, 20);
+			contentPane.add(labelName);
+			nameRegex = new JLabel("");
+			nameRegex.setBounds(170, 50, 150, 20);
+			contentPane.add(nameRegex);
+
+			textPW = new JTextField();
+			textPW.setBounds(70, 80, 80, 20);
+			contentPane.add(textPW);
+			JLabel labelPW = new JLabel("密码");
+			labelPW.setBounds(40, 80, 80, 20);
+			contentPane.add(labelPW);
+			PWRegex = new JLabel("");
+			PWRegex.setBounds(170, 80, 150, 20);
+			contentPane.add(PWRegex);
+
+			textAge = new JTextField();
+			textAge.setBounds(70, 110, 80, 20);
+			contentPane.add(textAge);
+			JLabel labelAge = new JLabel("年龄");
+			labelAge.setBounds(40, 110, 80, 20);
+			contentPane.add(labelAge);
+			ageRegex = new JLabel("");
+			ageRegex.setBounds(170, 110, 150, 20);
+			contentPane.add(ageRegex);
+
+			textSex = new JTextField();
+			textSex.setBounds(70, 140, 80, 20);
+			contentPane.add(textSex);
+			JLabel labelSex = new JLabel("性别");
+			labelSex.setBounds(40, 140, 80, 20);
+			contentPane.add(labelSex);
+			sexRegex = new JLabel("");
+			sexRegex.setBounds(170, 140, 150, 20);
+			contentPane.add(sexRegex);
+
+			new Thread(new AdminRegex()).start();
+		}
+
+		/*
+		 * 登录界面的校正线程 每0.5秒判定一次
+		 */
+		private class AdminRegex implements Runnable {
+
+			@Override
+			public void run() {
+				while (true) {
+					regex();
+					try {
+						Thread.sleep(500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+		}
+
+		public void regex() {
+			Regex regex = new Regex();
+			if("添加学生".equals(this.str))
+			{
+				if (!regex.stuIDRegex(textID.getText())) {
+					IDRegex.setForeground(Color.RED);
+					IDRegex.setText("6位数字");
+				} else {
+					IDRegex.setForeground(Color.GREEN);
+					IDRegex.setText("ID格式正确");
+				}
+			}
+			else
+			{
+				if (!regex.teacherIDRegex(textID.getText())) {
+					IDRegex.setForeground(Color.RED);
+					IDRegex.setText("4位数字");
+				} else {
+					IDRegex.setForeground(Color.GREEN);
+					IDRegex.setText("ID格式正确");
+				}
+			}
+			if (!regex.sexRegex(textSex.getText())) {
+				sexRegex.setForeground(Color.RED);
+				sexRegex.setText("m | M or f | F");
+			} else {
+				sexRegex.setForeground(Color.GREEN);
+				sexRegex.setText("性别格式正确");
+			}
+
+			if (!regex.ageRegex(textAge.getText())) {
+				ageRegex.setForeground(Color.RED);
+				ageRegex.setText("1-2位数字");
+			} else {
+				ageRegex.setForeground(Color.GREEN);
+				ageRegex.setText("年龄格式正确");
+			}
+
+			if (!regex.passwordRegex(textPW.getText())) {
+				PWRegex.setForeground(Color.RED);
+				PWRegex.setText("4-10位字母数字组合");
+			} else {
+				PWRegex.setForeground(Color.GREEN);
+				PWRegex.setText("密码格式正确");
+			}
+
+			if (!regex.nameRegex(textName.getText())) {
+				nameRegex.setForeground(Color.RED);
+				nameRegex.setText("1-10位字母");
+			} else {
+				nameRegex.setForeground(Color.GREEN);
+				nameRegex.setText("姓名格式正确");
+			}
+
+		}
+
+		/*
+		 * 向服务器发送添加课程数据 发送识别码 并且发送从输入框获得信息 将他们连接起来，并以","隔开
+		 */
+		public void sendAdd() {
+			StringBuilder sb = new StringBuilder();
+			sb.append(this.str + ",");
+			sb.append(textID.getText() + ",");
+			sb.append(textName.getText() + ",");
+			sb.append(textPW.getText() + ",");
+			sb.append(textAge.getText() + ",");
+			sb.append(textSex.getText());
+			Service.send(pw, sb.toString());
+		}
+
+		/*
+		 * 管理员二级菜单 Submit的事件 当点击提交时
+		 */
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if (e.getSource() == buttonSubmit) {
+				if (Color.GREEN.equals(IDRegex.getForeground()) &&Color.GREEN.equals(nameRegex.getForeground()) && Color.GREEN.equals(ageRegex.getForeground())
+						&& Color.GREEN.equals(PWRegex.getForeground()) && Color.GREEN.equals(sexRegex.getForeground()))
+				{
+					sendAdd();
+					dispose();
+				}
+				else
+					JOptionPane.showMessageDialog(null, "格式不正确", "添加", JOptionPane.ERROR_MESSAGE);
+			}
+		}
+
+	}
+
+	/*
+	 * 管理员菜单事件 添加学生按钮 与添加教师按钮 按下后弹出新的二级菜单，输入信息并发送至服务器
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == buttonAddStu) {
+			Submit submit = new Submit("添加学生");
+			submit.setVisible(true);
+		}
+		if (e.getSource() == buttonAddTeacher) {
+			Submit submit = new Submit("添加教师");
+			submit.setVisible(true);
+		}
+		if (e.getSource() == buttonSearchInfo) {
+			if(Color.GREEN.equals(laberUserIDRegex.getForeground()))
+			{
+				sendSearchInfo();
+			}
+			else
+			JOptionPane.showMessageDialog(null, "ID格式不正确", "查询", JOptionPane.ERROR_MESSAGE);
+		}
+	}
+
+}

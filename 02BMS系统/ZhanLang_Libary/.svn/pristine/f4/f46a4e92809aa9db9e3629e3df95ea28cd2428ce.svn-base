@@ -1,0 +1,49 @@
+package zhanlang.entity;
+
+
+import java.io.Serializable;
+
+
+public class Person implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5815724340776159144L;
+	private String ID;
+	private String name;
+	private String userName;
+	private String password;
+	public String getID() {
+		return ID;
+	}
+	public void setID(String iD) {
+		ID = iD;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Person() {
+		super();
+	}
+	public Person(String userName, String password) {
+		super();
+		this.userName = userName;
+		this.password = password;
+	}
+	
+}

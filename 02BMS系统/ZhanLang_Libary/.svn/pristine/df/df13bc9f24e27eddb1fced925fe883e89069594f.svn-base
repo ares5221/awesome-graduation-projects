@@ -1,0 +1,140 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JList;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+
+public class ManagerMenu extends JFrame {
+
+	private JPanel contentPane;
+	private static ManagerMenu frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					frame = new ManagerMenu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ManagerMenu() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 815, 468);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnNewButton = new JButton("添加用户");
+		btnNewButton.setBackground(new Color(211, 211, 211));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				M_AddUser newFrame = new M_AddUser();
+				newFrame.setVisible(true);	
+				frame.dispose();
+			}
+		});
+		btnNewButton.setBounds(0, 111, 93, 23);
+		contentPane.add(btnNewButton);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(676, 10, 93, 77);
+		contentPane.add(label);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setText("显示借出图书信息");
+		textArea.setBounds(162, 118, 564, 242);
+		contentPane.add(textArea);
+		
+		JLabel lblNewLabel = new JLabel("------>用 户 管 理");
+		lblNewLabel.setFont(new Font("黑体", Font.BOLD, 15));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(-13, 77, 165, 15);
+		contentPane.add(lblNewLabel);
+		
+		JButton button = new JButton("删除用户");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				M_DeleteUser newFrame = new M_DeleteUser();
+				newFrame.setVisible(true);	
+				frame.dispose();
+			}
+		});
+		button.setBackground(new Color(211, 211, 211));
+		button.setBounds(0, 144, 93, 23);
+		contentPane.add(button);
+		
+		JButton button_1 = new JButton("修改密码");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				M_ModifyUserPwd newFrame = new M_ModifyUserPwd();
+				newFrame.setVisible(true);	
+				frame.dispose();
+			}
+		});
+		button_1.setBackground(new Color(211, 211, 211));
+		button_1.setBounds(0, 177, 93, 23);
+		contentPane.add(button_1);
+		
+		JButton button_2 = new JButton("添加图书");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				M_AddBook newFrame = new M_AddBook();
+				newFrame.setVisible(true);	
+				frame.dispose();
+			}
+		});
+		button_2.setBackground(new Color(211, 211, 211));
+		button_2.setBounds(0, 266, 93, 23);
+		contentPane.add(button_2);
+		
+		JButton button_3 = new JButton("删除图书");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				M_DeleteBook newFrame = new M_DeleteBook();
+				newFrame.setVisible(true);	
+				frame.dispose();
+			}
+		});
+		button_3.setBackground(new Color(211, 211, 211));
+		button_3.setBounds(0, 299, 93, 23);
+		contentPane.add(button_3);
+		
+		JLabel label_1 = new JLabel("------>图 书 管 理");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setFont(new Font("黑体", Font.BOLD, 15));
+		label_1.setBounds(-13, 232, 165, 15);
+		contentPane.add(label_1);
+		
+		JLabel label_2 = new JLabel("");
+		label_2.setIcon(new ImageIcon(ManagerMenu.class.getResource("/bgimg/timg (21).jpg")));
+		label_2.setBounds(0, 0, 799, 429);
+		contentPane.add(label_2);
+	}
+}

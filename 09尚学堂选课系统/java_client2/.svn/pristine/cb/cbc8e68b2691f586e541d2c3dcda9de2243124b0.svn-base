@@ -1,0 +1,317 @@
+package com.bjsxt.swing;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import com.bjsxt.client.Regex;
+import com.bjsxt.service.Service;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.awt.event.ActionEvent;
+import java.awt.TextArea;
+import java.awt.Toolkit;
+
+import javax.swing.JComboBox;
+
+public class Teacher extends JFrame implements ActionListener{
+
+	private Socket socket;
+	private PrintWriter pw;
+	private BufferedReader br;
+	
+	
+	
+	private JPanel contentPane;
+	private JButton buttonAddCourse;
+	private JButton buttonPersonalInfo;
+	private JButton buttonMyStudents;
+	private TextArea textArea;
+	
+	public Teacher(Socket s) {
+		socket = s;
+		try {
+			pw = new PrintWriter(this.socket.getOutputStream());
+			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
+		final ImageIcon myimage=new ImageIcon("p/主界面.jpg");
+	    final Image image=myimage.getImage();
+	    final ImageIcon myimage2=new ImageIcon("p/2.jpg");
+	    final Image image2=myimage2.getImage();
+	    Graphics g;
+		
+	    double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+	     double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+	     int x=(int)(width-574)/2;
+	     int y=(int)(height-500)/2;
+		setBounds(x, y, 574, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		 buttonAddCourse = new JButton("添加课程");
+		buttonAddCourse.setBounds(370,410,133,43);
+		buttonAddCourse.setFont(new Font("微软雅黑", 1, 13));
+		buttonAddCourse.addActionListener(this);
+		contentPane.add(buttonAddCourse);
+		
+		 buttonPersonalInfo = new JButton("查看个人信息");
+		buttonPersonalInfo.addActionListener(this);
+		buttonPersonalInfo.setFont(new Font("微软雅黑", 1, 13));
+		buttonPersonalInfo.setBounds(20, 410, 133, 43);
+		contentPane.add(buttonPersonalInfo);
+		
+		 textArea = new TextArea();
+		textArea.setBounds(10, 200, 532, 200);
+		contentPane.add(textArea);
+		
+		 buttonMyStudents = new JButton("我的学生");
+		buttonMyStudents.addActionListener(this);
+		buttonMyStudents.setFont(new Font("微软雅黑", 1, 13));
+		buttonMyStudents.setBounds(195,410,133,43);
+		contentPane.add(buttonMyStudents);
+		
+		JLabel labelP = new JLabel(){
+			public void paint(Graphics g){
+	               g.drawImage(image2, 0, 0,this.getWidth(),this.getHeight(),null);
+	           }
+		};
+		labelP.setBounds(345, 0, 211, 178);
+		contentPane.add(labelP);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(10, 188, 203, 24);
+		contentPane.add(label);
+		
+		
+		new Thread(new InfoListener()).start();
+	}
+	
+	private class Submit extends JFrame implements ActionListener
+	{
+		private JTextField textID;
+		private JLabel IDRegex;
+		private JTextField textName;
+		private JLabel nameRegex;
+		private JTextField textMaxNum;
+		private JLabel maxNumRegex;
+		private JButton buttonSubmit;
+		public Submit() 
+		{
+			double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		     double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+		     int x=(int)(width-300)/2;
+		     int y=(int)(height-270)/2;
+			setBounds(x, y, 300, 270);
+			contentPane = new JPanel();
+			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+			setContentPane(contentPane);
+			contentPane.setLayout(null);
+			
+			buttonSubmit=new JButton("添加");
+			buttonSubmit.setFont(new Font("微软雅黑", 1, 14));
+			buttonSubmit.setBounds(80, 185, 70, 30);
+			buttonSubmit.addActionListener(this);
+			contentPane.add(buttonSubmit);
+			
+			textID=new JTextField();
+			textID.setBounds(70, 30, 80, 20);
+			contentPane.add(textID);
+			JLabel labelID = new JLabel("课程I   D");
+			labelID.setBounds(15, 30, 80, 20);
+			contentPane.add(labelID);
+			 IDRegex = new JLabel("");
+			IDRegex.setBounds(160, 30, 150, 20);
+			contentPane.add(IDRegex);
+			
+			textName=new JTextField();
+			textName.setBounds(70, 90, 80, 20);
+			contentPane.add(textName);
+			JLabel labelName = new JLabel("课程名称");
+			labelName.setBounds(15, 90, 80, 20);
+			contentPane.add(labelName);
+			nameRegex = new JLabel("");
+			nameRegex.setBounds(160, 90, 150, 20);
+				contentPane.add(nameRegex);
+			
+			
+			textMaxNum=new JTextField();
+			textMaxNum.setBounds(70, 150, 80, 20);
+			contentPane.add(textMaxNum);
+			JLabel labelAge = new JLabel("容纳人数");
+			labelAge.setBounds(15, 150, 80, 20);
+			contentPane.add(labelAge);
+			maxNumRegex = new JLabel("");
+			maxNumRegex.setBounds(160, 150, 150, 20);
+				contentPane.add(maxNumRegex);
+				
+			new Thread(new AdminRegex()).start();
+		}
+		
+		
+		/*
+		 * 登录界面的校正线程
+		 * 每0.5秒判定一次
+		 */
+		private class AdminRegex implements Runnable {
+
+			@Override
+			public void run() {
+				while (true) {
+					regex();
+					try {
+						Thread.sleep(500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+		}
+
+		public void regex() {
+			Regex regex = new Regex();
+			
+			
+			if (!regex.courseIDRegex(textID.getText())) {
+				IDRegex.setForeground(Color.RED);
+				IDRegex.setText("课程ID两位数字");
+			} else {
+				IDRegex.setForeground(Color.GREEN);
+				IDRegex.setText("课程ID格式正确");
+			}
+			
+			if (!regex.courseNameRegex(textName.getText())) {
+				nameRegex.setForeground(Color.RED);
+				nameRegex.setText("1-10个字母数字组合");
+			} else {
+				nameRegex.setForeground(Color.GREEN);
+				nameRegex.setText("课程名称格式正确");
+			}
+			
+			
+			if (!regex.maxNumRegex(textMaxNum.getText())) {
+				maxNumRegex.setForeground(Color.RED);
+				maxNumRegex.setText("1-2位数字");
+			} else {
+				maxNumRegex.setForeground(Color.GREEN);
+				maxNumRegex.setText("人数格式正确");
+			}
+			
+			
+		}
+		
+		
+		/*
+		 * 向服务器发送添加课程数据 发送识别码 并且发送从输入框获得的ID，
+		 * 课程名，授课教师，课程人数  将他们连接起来，并以","隔开
+		 */
+		public void sendAddCourse() {
+			StringBuilder sb = new StringBuilder();
+			sb.append("添加课程,");
+			sb.append(textID.getText()+",");
+			sb.append(textName.getText()+",");
+			sb.append(textMaxNum.getText());
+			Service.send(pw, sb.toString());
+		}
+		
+		
+		/*
+		 * 管理员二级菜单
+		 * Submit的事件
+		 * 当点击提交时
+		 */
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(e.getSource()==buttonSubmit)
+			{
+				if(Color.GREEN.equals(nameRegex.getForeground())&&
+						Color.GREEN.equals(maxNumRegex.getForeground())&&Color.GREEN.equals(IDRegex.getForeground()))
+				{
+					sendAddCourse();
+					dispose();
+				}
+				else
+				JOptionPane.showMessageDialog(null, "格式不正确", "添加", JOptionPane.ERROR_MESSAGE);
+		}
+		}
+		
+	}
+	
+	
+	
+	/*
+	 * 内部类 在系统初始化的时候，创建一个线程 功能：监听从服务器传来的数据 并对数据进行处理和执行
+	 */
+	private class InfoListener implements Runnable {
+
+		@Override
+		public void run() {
+			while (true) {
+				judgeTeacher(Service.listen(br));
+			}
+		}
+		/*
+		 * 解析服务器传来的数据 依照标识码分别进行操作
+		 */
+		private void judgeTeacher(String str) {
+			// TODO
+			if (str.startsWith("教师个人信息"))
+				textArea.append(dealInfo(str)+"\n");
+			if (str.startsWith("所有学生"))
+				textArea.append(dealInfo(str)+"\n");
+			if (str.startsWith("添加课程")) {
+				if ("true".equals(dealInfo(str)))
+				JOptionPane.showMessageDialog(null, "添加成功");
+				else
+					JOptionPane.showMessageDialog(null, "添加失败", "添加课程", JOptionPane.ERROR_MESSAGE);
+			}
+		}
+		/*
+		 * 将获得的字符串进行处理 按“,”分开，丢掉标识码 返回有用的信息
+		 */
+		private String dealInfo(String str) {
+			String[] sArr = str.split(",");
+			return sArr[1];
+		}
+	}
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+		if(ae.getSource()==buttonAddCourse)
+			new Submit().setVisible(true);
+		if(ae.getSource()==buttonPersonalInfo)
+		{
+			Service.send(pw, "教师个人信息");
+			textArea.append("=======教师个人信息=======\n");
+		}
+		if(ae.getSource()==buttonMyStudents)
+		{
+			Service.send(pw, "所有学生");
+			textArea.append("=======所有学生=======\n");
+		}
+	}
+
+
+
+
+}

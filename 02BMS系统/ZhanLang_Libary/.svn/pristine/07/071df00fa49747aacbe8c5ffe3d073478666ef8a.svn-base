@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<books size="9"> 
+  <book ID="1"> 
+    <image/>  
+    <bookID>1</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>null</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>null</outTime> 
+  </book>  
+  <book ID="2"> 
+    <image/>  
+    <bookID>2</bookID>  
+    <bName>水浒传</bName>  
+    <author>施耐庵</author>  
+    <press>新华出版社</press>  
+    <inTime>2017-06-01</inTime>  
+    <type>心理</type>  
+    <borrow>111</borrow>  
+    <outTime>null</outTime> 
+  </book>  
+  <book ID="3"> 
+    <image/>  
+    <bookID>3</bookID>  
+    <bName>红楼梦</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <inTime>2017-06-01</inTime>  
+    <type>小说</type>  
+    <borrow>null</borrow>  
+    <outTime>null</outTime> 
+  </book>  
+  <book ID="4"> 
+    <bookID>4</bookID>  
+    <bName>久久</bName>  
+    <author>久久</author>  
+    <press>久久</press>  
+    <inTime>久久</inTime> 
+  </book>  
+  <book ID="5"> 
+    <bookID>5</bookID>  
+    <bName>知音</bName>  
+    <author>张炜</author>  
+    <press>尚学堂出版社</press>  
+    <inTime>2017-08-29</inTime> 
+  </book>  
+  <book ID="8"> 
+    <bookID>8</bookID>  
+    <bName>语文</bName>  
+    <author>张涛</author>  
+    <press>北京尚学堂</press>  
+    <inTime>2017-8-29</inTime> 
+  </book>  
+  <book ID="9">
+    <bookID>9</bookID>
+    <bName>数学</bName>
+    <author>张涛</author>
+    <press>尚学堂</press>
+    <inTime>2017-07-20</inTime>
+  </book>
+</books>

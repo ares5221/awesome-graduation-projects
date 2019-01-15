@@ -1,0 +1,154 @@
+package zhanlang.service.Dao.Imple;
+
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.dom4j.DocumentException;
+
+import zhanlang.entity.Book;
+import zhanlang.entity.Person;
+import zhanlang.service.Dao.LibServerDAO;
+import zhanlang.service.operate.DataInfo;
+
+public class ServerOperation implements LibServerDAO{
+	private static DataInfo di;
+	public ServerOperation() {
+		di = new DataInfo();
+	}
+	static{
+		di.init();
+		 
+	}
+
+	/**
+	 * 注册
+	 */
+	@Override
+	public boolean regester(Person per) {
+		try {
+			di.addData(per);
+			di.init();
+		} catch (DocumentException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	/**
+	 * 登录
+	 */
+	@Override
+	public Person login(Person per) {
+		boolean flag = false;
+		for(Person per1 : di.perList){
+			if((per.getUserName().equals(per1.getUserName())&&per.getPassword().equals(per1.getPassword()))){
+				return per1;
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * 查看可借图书信息
+	 */
+	@Override
+	public List<Book> showCanAll() {
+		List<Book> canAllList = new ArrayList<Book>();
+		for (Book book : di.bookList) {
+			if(book.getBorrow()==null){//如果借出时间为空（就是没有借出去）
+				canAllList.add(book);
+			}
+		}
+		return canAllList;
+	}
+
+	/**
+	 * 查看已借图书信息
+	 */
+	@Override
+	public List<Book> showAlready() {
+		List<Book> alreadyList = new ArrayList<Book>();
+		for(Book book : di.bookList){
+			if(book.getBorrow() != null){
+				alreadyList.add(book);
+			}
+		}
+		return alreadyList;
+	}
+
+	/**
+	 * 根据图书编号完成借书
+	 */
+	@Override
+	public boolean borrowById(Book book,Person per) {
+		Date data = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String outTime = sdf.format(data);
+		for(Book book1 : di.bookList){
+			if(book.getID().equals(book1.getID())){
+				try {
+					di.altData(book1, "borrow",per.getName());
+					di.altData(book1, "outTime", outTime);
+					di.init();
+					return true;
+				} catch (DocumentException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * 根据图书编号还书
+	 */
+	@Override
+	public boolean returnById(Book book) {
+		book.setOutTime(null);
+		book.setBorrow(null);
+		di.init();
+		return false;
+	}
+	/**
+	 * 修改个人信息
+	 */
+	@Override
+	public boolean alterInfo(Person per,String property,String content) {
+		try {
+			di.altData(per, property, content);
+		} catch (DocumentException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return true;
+	}
+
+	/**
+	 * 根据图书编号查询图书信息
+	 */
+	@Override
+	public Book selectById(Book book) {
+		for(Book book1 : di.bookList){
+			if(book.getID().equals(book1.getID())){
+				return book1;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public boolean alterInfo() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

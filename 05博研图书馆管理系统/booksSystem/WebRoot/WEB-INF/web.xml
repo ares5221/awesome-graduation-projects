@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>booksSystem</display-name>
+  
+   <!-- 配置乱码过滤器 -->
+  
+  <filter>
+  	<filter-name>CharsetFilter</filter-name>
+  	<filter-class>com.bjsxt.filter.CharsetFilter</filter-class>
+ 
+  </filter>
+  <filter-mapping>
+  	<filter-name>CharsetFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  
+  </filter-mapping>
+  
+  
+    <!-- Web项目中配置proxool，并自动加载 -->
+  	<servlet>
+     <servlet-name>ServletConfigurator</servlet-name>
+     <servlet-class>
+		org.logicalcobwebs.proxool.configuration.ServletConfigurator
+     </servlet-class>
+     <init-param>
+      <param-name>propertyFile</param-name>
+      <param-value>WEB-INF/classes/proxool.properties</param-value>
+     </init-param>
+     <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!--  监控 proxool 连接池 -->
+  
+    <servlet>
+	   <servlet-name>AdminServlet</servlet-name>
+	   <servlet-class>org.logicalcobwebs.proxool.admin.servlet.AdminServlet</servlet-class>
+	</servlet>
+	
+	<!-- 防止恶意登录监听器-->
+	 <!-- <filter>
+	 	<filter-name>AuthFilter</filter-name>
+	 	<filter-class>com.bjsxt.filter.AuthFilter</filter-class>
+     </filter>
+  	 <filter-mapping>
+	    <filter-name>AuthFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<url-pattern>*.jsp</url-pattern>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping> -->
+	 
+	 <!--监听器配置 -->
+	  <listener>
+	  	<listener-class>com.bjsxt.listener.LogListener</listener-class>
+	  </listener>
+	
+	
+	
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LibraryServlet</servlet-name>
+    <servlet-class>com.bjsxt.servlet.LibraryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerServlet</servlet-name>
+    <servlet-class>com.bjsxt.servlet.ManagerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ReaderServlect</servlet-name>
+    <servlet-class>com.bjsxt.servlet.ReaderServlect</servlet-class>
+  </servlet>
+	 
+	 <servlet>
+	    <servlet-name>AdminServlet2</servlet-name>
+	    <servlet-class>com.bjsxt.servlet.AdminServlet</servlet-class>
+	  </servlet>
+
+	<servlet-mapping>
+	   <servlet-name>AdminServlet2</servlet-name>
+	   <url-pattern>/AdminServlet2</url-pattern>
+	</servlet-mapping>
+ 
+    <servlet>
+	    <servlet-name>AdminServlet1</servlet-name>
+	    <servlet-class>com.bjsxt.servlet.AdminServlet1</servlet-class>
+	  </servlet>
+
+	<servlet-mapping>
+	   <servlet-name>AdminServlet1</servlet-name>
+	   <url-pattern>/AdminServlet1</url-pattern>
+	</servlet-mapping>
+     
+   <servlet>
+	    <servlet-name>BookServlet</servlet-name>
+	    <servlet-class>com.bjsxt.servlet.BookServlet</servlet-class>
+	  </servlet>
+
+	<servlet-mapping>
+	   <servlet-name>BookServlet</servlet-name>
+	   <url-pattern>/BookServlet</url-pattern>
+	</servlet-mapping>
+	
+	 <servlet>
+	    <servlet-name>ReaderServlet</servlet-name>
+	    <servlet-class>com.bjsxt.servlet.ReaderServlet</servlet-class>
+	  </servlet>
+
+	<servlet-mapping>
+	   <servlet-name>ReaderServlet</servlet-name>
+	   <url-pattern>/ReaderServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+	   <servlet-name>AdminServlet</servlet-name>
+	   <url-pattern>/admin.jsp</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LibraryServlet</servlet-name>
+    <url-pattern>/LibraryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerServlet</servlet-name>
+    <url-pattern>/ManagerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ReaderServlect</servlet-name>
+    <url-pattern>/ReaderServlect</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

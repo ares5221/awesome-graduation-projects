@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="../css/pintuer.css">
+<link rel="stylesheet" href="../css/admin.css">
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script src="../js/jquery-3.2.0.min.js"></script>
+<script src="../js/pintuer.js"></script>
+<style type="text/css">
+	
+	td {
+		font-family: "微软雅黑";
+		font-size: 14px;
+		color: #555555;
+		text-decoration: none;
+		text-align: center;
+		line-height: 20px;
+		padding-top: 5px;
+	}
+	
+</style>
+
+<script type="text/javascript">
+	// 隔行变色
+	window.onload = function (){
+           var aTr = document.getElementsByTagName('tr');
+
+           for(var i=0; i<aTr.length; i++) {
+               if(i % 2 == 0) {
+                   aTr[i].style.background = '#DBDBDB';
+               } else {
+                   aTr[i].style.background = '#F0F0EE';
+               }
+           }
+
+       };
+</script>
+</head>
+<body>
+	<div class="panel admin-panel">
+		<div class="panel-head">
+			<strong><span class="icon-key"></span>收取作业</strong>
+		</div>
+		<div class="body-content">
+			<span>请选择要收取的作业:</span>
+			<select name="selwork">
+				<option value="1" selected="selected">Java</option>
+				<option value="2">Hive</option>
+				<option value="3">Spark</option>
+				<option value="4">Hadoop</option>
+			</select>
+			&nbsp;&nbsp;<span><a href="javascript:">查询</a></span>
+			<br /><br />
+			<table width="100%" border="0" cellpadding="4" cellspacing="1" bgcolor="#464646" class="newfont03">
+
+				<tr>
+					<td colspan="6" align="center" bgcolor="#EEEEEE" class="tablestyle_title" style="text-align: center;">您选择的作业有以下同学提交 </td>
+				</tr>
+				
+				<tr>
+					<td width="6%" align="center" bgcolor="#EEEEEE">选择</td>
+					<td width="9%" height="20" align="center" bgcolor="#EEEEEE">作业名称</td>
+					<td width="9%" align="center" bgcolor="#EEEEEE">所有者</td>
+					<td width="8%" align="center" bgcolor="#EEEEEE">修改日期</td>
+					<td width="8%" align="center" bgcolor="#EEEEEE">作业编号</td>
+					<td width="7%" align="center" bgcolor="#EEEEEE">下载</td>
+				</tr>
+				<tr>
+					<td ><input type="checkbox" name="delid"/></td>
+					<td >Java</td>
+					<td >三哈</td>
+					<td >2017-01-01</td>
+					<td height="20" >1111</td>
+					<td height="20" ><a href="#">下载</a></td>
+				</tr>
+				<tr>
+					<td ><input type="checkbox" name="delid"/></td>
+					<td >Java</td>
+					<td >四哈</td>
+					<td >2017-01-01</td>
+					<td height="20" >1111</td>
+					<td height="20" ><a href="#">下载</a></td>
+				</tr>
+				<tr>
+					<td ><input type="checkbox" name="delid"/></td>
+					<td >Java</td>
+					<td >二哈</td>
+					<td >2017-01-01</td>
+					<td height="20" >1111</td>
+					<td height="20" ><a href="#">下载</a></td>
+				</tr>
+				<tr>
+					<td colspan="10">分页</td>
+				</tr>
+			</table>
+			
+		</div>
+	</div>
+</body>
+</html>

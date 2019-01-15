@@ -1,0 +1,92 @@
+package zhanlang.service.operate;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.Socket;
+
+import zhanlang.entity.Person;
+
+public class ListenThread implements Runnable{
+	
+	private Socket socket;
+	ChooseOperation co=new ChooseOperation();
+	BufferedReader br = null;
+	BufferedWriter bw=null;
+	
+	public ListenThread(Socket socket) {
+		super();
+		this.socket = socket;
+	}
+	class ListenTh implements Runnable{
+
+		@Override
+		public void run() {
+			try {
+				OutputStream os=socket.getOutputStream();
+				//br.close();
+				bw=new BufferedWriter(new OutputStreamWriter(os));
+				//向客户端发送数据
+				synchronized("abc"){
+					try {
+						"abc".wait();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+				bw.write(co.getSb().toString());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+	}
+	/**
+	 * 用来处理每个用户,每个用户一个线程
+	 */
+	@Override
+	public void run() {
+		InputStream is = null;
+
+
+		Person person=new Person();
+		/*ListenTh lt=new ListenTh();
+		Thread t=new Thread(lt);
+		t.start();*/
+		while(true) {
+			try {
+				is=this.socket.getInputStream();
+				br=new BufferedReader(new InputStreamReader(is));
+				//读取来自客户端的请求
+				String str=br.readLine();
+
+				//解析数据包
+				System.out.println(str+"222222");
+				
+				String[] strArray=co.str2cmd(str);
+				co.operation(strArray);
+				PrintWriter pw=new PrintWriter(this.socket.getOutputStream());
+				pw.println(co.getSb().toString());
+				System.out.println(co.getSb().toString()+"------------");
+				pw.flush();
+/*				synchronized("abc"){
+					"abc".notify();
+				}*/
+			}  catch (IOException e) {
+				e.printStackTrace();
+			} 
+			
+			
+		}
+		
+		
+		
+	}
+
+}

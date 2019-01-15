@@ -1,0 +1,159 @@
+package zhanlang.entity;
+
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+public class ServiceFrame extends JFrame implements MouseListener{
+	
+	
+	class JFrameFlush implements Runnable{
+
+		@Override
+		public void run() {
+			frameFlush();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	void frameFlush(){
+		this.repaint();
+	}
+	
+	private JPanel contentPane;
+	public static JTextArea jta=new JTextArea();
+	public static JTextArea jta1=new JTextArea();
+	JLabel lblNewLabel = new JLabel("服务器后台数据：");
+	JLabel label = new JLabel("在线用户: ");
+	/**
+	 * Launch the application.
+	 */
+
+
+	/**
+	 * Create the frame.
+	 */
+	public ServiceFrame() {
+		this.addMouseListener(this);
+		setTitle("BMS系统后台服务");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1000, 600);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		lblNewLabel.setFont(new Font("宋体", Font.PLAIN, 12));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel.setBounds(20, 0, 366, 35);
+		contentPane.add(lblNewLabel);
+		jta.setEditable(false);
+		
+		jta.setBounds(20, 35, 593, 517);
+		JScrollPane scr=new JScrollPane(jta,
+                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scr.setBounds(20, 35, 784, 517);
+		contentPane.add(scr);
+		
+		
+		label.setFont(new Font("宋体", Font.PLAIN, 12));
+		jta1.setEditable(false);
+		jta1.setBounds(jta.getWidth()+jta.getX()+30, 35, 151, 517);
+		JScrollPane scr1=new JScrollPane(jta1,
+                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scr1.setBounds(scr.getX()+794, 35, 160, 517);
+		label.setBounds(810, 0, 164, 35);
+		contentPane.add(label);
+		contentPane.add(scr1);
+	}
+	
+	
+	 public void paint(Graphics g){
+		 //保存原有画笔s
+		 Graphics ge=g;
+		 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setBounds(100, 100, 1000, 600);
+		contentPane = new JPanel();
+		contentPane.setSize(this.getWidth(), this.getHeight());
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		lblNewLabel.setBounds(25, 10, 96, 15);
+		contentPane.add(lblNewLabel);
+		
+		jta.setBounds(20, 35, this.getWidth()-407, this.getHeight()-83);
+		JScrollPane scr=new JScrollPane(jta,
+                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scr.setBounds(20, 35, this.getWidth()-216, this.getHeight()-83);
+		contentPane.add(scr);
+		
+		
+		jta1.setBounds(jta.getWidth()+jta.getX()+30, 35, 151, this.getHeight()-83);
+		JScrollPane scr1=new JScrollPane(jta1,
+                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scr1.setBounds(scr.getWidth()+30, 35, 160, this.getHeight()-83);
+		label.setBounds(scr.getWidth()+30, 10, 164, 15);
+		contentPane.add(label);
+		contentPane.add(scr1);
+		//还原画笔
+		g=ge;
+		
+	}
+
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		//this.repaint();
+		
+	}
+
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		//this.repaint();
+		
+	}
+
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		//this.repaint();
+		
+	}
+
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		this.repaint();
+		
+	}
+
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		this.repaint();
+		
+	}
+}

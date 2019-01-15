@@ -1,0 +1,127 @@
+package zhanlang.DAO.Imple;
+
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.List;
+
+import javax.swing.JButton;
+
+import zhanlang.DAO.UserDAO;
+import zhanlang.entity.Book;
+import zhanlang.view.LoginMenu;
+
+public class UserDAOImple implements UserDAO{
+	private DataExchange de = new DataExchange();
+	@Override
+	public Object login(String command,Object loginPerson) {
+		try {
+			de.doWork(command,loginPerson);
+			synchronized ("aaa") {
+				"aaa".wait();
+				}
+			if(de.object!=null){
+				return de.object;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
+	@Override
+	/**
+	 * 显示可借书籍
+	 */
+	public Object showCanAll(String command,Object book) {
+		try {
+			de.doWork(command,book);
+			synchronized ("aaa") {
+				"aaa".wait();
+			}
+			if(de.object != null){
+				return de.object;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	
+	@Override
+	/**
+	 * 显示被借出书籍
+	 */
+	public Object showAlready(String command,Object book) {
+		try {
+			de.doWork(command, book);
+			synchronized ("aaa") {
+				"aaa".wait();
+			}
+			if(de.object != null){
+				return de.object;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	/**
+	 * 通过图书ID借书
+	 */
+	public Object borrowById(String command,Object book) {
+		try {
+			de.doWork(command, book);
+			synchronized ("aaa") {
+				"aaa".wait();
+			}
+			if(de.object != null){
+				return de.object;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * 通过id还书
+	 */
+	@Override
+	public Object returnById(String command,Object book) {
+		try {
+			de.doWork(command, book);
+			synchronized ("aaa") {
+				"aaa".wait();
+			}
+			if(de.object != null){
+				return de.object;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public boolean regester() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void alterInfo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectById() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

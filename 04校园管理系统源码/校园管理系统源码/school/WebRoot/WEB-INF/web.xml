@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>school</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>StudentServlet</servlet-name>
+    <servlet-class>com.bjsxt.school.servlet.StudentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TeacherServlet</servlet-name>
+    <servlet-class>com.bjsxt.school.servlet.TeacherServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LibraryServlet</servlet-name>
+    <servlet-class>com.bjsxt.school.servlet.LibraryServlet</servlet-class>
+  </servlet>
+	
+	<servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.bjsxt.school.servlet.UserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ClazzServlet</servlet-name>
+    <servlet-class>com.bjsxt.school.servlet.ClazzServlet</servlet-class>
+  </servlet>
+<servlet>
+    <servlet-name>CourseServlet</servlet-name>
+    <servlet-class>com.bjsxt.school.servlet.CourseServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>RandomServlet</servlet-name>
+    <servlet-class>com.bjsxt.school.util.RandomServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MajorServlet</servlet-name>
+    <servlet-class>com.bjsxt.school.servlet.MajorServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>RandomServlet</servlet-name>
+    <url-pattern>/random.jpg</url-pattern>
+  </servlet-mapping>
+
+
+<servlet-mapping>
+    <servlet-name>CourseServlet</servlet-name>
+    <url-pattern>/servlet/CourseServlet</url-pattern>
+  </servlet-mapping>
+
+	<servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/servlet/UserServlet</url-pattern>
+  </servlet-mapping>
+
+
+
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/servlet/StudentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TeacherServlet</servlet-name>
+    <url-pattern>/servlet/TeacherServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LibraryServlet</servlet-name>
+    <url-pattern>/servlet/LibraryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ClazzServlet</servlet-name>
+    <url-pattern>/servlet/ClazzServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MajorServlet</servlet-name>
+    <url-pattern>/servlet/MajorServlet</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+  	<filter-name>AuthFilter</filter-name>
+  	<filter-class>com.bjsxt.school.filter.AuthFilter</filter-class>
+  </filter>
+  <filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>com.bjsxt.school.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/servlet/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	  	<filter-name>AuthFilter</filter-name>
+	  	<url-pattern>/servlet/*</url-pattern>
+	  	<url-pattern>*.jsp</url-pattern>
+  	</filter-mapping>
+  
+</web-app>

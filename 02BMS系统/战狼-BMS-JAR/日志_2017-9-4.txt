@@ -1,0 +1,33 @@
+
+[2017-9-4 14:54:11]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow]
+Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12]
+1.这是怎么回事？=====[Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234], Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234], Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111], Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123], Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232], Person [ID=null, name=Moses, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei110, password=knownoknow], Person [ID=null, name=2222, sex=男, tel=123123123, age=12, address=北京市, userName=2222, password=123456], Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as], Person [ID=null, name=zdd, sex=女, tel=12, age=12, address=北京市, userName=zdd, password=12], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=刘能, password=2345], Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=admin, password=admin]]
+2.这是怎么回事？Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+2.这是怎么回事？Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+让你登录
+用户请求登录:111[2017-9-4 14:54:22]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！

@@ -1,0 +1,150 @@
+package zhanlang.service.operate;
+
+
+
+import java.util.List;
+
+import zhanlang.entity.Book;
+import zhanlang.entity.Person;
+import zhanlang.service.Dao.LibServerDAO;
+import zhanlang.service.Dao.Imple.LibServerDAOimple;
+import zhanlang.service.Dao.Imple.ServerOperation;
+/**
+ * 功能选择及调用返回类
+ * @author lisi
+ *
+ */
+public class ChooseOperation {
+	Person person;
+	boolean flag;
+	String sb;
+	List<Book> list;
+	List<Book> list1;
+	Book book;
+	
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
+	public String getSb() {
+		return sb;
+	}
+
+	public void setSb(String sb) {
+		this.sb = sb;
+	}
+
+	public boolean isFlag() {
+		return flag;
+	}
+
+	public void setFlag(boolean flag) {
+		this.flag = flag;
+	}
+	
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	
+	//功能选择及调用
+	String operation(String str){
+		LibServerDAO lsd=new LibServerDAOimple();
+		if(str!=null) {
+			//用户功能
+			switch (str) {
+			//登录
+			case "login":{
+				person=lsd.login(person);
+				if(person!=null){
+					sb="true";
+				}else{
+					sb="false";
+				}
+				return sb;
+			}
+			//查看可借阅书籍
+			case "showCanAll":{ 
+				list=lsd.showCanAll();
+				return "showCanAll";
+			}
+			//查看已借阅书籍
+			case "showAlready":{
+			list1=lsd.showAlready();
+				return "showAlready";
+			}
+			//根据图书编号完成借书
+			case "borrowById":{
+				
+				boolean b=lsd.borrowById(book, person);
+				return "borrowById";
+			}
+			//根据图书编号还书
+			case "returnById":{
+				boolean b1=lsd.returnById(book);
+				return "returnById";
+			}
+			//注册
+			case "regester":{
+				//boolean b2=lsd.regester(person);
+				return "regester";
+			}
+			//修改个人信息
+			case "alterInfo":{
+				String property = null;
+				String content = null;
+				boolean b3=lsd.alterInfo(person, property, content);
+				return "alterInfo";
+			}
+			//根据图书编号查询信息
+			case "selectById":{
+				Book book1=lsd.selectById(book);
+				return "selectById";
+			}
+//=======================================
+			//增加用户
+			case "addUser":{
+				
+				
+				return "true";
+			}
+			//删除用户
+			case "deleteUser":{
+				
+				return "true";
+			}
+			//修改密码
+			case "alterPassword":{
+				
+				return "true";
+			}
+			//添加图书
+			case "addBook":{
+			
+				return "true";
+			}
+			//删除图书
+			case "deleteBook":{
+				
+				return "true";
+			}
+//======================================	
+			default:
+				
+				return "true";
+			}
+		}
+		return "true";
+		
+	}
+	
+}

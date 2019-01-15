@@ -1,0 +1,23 @@
+package com.sxt.util;
+
+public class Regex {
+	//用户ID的正则校验
+	public static boolean idRegex(String id){
+		if ("".equals(id.trim())) {
+			return false;
+		}
+		return id.matches("[a-zA-Z0-9]{4,8}");
+	}
+	public static boolean nameRegex(String name){
+		if ("".equals(name.trim())) {
+			return false;
+		}
+		return name.matches("[^0-9]{2,8}");
+	}
+	public static boolean pwdRegex(String pwd){
+		if ("".equals(pwd.trim())) {
+			return false;
+		}
+		return pwd.matches(".{3,8}");
+	}
+}

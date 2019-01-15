@@ -1,0 +1,85 @@
+package zhanlang.view;
+
+import java.awt.EventQueue;
+import java.util.List;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import zhanlang.DAO.UserDAO;
+import zhanlang.DAO.Imple.UserDAOImple;
+import zhanlang.entity.Book;
+import javax.swing.JButton;
+import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class U_ShowAlready extends JFrame {
+	UserDAO userImple = new UserDAOImple();
+	List<Book> bookList = null;
+
+	private JPanel contentPane;
+	private JTextField inputId;
+
+	/**
+	 * Create the frame.
+	 */
+	public U_ShowAlready() {
+		setTitle("已借书籍");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 600, 400);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		//创建框框
+		JTextArea canBook = new JTextArea();
+		canBook.setColumns(7);
+		canBook.setEditable(false);
+		canBook.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+		canBook.setBounds(10, 49, 547, 241);
+		contentPane.add(canBook);
+		
+		JButton button = new JButton("返回");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.showCanAllFrame.dispose();
+			}
+		});
+		button.setBounds(476, 300, 93, 23);
+		contentPane.add(button);
+		
+		inputId = new JTextField();
+		inputId.setBounds(136, 18, 218, 21);
+		contentPane.add(inputId);
+		inputId.setColumns(10);
+		
+		JButton btnNewButton = new JButton("还书");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				userImple.returnById("returnById",new Book(inputId.getText()));
+			}
+		});
+		btnNewButton.setBounds(384, 17, 93, 23);
+		contentPane.add(btnNewButton);
+		//添加
+		
+		bookList = userImple.showAlready("showAlready", new LoginMenu().userlogin);
+		canBook.append("    编号\t书名\t作者\t出版社\t借书时间\r\n");
+		if(bookList != null){
+			for (Book book : bookList) {
+				canBook.append("    "+book.getID()+"\t"+book.getbName()+"\t"+book.getAuthor() +"\t"
+						+book.getPress()+"\t"+book.getBorrow() + "\r\n");
+				canBook.append("---------------------------------------------------------------------------------------------------\r\n");
+			}
+		}
+	}
+}

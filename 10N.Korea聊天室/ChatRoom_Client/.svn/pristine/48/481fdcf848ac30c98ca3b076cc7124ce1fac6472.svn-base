@@ -1,0 +1,192 @@
+package com.sxt.swing;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.SystemColor;
+import java.awt.Toolkit;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextPane;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+
+import com.sxt.util.FontAndText;
+import com.sxt.util.PicInfo;
+import com.sxt.vo.Users;
+/**
+ * 自定义一个消息框模型
+ * @author gabriel
+ *
+ */
+public class OneChatPanel {
+	
+	private Users users;
+	private String chat;
+	BufferedWriter writer;
+	BufferedReader reader;
+	private FontAndText attr=null;
+	private List<PicInfo> receivdPicInfo = null;
+	private HashMap<Users,File> headMap;
+	public OneChatPanel(Users users,String chat,List<PicInfo> receivdPicInfo,FontAndText attr) {
+		this.receivdPicInfo=receivdPicInfo;
+		this.headMap=new HashMap<>();
+		this.users=users;
+		this.attr=attr;
+		this.chat=chat;
+		try {
+			 writer=new BufferedWriter(new FileWriter("res/history/chat.data",true));
+		 reader=new BufferedReader(new FileReader("res/history/chat.data"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+
+	
+	public JPanel getPanel(){
+		JPanel bigPanel=new JPanel();
+		JPanel jPanel =new JPanel();
+		bigPanel.setLayout(new BoxLayout(bigPanel, BoxLayout.Y_AXIS));
+		bigPanel.add(getNullPanel());
+		
+		jPanel.setLayout(new BorderLayout());
+		//头像JLabel
+		JLabel im = new JLabel("");
+		ImageIcon icon =new ImageIcon("res/headimg/"+users.getImg());
+		icon.setImage(icon.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		im.setIcon(icon);
+		jPanel.add(im, BorderLayout.WEST);
+		//文本框
+		JTextPane text = new JTextPane();
+		text.setContentType("text/html");
+//		text.setFont(new Font("微软雅黑 Light", Font.BOLD, 18));
+		text.setBounds(461, 51, 106, 69);
+//		text.insertIcon(new ImageIcon("res/face/"+chat+".gif"));
+		StringBuilder sb=new  StringBuilder();
+		
+		int index=0;
+//		text.setIconImage(Toolkit.getDefaultToolkit().getImage(MainRoomSwing.class.getResource("/com/sxt/swing/images/imgp/weixiao.png")));
+//		text.insertIcon(new ImageIcon("/com/sxt/swing/images/imgp/weixiao.png"));
+		
+//		text.insertIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(text.getClass().getResource("/com/sxt/swing/images/imgp/weixiao.png"))));
+		
+		for(int i=0;i<attr.getMsg().length();i++){
+			for (PicInfo picInfo : receivdPicInfo) {
+				if (picInfo.getPos()==i) {
+				
+					text.insertIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(text.getClass().getResource("/com/sxt/swing/images/imgp/qqdefaultface/"+picInfo.getVal()+".gif"))));
+					receivdPicInfo.remove(picInfo);
+				}
+			}
+		}
+		
+		
+		
+		SimpleAttributeSet attributeSet=attr.getAttrSet();
+		Document docs=text.getDocument();
+		try {
+			docs.insertString(docs.getLength(), attr.getText(), attributeSet);
+		} catch (BadLocationException e1) {
+			e1.printStackTrace();
+		}
+
+		
+		
+		//text.setText("<h2>"+chat+"</h2> ");
+//		if (chat.toString().contains("图片")) {
+//			chat=chat.split("图片")[1];
+//			text.setText("<img src=\""+chat+"\"> ");
+//		}
+		
+		
+			
+		
+		
+		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		//消息属性框
+		String head=users.getName()+"(id："+users.getId()+")"+"    "+dateFormat.format(new Date());
+		JLabel jLabel=	new JLabel(head);
+		jLabel.setFont(new Font("微软雅黑 Light", Font.BOLD, 12));
+		jLabel.setOpaque(true);
+		jLabel.setBackground(new Color(255, 160, 122));
+		text.setBackground(SystemColor.info);
+		
+		jPanel.add(jLabel,BorderLayout.NORTH);
+	
+		jPanel.add(text,BorderLayout.CENTER);
+		bigPanel.add(jPanel);
+		bigPanel.add(getNullPanel());
+		
+		try {
+			
+			writer.append(head+"\r\n");
+			writer.append(chat+"\r\n");
+			writer.flush();
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return bigPanel;
+		
+	}
+	public JPanel getNullPanel(){
+		return new JPanel();
+	}
+	//历史聊天窗口
+	public JPanel getHistoryPanel(){
+		StringBuilder sb=new StringBuilder();
+		String str=null;
+		try {
+			while((str=reader.readLine())!=null){
+				sb.append(str+"\r\n");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		JPanel jPanel=new JPanel();
+		jPanel.setLayout(new BorderLayout());
+		String head="-----------------------历史聊天记录-------------------";
+		JLabel jLabel=	new JLabel(head);
+		jLabel.setFont(new Font("微软雅黑 Light", Font.BOLD,25));
+		jLabel.setOpaque(true);
+		jLabel.setBackground(new Color(255, 160, 122));
+		jPanel.add(jLabel,BorderLayout.NORTH);
+		JTextArea textArea=new JTextArea();
+		textArea.setText(sb.toString());
+		
+		textArea.setSelectionColor(new Color(255, 0, 255));
+		//textArea.setForeground(new Color(105, 105, 105));
+		textArea.setLineWrap(true);
+		textArea.setFont(new Font("微软雅黑 Light", Font.BOLD, 20));
+		textArea.setBackground(new Color(255, 192, 203));
+		textArea.setBounds(410, 10, 199, 106);
+		
+		
+		jPanel.add(textArea, BorderLayout.CENTER);
+		return jPanel;
+		
+	}
+	
+	
+}

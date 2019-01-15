@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<books size="55"> 
+  <book ID="1"> 
+    <image>1.png</image>  
+    <bookID>1</bookID>  
+    <bName>狼王梦</bName>  
+    <author>沈石溪</author>  
+    <press>尚学堂出版社</press>  
+    <type>儿童文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>2017-09-03</outTime>  
+    <borrow>111</borrow>  
+    <introduce>本书写的是一匹充满智慧的狼， 用一生的时间来完成自己的梦想。丈夫没了，还有儿 子，儿子没了，还有女儿。为了那梦寐 以求的狼 王 宝座，它浪费了大 量青春，它葬送了美好爱情，它 放弃了宝贵生命。命运之神啊，为何总是与它擦肩 而过？它走了，只留下无限遗憾和永久的梦……</introduce> 
+  </book>  
+  <book ID="2"> 
+    <image>2.png</image>  
+    <bookID>2</bookID>  
+    <bName>没头脑</bName>  
+    <author>任溶溶</author>  
+    <press>尚学堂出版社</press>  
+    <type>儿童文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>2017-09-03</outTime>  
+    <borrow>null</borrow>  
+    <introduce>任爷爷可是鼎鼎有名的大作家， 他写的书很多很多，数都数不清，像大家熟悉的 《没头脑和不高兴》、《一个天才杂技演员》、 《爸爸的老师》、《我是一个可大可小的人》、 《土土的故事》、《大大大和小小小历险记》、 《丁丁探案》、《当心小妖精》……都是任爷 爷写的， 任爷爷还是一位大翻译家，懂四种 外国语，翻译过 《安徒生童话全集》、《木 偶奇遇记》、 《假话国历险记》、《长袜子 皮皮》、 《伊索寓言》、《彼得·潘》等等。</introduce> 
+  </book>  
+  <book ID="3"> 
+    <image>3.png</image>  
+    <bookID>3</bookID>  
+    <bName>平凡的世界</bName>  
+    <author>路瑶</author>  
+    <press>尚学堂出版社</press>  
+    <type>儿童文学</type>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>这是一部现实主义小说，也是 小说化的家族史。作家高度浓缩了中国西北农村的历 史变迁过程，作品达到了思想性与艺术性的高度统一， 特别是主人公面对困境艰苦奋斗的精神，对今天的大 学生朋友仍有启迪。这是一部全景式地表现中国当代 城 乡社会生活的长篇小说，本书共三部。作者在近十 年问 广阔背景上，通过复杂的矛盾纠葛，刻划了社会 各阶层 众多普通人的形象。劳动与爱情，挫折与追求， 痛苦与 欢乐，日常生活与巨大社会冲突，纷繁地交织 在一起， 深刻地展示了普通人在大时代历史进程中所 走过的艰难 曲折的道路。</introduce> 
+  </book>  
+  <book ID="4"> 
+    <image>4.jpg</image>  
+    <bookID>4</bookID>  
+    <bName>中国历史</bName>  
+    <author>陈卫宇</author>  
+    <press>尚学堂出版社</press>  
+    <type>儿童文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>本书以近百篇精彩故事、上千 幅插画贯串上古至现代的中国历史，为儿童描绘一个 完 整具体的轮廓，以儿童的生活经验与历史因果相结 合， 叙史故事化、新鲜的文字妙喻再加上写实精美的 插画， 足以唤起儿童对历史的兴趣；精彩有趣的故事 不仅带 给孩子想象与创造的空间，真实的历史更给孩 子思考 与判断的智慧，是一部让孩子认识自己、喜欢 历史、 见贤思齐的经典巨作。</introduce> 
+  </book>  
+  <book ID="5"> 
+    <image>5.jpg</image>  
+    <bookID>5</bookID>  
+    <bName>我想去看海</bName>  
+    <author>张炜</author>  
+    <press>尚学堂出版社</press>  
+    <type>儿童文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>2017-09-01</outTime>  
+    <borrow>null</borrow>  
+    <introduce>“不一样的卡梅拉”第一季系列故事 讲述的是母鸡卡梅拉和她的儿女们卡梅利多和卡门的历险 故事。卡梅拉家族里的每个人都是那样的与众不同。敢于 幻想，更敢于去尝试别人不敢想的事情。书中充满了惊险 的情节和法式的幽默。当然，也不乏那些捧着肚子哈哈大 笑的段子。孩子们百看不厌，家长们更乐于推荐。其清新 的风格和有趣的故事，令读者们十分喜爱，受到广大读者的好 评，不一样的卡梅拉，0-99岁都追捧的图画书！千 百万“ 卡梅拉”粉丝极力推荐！</introduce> 
+  </book>  
+  <book ID="6"> 
+    <image>6.jpg</image>  
+    <bookID>6</bookID>  
+    <bName>将来的你</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>青春励志</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>2017-09-01</outTime>  
+    <borrow>null</borrow>  
+    <introduce>这是一部激励千万心灵的年度暖心 之作，写给无数次跌倒却依然默默努力的年轻人，写给为 了心中的梦想而决不放弃的年轻人。</introduce> 
+  </book>  
+  <book ID="7"> 
+    <image>7.jpg</image>  
+    <bookID>7</bookID>  
+    <bName>另一种方式</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>青春励志</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>《所有失去的都会以另一种方式 归来》 是励志作家耿帅暌违五年，送给读者最暖心的励 志故事， 五年时光，独家记忆。 ★ 他的文字，给年轻 人爱的正 能量和信心。与你讲述人情冷暖，万水千山。 见解独到， 治愈励志。 ★ 换一个城市是不是更快乐、 离开 现在的工作是不是就会有前途、结束一段关系是 不是就幸 福了？这些困扰的问题你都会从他的书里找 到答案。他用 文字来告诉每一个人，所有的困境都是 来自内在的心境， 单身不可怕，失恋不可怕，可怕的 是失去爱的能力。</introduce> 
+  </book>  
+  <book ID="8"> 
+    <image>8.jpg</image>  
+    <bookID>8</bookID>  
+    <bName>秘密</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>青春励志</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>朗达•拜恩编著的《秘密(精)》 讲述了： 几个世纪以来，这个大秘密，就零星地在一些 古老的传说、文 学经典和哲人的口中出现过。但是这一 次，所有关于这个秘密 的讯息，以不可思议的方式同时 汇集在此且无隐藏地揭露出来， 所有读过此书的人，生 命都发生了改变。 在这本《秘密(精)》 里，你将学会 如何把这个秘密运用在自己人生的各个层面</introduce> 
+  </book>  
+  <book ID="9"> 
+    <image>9.jpg</image>  
+    <bookID>9</bookID>  
+    <bName>好吗好的</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>青春励志</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>我一边想着一边朝他的专用休息室 走去， 看到没，是专用休息室，啧啧啧，大牌就是大牌， 待遇不一样 啊，像我们这种跟组的小助理十几个人，窝 在50平米大小的房 间里睡觉，人挤人呐，转头就能看到 别人那张近在咫尺的脸不 知道的还以为偶像剧玩儿接吻 呢。也不要妄想有什么安慰呀， 公主抱呀，去医务室呀， 都说了生活不是言情小说！</introduce> 
+  </book>  
+  <book ID="10"> 
+    <image>10.jpg</image>  
+    <bookID>10</bookID>  
+    <bName>刻意练习</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>青春励志</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>首次提出“刻意练习”这个概念的是 佛罗里达州立大学（Florida State University） 心理学家 K. Anders Ericsson。这套练习方法的核 心假设是，专家级水平是逐渐地练出来的，而有效进步的关 键在 于找到一系列的小任务让受训者按顺序完成。这些小任 务必须 是受训者正好不会做，但是又正好可以学习掌握的。 完成这种 练习要求受训者思想高度集中，这就与那些例行公 事或者带娱 乐色彩的练习完全不同。“刻意练习”的理论目前 已经被广泛接受。</introduce> 
+  </book>  
+  <book ID="11"> 
+    <image>11.jpg</image>  
+    <bookID>11</bookID>  
+    <bName>二十到三十岁</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>青春励志</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>20岁到30岁，是人一生中迷茫但至 关重要的十年。这十年，绝不能因一时迷途而遗憾终生。 这十年，要学会挖掘深层的自我、刻画独有的性格、丰富 自己的内涵、打造自己的事业、掌控自己的经济、打拼精 彩的未来、活出自己的精彩。这十年，充满了众多的选择 和可能，唯有懂得规划人生，才能成就一生。</introduce> 
+  </book>  
+  <book ID="12"> 
+    <image>12.jpg</image>  
+    <bookID>12</bookID>  
+    <bName>青春不负梦</bName>  
+    <author>俞敏洪</author>  
+    <press>尚学堂出版社</press>  
+    <type>青春励志</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>在本书中，俞敏洪以真诚的态度、 坦荡的胸怀、幽默的语言，娓娓讲述了自己的青春、 梦想、 成长、奋斗、事业、生活方面的经历和感受， 分享了自己 从出生到成长，从成长到考上北大，从北 大离职后创业， 经历种种挫折与磨难的人生奋斗历程。 他以非凡的气魄、 坚忍不拔的毅力、大无畏的精神， 渡过了一道道难关， 一步步走到了今天，希望以此 激励你勇敢地追逐自己的梦想。</introduce> 
+  </book>  
+  <book ID="13"> 
+    <image>13.jpg</image>  
+    <bookID>13</bookID>  
+    <bName>悄悄话</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>网络文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>我不知道你有没有这样的时候， 怀揣着对未来的憧憬，勤勤恳恳地工作。却发现自己 始终也无法突破工作上的瓶颈，别人轻而易举就完成 的事情，自己做起来总是如履薄冰；我不知道你有没 有这样的时候，小心翼翼地维系着亲情、友情和爱情， 把感情看得比什么都重要，到头来却发现感情是换不 来等量回报的，即便全心全意地付出，也终究避免不 了突如其来的伤害和疏离。</introduce> 
+  </book>  
+  <book ID="14"> 
+    <image>14.jpg</image>  
+    <bookID>14</bookID>  
+    <bName>桃花债</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>网络文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>谁是谁的劫，谁欠谁的债。 千年 前的局，不过一场相逢的等待。 丞相公子宋 珧迷恋花魁 瑶湘，瑶湘却与一个穷书生情投意合。 失魂落魄的宋珧 因缘际会误食了仙丹，就此飞升 成了神仙。 天庭的天枢 星君和南明帝君有私情， 被玉帝贬下凡界，玉帝钦点宋 珧下凡将他二人拆 散。宋珧的知己好友衡文清君也随谁 是谁的劫, 谁欠谁的债。千年前的局，不过一场相逢的 等待。 丞相公子宋珧迷恋花魁瑶湘。</introduce> 
+  </book>  
+  <book ID="15"> 
+    <image>15.jpg</image>  
+    <bookID>15</bookID>  
+    <bName>龙的承诺</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>网络文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 又一百年过去，年轻的 未来龙王肯肯来到人间娶新娘，遭到了大法师和骑士团 的围殴。为了顺利迎娶媳妇，肯肯把**项链抵押给精 灵族王子格兰蒂纳，雇他做帮手，打倒骑士团。 这条 项链，其实正是开启神之宝藏的关键。 想娶媳妇的少 年龙王，“别有用心”的精灵王子，为了各自的愿望结 伴踏上旅程。 媳妇，会有的吧？ 宝藏，也会有的吧？ 虽然传说与现实，总有那么一点点的差别……</introduce> 
+  </book>  
+  <book ID="16"> 
+    <image>16.jpg</image>  
+    <bookID>16</bookID>  
+    <bName>不愿你一人</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>网络文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 DJ程一，国内情感网络电台 男主播，他被誉为众多迷妹心目中最会疗伤的男主播，百万 粉丝耳朵里的男朋友。截至2017年，网易云音乐、荔枝FM、 喜马拉雅等全网累计收听量突破2000,000,000亿次， 他是荔枝FM收听破4*440000次人气男主播。微信公众号 DJ程一粉丝80万 。以声音为饵，诱你入局。治愈你每 一个孤寂无眠的夜晚。声音是有温度的，夜晚的声音会发光。 程一电台，温暖如一。每晚都会温暖你。 ?抑或是不好的结 果，总归能画个句号。</introduce> 
+  </book>  
+  <book ID="17"> 
+    <image>17.jpg</image>  
+    <bookID>17</bookID>  
+    <bName>阿基米德</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>网络文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 甄爱带着失联哥哥留下的密 码纸，走进了言溯的古堡。 第一面，他就精准地分析出她的 身份和来历。 这一天，是2月29日。 天才生物学家，悄然 开启了天才逻辑学家的爱情触觉。 然而随着对密码的分析， 甄爱的身世和过往，将他们卷入暗黑组织的罪恶深渊…… “S.A.，不管有没有人阻止你，你都会找到我，对吧？ ” “对。甄爱，记得坚强，记得微笑，记得自由，记得……我。”</introduce> 
+  </book>  
+  <book ID="18"> 
+    <image>18.jpg</image>  
+    <bookID>18</bookID>  
+    <bName>鬼吹灯</bName>  
+    <author>随便鬼</author>  
+    <press>尚学堂出版社</press>  
+    <type>网络文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《鬼吹灯全集》是一个系列 形式的文字冒险故事，三位当代摸金校尉，利用风水秘术， 解读天下大山大川的脉搏，寻找那些失落在大地上的一处 处龙楼宝殿，沙漠、雪山、森林、峡谷、急流、草原、鲜 为人知的神秘动植物，危机四伏的陷阱，步步惊心，环环 紧扣，超越极限与想象力的挑战，在离奇诡异的地下世界 中，揭开一层层远古的神秘面纱。</introduce> 
+  </book>  
+  <book ID="19"> 
+    <image>19.jpg</image>  
+    <bookID>19</bookID>  
+    <bName>全职高手</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>网络文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 本部《全职高手13—— 初露锋芒》为《全职高手》系列小说的第十三册，荣耀 职业联盟第十赛季拉开序幕，充满艰难险阻的夺冠之旅 就此开启。首轮被轮回横扫的兴欣次轮主场战百花，唐 柔在擂台赛中打败全明星选手于锋，勇猛一挑二，为队 伍取胜奠定基础；团队赛中兴欣更完成“教科书般经典” 的绝杀，被称为“史上最强新队”，锋芒毕露。新加入战 队的方锐无法回避转型气功师的阵痛；散人与队中其他 职业的磨合状况不断；唐柔放言五轮之内一挑三未果 遭到质疑……兴欣大胜百花后，严峻的形势接踵而至。 有了与霸图、微草等豪门战队交手的经历，兴欣战队 迅速成长，而叶修，也开始了他的连胜纪录……</introduce> 
+  </book>  
+  <book ID="20"> 
+    <image>20.jpg</image>  
+    <bookID>20</bookID>  
+    <bName>再遇霍承安</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>网络文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 学生时代，属于霍承安的， 只有洗得发白的衬衫和满是腐朽气息的老巷子，他的人生 毫无生气，直到赵贞出现。 她恣意、张扬、不顾一切，她 的一切都惹人非议，却成了霍成安年少记忆里唯一的颜色。 她曾是一团火，点燃了霍成安这块木头，而后，留给他一 地灰烬。 经年过后，再次相逢，两人已如云泥，只不过， 这一次，霍承安是高高在上的云，赵贞是低贱卑微的泥， 她对他避之不及。 霍承安：赵贞，你就这么怕我吗？ 赵贞：呵呵，换做你把人追到手后却不告而别九年之久试试？</introduce> 
+  </book>  
+  <book ID="21"> 
+    <image>21.jpg</image>  
+    <bookID>21</bookID>  
+    <bName>拖延心理学</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>人文社科</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《拖延心理学》：全球首 个拖延工作坊创始人、美国权威心理学家联袂出击，风靡 全球25年经典之作最新版，抢先登陆中国，资深心理医生 李梦潮专文推荐，（25周年钻石版）。 我们都因拖延而 焦虑，却又在焦虑中拖延 “明明知道那么多事情堆在眼前： 摊开的文件、散乱的衣橱或者只是一个该打的电话、一封 该发出去的邮件，还有自己焦急不安的小心脏，可我还是 边咬着手指甲边想，再待一会儿，就一下下……”</introduce> 
+  </book>  
+  <book ID="22"> 
+    <image>22.jpg</image>  
+    <bookID>22</bookID>  
+    <bName>墨菲定律</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>人文社科</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 约会时，越不想被熟人看见， 越可能会遇到熟人； 看球赛时，最精彩的瞬间往往出现在你 出去买啤酒的空档； 和许久不见的朋友见面，时间总是很短， 不知不觉就要分别； 等在厕所外边时，哪怕只是一分钟也觉 得无比漫长； 常常一洗完车，紧接着就会下雨，结果往往是 白洗一场； 越着急的时候，越会有接踵而至的各种麻烦事； 对股票涨幅越是期待，结果往往越会跌得惨淡； 投资时越想 赚一大笔，农奴翻身做主人，越是会亏得血本无归；</introduce> 
+  </book>  
+  <book ID="23"> 
+    <image>23.jpg</image>  
+    <bookID>23</bookID>  
+    <bName>次第花开</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>人文社科</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《次第花开》是希阿荣博 堪布所写的心灵随笔集，以现代人的思维和表达方式，将 心灵世界应有的美好境界娓娓道来。 本书就像是一个忠 实的朋友，在迷茫脆弱的时候，给我们以鼓励和启发， 让我们生起对三宝和佛法的信心以及求解脱的决心。</introduce> 
+  </book>  
+  <book ID="24"> 
+    <image>24.jpg</image>  
+    <bookID>24</bookID>  
+    <bName>文明的冲突</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>人文社科</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 40年间，国际关系的 研究者和实践者都是根据非常简化的但也是非常有用 的关于世界事务的冷战范式来思考和行动的。这一范 式不能说明世界政治中发生的一切事情。用库恩的话 说，存在着许多例外，而且这一范式时而会妨碍学者 和政治家看清一些重大的发展，如中苏破裂。然而， 作为全球政治的简单模式，它比其他任何竞争对手都 更能说明更重要的现象。它是思考国际事务的必不可 少的出发点，几乎被普遍接受，并影响了两代人关于 世界政治的思考。</introduce> 
+  </book>  
+  <book ID="25"> 
+    <image>25.jpg</image>  
+    <bookID>25</bookID>  
+    <bName>人间词话</bName>  
+    <author>王国维</author>  
+    <press>尚学堂出版社</press>  
+    <type>人文社科</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 本书收齐《人间词话》 的各种版本：手稿本，定稿本，未刊本，删改本、选本 和通行本，及通行本中的附录本。 本书将以上诸本作 了汇校，以方便读者阅读和思考。注解部分有人名的 介绍和词话中引及的诗词原文及其难点的解释，向读 者提供比较全面的知识。汇评部分涵盖 20世纪的诸 家评论，将精彩的有独到见解的评论收集在一起， 便于读者参考和在此基础上做出更深入的思考</introduce> 
+  </book>  
+  <book ID="26"> 
+    <image>26.jpg</image>  
+    <bookID>26</bookID>  
+    <bName>乌合之众</bName>  
+    <author>古斯塔夫.勒庞</author>  
+    <press>尚学堂出版社</press>  
+    <type>人文社科</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《乌合之众》作者是法国 著名社会心理学家古斯塔夫.勒庞自1894年始，写下一系 列社会心理学著作，以本书*为著名；在社会心理学领域 已有的著作中，*有影响的，也是这本并不很厚的《乌合 之众》。作者论述在传统社会因素毁灭、工业时代巨变的 基础上，“群体的时代”已经到来。书中极为精致地描述 了集体心态，对人们理解集体行为的作用以及对社会心理 学的思考发挥了巨大影响。《乌合之众--大众心理研究》 其观点新颖，语言生动，是群体行为的研究者不可不读的佳作。</introduce> 
+  </book>  
+  <book ID="27"> 
+    <image>27.jpg</image>  
+    <bookID>27</bookID>  
+    <bName>织色入史笺</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>人文社科</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 在古代中国，最重要的颜色 只有五种：赤、青、黄、白、黑。五色系统大约形成于春秋 时期，与古时盛行的五行理论互为表里，渗透到政治、文化、 社会生活等诸多方面。 本书从人文历史的角度阐释色彩，描 述色彩与中国古代文化（包括政治、历史、文学、民俗、艺 术等）千丝万缕的联系。内容上分五篇，体例上先从色彩的 字形切入，追溯本源；再分门别类讲述由此生发出的典故， 阐述色彩渗透古代文化方方面面的影响。 本书不拘泥于传统 的考据分析类文章，而是每一篇皆为独立别致的小品文，文 字清新隽永，亦古亦今。</introduce> 
+  </book>  
+  <book ID="28"> 
+    <image>28.jpg</image>  
+    <bookID>28</bookID>  
+    <bName>乔布斯传</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>人文社科</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 沃尔特•艾萨克森著的《史 蒂夫•乔布斯传》是 乔布斯***授权的官方传记，由***作 家沃尔特艾萨 克森（Walter Isaacson）在过去两年 与乔布斯面对 面交流40多次、对乔布斯100多位家庭成员、 朋友、 竞争对手和同事的采访的基础上撰写而成，详尽描写 了乔布斯的成长经历，创业生涯和打造苹果公司及其 产品 的全过程。</introduce> 
+  </book>  
+  <book ID="29"> 
+    <image>29.jpg</image>  
+    <bookID>29</bookID>  
+    <bName>肖申克的救赎</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>恐怖悬疑</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《肖申克的救赎》去年曾由 台湾远流出版公司出版繁体字版，书名为 《四季奇谭》。 本次人民文学出版社推出的简体中文版与台湾版使用 的是 同一个译本，由于电影《肖申克的救赎》在**读者中的广 泛影响， 而把它用作书名。 全书共收录了斯蒂芬•金的四 篇中篇小说，首篇即 为“春天的希望”《肖申克的救赎》。 此外，还有“夏日沉沦”《纳粹高 徒》、“不在纯真的秋天” 《尸体》，“暮冬重生”《呼－吸－呼－吸》 ，故事分别是 关于一个很特别的越狱犯、一个老人和一个男孩被困在一种 相互寄生的关系中、四个乡下小孩的发现之旅，以及年轻女 人决定不管发 生什么事都要生下小孩的恐怖故事。 该书英文 版1982年**出版，不 久后便登上《纽约时报》畅销书排行 榜的**之位，当年在美国曾狂销28 万册。</introduce> 
+  </book>  
+  <book ID="30"> 
+    <image>30.jpg</image>  
+    <bookID>30</bookID>  
+    <bName>犯罪心理</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>恐怖悬疑</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 这是一部囊括了几乎所有犯罪 元素的惊心之书：碎尸悬案、虐童恶魔、地狱来电、废墓遗尸、 杀人魔咒……每一起凶案都让人头皮发麻，真凶一直藏在我们 身边，与我们同眠共餐。善与恶的殊死角逐背后，充满着绝望、 怨恨、嫉妒、贪婪、傲慢、色欲、禁恋。公安厅最隐秘最不可 告人的档案完全揭露，你将深入一线的犯罪现场，直面最令人 恐惧、最沉重难解的人性之恶！</introduce> 
+  </book>  
+  <book ID="31"> 
+    <image>31.jpg</image>  
+    <bookID>31</bookID>  
+    <bName>偷窥者</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>恐怖悬疑</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《偷窥者》是“法医秦明”系 列作品第六部，以几起女性失踪案为主线展开，以杜洲的失 踪设下悬念，讲述了公安部门历经波折，终破获案件，抓捕 变态“偷窥者”丁立响归案的故事。延续了“法医秦明”系列 前五部作品的写作方法和风格，在一条主线之下展开多个独 立的案件侦破过程，主线与支线相辅相成，在讲述故事的同 时也向读者普及一些法医学方面的知识。相比前五部，本书 对人性的揭露和道德的考量更加深刻。</introduce> 
+  </book>  
+  <book ID="32"> 
+    <image>32.jpg</image>  
+    <bookID>32</bookID>  
+    <bName>梦幻花</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>恐怖悬疑</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《梦幻花》以几个突发事件为 谜题：一对恩爱夫妻在上班路上被砍杀，留下了嗷嗷待哺的幼 女；一个正值青春年少的电子琴乐手跳楼自杀，留下此生未完 成的梦想；一个独居的老人被人杀死在家里，家里被翻乱，却 没有丢失钱财……看似毫无关联的突发事件，因为一包花种的丢 失而串连一起，原来，事情的根由是缘于一盆神秘的牵牛花。 “寻找人间不存在的禁断之花，千万不要去寻找黄色的牵 牛花”——神秘的留言到底意味着什么？</introduce> 
+  </book>  
+  <book ID="33"> 
+    <image>33.jpg</image>  
+    <bookID>33</bookID>  
+    <bName>漫长的夜</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>恐怖悬疑</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《最漫长的那一夜》是著 名作家蔡骏的最新现象级情怀力作。亦是蔡骏天马行空的 想象与悬疑的一次完美融合。本书收录的19篇发生在漫长 黑夜的故事再现了我们的成长和记忆中难忘的点滴。从悬 疑到怀旧，从青春到爱情，写尽了我们这代中国人的成长 和命运，看似匪夷所思，甚至残酷的故事，在最后则用温 情的结局告诉我们“有些黑夜，只能独自度过，有些路， 只能一个人走。虽然，每个人都有最漫长的那一夜，但天 一定会亮起来！”</introduce> 
+  </book>  
+  <book ID="34"> 
+    <image>34.jpg</image>  
+    <bookID>34</bookID>  
+    <bName>摸金传人</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>恐怖悬疑</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 朱笑东，出身于典当世家 的富二代，祖上却是不折不扣的摸金传人，原本混吃等死 他却被未婚妻和发小联手推下了明熹宗的万人坑，他不甘 坐以待毙，利用家传知识，九死一生，逃出墓穴……死里逃 生的朱笑东人生发生巨变，他跋山涉水，堪舆定穴，发生 了一系列惊心动魄的离奇遭遇...</introduce> 
+  </book>  
+  <book ID="35"> 
+    <image>35.jpg</image>  
+    <bookID>35</bookID>  
+    <bName>瑚公蝶墓</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>恐怖悬疑</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 中国悬疑必读佳作，完美 3D典藏版 每个城市都隐藏着一座神秘的蝴蝶公墓！ 美丽大学生因蝴蝶公墓丧命的传闻成为了学校里挥之不去 的阴影！ 据说，那里能够实现你的任何愿望，但你也必须 付出惨烈的代价！ 灵魂与欲望的抉择之险，一念天堂， 一念地狱！ 中国悬疑小说 人，中国 悬疑小说家。 已出版 《生死河》、《地狱变》、《谋杀似水年华》、《天机》、 《荒村公寓》、《荒村归来》等多部畅销作品，创下中国 原创悬疑类小说畅销纪录。《荒村公寓》、《地狱的第19 层》更分别被改编为电视剧与电影！......</introduce> 
+  </book>  
+  <book ID="36"> 
+    <image>36.jpg</image>  
+    <bookID>36</bookID>  
+    <bName>红楼梦</bName>  
+    <author>曹雪芹</author>  
+    <press>尚学堂出版社</press>  
+    <type>古典文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 本书为中国古典文学读本丛书。 如果你还在为了阅读或收藏价格昂贵的中国古典名著而在书架 前徘徊，那么现在你不用愁了，该版的《红楼梦》，不仅价格 便宜、印刷美观、装帧古朴，收藏、送人都让你特有面子！实 为古典小说的**普及本！ 本书初版于一九八二年三月，距今 瞬已十二年。本书初版以来，受到广大读者和专家们的欢迎， 也得到了不少指正。这十二年的岁月，使我们进一步认识到， 我闪当时确定的几个原则是正确的：一是我们所选择的底本 ——庚辰本，确是一个学术价值很高、接近曹雪芹原稿 的珍贵本子，我们以此为底本，就使这相校本有了很好的基础。</introduce> 
+  </book>  
+  <book ID="37"> 
+    <image>37.jpg</image>  
+    <bookID>37</bookID>  
+    <bName>西游记</bName>  
+    <author>吴承恩</author>  
+    <press>尚学堂出版社</press>  
+    <type>古典文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《西游记》中国四大古典著作之一， 世界神话传奇经典著作。 《西游记》以丰富瑰奇的想象描写了师徒 四众在去往西方途上，和穷山恶水冒险斗争的历程，并将所经历的 千难万险形象化为妖魔鬼怪所设置的八十一难，以动物幻化有情的 精怪生动地表现了无情的山川的险阻。以降妖伏魔，歌赞了取经人 排除艰难的战斗精神，鼓舞人积极斗争、永不灰心、为达到目标而 百折不挠。 《西游记》问世以来，受到历代读者的欢迎，它的故事 和人物家喻户晓，老少皆知。建国后，仅人民文学出版社就印了近 300万部。各种翻印本、删节本、改编本更是无法统计。历代 评论家对《西游记》都有极高评价。</introduce> 
+  </book>  
+  <book ID="38"> 
+    <image>38.jpg</image>  
+    <bookID>38</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>尚学堂出版社</press>  
+    <type>古典文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《三国演义》是中国最有成就的 历史小说，始于黄巾起义，终于西晋统一，展现了公元184年到 280年间的历史风云画卷。作者通过集中描绘三国时代以曹魏、 蜀汉、孙吴为代表的各统治集团之间的政治、军事、外交斗争， 揭示了东汉末年社会现实的动荡和黑暗，反映了人民的苦难，表达 了人民呼唤明君、呼唤安定的强烈愿望。另外， 《三国演义》沿袭 了平话“拥刘反曹”的传统，体现了人民朴素的拥明君、反暴君心理。</introduce> 
+  </book>  
+  <book ID="39"> 
+    <image>39.jpg</image>  
+    <bookID>39</bookID>  
+    <bName>水浒传</bName>  
+    <author>施耐庵</author>  
+    <press>尚学堂出版社</press>  
+    <type>古典文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《水浒传》，是中国四大名著之一， 全书描写北宋末年以宋江为首的108位好汉在梁山聚义，以及聚义 之后接受招安、四处征战的故事。 《水浒传》也是汉语文学中最具 备史诗特征的作品之一。[1]是中国历史上最早用白话文写成的 章回小说之一。版本众多，流传极广，脍炙人口，对中国乃至东 亚的叙事文学都有极其深远的影响。</introduce> 
+  </book>  
+  <book ID="40"> 
+    <image>40.jpg</image>  
+    <bookID>40</bookID>  
+    <bName>儒林外史</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>古典文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《儒林外史》是我国文学史上 一部杰出的现实主义的长篇讽刺小说。鲁迅先生评为“如集诸 碎锦，合为帖子，虽非巨幅，而时见珍异。”冯沅君、陆侃如 合著的《中国文学史简编》认为“大醇小疵”。 全书故事情节 虽没有一个主干，可是有一个中心贯穿其间，那就是反对科 举制度和封建礼教的毒害，讽刺因热衷功名富贵而造成的极 端虚伪、恶劣的社会风习。这样的思想内容，在当时无疑是 有其重大的现实意义和教育意义。加上它那准确、生动、 洗练的白话语言，栩栩如生的人物形象塑造，优美细腻 的景物描写，出色的讽刺手法，艺术上也获得了巨大的成功。</introduce> 
+  </book>  
+  <book ID="41"> 
+    <image>41.jpg</image>  
+    <bookID>41</bookID>  
+    <bName>封神演义</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>古典文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《封神演义》，俗称《封神榜》， 又名《商周列国全传》、《武王伐纣外史》、《封神传》。 全书共一百回。《封神演义》的原型最早可追溯至南宋的 《武王伐纣平话》，可能还参考了《商周演义》、《昆仑八 仙东游记》，全书以武王伐纣、商周易代的历史为框架， 叙写天上的神仙分成两派卷入这场斗争，支持武王的为 阐教，帮助纣王的为截教。双方祭宝斗法，几经较量， 最后纣王失败自焚，姜子牙将双方战死的要人一一封神。</introduce> 
+  </book>  
+  <book ID="42"> 
+    <image>42.jpg</image>  
+    <bookID>42</bookID>  
+    <bName>山海经</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>古典文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《山海经》是中国志怪古籍， 大体是战国中后期到汉代初中期的楚国或巴蜀人所作。也是 一部荒诞不经的奇书。该书作者不详，古人认为该书是“战 国好奇之士取《穆王传》，杂录《庄》、《列》、《离骚》、 《周书》、《晋乘》以成者” 。现代学者也均认为成书并非 一时，作者亦非一人。《山海经》全书现存18篇，其余篇章 内容早佚。原共22篇约32650字。共藏山经5篇、海外经4篇、 海内经5篇、大荒经4篇。《汉书•艺文志》作13篇，未把晚出 的大荒经和海内经计算在内。山海经内容主要是民间传说中的 地理知识，包括山川、道里、民族、物产、药物、祭祀、巫医等。 保存了包括夸父逐日、女娲补天、精卫填海、大禹治水等不少脍 炙人口的远古神话传说和寓言故事。《山海经》具有非凡的文献 价值，对中国古代历史、地理、文化、中外交通、民俗、神话等 的研究，均有参考，其中的矿物记录，更是世界上最早的有关文献。</introduce> 
+  </book>  
+  <book ID="43"> 
+    <image>43.jpg</image>  
+    <bookID>43</bookID>  
+    <bName>隋唐演义</bName>  
+    <author>随便</author>  
+    <press>尚学堂出版社</press>  
+    <type>古典文学</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 《隋唐演义》从隋主伐陈一直写到 唐明皇死，故事的时间跨度长达180年左右。但前详后略，前40多 年占有66回篇幅，后130多年只用了34回篇幅。全书人物众多， 事件纷繁，概括起来，大致可分为两个方面的内容：一、描写秦琼、 单雄信、程咬金、徐世勣、李密、窦建德等乱世英雄的轰轰烈烈的 反抗斗争和光彩照人的侠义性格。二、描写隋唐两代王后妃特别是 隋炀帝、武则天、唐明皇的宫闱故事。这部分的思想内容比较复杂。 首先，作者的描写在客观上揭露了宫廷政治斗争的血腥与残酷，几 乎每个新君主都是在阴谋诡计、互相残杀中最后踩着政敌的血泊登 上皇帝的宝座的。其次，小说铺叙和揭露了帝王后妃穷奢极欲、荒 淫无耻的生活。</introduce> 
+  </book>  
+  <book ID="44"> 
+    <image>44.jpg</image>  
+    <bookID>44</bookID>  
+    <bName>Effective Java</bName>  
+    <author>Joshua Bloch</author>  
+    <press>机械工业出版社</press>  
+    <type>镇馆之宝</type>  
+    <inTime>2017-08-31</inTime>  
+    <outTime>null</outTime>  
+    <borrow>null</borrow>  
+    <introduce>内容简介 “我很希望10年前就拥有这本书。 可能有人认为我不需要任何Java方面的书籍，但是我需要这本书。 ” — —Java之父James Gosling 编码平添乐趣， 程序更加完美， 高效成为习惯，工作如此轻松。你是否正在寻 找一本能够更加深入地了 解Java编程语言的书，以便编写出 更清晰、更正确、更健壮且更易于重 用的代码。不用找了！本书 为我们带来了共78条程序员必备的经验法则，对于Java 平台精妙之处的独到见解， 以及优秀的代码范例。每个条目的 综合描述和 解释都阐明了应该怎么做，不应该怎么做，以及为什么。</introduce> 
+  </book>  
+  <book ID="54"> 
+    <image>1</image>  
+    <bookID>54</bookID>  
+    <bName>java</bName>  
+    <author>a</author>  
+    <press>1</press>  
+    <type>青春文学</type>  
+    <inTime>1</inTime>  
+    <borrow>null</borrow>  
+    <introduce>1</introduce> 
+  </book>  
+  <book ID="55"> 
+    <image/>  
+    <bookID>55</bookID>  
+    <bName>天</bName>  
+    <author>天</author>  
+    <press>尚学堂</press>  
+    <type>热门小说</type>  
+    <inTime>2018-9-12</inTime>  
+    <borrow>null</borrow>  
+    <introduce/> 
+  </book> 
+</books>

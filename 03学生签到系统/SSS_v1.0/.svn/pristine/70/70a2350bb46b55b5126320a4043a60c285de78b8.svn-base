@@ -1,0 +1,21 @@
+package com.zhatian.kraken.util;
+
+public class KrakenRecord {
+	private static int flag = 1;
+	
+	public static void log(String string){
+		if (flag == 1) {
+			System.out.println(string);
+		}else if (flag == 2) {
+			
+		}
+	}
+	
+	public static void log(int flag,String string){
+		if (flag == 1) {
+			System.out.println(string);
+		}else if (flag == 2) {
+			
+		}
+	}
+}

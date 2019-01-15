@@ -1,0 +1,251 @@
+package com.zhatian.Tinner.dao;
+import java.io.IOException;
+import java.text.Format;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Date;
+
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+
+import com.zhatian.Tinner.entity.Sign;
+import com.zhatian.Tinner.entity.Student;
+import com.zhatian.Tinner.util.testXml;
+
+public class StudentDao {
+	
+	protected static Format format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	protected static Format format_s = new SimpleDateFormat("yyyy-MM-dd");
+	
+	/**
+	 * 登录功能
+	 *传入username和password,新建一个Student对象
+	 * @throws DocumentException 
+	 */
+	public static Student getStuByNameAndPwd(String student_Username,String student_Password) throws DocumentException{
+		List<Student> students = testXml.selXMLDoc();
+		Student student = null;
+		//遍历集合
+		for(Student s:students){
+			if((student_Username.equals(s.getStudent_Username()))&&(student_Password.equals(s.getStudent_Password()))){
+				student = s;
+				
+			}
+		}
+		return student;
+	}
+
+	
+	/**
+	 * 签到功能
+	 * 传入studentId和签到时间sign_InTime,返回一个布尔值告诉客户端是否签到成功
+	 * @throws DocumentException 
+	 * @throws ParseException 
+	 * @throws IOException 
+	 */
+	
+	public static boolean stuSignIn(int student_Id,Date sign_InTime) throws DocumentException, ParseException, IOException{
+		List<Sign> signs = testXml.selXMLDoc_sign();
+		boolean flag = false;
+		List<Student> students = testXml.selXMLDoc();//获取所有学生名单
+		for(Student s:students){
+			if(student_Id == s.getStudent_Id()){
+				boolean bool = false;
+				for(int i = 0;i <signs.size();i++){
+					String date_s = format_s.format(sign_InTime);
+					String date_ss = format_s.format(signs.get(i).getSign_Date());
+					
+					if(signs.get(i).getSign_studentId() == student_Id && date_s.equals(date_ss)){
+						bool = true;
+						break;
+					}
+				}
+				if(!bool){
+					//获取ID
+					int sign_id = 0;
+					if(signs.size() == 0){
+						sign_id = 1;
+					}else{
+						int max =signs.get(0).getSign_Id();
+						for(Sign ss:signs){
+							if(ss.getSign_Id() > max){
+								max = ss.getSign_Id();
+							}
+						}
+						sign_id = max + 1;
+						
+					}
+					String date_si = format_s.format(sign_InTime);
+					SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+					Date datee=sdf.parse(date_si);  
+					Sign sign = new Sign(sign_id, student_Id, sign_InTime, null, "", datee);
+					if(testXml.addSign(sign)){
+						flag = true;
+					}
+					
+				}else{
+					break;
+				}
+			}
+		}	
+		return flag ;
+	}
+
+	/**
+	 * 签退功能
+	 * 传入studentId和签退时间signOutTime,返回一个布尔值告诉客户端是否签退成功
+	 * @throws DocumentException 
+	 * @throws IOException 
+	 * @throws ParseException 
+	 * @throws NumberFormatException 
+	 */
+	public static boolean stuSignOut(int student_Id,Date sign_OutTime) throws DocumentException, IOException, NumberFormatException, ParseException{
+		List<Sign> signs = testXml.selXMLDoc_sign();
+		boolean flag = false;
+		List<Student> students = testXml.selXMLDoc();
+		for(Student s:students){
+			if(student_Id == s.getStudent_Id()){
+				for(Sign ss : signs){
+					String date_s = format_s.format(sign_OutTime);
+					String date_ss = format_s.format(ss.getSign_Date());
+					if(ss.getSign_studentId() == student_Id && ss.getSign_OutTime() == null
+									&& ss.getSign_InTime() != null&& date_ss.equals(format_s.format(sign_OutTime))){
+						if(testXml.notifySign(ss.getSign_Id(), format.format(sign_OutTime))){
+							flag = true;
+						}	
+						break;
+					}
+				}
+			}
+		}
+		return flag ;
+	}
+	
+	/**
+	 * 修改学生信息,传入参数:学生id,新密码.性别,年龄,班级
+	 * 返回一个布尔值,提示用户是否修改成功
+	 * @throws DocumentException 
+	 * @throws IOException 
+	 */
+	public static boolean stuMotify(int student_Id,String student_Password,String student_Name,String student_Sex,String student_Age,String student_Classroom) throws DocumentException, IOException{
+		boolean flag = false;
+		List<Student> students = testXml.selXMLDoc();
+		for(Student s:students){
+			if(student_Id == s.getStudent_Id()){
+				s.setStudent_Password(student_Password);
+				s.setStudent_Name(student_Name);
+				s.setStudent_Sex(student_Sex);
+				s.setStudent_Age(student_Age);
+				s.setStudent_Classroom(student_Classroom);
+				if(testXml.motifyXML(s));{
+					flag = true;
+				}
+			}
+		}
+		return flag;
+	}
+	
+	/**
+	 * 用户注册
+	 * 传入参数:用户名,密码,姓名,性别,年龄,班级
+	 * 返回一个布尔值,提示用户是否注册成功
+	 * @throws DocumentException 
+	 * @throws IOException 
+	 */
+	public static boolean stuRegist(String student_Username,String student_Password,String name,String student_Sex,String student_Age,String student_Classroom) throws DocumentException, IOException{
+		boolean flag = false;
+		
+		List<Student> list = testXml.selXMLDoc();
+	
+		//判断是否有重复的username
+		boolean sss = true;
+		for(Student ss :list){
+			if(student_Username.equals(ss.getStudent_Username())){
+				sss = false;
+			}
+		}
+		if(sss){
+			//获取ID
+			int max = list.get(0).getStudent_Id();
+			for(Student ss:list){
+				if(ss.getStudent_Id() > max){
+					max = ss.getStudent_Id();
+				}
+			}
+			int id = max + 1;
+			Student s = new Student(id, student_Username, student_Password, name, student_Sex, student_Age, student_Classroom);
+			if(testXml.addXML(s)){
+				flag = true;
+			}
+		}
+		return flag;
+	}
+	
+	/**
+	 * 写入日志
+	 * 传入学生ID和日志内容
+	 * 返回一个布尔值提示用户是否写入成功
+	 * @throws DocumentException 
+	 * @throws IOException 
+	 * @throws ParseException 
+	 * @throws NumberFormatException 
+	 */
+	public static boolean stuLog(int student_Id,String sign_DateLog) throws DocumentException, IOException, NumberFormatException, ParseException{
+		List<Sign> signs = testXml.selXMLDoc_sign();
+		boolean flag = false;
+		List<Student> list = testXml.selXMLDoc();
+		for(Sign ss : signs){
+			String date_ss = format_s.format(ss.getSign_Date());
+			if(ss.getSign_studentId() == student_Id && ss.getSign_OutTime() == null 
+							&& ss.getSign_InTime() != null&& date_ss.equals(format_s.format(new Date()))){
+				System.out.println("ssss");
+				if(testXml.addLogSign(ss.getSign_Id(),  sign_DateLog)){
+					flag = true;
+				}	
+			}
+		}
+		return flag;
+	}
+	/**
+	 * 获取历史签到信息
+	 * 传入学生Id,
+	 * 返回一个用户的历史签到信息
+	 * @throws ParseException 
+	 * @throws DocumentException 
+	 * @throws NumberFormatException 
+	 */
+	public static List<Sign> getDistory(int student_Id) throws NumberFormatException, DocumentException, ParseException{
+		List<Sign> signs = testXml.selXMLDoc_sign();
+		List<Sign> history = new ArrayList<Sign>();
+		for(int i = 0;i<signs.size();i++){
+			if(student_Id == signs.get(i).getSign_studentId()){
+				history.add(signs.get(i));
+			}
+		}
+		return history;
+	}
+	/**
+	*
+	*获得学生指定日期的日志
+	*dateTime  ---> yyyy-MM-dd
+	 * @throws ParseException 
+	 * @throws DocumentException 
+	 * @throws NumberFormatException 
+	*
+	*/ 
+	public static Sign  findSignByData(Student student,String dateTime) throws ParseException, NumberFormatException, DocumentException{
+		List<Sign> signs = testXml.selXMLDoc_sign();
+		Sign s = null;
+		 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");  
+		  Date date = sdf.parse(dateTime);  
+		for(int i = 0; i <signs.size();i++){
+			if(signs.get(i).getSign_Date().equals(date)){
+				s = signs.get(i);
+			}
+		}
+		return s;
+	}
+
+}

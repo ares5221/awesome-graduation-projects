@@ -1,0 +1,175 @@
+package com.bjsxt.tomcat;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.List;
+
+import com.bjsxt.dao.TeacherDao;
+import com.bjsxt.entity.Teacher;
+import com.bjxst.service.ManagerService;
+import com.bjxst.service.StudentService;
+import com.bjxst.service.TeacherService;
+
+public class Mytomcat implements Runnable{
+	Socket scoket =null;
+	public Mytomcat(Socket socket){
+		this.scoket=socket;
+	}
+	public static void main(String[] args) throws IOException {
+		 
+		ServerSocket so=new ServerSocket(8900);
+		while(true){
+			Socket	accept = so.accept();
+			System.out.println("连接成功");
+			Mytomcat m=new Mytomcat(accept);
+			new Thread(m).start();
+		}
+	}
+
+	@Override
+	public void run() {
+		TeacherService t=new TeacherService();
+		
+		while(true){
+		
+		  try{
+			PrintWriter pri=new PrintWriter(scoket.getOutputStream());
+		    BufferedReader br=new BufferedReader(new InputStreamReader(scoket.getInputStream()));
+		    String clientCommand = br.readLine();
+		    String[] atr=clientCommand.split(",");
+		    String temp="";
+		    String ID="";
+		    //判断用户名和密码
+		    if("登录".equals(atr[0])){
+		    	if(atr[1].length()==6){
+		    		if(new StudentService().iftrue(atr[1], atr[2])){
+		    			String s="登录,true";
+		    			temp="学生";
+		    			ID=atr[1];
+		    			pri.println(s);
+		    			pri.flush();
+		    		}else{
+		    			String s="登录,false";
+		    			pri.println(s);
+		    			pri.flush();
+		    		}
+		    		
+		    	}else if(atr[1].length()==4){
+		    		boolean flag = t.teaPW(atr[1],atr[2]);
+		    		if(flag){
+		    			temp="teacher";
+		    			pri.println("登录,true");
+			    		pri.flush();
+			    	}else{
+			    		pri.println("登录,false");
+			    		pri.flush();
+			    		continue;
+			    	}
+		    		
+		    		
+		    	}else if(atr[1].length()==2){
+		    		ManagerService m=new ManagerService();
+		    		boolean flsg=m.admPW(atr[1],atr[2]);
+		    		if(flsg){
+		    			temp="admin";
+		    			pri.println("登录,true");
+			    		pri.flush();
+			    	}else{
+			    		pri.println("登录,false");
+			    		pri.flush();
+			    		continue;
+			    	}
+		    		
+		    	}
+		    
+		    	while(true){
+		    		
+		    	   //学生端
+		    		if(temp.equals("学生")){
+		    		String r=br.readLine();
+		    		new StudentTomcat(ID,r,pri);
+		    		if(r.contains(",")){
+		    		String[] s = r.split(",");
+		    		if("选课".equals(s[0])){
+		    			if(new StudentService().chooseCourse(ID, s[1])){
+			    			pri.println("选课,true");
+			    			pri.flush();
+			    		}else{
+			    			pri.println("选课,false");
+			    			pri.flush();
+			    			}	
+			    		}
+		    		}
+		    		}
+		    		//教师端
+		    		else if(temp.equals("teacher")){
+		    			//等待用户输入
+		    			
+			    		//等待用户输入
+		    			String function= br.readLine();
+		    			System.out.println(function);
+		    			String[] split = function.split(",");
+		    			if("教师个人信息".equals(split[0])){
+	    					//调用教师个人信息的方法
+	    					String teacherInfo = t.searchTeaId(atr[1]);
+	    					pri.println("教师个人信息,"+teacherInfo);
+	    					pri.flush();
+	    				}else if("所有学生".equals(split[0])){
+	    					//调用所有的学生  所有学生，str
+	    					String searchAllStuInfo = t.searchAllStuInfo(atr[1]);
+	    					System.out.println(searchAllStuInfo);
+	    					pri.println("所有学生,"+searchAllStuInfo);
+	    					pri.flush();
+	    				}else if("添加课程".equals(split[0])){
+	    					//调用添加课程的方法
+	    					TeacherDao td=new TeacherDao();
+	    					List<Teacher> teaList = td.getTeaList();
+	    					String teacherName="";
+	    					for(Teacher teacher:teaList){
+	    						if(atr[1].equals(teacher.getId())){
+	    							teacherName=teacher.getName();
+	    						}
+	    					}
+	    					boolean addCourse = t.addCourse(split[1], split[2], teacherName,atr[1],split[3]);
+	    					if(addCourse){
+	    						//给客户端的信息   添加课程，true
+	    						pri.println("添加课程,true");
+	    						pri.flush();
+	    					}else{
+	    						//给客户端的信息   添加课程，false
+	    						pri.println("添加课程,false");
+	    						pri.flush();
+	    					}
+	    				}
+			    	}
+		    		//管理员
+		    		else if(temp.equals("admin")){
+		    			ManagerService ms=new ManagerService();
+		    			String sr=br.readLine();
+		    			String[] art=sr.split(",");
+		    			if("添加学生".equals(art[0])){
+		    				ms.addStu(art[1],art[2],art[3],art[4],art[5]);
+		    				pri.println("添加学生,true");
+		    				pri.flush();
+		    			}
+		    			if("添加教师".equals(art[0])){
+		    				ms.addTea(art[1],art[2],art[3],art[4],art[5]);
+		    				pri.println("添加教师,true");
+		    				pri.flush();
+		    			}
+		    			
+		    		}
+		    	}
+		    }
+		   }catch(Exception e){
+			  e.printStackTrace();
+		  }
+		  
+	  }
+	}
+
+}

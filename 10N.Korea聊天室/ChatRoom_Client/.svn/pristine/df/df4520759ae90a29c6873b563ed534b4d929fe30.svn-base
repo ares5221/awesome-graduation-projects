@@ -1,0 +1,399 @@
+package com.sxt.swing;
+
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+
+import java.awt.Toolkit;
+import java.awt.Font;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
+import java.awt.event.ActionEvent;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeSelectionModel;
+
+import com.sxt.request.ConnectionServer;
+import com.sxt.util.FriTreeNode;
+import com.sxt.util.FriTreeRender;
+import com.sxt.windows.PicsMainJWindow;
+
+
+/**
+ * 聊天主窗口绘制
+ *
+ * @author pengLijun
+ */
+public class MainRoomSwing extends JFrame {
+
+    private JPanel contentPane;
+
+    private JLabel chatLabel;//聊天标签
+    private JLabel newsLabel;//公告标签
+    private JLabel historyLabel;//历史消息标签
+    private JPanel chatMessage;//聊天消息
+    private JButton fontButton;//字体设置
+    private JButton emojiButton;//表情
+    private JTextPane sendMessage;//发送消息
+    private JButton clearButton;//清空
+    private JButton sendButton;//发送
+    private JTree friendsTree;//我的好友
+    private FriTreeNode root;
+    private DefaultTreeModel jMode;
+    private  JScrollPane sendPane;
+    private JScrollPane messagePane;//聊天窗口
+	private static FriTreeNode node1=new  FriTreeNode("我的好友");
+	private static FriTreeNode node2=new FriTreeNode("离线好友");
+
+	
+	private PicsMainJWindow picsJWindow;
+	
+	
+    public static FriTreeNode getNode1() {
+		return node1;
+	}
+
+	public static void setNode1(FriTreeNode node1) {
+		MainRoomSwing.node1 = node1;
+	}
+
+	public static FriTreeNode getNode2() {
+		return node2;
+	}
+
+	public static void setNode2(FriTreeNode node2) {
+		MainRoomSwing.node2 = node2;
+	}
+
+	public JScrollPane getSendPane() {
+        return sendPane;
+    }
+
+    public void setSendPane(JScrollPane sendPane) {
+        this.sendPane = sendPane;
+    }
+
+    public JPanel getContentPane() {
+        return contentPane;
+    }
+
+
+    public FriTreeNode getRoot() {
+        return root;
+    }
+
+
+    public void setRoot(FriTreeNode root) {
+        this.root = root;
+    }
+
+
+    public JLabel getChatLabel() {
+        return chatLabel;
+    }
+
+
+    public void setChatLabel(JLabel chatLabel) {
+        this.chatLabel = chatLabel;
+    }
+
+
+    public JLabel getNewsLabel() {
+        return newsLabel;
+    }
+
+
+    public void setNewsLabel(JLabel newsLabel) {
+        this.newsLabel = newsLabel;
+    }
+
+
+    public JLabel getHistoryLabel() {
+        return historyLabel;
+    }
+
+
+    public void setHistoryLabel(JLabel historyLabel) {
+        this.historyLabel = historyLabel;
+    }
+
+
+
+
+
+    public JPanel getChatMessage() {
+		return chatMessage;
+	}
+
+	public void setChatMessage(JPanel chatMessage) {
+		this.chatMessage = chatMessage;
+	}
+
+	public JButton getFontButton() {
+        return fontButton;
+    }
+
+
+    public void setFontButton(JButton fontButton) {
+        this.fontButton = fontButton;
+    }
+
+
+    public JButton getEmojiButton() {
+        return emojiButton;
+    }
+
+
+    public void setEmojiButton(JButton emojiButton) {
+        this.emojiButton = emojiButton;
+    }
+
+
+    public JTextPane getSendMessage() {
+        return sendMessage;
+    }
+
+
+    public void setSendMessage(JTextPane sendMessage) {
+        this.sendMessage = sendMessage;
+    }
+
+
+    public JButton getClearButton() {
+        return clearButton;
+    }
+
+
+    public void setClearButton(JButton clearButton) {
+        this.clearButton = clearButton;
+    }
+
+
+    public JButton getSendButton() {
+        return sendButton;
+    }
+
+
+    public void setSendButton(JButton sendButton) {
+        this.sendButton = sendButton;
+    }
+
+
+    public JTree getFriendsTree() {
+        return friendsTree;
+    }
+
+
+    public void setFriendsTree(JTree friendsTree) {
+        this.friendsTree = friendsTree;
+    }
+
+
+    public JScrollPane getMessagePane() {
+        return messagePane;
+    }
+
+    public void setMessagePane(JScrollPane messagePane) {
+        this.messagePane = messagePane;
+    }
+
+    /**
+     * Create the frame.
+     */
+    public MainRoomSwing() {
+  //  	setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setBackground(new Color(95, 158, 160));
+        setFont(new Font("微软雅黑 Light", Font.PLAIN, 20));
+        setTitle("突击聊天室");
+        setIconImage(Toolkit.getDefaultToolkit().getImage(MainRoomSwing.class.getResource("/com/sxt/swing/images/imgp/weixiao.png")));
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 1001, 817);
+        contentPane = new JPanel();
+        contentPane.setBackground(new Color(95, 158, 160));
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+        contentPane.setLayout(null);
+        
+        messagePane=new JScrollPane();
+        messagePane.setBounds(0, 120, 700, 434);
+        chatMessage = new JPanel();
+        chatMessage.setLayout(new BoxLayout(chatMessage, BoxLayout.Y_AXIS));
+  //      chatMessage.setLayout(new BoxLayout(chatMessage, BoxLayout.Y_AXIS));
+ 
+ //       chatMessage.setEditable(false);
+ //       chatMessage.setFont(new Font("微软雅黑 Light", Font.PLAIN, 20));
+//        chatMessage.setBounds(0, 120, 700, 434);
+ //       chatMessage.setContentType("text/html");
+     
+        messagePane.setViewportView(chatMessage);
+        
+        contentPane.add(messagePane);
+
+        sendPane=new JScrollPane();
+        sendPane.setBounds(0, 604, 700, 95);
+        sendMessage = new JTextPane();
+        sendMessage.setFont(new Font("微软雅黑 Light", Font.PLAIN, 20));
+//        sendMessage.setBounds(0, 604, 700, 95);
+//        sendMessage.setContentType("text/html");
+        sendPane.setViewportView(sendMessage);
+        contentPane.add(sendPane);
+
+
+        fontButton = new JButton("A");
+
+        fontButton.setFont(new Font("Consolas", Font.PLAIN, 30));
+        fontButton.setBounds(0, 555, 77, 48);
+        fontButton.setBackground(new Color(95, 158, 160));
+        contentPane.add(fontButton);
+
+        emojiButton = new JButton("");
+        emojiButton.setIcon(new ImageIcon(MainRoomSwing.class.getResource("/com/sxt/swing/images/imgp/emoji.png")));
+        emojiButton.setFont(new Font("Consolas", Font.PLAIN, 30));
+        emojiButton.setBackground(new Color(95, 158, 160));
+        emojiButton.setBounds(76, 555, 77, 48);
+        contentPane.add(emojiButton);
+
+        JPanel panel = new JPanel();
+        panel.setBackground(new Color(255, 255, 255));
+        panel.setBounds(0, 0, 700, 76);
+        contentPane.add(panel);
+        panel.setLayout(null);
+
+        chatLabel = new JLabel("聊天");
+        chatLabel.setForeground(new Color(128, 128, 128));
+        chatLabel.setBackground(new Color(255, 255, 255));
+        chatLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        chatLabel.setFont(new Font("微软雅黑 Light", Font.BOLD, 30));
+        chatLabel.setBounds(15, 26, 81, 50);
+        panel.add(chatLabel);
+
+        newsLabel = new JLabel("公告");
+        newsLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        newsLabel.setForeground(Color.GRAY);
+        newsLabel.setFont(new Font("微软雅黑 Light", Font.BOLD, 30));
+        newsLabel.setBackground(Color.WHITE);
+        newsLabel.setBounds(94, 26, 81, 50);
+        panel.add(newsLabel);
+
+        JPanel panel_1 = new JPanel();
+        panel_1.setBounds(0, 76, 700, 45);
+        panel.add(panel_1);
+
+        historyLabel = new JLabel("查看聊天记录");
+        
+        historyLabel.setForeground(new Color(105, 105, 105));
+        historyLabel.setFont(new Font("宋体", Font.PLAIN, 30));
+        historyLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        historyLabel.setBounds(199, 78, 277, 41);
+        contentPane.add(historyLabel);
+
+        sendButton = new JButton("发送");
+        sendButton.setBackground(new Color(40, 96, 144));
+
+
+        sendButton.setFont(new Font("微软雅黑", Font.BOLD, 24));
+        sendButton.setBounds(545, 709, 145, 44);
+        contentPane.add(sendButton);
+
+        clearButton = new JButton("清空");
+        clearButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                sendMessage.setText(null);
+            }
+        });
+
+
+        clearButton.setFont(new Font("微软雅黑", Font.BOLD, 24));
+        clearButton.setBackground(new Color(40, 96, 144));
+        clearButton.setBounds(387, 709, 145, 44);
+        contentPane.add(clearButton);
+
+       
+        root = new FriTreeNode("好友");
+        jMode = new DefaultTreeModel(root);
+        friendsTree = new JTree(jMode);
+    	root.addchild(node1);
+		root.addchild(node2);
+        JScrollPane treePane=new JScrollPane();
+        treePane.setBounds(700, 0, 295, 777);
+		friendsTree.setCellRenderer(new FriTreeRender());
+        friendsTree.expandRow(1);
+        //字体的大小，样式
+        friendsTree.setFont(new Font("微软雅黑 Light", Font.PLAIN, 30));
+//        friendsTree.setBounds(700, 0, 295, 777);
+        friendsTree.putClientProperty("JTree.lineStyle", "Horizontal");// 将树设为水平分隔风格
+        friendsTree.setRowHeight(50);//树节点的高度
+        friendsTree.setToggleClickCount(1);
+        //设置一次自能选中一个节点
+        friendsTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+        friendsTree.setRootVisible(true);
+        friendsTree.setLargeModel(true);
+        friendsTree.setCellRenderer(new FriTreeRender());
+        treePane.setViewportView(friendsTree);
+        contentPane.add(treePane);
+
+        picsJWindow = new PicsMainJWindow(this);
+		
+		this.addComponentListener(new ComponentAdapter(){
+
+			@Override
+			public void componentResized(ComponentEvent e) {
+				picsJWindow.dispose();
+			}
+
+			@Override
+			public void componentMoved(ComponentEvent e) {
+				picsJWindow.dispose();
+			}
+
+			@Override
+			public void componentHidden(ComponentEvent e) {
+				picsJWindow.dispose();
+			}
+			
+		});
+		
+		this.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				try {
+					ConnectionServer.getSocket().close();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        
+     
+    }
+
+	/**
+	 * 插入图片
+	 * 
+	 * @param icon
+	 */
+	public void insertSendPic(ImageIcon imgIc) {
+		//sigleChatSwing.getSendText().setCaretPosition(docChat.getLength()); // 设置插入位置
+		sendMessage.insertIcon(imgIc); // 插入图片
+		System.out.print(imgIc.toString());
+		//insert(new FontAttrib()); // 这样做可以换行
+	}
+
+	public PicsMainJWindow getPicsJWindow() {
+		return picsJWindow;
+	}
+
+	public void setPicsJWindow(PicsMainJWindow picsJWindow) {
+		this.picsJWindow = picsJWindow;
+	}
+}

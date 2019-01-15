@@ -1,0 +1,23 @@
+package com.sxt.request;
+
+import java.net.Socket;
+/**
+ * 获得socket
+ * @author gabriel
+ *
+ */
+public class ConnectionServer {
+	private static Socket socket;
+	private ConnectionServer() {
+	}
+	
+	public static Socket getSocket() throws Exception {
+		if(socket==null){
+			socket=new Socket("192.168.143.50",8888);	
+			return socket;
+		}else{
+			 return socket;
+		}
+	}
+	
+}

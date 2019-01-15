@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<CourseView> 
+  <CourseUp> 
+    <student ID="201723"/>  
+    <student ID="201724"> 
+      <course ID="12"> 
+        <name>语文</name>  
+        <teacher ID="2225">王老师</teacher> 
+      </course>  
+      <course ID="13"> 
+        <name>英语</name>  
+        <teacher ID="2224">田老师</teacher> 
+      </course>  
+      <course ID="14"> 
+        <name>数学</name>  
+        <teacher ID="2223">李老师</teacher> 
+      </course> 
+    </student>  
+    <student ID="111111"> 
+      <course ID="12"> 
+        <name>语文</name>  
+        <teacher ID="2225">王老师</teacher> 
+      </course>  
+      <course ID="13"> 
+        <name>英语</name>  
+        <teacher ID="2224">田老师</teacher> 
+      </course>  
+      <course ID="14"> 
+        <name>数学</name>  
+        <teacher ID="2223">李老师</teacher> 
+      </course> 
+    </student>  
+    <student ID="222222"> 
+      <course ID="12"> 
+        <name>语文</name>  
+        <teacher ID="2225">王老师</teacher> 
+      </course>  
+      <course ID="13"> 
+        <name>英语</name>  
+        <teacher ID="2224">田老师</teacher> 
+      </course>  
+      <course ID="14"> 
+        <name>数学</name>  
+        <teacher ID="2223">李老师</teacher> 
+      </course> 
+    </student>  
+    <student ID="777777"> 
+      <course ID="13"> 
+        <name>英语</name>  
+        <teacher ID="2224">田老师</teacher> 
+      </course>  
+      <course ID="14"> 
+        <name>数学</name>  
+        <teacher ID="2223">李老师</teacher> 
+      </course>  
+      <course ID="22"> 
+        <name>22</name>  
+        <teacher ID="1111">a</teacher> 
+      </course>  
+      <course ID="23"> 
+        <name>23</name>  
+        <teacher ID="1111">a</teacher> 
+      </course>  
+      <course ID="33"> 
+        <name>33</name>  
+        <teacher ID="2222">a</teacher> 
+      </course>  
+      <course ID="32"> 
+        <name>32</name>  
+        <teacher ID="2222">a</teacher> 
+      </course> 
+    </student> 
+  </CourseUp>  
+  <CourseDown> 
+    <student ID="201723"> 
+      <course ID="12"> 
+        <name>语文</name>  
+        <teacher ID="2223">王老师</teacher> 
+      </course>  
+      <Course ID="13"> 
+        <name>英语</name>  
+        <teacher ID="2224">田老师</teacher> 
+      </Course>  
+      <Course ID="14"> 
+        <name>数学</name>  
+        <teacher ID="2223">李老师</teacher> 
+      </Course> 
+    </student>  
+    <student ID="201724"> 
+      <Course ID="12"> 
+        <name>语文</name>  
+        <teacher ID="2225">王老师</teacher> 
+      </Course>  
+      <Course ID="13"> 
+        <name>英语</name>  
+        <teacher ID="2224">田老师</teacher> 
+      </Course>  
+      <Course ID="14"> 
+        <name>数学</name>  
+        <teacher ID="2223">李老师</teacher> 
+      </Course> 
+    </student>  
+    <student ID="111111"> 
+      <Course ID="22"> 
+        <name>22</name>  
+        <teacher ID="1111">a</teacher> 
+      </Course>  
+      <Course ID="23"> 
+        <name>23</name>  
+        <teacher ID="1111">a</teacher> 
+      </Course> 
+    </student>  
+    <student ID="222222"> 
+      <Course ID="33"> 
+        <name>33</name>  
+        <teacher ID="2222">a</teacher> 
+      </Course>  
+      <Course ID="32"> 
+        <name>32</name>  
+        <teacher ID="2222">a</teacher> 
+      </Course> 
+    </student>  
+    <student ID="777777">
+      <Course ID="12">
+        <name>语文</name>
+        <teacher ID="2225">王老师</teacher>
+      </Course>
+    </student> 
+  </CourseDown> 
+</CourseView>

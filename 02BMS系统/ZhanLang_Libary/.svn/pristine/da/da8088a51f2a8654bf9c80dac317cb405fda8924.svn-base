@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<person size="10007"> 
+  <Users ID="001"> 
+    <user ID="10001"> 
+      <id>10001</id>  
+      <name>张涛</name>  
+      <userName>zhangtao001</userName>  
+      <password>1234</password>  
+      <sex>男</sex>  
+      <tel>16755890234</tel>  
+      <address>北京</address> 
+    </user>  
+    <user ID="10002"> 
+      <id>10002</id>  
+      <name>李四</name>  
+      <userName>lisi001</userName>  
+      <password>1234</password>  
+      <sex>男</sex>  
+      <tel>13446567668</tel>  
+      <address>上海</address> 
+    </user>  
+    <user ID="10003"> 
+      <id>10003</id>  
+      <name>李明</name>  
+      <userName>111</userName>  
+      <password>111</password>  
+      <sex>女</sex>  
+      <tel>1675520234</tel>  
+      <address>天津</address> 
+    </user>  
+    <user> 
+      <userName>Moses</userName>  
+      <password>110</password> 
+    </user>  
+    <user ID="10005"> 
+      <id>10005</id>  
+      <userName>Moses001</userName>  
+      <password>001</password> 
+    </user>  
+    <user ID="10006"> 
+      <id>10006</id>  
+      <userName>Moses002</userName>  
+      <password>1100</password> 
+    </user>  
+    <user ID="10007">
+      <id>10007</id>
+      <userName>zhangwei</userName>
+      <name>张炜</name>
+      <tel>178024311</tel>
+      <age>23</age>
+      <address>北京市</address>
+      <sex>男</sex>
+      <password>123</password>
+    </user>
+  </Users>  
+  <Managers ID="002"> 
+    <manager ID="00001"> 
+      <id>20001</id>  
+      <userName>王五</userName>  
+      <password>2345</password> 
+    </manager>  
+    <manager ID="00002"> 
+      <id>20002</id>  
+      <userName>刘能</userName>  
+      <password>2345</password> 
+    </manager> 
+  </Managers> 
+</person>

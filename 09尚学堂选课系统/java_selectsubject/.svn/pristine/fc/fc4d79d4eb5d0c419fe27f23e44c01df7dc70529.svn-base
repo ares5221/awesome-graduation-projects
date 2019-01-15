@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<CourseView> 
+  <CourseUp> 
+    <student ID="201723"> 
+      <course ID="14"> 
+        <name>数学</name>  
+        <teacher ID="2223">李老师</teacher>  
+        <maxNum>35</maxNum> 
+      </course> 
+    </student>  
+    <student ID="201724"> 
+      <course ID="13"> 
+        <name>英语</name>  
+        <teacher ID="2224">田老师</teacher>  
+        <maxNum>35</maxNum> 
+      </course>  
+      <course ID="12"> 
+        <name>语文</name>  
+        <teacher ID="2225">王老师</teacher>  
+        <maxNum>35</maxNum> 
+      </course> 
+    </student>  
+  
+  </CourseUp>  
+  <CourseDown> 
+    <student ID="201723"> 
+      <course ID="12"> 
+        <name>语文</name>  
+        <teacher ID="2223">王老师</teacher>  
+        <maxNum>35</maxNum> 
+      </course> 
+    </student> 
+  </CourseDown> 
+</CourseView>

@@ -1,0 +1,115 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.ManagerDAO;
+import zhanlang.DAO.Imple.ManagerDAOImple;
+import zhanlang.entity.User;
+
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+
+public class M_ModifyUserPwd extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField oldpass;
+	private JTextField newpass;
+	private JTextField newpass2;
+
+	/**
+	 * Create the frame.
+	 */
+	public M_ModifyUserPwd(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 431, 285);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton button_4 = new JButton("确认");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String oldPass=oldpass.getText();
+				String newPass=newpass.getText();
+				String newPass2=newpass2.getText();
+				
+				User user=new User(null,newPass);
+				ManagerDAO manager=new ManagerDAOImple();
+				JOptionPane.showConfirmDialog(null, "确认修改密码吗？");
+				Object object=manager.addUser("alterPassword", user);
+				if((boolean)object==true){
+					JOptionPane.showMessageDialog(null, "密码修改成功！");
+				}else{
+					JOptionPane.showMessageDialog(null, "密码修改失败，请重试！");
+				}
+				//处理完上一次提交的操作申请，应当将所有输入框置空
+				oldpass.setText("");
+				newpass.setText("");
+				newpass2.setText("");
+			}
+		});
+		button_4.setBackground(new Color(211, 211, 211));
+		button_4.setBounds(99, 199, 93, 23);
+		contentPane.add(button_4);
+		
+		JLabel label_2 = new JLabel("请输入原始密码 ：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_2.setBounds(80, 58, 133, 24);
+		contentPane.add(label_2);
+		
+		oldpass = new JTextField();
+		oldpass.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		oldpass.setColumns(10);
+		oldpass.setBounds(223, 59, 133, 21);
+		contentPane.add(oldpass);
+		
+		JLabel label_3 = new JLabel("请输入新的密码 ：");
+		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_3.setBounds(80, 102, 133, 24);
+		contentPane.add(label_3);
+		
+		newpass = new JTextField();
+		newpass.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		newpass.setColumns(10);
+		newpass.setBounds(223, 103, 133, 21);
+		contentPane.add(newpass);
+		
+		JLabel label_1 = new JLabel("请确认新的密码 ：");
+		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_1.setBounds(80, 144, 133, 24);
+		contentPane.add(label_1);
+		
+		newpass2 = new JTextField();
+		newpass2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		newpass2.setColumns(10);
+		newpass2.setBounds(223, 145, 133, 21);
+		contentPane.add(newpass2);
+		
+		JButton button = new JButton("返回");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.managerMenuFrame= new ManagerMenu();
+				Client.managerMenuFrame .setVisible(true);	
+				Client.mModifyUserPwdFrame.dispose();
+		}
+		});
+		button.setBackground(new Color(211, 211, 211));
+		button.setBounds(223, 199, 93, 23);
+		contentPane.add(button);
+	}
+}

@@ -1,0 +1,213 @@
+package com.bjsxt.utils;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.OutputFormat;
+import org.dom4j.io.SAXReader;
+import org.dom4j.io.XMLWriter;
+
+import com.bjsxt.entity.Course;
+import com.bjsxt.entity.Student;
+import com.bjsxt.entity.Teacher;
+
+/*
+ * 写一个工具类
+ */
+public class Utils {
+	
+	//解析所有的课程
+	public static List<Course> getAllCourse(){
+		List<Course> course=new ArrayList();
+		SAXReader saxReader = new SAXReader();
+		Document document;
+		try {
+			// 把xml文件转换成文档对象
+			document = saxReader.read("courseXML.xml");
+			// 取得根节点
+			Element rootNode = document.getRootElement();
+			//Element adms=rootNode.elementByID("3");
+			List<Element> list=rootNode.elements();
+			for(Element ele:list){
+				String id=ele.attributeValue("ID");
+				String name=ele.elementText("name");
+				String teacher=ele.elementText("teacher");
+				String teaId=ele.element("teacher").attributeValue("ID");
+				Course co=new Course(id, name, teacher,teaId);
+				course.add(co);
+			}
+		} catch (DocumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return course;
+		}
+	
+	
+	//修改user密码,ID判断用户类型，ID1用户个人ID，pw用户原密码，pw1用户修改后密码
+	public static String modifyPassword(String ID,String ID1,String pw,String pw1){
+		Element userType=null;
+		String type="";
+		String temp="";
+		//验证学生
+		if(Integer.parseInt(ID)==1){
+			
+			List<Student> stu=getUser(ID);
+			for(int i=0;i<stu.size();i++){
+				if(ID1.equals(stu.get(i).getID())&&pw.equals(stu.get(i).getPassword())){
+					type="student";
+					temp="true";
+					
+				}else{
+					temp="false";
+					
+				}
+			}
+			//验证教师
+		if(Integer.parseInt(ID)==2){
+				
+				List<Teacher> tea=getUser(ID);
+				for(int i=0;i<tea.size();i++){
+					if(ID1.equals(tea.get(i).getId())&&pw.equals(tea.get(i).getPassword())){
+						type="teacher";
+						temp="true";
+						
+					}else{
+						temp="false";
+						
+					}
+				}
+				//验证管理员
+		if(Integer.parseInt(ID)==3){
+					
+					List<String> adm=getUser(ID);
+					
+						if(ID1.equals(adm.get(0))&&pw.equals(tea.get(2))){
+							type="admin";
+							temp="true";
+							
+						}else{
+							temp="false";
+							
+						}
+		}
+			//获取Document对象,并修改密码
+			SAXReader reader=new SAXReader();
+			try {
+				Document doc=reader.read(new File("userXML.xml"));
+				//获取根节点
+				Element root=doc.getRootElement();
+				 userType=root.elementByID(ID);
+				Element user=userType.element(type);
+				Element password=user.element("password");
+				password.setText(pw1);
+			}catch(DocumentException e) {
+				e.printStackTrace();
+			}	
+		}
+		
+		}
+			return temp;
+	}
+	
+	
+	
+	
+	//根据传入id解析相应user
+	public static List getUser(String ID){
+		SAXReader saxReader = new SAXReader();
+		Document document;
+		
+		try{
+			document = saxReader.read("userXML.xml");
+			// 取得根节点
+			Element rootNode = document.getRootElement();
+		if(Integer.parseInt(ID)==1){
+			Element student=rootNode.elementByID("1");
+			List<Student> students=new ArrayList();
+			List<Element> list=student.elements();
+			for(Element ele:list){
+				String id=ele.attributeValue("ID");
+				String name=ele.elementText("name");
+				String password=ele.elementText("password");
+				String age=ele.elementText("age");
+				String sex=ele.elementText("sex");
+				Student co=new Student(id, name, password,age, sex);
+				students.add(co);
+			}
+			return students;
+			
+		}
+		if(Integer.parseInt(ID)==2){
+			Element teacher=rootNode.elementByID("2");
+			List<Teacher> teachers=new ArrayList();
+			List<Element> list=teacher.elements();
+			for(Element ele:list){
+				String id=ele.attributeValue("ID");
+				String name=ele.elementText("name");
+				String password=ele.elementText("password");
+				String age=ele.elementText("age");
+				String sex=ele.elementText("sex");
+				String course=ele.elementText("course");
+				Teacher co=new Teacher(id, name, password,age, sex,course);
+				teachers.add(co);
+			}
+			return teachers;
+			
+		}
+		if(Integer.parseInt(ID)==3){
+			Element Admins=rootNode.elementByID("3");
+			List<String> admins=new ArrayList();
+			List<Element> list=Admins.elements();
+			for(Element ele:list){
+				String id=ele.attributeValue("ID");
+				String name=ele.elementText("name");
+				String password=ele.elementText("password");
+				admins.add(id);
+				admins.add(name);
+				admins.add(password);
+				
+			}
+			return admins;
+			
+		}
+		
+		}catch(DocumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		
+		
+		
+		
+	}
+		//将解析的xml重新写到文件中
+		 public static void ToXml(File file,Document doc) {
+			 try {
+				FileOutputStream out=new FileOutputStream(file);
+				OutputFormat format = OutputFormat.createPrettyPrint();
+				format.setEncoding("utf-8");
+				XMLWriter write=new XMLWriter(out, format);
+				write.write(doc);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		 }
+}

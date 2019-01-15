@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book ID="10001">
+	    <image></image>
+	    <bookID>10001</bookID>
+		<bname>三国演义</bname>
+		<author>罗贯中</author>
+		<press>新华出版社</press>
+		<borrow>null</borrow>
+		<type>小说</type>
+		<inTime>2017-06-01</inTime>
+		<outTime>null</outTime>
+	</book>
+	
+	<book ID="10002">
+		<image></image>
+		<bookID>10002</bookID>
+		<bname>水浒传</bname>
+		<author>罗贯中</author>
+		<press>新华出版社</press>
+		<inTime>2017-06-01</inTime>
+		<type>心理</type>
+		<borrow>null</borrow>
+		<outTime>null</outTime>
+	</book>
+	
+	<book ID="10003">
+		<image></image>
+		<bookID>10003</bookID>
+		<bname>红楼梦</bname>
+		<author>罗贯中</author>
+		<press>新华出版社</press>
+		<inTime>2017-06-01</inTime>
+		<type>小说</type>
+		<borrow>null</borrow>
+		<outTime>null</outTime>
+	</book>
+
+</books>

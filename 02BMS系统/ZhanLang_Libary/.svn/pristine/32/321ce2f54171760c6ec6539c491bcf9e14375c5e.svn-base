@@ -1,0 +1,95 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Color;
+
+public class M_DeleteBook extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField deleteId1;
+	private JTextField deleteId2;
+	private static M_DeleteBook frame= new M_DeleteBook() ;
+
+
+	/**
+	 * Create the frame.
+	 */
+	public M_DeleteBook(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 815, 468);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label_1 = new JLabel("请输入要删除的图书编号 ：");
+		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_1.setBounds(224, 167, 173, 24);
+		contentPane.add(label_1);
+		
+		deleteId1 = new JTextField();
+		deleteId1.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		deleteId1.setBounds(407, 169, 159, 21);
+		contentPane.add(deleteId1);
+		deleteId1.setColumns(10);
+		
+		JButton button_4 = new JButton("删除");
+		button_4.setBackground(new Color(211, 211, 211));
+		button_4.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String id=deleteId1.getText();
+			}
+		});
+		button_4.setBounds(278, 276, 93, 23);
+		contentPane.add(button_4);
+		
+		JLabel label_2 = new JLabel("请确认要删除的图书编号 ：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_2.setBounds(224, 212, 173, 24);
+		contentPane.add(label_2);
+		
+		deleteId2 = new JTextField();
+		deleteId2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		deleteId2.setColumns(10);
+		deleteId2.setBounds(407, 214, 159, 21);
+		contentPane.add(deleteId2);
+		
+		JButton button = new JButton("返回");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.managerMenuFrame = new ManagerMenu();
+				Client.managerMenuFrame.setVisible(true);	
+				Client.mDeleteBookFrame.dispose();
+			}
+		});
+		button.setBackground(new Color(211, 211, 211));
+		button.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		button.setBounds(413, 276, 93, 23);
+		contentPane.add(button);
+		
+		JLabel label = new JLabel("删除图书");
+		label.setFont(new Font("Dialog", Font.BOLD, 25));
+		label.setBounds(312, 54, 214, 103);
+		contentPane.add(label);
+		
+		JLabel label_3 = new JLabel("");
+		label_3.setIcon(new ImageIcon(M_DeleteBook.class.getResource("/bgimg/timg (21).jpg")));
+		label_3.setBounds(0, 0, 799, 429);
+		contentPane.add(label_3);
+	}
+}

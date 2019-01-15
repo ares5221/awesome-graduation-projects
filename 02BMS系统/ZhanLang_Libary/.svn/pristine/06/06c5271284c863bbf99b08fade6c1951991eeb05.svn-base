@@ -1,0 +1,101 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+
+public class M_ModifyUserPwd extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField;
+	private static M_ModifyUserPwd frame= new M_ModifyUserPwd();
+
+
+	/**
+	 * Create the frame.
+	 */
+	public M_ModifyUserPwd(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 815, 468);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton button_4 = new JButton("确认");
+		button_4.setBackground(new Color(211, 211, 211));
+		button_4.setBounds(293, 306, 93, 23);
+		contentPane.add(button_4);
+		
+		JLabel label_2 = new JLabel("请输入原始密码 ：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_2.setBounds(268, 148, 133, 24);
+		contentPane.add(label_2);
+		
+		textField_1 = new JTextField();
+		textField_1.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		textField_1.setColumns(10);
+		textField_1.setBounds(411, 150, 133, 21);
+		contentPane.add(textField_1);
+		
+		JLabel label_3 = new JLabel("请输入新的密码 ：");
+		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_3.setBounds(269, 201, 133, 24);
+		contentPane.add(label_3);
+		
+		textField_2 = new JTextField();
+		textField_2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		textField_2.setColumns(10);
+		textField_2.setBounds(411, 203, 133, 21);
+		contentPane.add(textField_2);
+		
+		JLabel label_1 = new JLabel("请确认新的密码 ：");
+		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_1.setBounds(268, 250, 133, 24);
+		contentPane.add(label_1);
+		
+		textField = new JTextField();
+		textField.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		textField.setColumns(10);
+		textField.setBounds(411, 252, 133, 21);
+		contentPane.add(textField);
+		
+		JButton button = new JButton("返回");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LoginMenu.newManagerMenuFrame = new ManagerMenu();
+				LoginMenu.newManagerMenuFrame .setVisible(true);	
+				ManagerMenu.modifyFrame.dispose();
+			}
+		});
+		button.setBackground(new Color(211, 211, 211));
+		button.setBounds(418, 306, 93, 23);
+		contentPane.add(button);
+		
+		JLabel label_4 = new JLabel("修改密码");
+		label_4.setFont(new Font("Dialog", Font.BOLD, 25));
+		label_4.setBounds(347, 48, 164, 85);
+		contentPane.add(label_4);
+		
+		JLabel label = new JLabel("");
+		label.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label.setIcon(new ImageIcon(M_ModifyUserPwd.class.getResource("/bgimg/timg (21).jpg")));
+		label.setBounds(0, 0, 799, 429);
+		contentPane.add(label);
+	}
+}

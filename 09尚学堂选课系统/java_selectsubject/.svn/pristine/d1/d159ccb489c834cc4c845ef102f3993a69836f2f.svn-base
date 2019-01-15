@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<User> 
+  <Students ID="1"> 
+    <student ID="201723"> 
+      <name>张三</name>  
+      <password>1234</password>  
+      <age>22</age>  
+      <sex>男</sex> 
+    </student>  
+    <student ID="201724"> 
+      <name>王五</name>  
+      <password>4567</password>  
+      <age>24</age>  
+      <sex>女</sex> 
+    </student> 
+  </Students>  
+  <Teachers ID="2"> 
+    <teacher ID="2223"> 
+      <name>李老师</name>  
+      <password>1234</password>  
+      <age>32</age>  
+      <sex>男</sex>  
+      <course>aaaa</course> 
+    </teacher>  
+    <teacher ID="2224"> 
+      <name>田老师</name>  
+      <password>4567</password>  
+      <age>22</age>  
+      <sex>女</sex>  
+      <course>英语</course> 
+    </teacher>  
+    <teacher ID="2225"> 
+      <name>王老师</name>  
+      <password>6789</password>  
+      <age>25</age>  
+      <sex>女</sex>  
+      <course>语文</course> 
+    </teacher>  
+    <teacher ID="9999"> 
+      <name>aaaa</name>  
+      <password>aaaa</password>  
+      <age>99</age>  
+      <sex>m</sex>  
+      <course>99</course> 
+    </teacher>  
+    <teacher ID="4444"> 
+      <name>aaaa</name>  
+      <password>aaaa</password>  
+      <age>44</age>  
+      <sex>m</sex>  
+      <course>暂无课程</course> 
+    </teacher> 
+  </Teachers>  
+  <Admins ID="3"> 
+    <admin ID="33"> 
+      <name>admin</name>  
+      <password>1234</password> 
+    </admin> 
+  </Admins> 
+</User>

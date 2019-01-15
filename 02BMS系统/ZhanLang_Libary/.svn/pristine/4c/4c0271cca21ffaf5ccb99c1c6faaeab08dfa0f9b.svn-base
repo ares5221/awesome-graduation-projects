@@ -1,0 +1,176 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import org.omg.Messaging.SyncScopeHelper;
+
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JList;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+
+public class ManagerMenu extends JFrame {
+
+	private JPanel contentPane;
+	static ManagerMenu frame= new ManagerMenu();
+	static M_AddBook newFrame;
+	static M_DeleteBook deleteFrame;
+	static M_AddUser adduserwFrame;
+	static M_DeleteUser deleteuserFrame;
+	static M_ModifyUserPwd modifyFrame;
+	private LoginMenu loginFrame;
+	
+
+	/**
+	 * Launch the application.
+	 */
+	/*public static void main(String[] args) {
+		System.out.println("这是主方法");
+		EventQueue.invokeLater(new Runnable() {
+			
+			public void run() {
+				System.out.println("这是主方法线程");
+				try {
+					System.out.println("这是主方法线程");
+					frame = new ManagerMenu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}*/
+
+	/**
+	 * Create the frame.
+	 */
+	public ManagerMenu() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 815, 468);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnNewButton = new JButton("添加用户");
+		btnNewButton.setBackground(new Color(211, 211, 211));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				adduserwFrame = new M_AddUser();
+				adduserwFrame.setVisible(true);	
+				LoginMenu.newManagerMenuFrame.dispose();
+			}
+		});
+		btnNewButton.setBounds(-1, 225, 93, 23);
+		contentPane.add(btnNewButton);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(676, 10, 93, 77);
+		contentPane.add(label);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setText("显示借出图书信息");
+		textArea.setBounds(184, 97, 564, 242);
+		contentPane.add(textArea);
+		
+		JLabel lblNewLabel = new JLabel("------>用 户 管 理");
+		lblNewLabel.setFont(new Font("黑体", Font.BOLD, 15));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(-14, 191, 165, 15);
+		contentPane.add(lblNewLabel);
+		
+		JButton button = new JButton("删除用户");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				deleteuserFrame = new M_DeleteUser();
+				deleteuserFrame.setVisible(true);	
+				LoginMenu.newManagerMenuFrame.dispose();
+			}
+		});
+		button.setBackground(new Color(211, 211, 211));
+		button.setBounds(-1, 258, 93, 23);
+		contentPane.add(button);
+		
+		JButton button_1 = new JButton("修改密码");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				modifyFrame = new M_ModifyUserPwd();
+				modifyFrame.setVisible(true);	
+				LoginMenu.newManagerMenuFrame.dispose();
+			}
+		});
+		button_1.setBackground(new Color(211, 211, 211));
+		button_1.setBounds(-1, 291, 93, 23);
+		contentPane.add(button_1);
+		
+		JButton button_2 = new JButton("添加图书");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				newFrame = new M_AddBook();
+				newFrame.setVisible(true);	
+				LoginMenu.newManagerMenuFrame.dispose();
+			}
+		});
+		button_2.setBackground(new Color(211, 211, 211));
+		button_2.setBounds(-1, 114, 93, 23);
+		contentPane.add(button_2);
+		
+		JButton button_3 = new JButton("删除图书");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				deleteFrame = new M_DeleteBook();
+				deleteFrame.setVisible(true);	
+				LoginMenu.newManagerMenuFrame.dispose();
+			}
+		});
+		button_3.setBackground(new Color(211, 211, 211));
+		button_3.setBounds(-1, 147, 93, 23);
+		contentPane.add(button_3);
+		
+		JLabel label_1 = new JLabel("------>图 书 管 理");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setFont(new Font("黑体", Font.BOLD, 15));
+		label_1.setBounds(-14, 80, 165, 15);
+		contentPane.add(label_1);
+		
+		JButton button_4 = new JButton("退出登录");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				loginFrame = new LoginMenu();	
+				loginFrame.setVisible(true);	
+				LoginMenu.newManagerMenuFrame.dispose();
+			}
+		});
+		button_4.setBackground(new Color(211, 211, 211));
+		button_4.setBounds(-1, 324, 93, 23);
+		contentPane.add(button_4);
+		
+		JButton button_5 = new JButton("退出程序");
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		button_5.setBackground(new Color(211, 211, 211));
+		button_5.setBounds(-1, 357, 93, 23);
+		contentPane.add(button_5);
+		
+		JLabel label_2 = new JLabel("");
+		label_2.setIcon(new ImageIcon(ManagerMenu.class.getResource("/bgimg/timg (21).jpg")));
+		label_2.setBounds(-1, 0, 800, 430);
+		contentPane.add(label_2);
+	}
+}

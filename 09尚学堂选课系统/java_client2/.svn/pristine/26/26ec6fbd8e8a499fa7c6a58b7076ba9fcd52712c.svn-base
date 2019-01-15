@@ -1,0 +1,181 @@
+package com.bjsxt.swing;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import com.bjsxt.service.Service;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.awt.event.ActionEvent;
+import java.awt.TextArea;
+import javax.swing.JComboBox;
+
+public class Teacher extends JFrame implements ActionListener{
+
+	private Socket socket;
+	private PrintWriter pw;
+	private BufferedReader br;
+	
+	
+	
+	private JPanel contentPane;
+	private JButton buttonAddCourse;
+	private JButton buttonPersonalInfo;
+	private JButton buttonMyStudents;
+	private JTextField textID;
+	private JTextField textName;
+	private JTextField textTeacher;
+	private JTextField textMaxNum;
+	private TextArea textArea;
+	
+	public Teacher(Socket s) {
+		socket = s;
+		try {
+			pw = new PrintWriter(this.socket.getOutputStream());
+			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
+		final ImageIcon myimage=new ImageIcon("p/主界面.jpg");
+	    final Image image=myimage.getImage();
+	    final ImageIcon myimage2=new ImageIcon("p/2.jpg");
+	    final Image image2=myimage2.getImage();
+	    Graphics g;
+		
+		setBounds(100, 100, 574, 609);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		 buttonAddCourse = new JButton("添加课程");
+		buttonAddCourse.setBounds(381, 100, 161, 43);
+		buttonAddCourse.addActionListener(this);
+		contentPane.add(buttonAddCourse);
+		
+		textID=new JTextField();
+		textID.setBounds(300, 13, 80, 20);
+		contentPane.add(textID);
+		JLabel label_1 = new JLabel("课程ID");
+		label_1.setBounds(230, 13, 68, 18);
+		contentPane.add(label_1);
+		
+		textName=new JTextField();
+		textName.setBounds(300, 38, 80, 20);
+		contentPane.add(textName);
+		JLabel label_2 = new JLabel("课程名称");
+		label_2.setBounds(230, 38, 68, 18);
+		contentPane.add(label_2);
+		
+		textTeacher=new JTextField();
+		textTeacher.setBounds(300, 63, 80, 20);
+		contentPane.add(textTeacher);
+		JLabel label_3 = new JLabel("授课教师");
+		label_3.setBounds(230, 63, 68, 18);
+		contentPane.add(label_3);
+		
+		textMaxNum=new JTextField();
+		textMaxNum.setBounds(300, 88, 80, 20);
+		contentPane.add(textMaxNum);
+		JLabel label_4 = new JLabel("容纳人数");
+		label_4.setBounds(230, 88, 68, 18);
+		contentPane.add(label_4);
+		
+		 buttonPersonalInfo = new JButton("查看个人信息");
+		buttonPersonalInfo.addActionListener(this);
+		buttonPersonalInfo.setBounds(10, 111, 161, 43);
+		contentPane.add(buttonPersonalInfo);
+		
+		 textArea = new TextArea();
+		textArea.setBounds(10, 248, 532, 236);
+		contentPane.add(textArea);
+		
+		 buttonMyStudents = new JButton("我的学生");
+		buttonMyStudents.addActionListener(this);
+		buttonMyStudents.setBounds(10, 13, 133, 43);
+		contentPane.add(buttonMyStudents);
+		
+		JLabel labelP = new JLabel(){
+			public void paint(Graphics g){
+	               g.drawImage(image2, 0, 0,this.getWidth(),this.getHeight(),null);
+	           }
+		};
+		labelP.setBounds(345, 0, 211, 178);
+		contentPane.add(labelP);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(10, 188, 203, 24);
+		contentPane.add(label);
+		
+		
+		new Thread(new InfoListener()).start();
+	}
+
+	public void sendAddCourse() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("添加课程,");
+		sb.append(textID.getText()+",");
+		sb.append(textName.getText()+",");
+		sb.append(textTeacher.getText()+",");
+		sb.append(textMaxNum.getText());
+		Service.send(pw, sb.toString());
+	}
+	
+	private class InfoListener implements Runnable {
+
+		@Override
+		public void run() {
+			while (true) {
+				judgeTeacher(Service.listen(br));
+			}
+		}
+		private void judgeTeacher(String str) {
+			// TODO
+			if (str.startsWith("教师个人信息"))
+				textArea.append("=======教师个人信息=======\n" + dealInfo(str)+"\n");
+			if (str.startsWith("所有学生"))
+				textArea.append("=======所有学生=======\n" + dealInfo(str)+"\n");
+			if (str.startsWith("添加课程")) {
+				if ("true".equals(dealInfo(str)))
+					JOptionPane.showMessageDialog(null, "添加成功", "添加课程", JOptionPane.ERROR_MESSAGE);
+				else
+					JOptionPane.showMessageDialog(null, "添加失败", "添加课程", JOptionPane.ERROR_MESSAGE);
+			}
+		}
+
+		private String dealInfo(String str) {
+			String[] sArr = str.split(",");
+			return sArr[1];
+		}
+	}
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+		if(ae.getSource()==buttonAddCourse)
+			sendAddCourse();
+		if(ae.getSource()==buttonPersonalInfo)
+			Service.send(pw, "教师个人信息");
+		if(ae.getSource()==buttonMyStudents)
+			Service.send(pw, "所有学生");
+	}
+
+
+
+
+}

@@ -1,0 +1,161 @@
+package com.bjsxt.service;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.PrintWriter;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.border.EmptyBorder;
+
+import com.bjsxt.client.Regex;
+
+	public class ServiceModify extends JFrame implements ActionListener {
+		private boolean flag;
+		private JPanel contentPane;
+		private JLabel showOldPW;
+		private JPasswordField oldPW;
+		private JLabel PWRegex;
+		private JLabel showNewPW;
+		private JPasswordField newPW;
+		private JLabel doublePWRegex;
+		private JButton buttonOldPW;
+		private JButton buttonSubmit;
+		private PrintWriter pw;
+		private Regex regex = new Regex();
+
+		public boolean isFlag() {
+			return flag;
+		}
+		public void setFlag(boolean flag) {
+			this.flag = flag;
+		}
+		
+		public ServiceModify(PrintWriter pw) {
+			this.pw=pw;
+			
+			double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		     double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+		     int x=(int)(width-500)/2;
+		     int y=(int)(height-310)/2;
+			setBounds(x, y, 500, 310);
+			contentPane = new JPanel();
+			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+			setContentPane(contentPane);
+			contentPane.setLayout(null);
+
+			buttonSubmit = new JButton("确定");
+			buttonSubmit.setBounds(100, 180, 80, 20);
+			buttonSubmit.addActionListener(this);
+			contentPane.add(buttonSubmit);
+			
+			buttonOldPW = new JButton("验证旧密码");
+			buttonOldPW.setBounds(100, 70, 100, 20);
+			buttonOldPW.addActionListener(this);
+			contentPane.add(buttonOldPW);
+
+			  showOldPW=new JLabel("密码");
+			 showOldPW.setBounds(20, 30, 150, 30);
+			 showOldPW.setFont(new Font("微软雅黑", 1, 16));
+			contentPane.add(showOldPW);
+			
+			  oldPW=new JPasswordField();
+			  oldPW.setBounds(90, 30, 135, 30);
+			contentPane.add(oldPW);
+			
+			  PWRegex=new JLabel("");
+			 PWRegex.setBounds(250, 30, 150, 30);
+			 PWRegex.setFont(new Font("新宋体", 1, 14));
+			contentPane.add(PWRegex);
+			
+			 showNewPW=new JLabel("二次输入");
+			 showNewPW.setFont(new Font("微软雅黑", 1, 16));
+			 showNewPW.setBounds(20, 100, 150, 30);
+			contentPane.add(showNewPW);
+			
+			  newPW=new JPasswordField();
+			  newPW.setBounds(90, 100, 135, 30);
+			contentPane.add(newPW);
+			
+			  doublePWRegex=new JLabel("");
+			  doublePWRegex.setBounds(250, 100, 150, 30);
+			  doublePWRegex.setFont(new Font("新宋体", 1, 14));
+			contentPane.add(doublePWRegex);
+			
+			new Thread(new PWRegex()).start();
+
+		}
+			public void sendModifyOldPW() {
+				StringBuilder sb = new StringBuilder();
+				sb.append("修改旧密码,");
+				sb.append(oldPW.getPassword());
+				Service.send(pw, sb.toString());
+			}
+			public void sendSetNewPW() {
+				StringBuilder sb = new StringBuilder();
+				sb.append("设置新密码,");
+				sb.append(newPW.getPassword());
+				Service.send(pw, sb.toString());
+			}
+			/*
+			 * 登录界面的校正线程
+			 * 每0.5秒判定一次
+			 */
+			private class PWRegex implements Runnable {
+				@Override
+				public void run() {
+					while (true) {
+						regex();
+						try {
+							Thread.sleep(500);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+
+			}
+
+			public void regex() {
+				
+				if (!(regex.passwordRegex(String.valueOf(oldPW.getPassword())))) {
+					PWRegex.setForeground(Color.RED);
+					PWRegex.setText("密码4-10位数字");
+				} else {
+					PWRegex.setForeground(Color.GREEN);
+					PWRegex.setText("密码格式正确");
+				}
+				
+				if (!String.valueOf(oldPW.getPassword()).equals(String.valueOf(newPW.getPassword()))) {
+					doublePWRegex.setForeground(Color.RED);
+					doublePWRegex.setText("两次密码不一致");
+				} else {
+					doublePWRegex.setForeground(Color.GREEN);
+					doublePWRegex.setText("两次密码一致");
+				}
+			}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(e.getSource()==buttonOldPW&&!flag&&Color.GREEN.equals(PWRegex.getForeground()))
+			{
+				sendModifyOldPW();
+				oldPW.setText("");
+			}
+			
+			if(e.getSource()==buttonSubmit&&flag&&Color.GREEN.equals(PWRegex.getForeground())&&Color.GREEN.equals(doublePWRegex.getForeground()))
+			{
+				sendSetNewPW();
+				oldPW.setText("");
+			}
+			else if(e.getSource()==buttonSubmit&&!flag)
+				JOptionPane.showMessageDialog(null, "请先输入旧密码", "修改密码", JOptionPane.ERROR_MESSAGE);
+		}
+	}

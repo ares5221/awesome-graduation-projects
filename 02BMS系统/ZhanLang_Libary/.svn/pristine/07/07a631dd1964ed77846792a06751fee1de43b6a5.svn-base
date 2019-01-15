@@ -1,0 +1,118 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.ManagerDAO;
+import zhanlang.DAO.Imple.ManagerDAOImple;
+import zhanlang.entity.Book;
+import zhanlang.entity.User;
+
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+
+public class M_DeleteUser extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField deleteUser1;
+	private JTextField deleteUser2;
+
+	/**
+	 * Create the frame.
+	 */
+	public M_DeleteUser(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 815, 468);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label_1 = new JLabel("请输入要删除的用户账号：");
+		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_1.setBounds(247, 174, 164, 24);
+		contentPane.add(label_1);
+		
+		deleteUser1 = new JTextField();
+		deleteUser1.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		deleteUser1.setBounds(409, 176, 164, 21);
+		contentPane.add(deleteUser1);
+		deleteUser1.setColumns(10);
+		
+		JButton button_4 = new JButton("删除");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//获取输入框内容
+				String userName =deleteUser1.getText();
+				String command=new String("deleteUser");
+				User user=new User();
+				user.setUserName(userName);
+				ManagerDAO manager=new ManagerDAOImple();
+				Object object=manager.deleteUser(command, user);
+				if((boolean)object==true){
+					JOptionPane.showMessageDialog(null, "用户删除成功！");
+				//处理完上一次提交的操作申请，应当将输入框置空
+				deleteUser1.setText("");	
+				deleteUser2.setText("");	
+					
+				}else{
+					JOptionPane.showMessageDialog(null, "用户删除失败，请重试！");
+					
+				}
+				
+					
+			}
+		});
+		button_4.setBackground(new Color(211, 211, 211));
+		button_4.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		button_4.setBounds(291, 318, 93, 23);
+		contentPane.add(button_4);
+		
+		JLabel label_2 = new JLabel("请确认要删除的用户账号：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_2.setBounds(247, 241, 156, 24);
+		contentPane.add(label_2);
+		
+		deleteUser2 = new JTextField();
+		deleteUser2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		deleteUser2.setColumns(10);
+		deleteUser2.setBounds(409, 243, 164, 21);
+		contentPane.add(deleteUser2);
+		
+		JLabel label_3 = new JLabel("删除用户");
+		label_3.setFont(new Font("Dialog", Font.BOLD, 25));
+		label_3.setBounds(335, 60, 164, 85);
+		contentPane.add(label_3);
+		
+		JButton button = new JButton("返回");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.managerMenuFrame = new ManagerMenu();
+				Client.managerMenuFrame.setVisible(true);	
+				Client.mDeleteUserFrame.dispose();
+			}
+		});
+		button.setBackground(new Color(211, 211, 211));
+		button.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		button.setBounds(439, 318, 93, 23);
+		contentPane.add(button);
+		
+		JLabel label_4 = new JLabel("");
+		label_4.setIcon(new ImageIcon(M_DeleteUser.class.getResource("/bgimg/timg (21).jpg")));
+		label_4.setBounds(0, 0, 799, 429);
+		contentPane.add(label_4);
+	}
+}

@@ -1,0 +1,244 @@
+package com.sxt.server;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+
+import com.sxt.server.swing.ServerSwing;
+import com.sxt.service.ServersOparate;
+import com.sxt.vo.TransMsg;
+import com.sxt.vo.Users;
+
+public class Server {
+	private static TransMsg buff;
+	private static ServerSwing swing;
+	private static ArrayList<Users> list;
+	private static String FG=">>>>\t";
+	public Server() {
+		ServerSocket server = null;
+		try {
+			server = new ServerSocket(8888);
+		} catch (IOException e1) {
+			toCmd("服务器启动失败"+FG+e1.getMessage());
+			e1.printStackTrace();
+		}
+		Server.toCmd("---------------突击聊天室----------------");
+		Server.toCmd("Server Port"+FG+server.getLocalSocketAddress());
+		//Server server2=new Server();
+		//主线程负责所有的客户端连接
+		while(true){
+			Socket socket = null;
+			try {
+				socket = server.accept();
+				toCmd(socket.getRemoteSocketAddress().toString());
+			} catch (IOException e) {
+				toCmd(e.getMessage());
+				e.printStackTrace();
+			}
+			Server.toCmd("Somebody Connection"+FG+socket.toString());
+			new Thread(new Recv(socket)).start();
+			new Thread(new Send(socket)).start();
+		}
+	}
+	
+	static{
+		swing=new ServerSwing();
+		list=new ArrayList<>();
+	}
+	private static void toCmd(String s){
+		swing.getCommandMsg().insert((s+"\r\n"), 0);;
+	}
+	//=new TransMsg("test", new Users("888", "888", "888",1));//注意公共数据区必须是全局的唯一
+	
+	//接收信息---------------------------------------------------
+	static class Recv implements Runnable{
+		private Socket socket;
+		
+		public Recv(Socket socket){
+			this.socket=socket;
+		}
+		@Override
+		public void run() {
+			
+			try{
+			
+			while(true){
+				ObjectInputStream oips = new ObjectInputStream(this.socket.getInputStream());
+				buff =(TransMsg) oips.readObject();
+				toCmd("Request"+FG+buff.toString());
+//				synchronized (socket) {
+//					socket.notifyAll();
+//					
+//				}
+				wakeRespon();
+				wakeChat();
+				
+			}
+			}catch(Exception e){
+				
+			}
+		}
+		
+		
+	}
+	
+	//发送信息----------------------------------------------------
+	static class Send implements Runnable{
+		private Socket socket;
+		
+		public Send(Socket socket){
+			this.socket=socket;
+		}
+		@Override
+		public void run() {
+			try{
+			while(true){
+//					synchronized (socket) {
+//						socket.wait();
+//					}
+//				if("chat".equals(buff.getFunction())){
+//					waitChat();
+//					
+//				}
+				waitRespon();
+					ObjectOutput oops = new ObjectOutputStream(this.socket.getOutputStream());
+					String function=buff.getFunction();
+		//根据函数执行功能
+					switch (function) {
+					case "login": 
+					{
+						
+						TransMsg msg4=ServersOparate.checkUser(buff);
+						Users users=(Users) msg4.getMsg();
+						if(users!=null) {
+							ServersOparate.addOnlineUsers(list, users);
+							Server.toCmd("Add A User To List"+FG+users);
+							Server.toCmd("ListSize"+FG+list.size());
+							}
+						oops.writeObject(msg4);
+						Server.toCmd("Response login"+FG+msg4);
+					}
+						break;
+					case "regist":
+					{
+						TransMsg msg3=ServersOparate.registerUser(buff);
+						oops.writeObject(msg3);
+						Server.toCmd("Response regist"+FG+msg3);
+					}
+						break;
+					case "UsersList":
+						
+					{
+						TransMsg msg1=new TransMsg("UsersList", list);
+						//TransMsg msg1=ServersOparate.adminShowAllUsers();
+						oops.writeObject(msg1);
+						Server.toCmd("Response UsersList"+FG+msg1);
+					}
+						break;
+					case "Admin-ShowAllUsers":
+					{
+						TransMsg msg2=ServersOparate.adminShowAllUsers();
+						oops.writeObject(msg2);
+						Server.toCmd("Response Admin-ShowAllUsers"+FG+msg2);
+					}
+						break;
+					//管理员删除用户
+					case "Admin-DeleteUsers":
+					{
+						TransMsg msg5=ServersOparate.delUser(buff);
+						oops.writeObject(msg5);
+						Server.toCmd("Response Admin-DeleteUsers"+FG+msg5);
+					}
+					case "Admin-FindUser":
+					{
+						TransMsg msg6=ServersOparate.AdminCheckUser(buff);
+						oops.writeObject(msg6);
+						Server.toCmd("Response Admin-FindUser"+FG+msg6);
+					}break;
+					case "Admin-ModifyUser":
+					{
+						TransMsg msg6=ServersOparate.AdminModifyUser(buff);
+						oops.writeObject(msg6);
+					}break;
+					case "Admin-SearchUser":
+					{
+						TransMsg msg6=ServersOparate.AdminCheckUser(buff);
+						msg6.setFunction("Admin-SearchUser");
+						oops.writeObject(msg6);
+						Server.toCmd("Response Admin-SearchUser"+FG+msg6);
+					}break;
+					case "Chat":
+					{
+						oops.writeObject(buff);
+						Server.toCmd("Response Chat"+FG+buff);
+					}break;
+					
+					default:
+						break;
+					}
+				}
+			
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+		}
+	
+		
+	}
+	//等待线程
+	private  static void  waitRespon(){
+		synchronized("1"){
+			try {
+				"1".wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	//唤醒线程
+	private static void wakeRespon(){
+		synchronized ("1") {
+			"1".notifyAll();
+		}
+	}
+	//等待聊天请求
+	private static void waitChat(){
+		synchronized("chat"){
+			try {
+				"chat".wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	//唤醒聊天
+		private static void wakeChat(){
+			synchronized ("chat") {
+				"chat".notifyAll();
+			}
+		}
+		class A{}
+	public static void main(String[] args) throws Exception {
+	
+  Server server=new Server();
+//	
+//		Server.toCmd("---------------突击聊天室----------------");
+//		Server.toCmd("Server Port"+FG+"8888");
+//		ServerSocket server = new ServerSocket(8888);
+//		//Server server2=new Server();
+//		//主线程负责所有的客户端连接
+//		while(true){
+//			Socket socket  = server.accept();
+//			Server.toCmd("Somebody Connection"+FG+socket.toString());
+//			new Thread(new Recv(socket)).start();
+//			new Thread(new Send(socket)).start();
+//		}
+	}
+
+}

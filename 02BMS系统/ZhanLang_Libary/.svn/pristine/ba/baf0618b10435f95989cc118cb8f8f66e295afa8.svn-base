@@ -1,0 +1,262 @@
+package zhanlang.view;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.Imple.UserDAOImple;
+
+public class UserMenu extends JFrame {
+
+	private JPanel contentPane;
+	private static UserMenu frame ;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+				 frame = new UserMenu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public UserMenu() {
+		/***/
+		setBackground(new Color(189, 183, 107));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		/**创建用户页面窗体，大小900*600  */
+		setBounds(100, 100,900, 600);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		/**
+		 * 查看可以被借阅的书籍     按钮
+		 * 向服务器请求所有可借书籍的信息，并在本页面   提供的书架上显示。
+		 */
+		JButton btnNewButton = new JButton("显示可借书籍");
+		btnNewButton.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		btnNewButton.setForeground(new Color(0, 0, 0));
+		btnNewButton.setBackground(new Color(211, 211, 211));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
+		btnNewButton.setBounds(0, 258, 108, 26);
+		contentPane.add(btnNewButton);
+		
+		/**
+		 * 查看已经借出的书籍    按钮
+		 * 向服务器请求所有已经借出的书籍的信息，并跳转新页面显示。
+		 */
+		
+		JButton button = new JButton("显示已借书籍");
+		button.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		button.setBackground(new Color(211, 211, 211));
+		button.setBounds(0, 294, 108, 26);
+		contentPane.add(button);
+		
+		/**
+		 * 
+		 */
+		JButton button_2 = new JButton("借书");
+		button_2.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				U_BorrowBook newFrame = new U_BorrowBook();
+				newFrame.setVisible(true);	
+				frame.dispose();
+			}
+		});
+		button_2.setBackground(new Color(211, 211, 211));
+		button_2.setBounds(0, 330, 108, 26);
+		contentPane.add(button_2);
+		
+		JButton button_3 = new JButton("修改信息");
+		button_3.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_3.setBackground(new Color(211, 211, 211));
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				U_ModifyMessage newFrame = new U_ModifyMessage();
+				newFrame.setVisible(true);	
+				frame.dispose();
+			}
+		});
+		button_3.setBounds(0, 437, 108, 26);
+		contentPane.add(button_3);
+		
+		JButton button_5 = new JButton("还书");
+		button_5.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				U_BorrowBook newFrame = new U_BorrowBook();
+				newFrame.setVisible(true);	
+				frame.dispose();
+				
+				
+			}
+		});
+		button_5.setBackground(new Color(211, 211, 211));
+		button_5.setBounds(0, 366, 108, 26);
+		contentPane.add(button_5);
+		
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(183, 269, 576, 2);
+		contentPane.add(scrollPane);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(183, 451, 576, 2);
+		contentPane.add(scrollPane_1);
+	
+		/**
+		 * 当前用户头像模块。
+		 */
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(UserMenu.class.getResource("/bgimg/1.png")));
+		label.setBounds(800, 10, 74, 76);
+		contentPane.add(label);
+		
+		
+		/**
+		 * 书架上显示的图书的模块。
+		 * 共八个，根据服务器返回的容器的内容，选择性刷入。
+		 */
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(UserMenu.class.getResource("/img/10.jpg")));
+		lblNewLabel.setBounds(196, 110, 100, 120);
+		contentPane.add(lblNewLabel);
+		
+		JLabel label_3 = new JLabel("New label");
+		label_3.setIcon(new ImageIcon(UserMenu.class.getResource("/img/5.png")));
+		label_3.setBounds(196, 302, 100, 120);
+		contentPane.add(label_3);
+		
+		JLabel label_4 = new JLabel("New label");
+		label_4.setIcon(new ImageIcon(UserMenu.class.getResource("/img/7.png")));
+		label_4.setBounds(336, 302, 100, 120);
+		contentPane.add(label_4);
+		
+		JLabel label_5 = new JLabel("New label");
+		label_5.setIcon(new ImageIcon(UserMenu.class.getResource("/img/8.png")));
+		label_5.setBounds(476, 302, 100, 120);
+		contentPane.add(label_5);
+		
+		JLabel label_1 = new JLabel("New label");
+		label_1.setIcon(new ImageIcon(UserMenu.class.getResource("/img/3.png")));
+		label_1.setBounds(336, 110, 100, 120);
+		contentPane.add(label_1);
+		
+		JLabel label_2 = new JLabel("New label");
+		label_2.setIcon(new ImageIcon(UserMenu.class.getResource("/img/2.png")));
+		label_2.setBounds(476, 110, 100, 120);
+		contentPane.add(label_2);
+		
+		JLabel label_6 = new JLabel("New label");
+		label_6.setIcon(new ImageIcon(UserMenu.class.getResource("/img/4.png")));
+		label_6.setBounds(616, 110, 100, 120);
+		contentPane.add(label_6);
+		
+		JLabel label_7 = new JLabel("New label");
+		label_7.setIcon(new ImageIcon(UserMenu.class.getResource("/img/6.png")));
+		label_7.setBounds(616, 302, 100, 120);
+		contentPane.add(label_7);
+
+		/**
+		 * 书架的上一页  按钮
+		 * 跳转到书架的上一页，本质上是将服务器返回的容器中的图书对象，重新刷新进写好的模块中。
+		 */
+		JButton button_1 = new JButton("上一页");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_1.setFont(new Font("华文楷体", Font.PLAIN, 15));
+		button_1.setBackground(new Color(211, 211, 211));
+		button_1.setBounds(336, 487, 93, 23);
+		contentPane.add(button_1);
+		
+		/**
+		 * 书架的下一页  按钮
+		 * 跳转到书架的下一页，本质上是将服务器返回的容器中的图书对象，重新刷新进写好的模块中。
+		 */
+		JButton button_6 = new JButton("下一页");
+		button_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		button_6.setFont(new Font("华文楷体", Font.PLAIN, 15));
+		button_6.setBackground(new Color(240, 255, 240));
+		button_6.setBounds(483, 487, 93, 23);
+		contentPane.add(button_6);
+		
+		JLabel label_8 = new JLabel("请输入编号：");
+		label_8.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_8.setBounds(235, 50, 108, 15);
+		contentPane.add(label_8);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(342, 47, 170, 21);
+		contentPane.add(textField);
+		
+		JButton button_7 = new JButton("查询");
+		button_7.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_7.setBounds(522, 46, 93, 23);
+		contentPane.add(button_7);
+		
+		JLabel label_10 = new JLabel("书 籍 操 作");
+		label_10.setFont(new Font("黑体", Font.PLAIN, 14));
+		label_10.setBounds(0, 221, 130, 15);
+		contentPane.add(label_10);
+		
+		JLabel label_9 = new JLabel("用 户 操 作");
+		label_9.setFont(new Font("黑体", Font.PLAIN, 14));
+		label_9.setBounds(0, 402, 130, 15);
+		contentPane.add(label_9);
+		
+		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2.setBounds(0, 244, 123, 2);
+		contentPane.add(scrollPane_2);
+		
+		JScrollPane scrollPane_3 = new JScrollPane();
+		scrollPane_3.setBounds(0, 427, 123, 2);
+		contentPane.add(scrollPane_3);
+		
+		JLabel label_11 = new JLabel("");
+		label_11.setIcon(new ImageIcon(UserMenu.class.getResource("/bgimg/heg.jpg")));
+		label_11.setBounds(0, 0, 884, 561);
+		contentPane.add(label_11);
+	}
+}

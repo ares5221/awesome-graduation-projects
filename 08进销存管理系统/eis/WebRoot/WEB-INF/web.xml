@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>eis</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+<!--   配置proxool连接池 -->
+ 
+  <servlet>
+	<servlet-name>ServletConfigurator</servlet-name>
+	<servlet-class>org.logicalcobwebs.proxool.configuration.ServletConfigurator</servlet-class>
+  	<init-param>
+  		<param-name>propertyFile</param-name>
+  		<param-value>WEB-INF/classes/proxool.properties</param-value>
+  	</init-param>
+  	<load-on-startup>5</load-on-startup>
+  </servlet>
+
+<!--   数据库连接池的监听 -->
+
+
+  <!-- 数据库连接池的监听 -->
+
+
+   <servlet>
+  	<servlet-name>AdminServlet</servlet-name>
+  	<servlet-class>org.logicalcobwebs.proxool.admin.servlet.AdminServlet</servlet-class>
+  </servlet>
+ 
+  <servlet>
+    <servlet-name>TestUtil</servlet-name>
+    <servlet-class>com.kb.eis.servlet.TestUtil</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ClientServlet</servlet-name>
+    <servlet-class>com.kb.eis.servlet.ClientServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.kb.eis.servlet.UserServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+
+    <servlet-name>SPServlet</servlet-name>
+    <servlet-class>com.kb.eis.servlet.SPServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>StockServlet</servlet-name>
+    <servlet-class>com.kb.eis.servlet.StockServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+
+    <servlet-name>GYSServlet</servlet-name>
+    <servlet-class>com.kb.eis.servlet.GYSServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>RKServlet</servlet-name>
+    <servlet-class>com.kb.eis.servlet.RKServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CGServlet</servlet-name>
+    <servlet-class>com.kb.eis.servlet.CGServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>KuCunServlet</servlet-name>
+    <servlet-class>com.kb.eis.servlet.KuCunServlet</servlet-class>
+  </servlet>
+
+<!-- 过滤器 -->
+<filter>
+  <filter-name>EncodingFilter</filter-name>
+  <filter-class>com.kb.eis.filter.EncodingFilter</filter-class>
+<init-param>
+  <param-name>encoding</param-name>
+  <param-value>utf-8</param-value>
+</init-param>
+</filter>
+<filter-mapping>
+   <filter-name>EncodingFilter</filter-name>
+   <url-pattern>/servlet/*</url-pattern>
+</filter-mapping>
+
+
+  <filter>
+  	<filter-name>AuthFilter</filter-name>
+  	<filter-class>com.kb.eis.filter.AuthFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+  	<filter-name>AuthFilter</filter-name>
+  	<url-pattern>/servlet/*</url-pattern>
+  	<url-pattern>*.jsp</url-pattern>  
+  </filter-mapping>
+
+
+
+
+  <servlet-mapping>
+  	<servlet-name>AdminServlet</servlet-name>
+  	<url-pattern>/admin.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ClientServlet</servlet-name>
+    <url-pattern>/servlet/ClientServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/servlet/UserServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SPServlet</servlet-name>
+    <url-pattern>/servlet/SPServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StockServlet</servlet-name>
+    <url-pattern>/servlet/StockServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>GYSServlet</servlet-name>
+    <url-pattern>/servlet/GYSServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>RKServlet</servlet-name>
+    <url-pattern>/servlet/RKServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CGServlet</servlet-name>
+    <url-pattern>/servlet/CGServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>KuCunServlet</servlet-name>
+    <url-pattern>/servlet/KuCunServlet</url-pattern>
+  </servlet-mapping>
+
+</web-app>

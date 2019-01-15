@@ -1,0 +1,106 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+
+public class U_RegesterUser extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					LoginMenu frame = new LoginMenu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public U_RegesterUser() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 671, 404);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
+		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setForeground(new Color(255, 255, 255));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label_1 = new JLabel("注册");
+		label_1.setFont(new Font("黑体", Font.PLAIN, 24));
+		label_1.setBounds(270, 36, 271, 54);
+		contentPane.add(label_1);
+		
+		JLabel label = new JLabel("用户名：");
+		label.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label.setBounds(187, 122, 99, 18);
+		contentPane.add(label);
+		
+		JLabel label_2 = new JLabel("输入密码：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_2.setBounds(187, 172, 85, 18);
+		contentPane.add(label_2);
+		
+		textField = new JTextField();
+		textField.setBounds(282, 121, 129, 21);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(282, 171, 129, 21);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JButton button = new JButton("提交");
+		button.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button.setBackground(new Color(211, 211, 211));
+		button.setBounds(193, 277, 93, 23);
+		contentPane.add(button);
+		
+		JLabel lblima = new JLabel("重复密码：");
+		lblima.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		lblima.setBounds(187, 221, 75, 18);
+		contentPane.add(lblima);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(282, 220, 129, 21);
+		contentPane.add(textField_2);
+		
+		JButton button_1 = new JButton("重置");
+		button_1.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_1.setBackground(new Color(211, 211, 211));
+		button_1.setBounds(307, 277, 93, 23);
+		contentPane.add(button_1);
+		
+		JLabel label_3 = new JLabel("");
+		label_3.setIcon(new ImageIcon(U_RegesterUser.class.getResource("/bgimg/timg.jpg")));
+		label_3.setBounds(0, 0, 655, 365);
+		contentPane.add(label_3);
+	}
+}

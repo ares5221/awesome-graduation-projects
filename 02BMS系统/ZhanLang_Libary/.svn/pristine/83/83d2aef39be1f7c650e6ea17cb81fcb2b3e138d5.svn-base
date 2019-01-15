@@ -1,0 +1,121 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+
+public class M_AddUser extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField addUser;
+	private JTextField addPass;
+	private JTextField addRepeat;
+	private JTextField addCount;
+	private static M_AddUser frame = new M_AddUser();
+	/**
+	 * Create the frame.
+	 */
+	public M_AddUser(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 815, 468);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label_1 = new JLabel("请输入用户名 ：");
+		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_1.setBounds(280, 123, 114, 24);
+		contentPane.add(label_1);
+		
+		addUser = new JTextField();
+		addUser.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addUser.setBounds(427, 125, 114, 21);
+		contentPane.add(addUser);
+		addUser.setColumns(10);
+		
+		JButton button_4 = new JButton("提交");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String name=addUser.getText();
+				String pass=addPass.getText();
+				String count=addCount.getText();
+			}
+			
+		});
+		button_4.setBackground(new Color(211, 211, 211));
+		button_4.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		button_4.setBounds(288, 302, 93, 23);
+		contentPane.add(button_4);
+		
+		JLabel label_2 = new JLabel("请输入用户密码 ：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_2.setBounds(280, 167, 114, 24);
+		contentPane.add(label_2);
+		
+		addPass = new JTextField();
+		addPass.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addPass.setColumns(10);
+		addPass.setBounds(427, 169, 114, 21);
+		contentPane.add(addPass);
+		
+		JLabel label_3 = new JLabel("请重复用户密码 ：");
+		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_3.setBounds(280, 210, 114, 24);
+		contentPane.add(label_3);
+		
+		addRepeat = new JTextField();
+		addRepeat.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addRepeat.setColumns(10);
+		addRepeat.setBounds(427, 212, 114, 21);
+		contentPane.add(addRepeat);
+		
+		JLabel label_4 = new JLabel("请输入可借数目 ：");
+		label_4.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_4.setBounds(280, 253, 114, 24);
+		contentPane.add(label_4);
+		
+		addCount = new JTextField();
+		addCount.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addCount.setColumns(10);
+		addCount.setBounds(427, 255, 114, 21);
+		contentPane.add(addCount);
+		
+		JLabel label_5 = new JLabel("添加用户");
+		label_5.setFont(new Font("Dialog", Font.BOLD, 25));
+		label_5.setBounds(352, 24, 214, 103);
+		contentPane.add(label_5);
+		
+		JButton button = new JButton("返回");
+		button.setBackground(new Color(211, 211, 211));
+		button.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.managerMenuFrame = new ManagerMenu();
+				Client.managerMenuFrame .setVisible(true);	
+				Client.mAddUserFrame.dispose();
+			}
+		});
+		button.setBounds(435, 302, 93, 23);
+		contentPane.add(button);
+		
+		JLabel label = new JLabel("");
+		label.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label.setIcon(new ImageIcon(M_AddUser.class.getResource("/bgimg/timg (21).jpg")));
+		label.setBounds(0, 0, 799, 429);
+		contentPane.add(label);
+	}
+}

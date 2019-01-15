@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<students> 
+  <student ID="1"> 
+    <username>zhangsan</username>  
+    <password>zhangsan</password>  
+    <name>张三</name>  
+    <sex>男</sex>  
+    <age>25</age>  
+    <classroom>403</classroom> 
+  </student>  
+  <student ID="2"> 
+    <username>liuliu</username>  
+    <password>123456</password>  
+    <name>刘六</name>  
+    <sex>男</sex>  
+    <age>26</age>  
+    <classroom>403</classroom> 
+  </student>  
+  <student ID="3"> 
+    <username>qxx</username>  
+    <password>123456</password>  
+    <name>祁新新</name>  
+    <sex>男</sex>  
+    <age>24</age>  
+    <classroom>403</classroom> 
+  </student>  
+  <student ID="4"> 
+    <username>qixx</username>  
+    <password>654321</password>  
+    <name>祁新新</name>  
+    <sex>男</sex>  
+    <age>25</age>  
+    <classroom>403</classroom> 
+  </student>  
+  <student ID="5"> 
+    <username>asd8400j</username>  
+    <password>050401</password>  
+    <name>近平</name>  
+    <sex>男</sex>  
+    <age>22</age>  
+    <classroom>403</classroom> 
+  </student>  
+  <student ID="6"> 
+    <username>asd8400jkl</username>  
+    <password>123456</password>  
+    <name>金平</name>  
+    <sex>男</sex>  
+    <age>19</age>  
+    <classroom>201</classroom> 
+  </student>  
+  <student ID="7"> 
+    <username>asd</username>  
+    <password>789456</password>  
+    <name>靳平</name>  
+    <sex>男</sex>  
+    <age>20</age>  
+    <classroom>201</classroom> 
+  </student> 
+</students>

@@ -1,0 +1,116 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+
+public class U_ModifyMessage extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UserMenu frame = new UserMenu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public U_ModifyMessage(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 815, 468);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(676, 10, 93, 77);
+		contentPane.add(label);
+		
+		JLabel label_1 = new JLabel("请输入用户名 ：");
+		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_1.setBounds(257, 137, 114, 24);
+		contentPane.add(label_1);
+		
+		textField = new JTextField();
+		textField.setBounds(381, 139, 137, 21);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JButton button_4 = new JButton("提交");
+		button_4.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_4.setBackground(new Color(211, 211, 211));
+		button_4.setBounds(277, 295, 93, 23);
+		contentPane.add(button_4);
+		
+		JLabel label_2 = new JLabel("请输入用户密码 ：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_2.setBounds(257, 183, 114, 24);
+		contentPane.add(label_2);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(381, 185, 137, 21);
+		contentPane.add(textField_1);
+		
+		JLabel label_3 = new JLabel("请重复用户密码 ：");
+		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_3.setBounds(257, 234, 114, 24);
+		contentPane.add(label_3);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(381, 236, 137, 21);
+		contentPane.add(textField_2);
+		
+		JLabel label_5 = new JLabel("修改个人信息");
+		label_5.setFont(new Font("Dialog", Font.BOLD, 25));
+		label_5.setBounds(304, 24, 214, 103);
+		contentPane.add(label_5);
+		
+		JButton button = new JButton("返回");
+		button.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.userMenuFrame = new UserMenu();
+				Client.userMenuFrame .setVisible(true);	
+				Client.uModifyMessageFrame.dispose();
+			}
+		});
+		button.setBounds(407, 295, 93, 23);
+		contentPane.add(button);
+		
+		JLabel label_4 = new JLabel("");
+		label_4.setIcon(new ImageIcon(U_ModifyMessage.class.getResource("/bgimg/heg.jpg")));
+		label_4.setBounds(0, 0, 799, 429);
+		contentPane.add(label_4);
+	}
+}

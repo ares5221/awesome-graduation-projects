@@ -1,0 +1,145 @@
+package zhanlang.view;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.zip.DataFormatException;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.ManagerDAO;
+import zhanlang.DAO.Imple.ManagerDAOImple;
+import zhanlang.entity.Book;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+
+public class M_AddBook extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField addName;
+	private JTextField addAuthor;
+	private JTextField addPress;
+	private JTextField addIntime;
+	/**
+	 * Create the frame.
+	 */
+	public M_AddBook(){
+		setTitle("百战程序员BMS系统");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 388, 376);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton button_4 = new JButton("返回");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.mAddBookFrame.dispose();
+			}
+		});
+		button_4.setBackground(new Color(211, 211, 211));
+		button_4.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		button_4.setBounds(201, 289, 77, 23);
+		contentPane.add(button_4);
+		
+		JButton button_5 = new JButton("添加");
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String bName=addName.getText();
+				String author=addAuthor.getText();
+				String press=addPress.getText();
+				String inTime=addIntime.getText();
+				
+				Book newBook = new Book(null,bName, author, press, inTime);
+				
+				ManagerDAOImple manager = new ManagerDAOImple();
+				
+				Object object = manager.addBook("addBook", newBook);
+				if(object!= null){
+					JOptionPane.showMessageDialog(null, "图书添加成功！");
+				}else{
+					JOptionPane.showMessageDialog(null, "图书添加失败，请重试！");
+				}
+				
+				//处理完上一次提交的操作申请，应当将所有输入框置空
+				addName.setText("");
+				addAuthor.setText("");
+				addPress.setText("");
+				addIntime.setText("");
+				
+			}
+		});
+		button_5.setBackground(new Color(211, 211, 211));
+		button_5.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		button_5.setBounds(87, 290, 82, 21);
+		contentPane.add(button_5);
+		
+		JLabel label_3 = new JLabel("图书作者 ：");
+		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_3.setBounds(77, 140, 82, 24);
+		contentPane.add(label_3);
+		
+		JLabel label_1 = new JLabel("入库时间 ：");
+		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_1.setBounds(77, 242, 82, 24);
+		contentPane.add(label_1);
+		
+		JLabel label_4 = new JLabel("图书名称：");
+		label_4.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_4.setBounds(77, 106, 77, 24);
+		contentPane.add(label_4);
+		
+		addName = new JTextField();
+		addName.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addName.setColumns(10);
+		addName.setBounds(175, 107, 114, 21);
+		contentPane.add(addName);
+		
+		JLabel label_5 = new JLabel("出版社：");
+		label_5.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_5.setBounds(77, 208, 133, 24);
+		contentPane.add(label_5);
+		
+		JLabel label = new JLabel("添加图书");
+		label.setFont(new Font("Dialog", Font.BOLD, 25));
+		label.setBounds(147, 10, 214, 103);
+		contentPane.add(label);
+		
+		addAuthor = new JTextField();
+		addAuthor.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addAuthor.setColumns(10);
+		addAuthor.setBounds(175, 142, 114, 21);
+		contentPane.add(addAuthor);
+		
+		addPress = new JTextField();
+		addPress.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addPress.setColumns(10);
+		addPress.setBounds(175, 210, 114, 21);
+		contentPane.add(addPress);
+		
+		addIntime = new JTextField();
+		addIntime.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addIntime.setColumns(10);
+		addIntime.setBounds(175, 244, 114, 21);
+		contentPane.add(addIntime);
+		
+		JLabel label_2 = new JLabel("类型：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_2.setBounds(77, 174, 77, 24);
+		contentPane.add(label_2);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"青春文学", "热门小说", "名人自传", "成功励志", "投资理财", "科普读物", "自然科学", "悬疑推理", "社科历史", ""}));
+		comboBox.setBounds(175, 177, 114, 21);
+		contentPane.add(comboBox);
+	}
+}

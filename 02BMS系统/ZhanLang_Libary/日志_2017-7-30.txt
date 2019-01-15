@@ -1,0 +1,1422 @@
+
+[2017-7-30 19:43:50]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+用户请求登录:111[2017-7-30 19:44:1]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--1	null	null	null	borrow	inTime	outTime	type
+获取图书----:1	null	null	null	borrow	inTime	outTime	type
+返回是否找到=================找到了
+被借的是这本书1	null	null	null	borrow	inTime	outTime	type
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+Thread-3---null 用户断开！时间是：[2017-7-30 19:43:57]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+服务器回收资源!
+Thread-4---111 用户断开！时间是：[2017-7-30 19:44:21]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+用户请求登录:111[2017-7-30 19:44:55]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--1	null	null	null	borrow	inTime	outTime	type
+获取图书----:1	null	null	null	borrow	inTime	outTime	type
+返回是否找到=================找到了
+被借的是这本书1	null	null	null	borrow	inTime	outTime	type
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---showAlready
+等待读取实体！
+读取实体成功！--Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学
+3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说
+4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说
+1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学
+3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说
+4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说
+1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学
+3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说
+4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说
+查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代]
+返回查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第5轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第6轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第7轮循环！
+读取指令中----
+读取命令成功---showAlready
+等待读取实体！
+读取实体成功！--Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学
+3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说
+4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说
+1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学
+3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说
+4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说
+1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学
+3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说
+4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说
+查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代]
+返回查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第8轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+Thread-5---null 用户断开！时间是：[2017-7-30 19:44:51]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+服务器回收资源!
+Thread-6---111 用户断开！时间是：[2017-7-30 19:46:7]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+用户请求登录:111[2017-7-30 19:47:35]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	null	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司 	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+Thread-7---null 用户断开！时间是：[2017-7-30 19:47:32]
+Thread-8---111 用户断开！时间是：[2017-7-30 19:47:36]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[]
+服务器回收资源!
+容器删除后：[]
+服务器回收资源!
+
+[2017-7-30 19:47:57]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+用户请求登录:111[2017-7-30 19:48:7]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--1	null	null	null	borrow	inTime	outTime	type
+获取图书----:1	null	null	null	borrow	inTime	outTime	type
+返回是否找到=================找到了
+被借的是这本书1	null	null	null	borrow	inTime	outTime	type
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+用户请求登录:111[2017-7-30 19:50:19]
+是否准许登录：------false
+服务器发送----:null
+调用operation方法成功!
+正在获取对象流！
+Thread-5---null 用户断开！时间是：[2017-7-30 19:50:16]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+服务器回收资源!
+Thread-6---111 用户断开！时间是：[2017-7-30 19:50:19]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+用户请求登录:111[2017-7-30 19:50:30]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+
+[2017-7-30 19:50:49]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+用户请求登录:111[2017-7-30 19:50:56]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--2	null	null	null	borrow	inTime	outTime	type
+获取图书----:2	null	null	null	borrow	inTime	outTime	type
+返回是否找到=================找到了
+被借的是这本书2	null	null	null	borrow	inTime	outTime	type
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第5轮循环！
+读取指令中----
+读取命令成功---showAlready
+等待读取实体！
+读取实体成功！--Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	null	文学
+3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说
+4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说
+1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学
+3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说
+4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说
+查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学]
+返回查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学]
+调用operation方法成功!
+正在获取对象流！
+Thread-3---null 用户断开！时间是：[2017-7-30 19:50:53]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+服务器回收资源!
+Thread-4---111 用户断开！时间是：[2017-7-30 19:51:14]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+
+[2017-7-30 19:52:33]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+用户请求登录:111[2017-7-30 19:52:42]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--3	null	null	null	borrow	inTime	outTime	type
+获取图书----:3	null	null	null	borrow	inTime	outTime	type
+返回是否找到=================找到了
+被借的是这本书3	null	null	null	borrow	inTime	outTime	type
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	null	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+Thread-3---null 用户断开！时间是：[2017-7-30 19:52:38]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+服务器回收资源!
+Thread-4---111 用户断开！时间是：[2017-7-30 19:52:51]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+
+[2017-7-30 19:55:24]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+用户请求登录:111[2017-7-30 19:55:33]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--1	null	null	null	borrow	inTime	outTime	type
+获取图书----:1	null	null	null	borrow	inTime	outTime	type
+返回是否找到=================找到了
+被借的是这本书1	null	null	null	borrow	inTime	outTime	type
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+Thread-3---null 用户断开！时间是：[2017-7-30 19:55:29]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+服务器回收资源!
+Thread-4---111 用户断开！时间是：[2017-7-30 19:55:45]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+
+[2017-7-30 20:0:11]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+用户请求登录:111[2017-7-30 20:0:20]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--2	null	null	null	borrow	inTime	outTime	type
+获取图书----:2	null	null	null	borrow	inTime	outTime	type
+返回是否找到=================找到了
+被借的是这本书2	null	null	null	borrow	inTime	outTime	type
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+Thread-3---null 用户断开！时间是：[2017-7-30 20:0:17]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+服务器回收资源!
+Thread-4---111 用户断开！时间是：[2017-7-30 20:0:45]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+用户请求登录:111[2017-7-30 20:7:39]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--3	null	null	null	borrow	inTime	outTime	type
+获取图书----:3	null	null	null	borrow	inTime	outTime	type
+返回是否找到=================找到了
+被借的是这本书3	null	null	null	borrow	inTime	outTime	type
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第5轮循环！
+读取指令中----
+读取命令成功---showAlready
+等待读取实体！
+读取实体成功！--Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学
+3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说
+4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说
+查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说]
+返回查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第6轮循环！
+读取指令中----
+读取命令成功---showAlready
+等待读取实体！
+读取实体成功！--Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学
+3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说
+4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说
+查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说]
+返回查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第7轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+Thread-5---null 用户断开！时间是：[2017-7-30 20:7:35]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+Thread-6---111 用户断开！时间是：[2017-7-30 20:8:25]
+服务器回收资源!
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+---连接到一个新用户
+正在获取对象流！
+Thread-7---null 用户断开！时间是：[2017-7-30 20:23:32]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[]
+容器删除后：[]
+服务器回收资源!
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+用户请求登录:111[2017-7-30 20:23:48]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--4	null	null	null	borrow	inTime	outTime	type
+获取图书----:4	null	null	null	borrow	inTime	outTime	type
+返回是否找到=================找到了
+被借的是这本书4	null	null	null	borrow	inTime	outTime	type
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---showAlready
+等待读取实体！
+读取实体成功！--Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学
+3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说
+4	三国演义	罗贯中	新华出版社	111	2017-06-01	2017-08-30	小说
+查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	111	2017-06-01	2017-08-30	小说]
+返回查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	111	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	111	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+Thread-8---null 用户断开！时间是：[2017-7-30 20:23:45]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+服务器回收资源!
+Thread-9---111 用户断开！时间是：[2017-7-30 20:24:1]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+
+[2017-7-30 20:28:10]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+用户请求登录:111[2017-7-30 20:28:21]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--1	null	null	null	borrow	inTime	outTime	type
+获取图书----:1	null	null	null	borrow	inTime	outTime	type
+返回是否找到=================找到了
+被借的是这本书1	null	null	null	borrow	inTime	outTime	type
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第5轮循环！
+读取指令中----
+读取命令成功---showAlready
+等待读取实体！
+读取实体成功！--Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学
+3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说
+4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说
+查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代]
+返回查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第6轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[2	解忧杂货店	东野圭吾	南海出版公司	null	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第7轮循环！
+读取指令中----
+读取命令成功---borrowById
+等待读取实体！
+读取实体成功！--2	null	null	null	borrow	inTime	outTime	type
+获取图书----:2	null	null	null	borrow	inTime	outTime	type
+返回是否找到=================找到了
+被借的是这本书2	null	null	null	borrow	inTime	outTime	type
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号完成借书是否成功----:true
+返回根据图书编号完成借书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第8轮循环！
+读取指令中----
+读取命令成功---showAlready
+等待读取实体！
+读取实体成功！--Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代
+2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学
+3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说
+4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说
+查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学]
+返回查看已借阅书籍----:[1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代, 2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第9轮循环！
+读取指令中----
+读取命令成功---returnById
+等待读取实体！
+读取实体成功！--1	null	null	null	borrow	inTime	outTime	type
+获取图书----:1	null	null	null	borrow	inTime	outTime	type
+-----------------------------------什么鬼东西要传进来呢？1	智能时代	杰夫·霍金斯	中信出版社	111	2017-06-01	2017-08-30	商业时代
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号还书是否成功----:true
+返回根据图书编号还书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第10轮循环！
+读取指令中----
+读取命令成功---returnById
+等待读取实体！
+读取实体成功！--1	null	null	null	borrow	inTime	outTime	type
+获取图书----:1	null	null	null	borrow	inTime	outTime	type
+-----------------------------------什么鬼东西要传进来呢？1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号还书是否成功----:true
+返回根据图书编号还书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第11轮循环！
+读取指令中----
+读取命令成功---returnById
+等待读取实体！
+读取实体成功！--1	null	null	null	borrow	inTime	outTime	type
+获取图书----:1	null	null	null	borrow	inTime	outTime	type
+-----------------------------------什么鬼东西要传进来呢？1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号还书是否成功----:true
+返回根据图书编号还书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第12轮循环！
+读取指令中----
+读取命令成功---returnById
+等待读取实体！
+读取实体成功！--1	null	null	null	borrow	inTime	outTime	type
+获取图书----:1	null	null	null	borrow	inTime	outTime	type
+-----------------------------------什么鬼东西要传进来呢？1	智能时代	杰夫·霍金斯	中信出版社	null	2017-06-01	2017-08-30	商业时代
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+根据图书编号还书是否成功----:true
+返回根据图书编号还书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+Thread-4---111 用户断开！时间是：[2017-7-30 20:29:31]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Thread-3---null 用户断开！时间是：[2017-7-30 20:28:16]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+服务器回收资源!
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+用户请求登录:王五[2017-7-30 20:36:28]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---addUser
+等待读取实体！
+读取实体成功！--Person [ID=null, name=翟丹丹, sex=女, tel=123456789, age=23, address=北京市 , userName=zdd, password=1234]
+Person [ID=null, name=翟丹丹, sex=女, tel=123456789, age=23, address=北京市 , userName=zdd, password=1234]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=翟丹丹, sex=女, tel=123456789, age=23, address=北京市, userName=zdd, password=1234]
+注册是否成功----:true
+返回注册是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---addUser
+等待读取实体！
+读取实体成功！--Person [ID=null, name=翟丹丹, sex=女, tel=12345, age=12, address=北京市 , userName=zdd, password=12]
+Person [ID=null, name=翟丹丹, sex=女, tel=12345, age=12, address=北京市 , userName=zdd, password=12]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=翟丹丹, sex=女, tel=123456789, age=23, address=北京市, userName=zdd, password=1234]
+注册是否成功----:false
+返回注册是否成功----:false
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第4轮循环！
+读取指令中----
+读取命令成功---addUser
+等待读取实体！
+读取实体成功！--Person [ID=null, name=力能, sex=女, tel=12133, age=23, address=北京市 , userName=zdd, password=12]
+Person [ID=null, name=力能, sex=女, tel=12133, age=23, address=北京市 , userName=zdd, password=12]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=翟丹丹, sex=女, tel=123456789, age=23, address=北京市, userName=zdd, password=1234]
+注册是否成功----:false
+返回注册是否成功----:false
+调用operation方法成功!
+正在获取对象流！
+Thread-5---null 用户断开！时间是：[2017-7-30 20:36:19]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+容器删除后：[Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+Thread-6---zdd 用户断开！时间是：[2017-7-30 20:40:13]
+正在删除：Person [ID=null, name=力能, sex=女, tel=12133, age=23, address=北京市 , userName=zdd, password=12]
+容器删除前：[Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+服务器回收资源!
+容器删除后：[Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+服务器回收资源!
+
+[2017-7-30 20:47:3]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=翟丹丹, sex=女, tel=123456789, age=23, address=北京市, userName=zdd, password=1234]
+用户请求登录:王五[2017-7-30 20:47:19]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+调用operation方法成功!
+正在获取对象流！
+Thread-3---null 用户断开！时间是：[2017-7-30 20:47:7]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+容器删除后：[Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+服务器回收资源!
+Thread-4---王五 用户断开！时间是：[2017-7-30 20:47:19]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+容器删除前：[Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+容器删除后：[]
+服务器回收资源!
+
+[2017-7-30 20:51:50]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=翟丹丹, sex=女, tel=123456789, age=23, address=北京市, userName=zdd, password=1234]
+用户请求登录:王五[2017-7-30 20:52:9]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---addUser
+等待读取实体！
+读取实体成功！--Person [ID=null, name=翟丹丹, sex=女, tel=1234, age=23, address=北京市 , userName=zdd, password=12]
+Person [ID=null, name=翟丹丹, sex=女, tel=1234, age=23, address=北京市 , userName=zdd, password=12]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=翟丹丹, sex=女, tel=123456789, age=23, address=北京市, userName=zdd, password=1234]
+注册是否成功----:false
+返回注册是否成功----:false
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第3轮循环！
+读取指令中----
+读取命令成功---addUser
+等待读取实体！
+读取实体成功！--Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市 , userName=zddd, password=as]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市 , userName=zddd, password=as]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=翟丹丹, sex=女, tel=123456789, age=23, address=北京市, userName=zdd, password=1234]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+注册是否成功----:true
+返回注册是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+
+[2017-7-30 21:2:40]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=翟丹丹, sex=女, tel=123456789, age=23, address=北京市, userName=zdd, password=1234]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+用户请求登录:王五[2017-7-30 21:2:55]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---deleteBook
+等待读取实体！
+读取实体成功！--1	null	null	null	borrow	inTime	outTime	type
+获取图书----:1	null	null	null	borrow	inTime	outTime	type
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=翟丹丹, sex=女, tel=123456789, age=23, address=北京市, userName=zdd, password=1234]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+删除图书是否成功----:true
+返回图书是否成功----:true
+调用operation方法成功!
+正在获取对象流！
+Thread-3---null 用户断开！时间是：[2017-7-30 21:2:46]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+Thread-4---王五 用户断开！时间是：[2017-7-30 21:3:6]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]
+容器删除前：[Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+容器删除后：[]
+服务器回收资源!
+容器删除后：[Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=王五, password=2345]]
+服务器回收资源!
+
+[2017-7-30 21:21:53]
+
+服务器启动成功！
+Thread-1处理新用户线程，启动成功！正在监听中>>>>>
+---连接到一个新用户
+正在获取对象流！
+---连接到一个新用户
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第1轮循环！
+读取指令中----
+读取命令成功---login
+等待读取实体！
+读取实体成功！--Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=111, password=111]
+Person [ID=null, name=张涛, sex=男, tel=16755890234, age=23, address=北京, userName=zhangtao001, password=1234]
+Person [ID=null, name=李四, sex=男, tel=13446567668, age=23, address=上海, userName=lisi001, password=1234]
+Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+Person [ID=null, name=张炜, sex=男, tel=178024311, age=23, address=北京市, userName=zhangwei, password=123]
+Person [ID=null, name=啥子, sex=男, tel=1489652265, age=22, address=北京市, userName=zhangtao, password=232]
+Person [ID=null, name=翟丹丹, sex=女, tel=123456789, age=23, address=北京市, userName=zdd, password=1234]
+Person [ID=null, name=asdfghjk, sex=女, tel=1, age=12, address=北京市, userName=zddd, password=as]
+用户请求登录:111[2017-7-30 21:22:2]
+是否准许登录：------true
+服务器发送----:Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+调用operation方法成功!
+正在获取对象流！
+获取对象输入流成功！
+获取对象输出流成功！
+现在是第2轮循环！
+读取指令中----
+读取命令成功---showCanAll
+等待读取实体！
+读取实体成功！--null	null	null	null	borrow	inTime	outTime	type
+实现类中的bookList:[2	解忧杂货店	东野圭吾	南海出版公司	111	2017-06-01	2017-08-30	文学, 3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+查看可借阅书籍----:[3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+返回查看可借阅书籍----:[3	铁军密码	曹雪芹	新华出版社	null	2017-06-01	2017-08-30	小说, 4	三国演义	罗贯中	新华出版社	null	2017-06-01	2017-08-30	小说]
+调用operation方法成功!
+正在获取对象流！
+Thread-3---null 用户断开！时间是：[2017-7-30 21:21:57]
+正在删除：Person [ID=null, name=null, sex=null, tel=null, age=null, address=null, userName=null, password=null]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+服务器回收资源!
+Thread-4---111 用户断开！时间是：[2017-7-30 21:22:5]
+正在删除：Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]
+容器删除前：[Person [ID=null, name=李明, sex=女, tel=1675520234, age=23, address=天津, userName=111, password=111]]
+容器删除后：[]
+服务器回收资源!

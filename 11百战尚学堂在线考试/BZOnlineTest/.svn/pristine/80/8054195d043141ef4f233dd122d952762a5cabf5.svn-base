@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--ID为学生姓名 Username为学生用户名 password为登录密码 -->
+<User> 
+  <student ID="张三" pass=",Chinese," unpass=",Math,English,"> 
+    <Username>2017403111</Username>  
+    <password>123123</password> 
+  </student>  
+  <student ID="赵四" pass="" unpass="Chinese,Math,English,"> 
+    <Username>2017403222</Username>  
+    <password>123456222</password> 
+  </student>  
+  <student ID="王五" pass="" unpass="Chinese,English,Math,"> 
+    <Username>2017403333</Username>  
+    <password>123456333</password> 
+  </student>  
+  <student ID="周七" pass=",English," unpass="Chinese,Math,"> 
+    <Username>2017403444</Username>  
+    <password>qwe</password> 
+  </student>  
+  <student ID="吴京" pass="" unpass="Chinese,Math,English,"> 
+    <Username>2017403555</Username>  
+    <password>12345</password> 
+  </student>  
+  <student ID="小米" pass="" unpass="Chinese,Math,English,"> 
+    <Username>20156499</Username>  
+    <password>159</password> 
+  </student> 
+</User>

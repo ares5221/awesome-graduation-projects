@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<subjects> 
+  <subject style="Chinese"> 
+    <problem answer="2"> 
+      <question>“故人西辞黄鹤楼”的下一句是：</question>  
+      <choicea>一行白鹭上青天</choicea>  
+      <choiceb>烟花三月下扬州</choiceb>  
+      <choicec>桃花流水鳜鱼肥</choicec>  
+      <choiced>山寺桃花始盛开</choiced> 
+    </problem>  
+    <problem answer="3"> 
+      <question>“黄梅时节家家雨”的下一句是：</question>  
+      <choicea>一行白鹭上青天</choicea>  
+      <choiceb>北斗阑干南斗斜</choiceb>  
+      <choicec>青草池塘处处蛙</choicec>  
+      <choiced>散入春风满洛城</choiced> 
+    </problem>  
+    <problem answer="4"> 
+      <question>“杨柳阴阴细雨晴”的下一句是：</question>  
+      <choicea>一行白鹭上青天</choicea>  
+      <choiceb>深锁春光一院愁</choiceb>  
+      <choicec>绿柳才黄半未匀</choicec>  
+      <choiced>残花落尽见流莺</choiced> 
+    </problem> 
+  </subject>  
+  <subject style="Math"> 
+    <problem answer="1"> 
+      <question>1 + 1 = 多少？</question>  
+      <choicea>2</choicea>  
+      <choiceb>二</choiceb>  
+      <choicec>俩</choicec>  
+      <choiced>田</choiced> 
+    </problem>   
+    <problem answer="4"> 
+      <question>2的平方是多少？</question>  
+      <choicea>1</choicea>  
+      <choiceb>2</choiceb>  
+      <choicec>3</choicec>  
+      <choiced>4</choiced> 
+    </problem> 
+  </subject>  
+  <subject style="English">
+    <problem answer="1">
+      <question>你好的英语</question>
+      <choicea>Hello</choicea>
+      <choiceb>Helloo</choiceb>
+      <choicec>nihao</choicec>
+      <choiced>welcome</choiced>
+    </problem>
+  </subject>
+</subjects>

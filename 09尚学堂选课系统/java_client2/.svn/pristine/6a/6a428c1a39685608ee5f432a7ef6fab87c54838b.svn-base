@@ -1,0 +1,179 @@
+package com.bjsxt.swing;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.TextArea;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import com.bjsxt.service.Service;
+
+public class Student extends JFrame implements ActionListener {
+	private JPanel contentPane;
+	private JTextField textCourseID;
+	private JButton buttonYX;
+	private JButton buttonKX;
+	private JButton buttonChooseCourse;
+	private JButton buttonPersonalInfo;
+	private JLabel label_2;
+	private TextArea textArea;
+
+	private Socket socket;
+	private PrintWriter pw;
+	private BufferedReader br;
+
+	final ImageIcon myimage = new ImageIcon("p/主界面.jpg");
+	final Image image = myimage.getImage();
+	final ImageIcon myimage2 = new ImageIcon("p/2.jpg");
+	final Image image2 = myimage2.getImage();
+	Graphics g;
+	public Student(Socket s) {
+
+		setBounds(100, 100, 574, 609);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		socket = s;
+		try {
+			pw = new PrintWriter(this.socket.getOutputStream());
+			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
+		buttonKX = new JButton("查看可选课程");
+		buttonKX.setBounds(170, 490, 161, 43);
+		buttonKX.addActionListener(this);
+		contentPane.add(buttonKX);
+
+		buttonYX = new JButton("查看已选课程");
+		buttonYX.setBounds(345, 490, 161, 43);
+		buttonYX.addActionListener(this);
+		contentPane.add(buttonYX);
+
+		textArea = new TextArea();
+		textArea.setBounds(10, 248, 532, 236);
+		contentPane.add(textArea);
+
+		textCourseID = new JTextField();
+		textCourseID.setBounds(313, 185, 132, 24);
+		contentPane.add(textCourseID);
+		textCourseID.setColumns(10);
+
+		buttonChooseCourse = new JButton("选课");
+		buttonChooseCourse.setBounds(470, 184, 72, 27);
+		buttonChooseCourse.addActionListener(this);
+		contentPane.add(buttonChooseCourse);
+
+		JLabel lblid = new JLabel("课程ID");
+		lblid.setBounds(227, 188, 72, 18);
+		contentPane.add(lblid);
+
+		buttonPersonalInfo = new JButton("查看个人信息");
+		buttonPersonalInfo.setBounds(23, 490, 133, 43);
+		buttonPersonalInfo.addActionListener(this);
+		contentPane.add(buttonPersonalInfo);
+
+		JLabel label = new JLabel("") {
+			public void paint(Graphics g) {
+				g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
+			}
+		};
+		label.setBounds(0, 0, 353, 178);
+		contentPane.add(label);
+
+		JLabel label_1 = new JLabel() {
+			public void paint(Graphics g) {
+				g.drawImage(image2, 0, 0, this.getWidth(), this.getHeight(), null);
+			}
+		};
+		label_1.setBounds(345, 0, 211, 178);
+		contentPane.add(label_1);
+
+		label_2 = new JLabel("");
+		label_2.setBounds(10, 188, 203, 24);
+		contentPane.add(label_2);
+
+		new Thread(new InfoListener()).start();
+	}
+
+	/*
+	 * 向服务器发送选课数据 发送识别码 并且发送从输入框获得的ID字符串 将他们连接起来，并以","隔开
+	 */
+	public void sendChooseCourse() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("选课,");
+		sb.append(textCourseID.getText());
+		Service.send(pw, sb.toString());
+	}
+	/*
+	 * 内部类 在系统初始化的时候，创建一个线程 功能：监听从服务器传来的数据 并对数据进行处理和执行
+	 */
+	private class InfoListener implements Runnable {
+
+		@Override
+		public void run() {
+			while (true) {
+				judgeStu(Service.listen(br));
+			}
+		}
+		/*
+		 * 解析服务器传来的数据 依照标识码分别进行操作
+		 */
+		private void judgeStu(String str) {
+			// TODO
+			if (str.startsWith("学生个人信息"))
+				textArea.append("=======学生个人信息=======\n" + dealInfo(str)+"\n" );
+			if (str.startsWith("可选课程"))
+			{
+				textArea.append("=======可选课程=======\n"+dealInfo(str)+"\n" );
+			}
+			if (str.startsWith("已选课程"))
+				textArea.append("=======已选课程=======\n" + dealInfo(str)+"\n" );
+			if (str.startsWith("选课")) {
+				if ("true".equals(dealInfo(str)))
+					JOptionPane.showMessageDialog(null, "选课成功", "选课", JOptionPane.ERROR_MESSAGE);
+				else
+					JOptionPane.showMessageDialog(null, "选课失败", "选课", JOptionPane.ERROR_MESSAGE);
+			}
+		}
+		/*
+		 * 将获得的字符串进行处理 按“,”分开，丢掉标识码 返回有用的信息
+		 */
+		private String dealInfo(String str) {
+			String[] sArr = str.split(",");
+			return sArr[1];
+		}
+	}
+	/*
+	 * 依据选择的按钮不同 向服务器发送不同的数据
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == buttonChooseCourse)
+			sendChooseCourse();
+		if (e.getSource() == buttonPersonalInfo)
+			Service.send(pw,"学生个人信息" );
+		if (e.getSource() == buttonKX)
+			Service.send(pw,"可选课程");
+		if (e.getSource() == buttonYX)
+			Service.send(pw,"已选课程");
+	}
+
+}

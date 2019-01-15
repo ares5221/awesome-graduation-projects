@@ -1,0 +1,72 @@
+package com.bjsxt.utils;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.OutputFormat;
+import org.dom4j.io.SAXReader;
+import org.dom4j.io.XMLWriter;
+
+import com.bjsxt.entity.Course;
+
+/*
+ * 写一个工具类
+ */
+public class Utils {
+	
+	//解析所有的课程
+	public static List<Course> getAllCourse(){
+		List<Course> course=new ArrayList();
+		SAXReader saxReader = new SAXReader();
+		Document document;
+		try {
+			// 把xml文件转换成文档对象
+			document = saxReader.read("courseXML.xml");
+			// 取得根节点
+			Element rootNode = document.getRootElement();
+			//Element adms=rootNode.elementByID("3");
+			List<Element> list=rootNode.elements();
+			for(Element ele:list){
+				String id=ele.attributeValue("ID");
+				String name=ele.elementText("name");
+				String teacher=ele.elementText("teacher");
+				String teaId=ele.element("teacher").attributeValue("ID");
+				String maxNum=ele.elementText("maxNum");
+				Course co=new Course(id, name, teacher,teaId, maxNum);
+				course.add(co);
+			}
+		} catch (DocumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return course;
+		}
+		//将解析的xml重新写到文件中
+		 public static void ToXml(File file,Document doc) {
+			 try {
+				FileOutputStream out=new FileOutputStream(file);
+				OutputFormat format = OutputFormat.createPrettyPrint();
+				format.setEncoding("utf-8");
+				XMLWriter write=new XMLWriter(out, format);
+				write.write(doc);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		 }
+}

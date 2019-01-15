@@ -1,0 +1,50 @@
+package zhanlang.DAO.Imple;
+
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+import zhanlang.view.Client;
+
+public class DataExchange {
+
+	private ObjectInputStream ois;
+
+	private ObjectOutputStream oos;
+
+	public static Object object;
+	/**当前设计中，doWork 方法，接受两个参数，分别为，操作指令与对象，不合理，未来不是所有对象都需要传递两个参数。*/
+	public void doWork(String command,Object o)throws Exception{
+		oos  = new ObjectOutputStream(Client.socket.getOutputStream());
+		oos.writeObject(command);
+		oos.writeObject(o);
+		ReadNet r = new ReadNet();
+		Thread t= new Thread(r);
+		t.start();
+	}
+	
+	/**
+	 * 
+	 * @author Administrator
+	 * 内部类  启动线程监听
+	 */
+	class ReadNet implements Runnable{
+		@Override
+		public void run() {
+			
+			try{
+			 ois= new ObjectInputStream(Client.socket.getInputStream());
+			while(true){
+				//System.out.println("这里是读到服务器返回的内容，输出");
+				
+				object =ois.readObject();
+				//使用同步锁，避免在没有登录成功的时候，就在主线程中判断登录对象为空，从而导致登录失败。
+				synchronized ("aaa") {
+					"aaa".notify();
+				}
+			}
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+	}
+}

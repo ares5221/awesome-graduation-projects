@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<books size="9"> 
+  <book ID="1"> 
+    <image/>  
+    <bookID>1</bookID>  
+    <bName>中国历史</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>null</borrow>  
+    <type>儿童读物</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-31</outTime> 
+    <introduce>本书以近百篇精彩故事、上千幅插画贯串上古至现代的中国历史，为儿童描绘一个完整具体的轮廓，以儿童的生活经验与历史因果相结合，叙史故事化、新鲜的文字妙喻再加上写实精美的插画，足以唤起儿童对历史的兴趣；精彩有趣的故事不仅带给孩子想象与创造的空间，真实的历史更给孩子思考与判断的智慧，是一部让孩子认识自己、喜欢历史、见贤思齐的经典巨作。</introduce>
+  </book>  
+  <book ID="2"> 
+    <image/>  
+    <bookID>2</bookID>  
+    <bName>我想去看海</bName>  
+    <author>东野圭吾</author>  
+    <press>南海出版公司</press>  
+    <inTime>2017-06-01</inTime>  
+    <type>儿童读物</type>  
+    <borrow>111</borrow>  
+    <outTime>2017-08-31</outTime> 
+    <introduce>“不一样的卡梅拉”第一季系列故事讲述的是母鸡卡梅拉和她的儿女们卡梅利多和卡门的历险故事。卡梅拉家族里的每个人都是那样的与众不同。敢于幻想，更敢于去尝试别人不敢想的事情。书中充满了惊险的情节和法式的幽默。当然，也不乏那些捧着肚子哈哈大笑的段子。孩子们百看不厌，家长们更乐于推荐。其清新的风格和有趣的故事，令读者们十分喜爱，受到广大读者的好评，不一样的卡梅拉，0-99岁都追捧的图画书！千百万“卡梅拉”粉丝极力推荐！</introduce>
+  </book>  
+  <book ID="3"> 
+    <image/>  
+    <bookID>3</bookID>  
+    <bName>和这个世界说悄悄话</bName>  
+    <author>曹雪芹</author>  
+    <press>新华出版社</press>  
+    <inTime>2017-06-01</inTime>  
+    <type>网络小说</type>  
+    <borrow>null</borrow>  
+    <outTime>null</outTime> 
+    <introduce> 我不知道你有没有这样的时候，怀揣着对未来的憧憬，勤勤恳恳地工作。却发现自己始终也无法突破工作上的瓶颈，别人轻而易举就完成的事情，自己做起来总是如履薄冰；我不知道你有没有这样的时候，小心翼翼地维系着亲情、友情和爱情，把感情看得比什么都重要，到头来却发现感情是换不来等量回报的，即便全心全意地付出，也终究避免不了突如其来的伤害和疏离。</introduce>
+  </book>  
+  <book ID="4"> 
+    <image/>  
+    <bookID>4</bookID>  
+    <bName>桃花债</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>null</borrow>  
+    <type>网络小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>null</outTime> 
+    <introduce>谁是谁的劫，谁欠谁的债。千年前的局，不过一场相逢的等待。
+    丞相公子宋珧迷恋花魁瑶湘，瑶湘却与一个穷书生情投意合。失魂落魄的宋珧因缘际会误食了仙丹，就此飞升成了神仙。
+    天庭的天枢星君和南明帝君有私情，被玉帝贬下凡界，玉帝钦点宋珧下凡将他二人拆散。宋珧的知己好友衡文清君也随其来到人间，却遇上了命中注定的劫数。
+    宋珧在下界做了一个藩王世子，把文弱的天枢星君强抢入府……前世纠葛，因果轮回，宋珧在别人的情戏里扮演搭线的桥，自己确是个永世孤鸾的命。
+
+传说，每隔一百年，就会有一条恶龙来到人间，抢走一位公主做新娘。
+传说，神离开世间时，将*珍贵的宝物埋藏在某处，也埋藏了他*深刻的爱。</introduce>
+  </book>  
+     <book ID="5"> 
+    <image/>  
+    <bookID>5</bookID>  
+    <bName>龙的承诺</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>网络小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+     <introduce>又一百年过去，年轻的未来龙王肯肯来到人间娶新娘，遭到了大法师和骑士团的围殴。为了顺利迎娶媳妇，肯肯把**项链抵押给精灵族王子格兰蒂纳，雇他做帮手，打倒骑士团。
+这条项链，其实正是开启神之宝藏的关键。
+想娶媳妇的少年龙王，“别有用心”的精灵王子，为了各自的愿望结伴踏上旅程。
+媳妇，会有的吧？
+宝藏，也会有的吧？
+虽然传说与现实，总有那么一点点的差别……</introduce>
+  </book> 
+    <book ID="6"> 
+    <image/>  
+    <bookID>6</bookID>  
+    <bName>我不愿让你一个人</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>null</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+    <introduce>DJ程一，国内情感网络电台男主播，他被誉为众多迷妹心目中最会疗伤的男主播，百万粉丝耳朵里的男朋友。截至2017年，网易云音乐、荔枝FM、喜马拉雅等全网累计收听量突破2000,000,000亿次，他是荔枝FM收听破4*440000次人气男主播。微信公众号DJ程一粉丝80万 。以声音为饵，诱你入局。治愈你每一个孤寂无眠的夜晚。声音是有温度的，夜晚的声音会发光。程一电台，温暖如一。每晚都会温暖你。 ?抑或是不好的结果，总归能画个句号。</introduce>
+  </book> 
+    <book ID="7"> 
+    <image/>  
+    <bookID>7</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="8"> 
+    <image/>  
+    <bookID>8</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="9"> 
+    <image/>  
+    <bookID>9</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="10"> 
+    <image/>  
+    <bookID>10</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="11"> 
+    <image/>  
+    <bookID>11</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="12"> 
+    <image/>  
+    <bookID>12</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="13"> 
+    <image/>  
+    <bookID>13</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="14"> 
+    <image/>  
+    <bookID>14</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="15"> 
+    <image/>  
+    <bookID>15</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="16"> 
+    <image/>  
+    <bookID>16</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="17"> 
+    <image/>  
+    <bookID>17</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="18"> 
+    <image/>  
+    <bookID>18</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="19"> 
+    <image/>  
+    <bookID>19</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="20"> 
+    <image/>  
+    <bookID>20</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="21"> 
+    <image/>  
+    <bookID>21</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="22"> 
+    <image/>  
+    <bookID>22</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="23"> 
+    <image/>  
+    <bookID>23</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book> 
+    <book ID="24"> 
+    <image/>  
+    <bookID>24</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book>  
+</books>

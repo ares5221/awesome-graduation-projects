@@ -1,0 +1,151 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+
+public class M_AddBook extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField addId;
+	private JTextField addAuthor;
+	private JTextField addIntime;
+	private JTextField addName;
+	private JTextField addPress;
+	private static M_AddBook frame=new M_AddBook();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					frame = new M_AddBook();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public M_AddBook(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 815, 468);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton button_4 = new JButton("返回");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LoginMenu.newManagerMenuFrame = new ManagerMenu();
+				LoginMenu.newManagerMenuFrame .setVisible(true);	
+				ManagerMenu.newFrame.dispose();
+			}
+		});
+		button_4.setBackground(new Color(211, 211, 211));
+		button_4.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		button_4.setBounds(405, 326, 93, 23);
+		contentPane.add(button_4);
+		
+		JButton button_5 = new JButton("添加");
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String id=addId.getText();
+				String name=addName.getText();
+				String author=addAuthor.getText();
+				String press=addPress.getText();
+				String intime=addIntime.getText();
+			}
+		});
+		button_5.setBackground(new Color(211, 211, 211));
+		button_5.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		button_5.setBounds(259, 327, 93, 21);
+		contentPane.add(button_5);
+		
+		JLabel label_2 = new JLabel("请输入图书编号：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_2.setBounds(259, 133, 133, 24);
+		contentPane.add(label_2);
+		
+		addId = new JTextField();
+		addId.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addId.setColumns(10);
+		addId.setBounds(405, 135, 114, 21);
+		contentPane.add(addId);
+		
+		JLabel label_3 = new JLabel("请输入图书作者 ：");
+		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_3.setBounds(259, 201, 133, 24);
+		contentPane.add(label_3);
+		
+		addAuthor = new JTextField();
+		addAuthor.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addAuthor.setColumns(10);
+		addAuthor.setBounds(405, 203, 114, 21);
+		contentPane.add(addAuthor);
+		
+		JLabel label_1 = new JLabel("请输入入库时间 ：");
+		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_1.setBounds(259, 265, 133, 24);
+		contentPane.add(label_1);
+		
+		addIntime = new JTextField();
+		addIntime.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addIntime.setColumns(10);
+		addIntime.setBounds(405, 267, 114, 21);
+		contentPane.add(addIntime);
+		
+		JLabel label_4 = new JLabel("请输入图书名称：");
+		label_4.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_4.setBounds(259, 167, 133, 24);
+		contentPane.add(label_4);
+		
+		addName = new JTextField();
+		addName.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addName.setColumns(10);
+		addName.setBounds(405, 172, 114, 21);
+		contentPane.add(addName);
+		
+		JLabel label_5 = new JLabel("请输入图书出版社");
+		label_5.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_5.setBounds(259, 235, 133, 24);
+		contentPane.add(label_5);
+		
+		addPress = new JTextField();
+		addPress.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		addPress.setColumns(10);
+		addPress.setBounds(405, 236, 114, 21);
+		contentPane.add(addPress);
+		
+		JLabel label = new JLabel("添加图书");
+		label.setFont(new Font("Dialog", Font.BOLD, 25));
+		label.setBounds(321, 33, 214, 103);
+		contentPane.add(label);
+		
+		JLabel label_6 = new JLabel("");
+		label_6.setIcon(new ImageIcon(M_AddBook.class.getResource("/bgimg/timg (21).jpg")));
+		label_6.setBounds(0, 0, 799, 429);
+		contentPane.add(label_6);
+	}
+}

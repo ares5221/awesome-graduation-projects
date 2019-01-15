@@ -1,0 +1,83 @@
+package com.sxt.serice;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
+
+import javax.swing.JOptionPane;
+
+import com.sxt.request.Communication;
+import com.sxt.swing.RegisterSwing;
+import com.sxt.util.HeadImage;
+import com.sxt.util.Regex;
+import com.sxt.vo.TransMsg;
+import com.sxt.vo.Users;
+
+/**
+ * 用于注册页面registerswing界面的相关操作
+ * @author penglijun
+ *
+ */
+public class RegisterOperate implements ActionListener {
+	
+
+	private RegisterSwing registerSwing;// 注册界面设计
+
+	private String id;// 账号
+	private String name;// 昵称
+	private String password;// 第一次输入密码
+	private String checkedpsw;// 第二次输入密码
+	private int admin = 0;
+	
+	/**
+	 * 构造方法，用于初始化界面和添加监听器
+	 */
+	public RegisterOperate() {
+		registerSwing = new RegisterSwing();
+		registerSwing.getSubmitButton().addActionListener(this);
+	}
+
+
+	/**
+	 * 注册界面提交按钮触发的事件
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource().equals(registerSwing.getSubmitButton())) {
+			id = registerSwing.getIdText().getText().trim();
+			name = registerSwing.getNameText().getText().trim();
+			password = registerSwing.getPasswordText().getText().trim();
+			checkedpsw = registerSwing.getCheckpswText().getText().trim();
+			
+			if (!Regex.idRegex(id)||!Regex.nameRegex(name)||!Regex.pwdRegex(password)) {
+				JOptionPane.showMessageDialog(null, "请按要求填写信息！");
+				return;
+			}
+				if(!password.equals(checkedpsw)){
+					JOptionPane.showMessageDialog(null, "密码不一致！");
+					return;
+				}else{
+					
+					Users users = new Users(id, name, password, admin,(String)registerSwing.getComboBox().getSelectedItem());
+					Communication communication = new Communication();
+					communication.sender(new TransMsg("regist", users));
+			    	communication.listener();
+			    	for (TransMsg msg : communication.getList()) {
+						if (msg.getFunction().equals("regist")) {
+							Users users2=(Users)msg.getMsg();
+							if (users2==null) {
+								JOptionPane.showMessageDialog(null, "该账号已存在！");
+								communication.getList().remove(msg);
+								return;
+							}
+						}
+					}
+			    	LoginOperate loginOperate=new LoginOperate();
+			    	registerSwing.setVisible(false);
+				}
+			
+		}
+	}
+
+
+}

@@ -1,0 +1,11 @@
+package com.sxt.serice;
+
+import com.sxt.swing.AdminOperateSwing;
+
+public class AdminOperate {
+
+	public AdminOperate() {
+		new AdminOperateSwing();
+	}
+
+}

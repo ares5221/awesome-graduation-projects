@@ -1,0 +1,133 @@
+package zhanlang.DAO.Imple;
+
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.util.List;
+
+import javax.swing.JButton;
+
+import zhanlang.DAO.UserDAO;
+import zhanlang.entity.Book;
+import zhanlang.entity.Person;
+import zhanlang.service.Dao.LibServerDAO;
+import zhanlang.service.Dao.Imple.LibServerDAOimple;
+
+public class UserDAOImple implements UserDAO{
+	private JButton send;
+	private Socket socket;
+	private ObjectOutputStream oos;
+	private Object object; 
+	private byte[] myData;
+	/**
+	 * 
+	 */
+	public void doCall(String command,Object o)throws Exception{
+		socket = new Socket("192.168.143.139", 8888);
+		this.doWork(command,o);
+	}
+	
+	
+	public void doWork(String command,Object o)throws Exception{
+		oos  = new ObjectOutputStream(this.socket.getOutputStream());
+	/*	myData = new byte [30];
+		String log = new String("login");
+		myData = log.getBytes();
+		
+		os.write(myData);*/
+		oos.writeObject(command);
+		oos.writeObject(o);
+		ReadNet r = new ReadNet();
+		Thread t= new Thread(r);
+		t.start();
+	}
+	/**
+	 * 
+	 * @author Administrator
+	 * 内部类  启动线程监听
+	 */
+	class ReadNet implements Runnable{
+		@Override
+		public void run() {
+			try{
+				ObjectInputStream ois= new ObjectInputStream(socket.getInputStream());
+			while(true){
+				//System.out.println("这里是读到服务器返回的内容，输出");
+				
+				object =ois.readObject();
+				//使用同步锁，避免在没有登录成功的时候，就在主线程中判断登录对象为空，从而导致登录失败。
+				synchronized ("aaa") {
+					"aaa".notify();
+				}
+			}
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	
+	@Override
+	//public boolean login(Person person) {
+	public boolean login(String command,Person loginPerson) {
+		try {
+			doCall(command,loginPerson);
+			synchronized ("aaa") {
+				"aaa".wait();
+				}
+			while(((String)object).equals("true")){
+				System.out.println("我收到了");
+				System.out.println("???");
+				return true;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public List<Book> showCanAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Book> showAlready() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void borrowById(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void returnById(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean regester() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void alterInfo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectById() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

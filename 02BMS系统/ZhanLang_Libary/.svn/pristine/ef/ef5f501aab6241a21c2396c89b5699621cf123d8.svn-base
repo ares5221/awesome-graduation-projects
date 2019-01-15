@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<person size="10010"> 
+  <Users ID="001"> 
+    <user ID="10001"> 
+      <userID>10001</userID>  
+      <name>张涛</name>  
+      <userName>zhangtao001</userName>  
+      <password>1234</password>  
+      <sex>男</sex>  
+      <age>23</age>  
+      <tel>16755890234</tel>  
+      <address>北京</address> 
+    </user>  
+    <user ID="10002"> 
+      <userID>10002</userID>  
+      <name>李四</name>  
+      <userName>lisi001</userName>  
+      <password>1234</password>  
+      <sex>男</sex>  
+      <age>23</age>  
+      <tel>13446567668</tel>  
+      <address>上海</address> 
+    </user>  
+    <user ID="10003"> 
+      <userID>10003</userID>  
+      <name>李明</name>  
+      <userName>111</userName>  
+      <password>111</password>  
+      <sex>女</sex>  
+      <age>23</age>  
+      <tel>1675520234</tel>  
+      <address>天津</address> 
+    </user>  
+    <user ID="10007"> 
+      <id>10007</id>  
+      <userName>zhangwei</userName>  
+      <name>张炜</name>  
+      <tel>178024311</tel>  
+      <age>23</age>  
+      <address>北京市</address>  
+      <sex>男</sex>  
+      <age>23</age>  
+      <password>123</password> 
+    </user>  
+    <user ID="10008"> 
+      <id>10008</id>  
+      <userName>zhangtao</userName>  
+      <name>啥子</name>  
+      <tel>1489652265</tel>  
+      <age>22</age>  
+      <address>北京市</address>  
+      <sex>男</sex>  
+      <age>23</age>  
+      <password>232</password> 
+    </user>  
+    <user ID="10009"> 
+      <id>10009</id>  
+      <userName>zhangwei110</userName>  
+      <name>Moses</name>  
+      <tel>178024311</tel>  
+      <age>23</age>  
+      <address>北京市</address>  
+      <sex>男</sex>  
+      <password>knownoknow</password> 
+    </user>  
+    <user ID="10010">
+      <id>10010</id>
+      <userName>2222</userName>
+      <name>2222</name>
+      <tel>123123123</tel>
+      <age>12</age>
+      <address>北京市</address>
+      <sex>男</sex>
+      <password>123456</password>
+    </user>
+    <user ID="10011">
+      <id>10010</id>
+      <userName>zddd</userName>
+      <name>asdfghjk</name>
+      <tel>1</tel>
+      <age>12</age>
+      <address>北京市</address>
+      <sex>女</sex>
+      <password>as</password>
+    </user>
+  </Users>  
+  <Managers ID="002"> 
+    <manager ID="00001"> 
+      <userID>20001</userID>  
+      <userName>王五</userName>  
+      <password>2345</password> 
+    </manager>  
+    <manager ID="00002"> 
+      <userID>20002</userID>  
+      <userName>刘能</userName>  
+      <password>2345</password> 
+    </manager> 
+        <manager ID="00003"> 
+      <userID>20003</userID>  
+      <userName>admin</userName>  
+      <password>admin</password> 
+    </manager>  
+  </Managers> 
+</person>

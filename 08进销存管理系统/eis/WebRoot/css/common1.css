@@ -1,0 +1,75 @@
+.declare{background:#FFFDE8;border:1px solid #FFEBB6;margin-top:10px;padding:10px}
+.FTGreen{color:#7DC818}
+.price_list_head{border-bottom:2px solid #7F7F7F}
+.price_list_main{border-bottom:1px solid #D7D7D7}
+.SideItem{position:absolute;right:20px;top:7px}
+.title{font:bold 14px "ו";margin:16px 10px 0;position:relative}
+.TitleInfo{position:absolute}
+.TitleLink{text-align:center;position:absolute}
+.TitleTop{text-align:center;position:absolute}
+#auction_list{padding-left:30px;}
+#auction_list li{float:left;text-align:center}
+#comm{margin-top:10px;position:relative;width:100%}
+#commend{margin-top:10px}
+#commend_head{font:bold 14px "ו";height:20px;padding:6px 0 0 30px}
+#commend_list td{text-align:center}
+#commend_list{height:180px;padding-top:10px;margin:0 10px 10px}
+#CommInfo{position:absolute;right:10px;top:0;width:240px}
+#CommInfo div{text-align:left}
+#CommMess{text-align:left;width:300px;height:250px;margin:0 auto}
+#CommMess #city{width:90px}
+#CommMess #TenpayNone{background:#FFFDE8;border:1px solid #FFEBB6;margin-top:5px;padding:5px 10px}
+#CommMess #TenpayShow{background:url(http://pics.paipai.com/newsys/auction/auction_btn_pay.gif) center no-repeat;margin-top:5px;padding:7px 20px 7px 110px;border:none;line-height:140%}
+#CommMess div{border-bottom:1px dashed #D4D4D4;padding:7px 0 4px 10px}
+#CommMess div.position{border:none;margin:0;padding:0;position:relative;width:100%}
+#CommMess span.PositionShow{left:160px;position:absolute;top:-19px}
+#CommPics{left:10px;position:absolute;text-align:center;top:0;width:220px}
+#CommPicsShow{height:200px;padding:5px 0;border: 1px solid #EDEDED;}
+#CommShow{margin:0 240px 0 220px;text-align:center}
+#FullPath{position:relative}
+#FullPathShow{border-bottom:1px solid #E1569A;padding:7px 0}
+#html_tem_leaveMsg td{line-height:150%;word-wrap:break-word;word-break:break-all}
+#html_tem_price{color:#FF4E00;font:18px Arial}
+#LeaveMsg{border:1px dashed #CCCCCC;height:50px;line-height:50px;margin:10px;text-align:center}
+#MobileSeller{background:#FFFDE8;border:1px solid #FFEBB6;height:30px;margin-top:10px;padding:10px;text-align:left}
+#name{height:28px;padding-top:12px}
+#others{height:100%}
+#others li{float:left;padding-left:30px;width:45%;border-bottom:1px dashed #D4D4D4;height:24px;line-height:24px}
+#others ul{margin:10px 30px}
+#pay_desc1,#pay_desc2{padding-left:20px}
+#price{padding:10px 0 10px 30px;text-align:left}
+#price li{float:left;height:30px;line-height:30px;margin-left:20px}
+#price_list{margin-top:10px}
+#price_list_foot{background:#F7F7F7}
+#rate{margin-top:10px}
+#rate td{border-bottom:1px dashed #D7D7D7;line-height:150%;word-wrap:break-word;word-break:break-all}
+#TenpayBank{line-height:150%;margin:0 0 10px 60px;text-align:left}
+#UserHelp{margin-top:5px;padding-left:30px}
+#UserHelp li{background:url(images/auction_btn_help.gif) 0 2px no-repeat;margin-bottom:3px;padding-left:10px}
+#UserInfo{background:#F8F8F8;border:1px solid #D8D8D8}
+#UserInfo ul{margin-bottom:7px;position:relative}
+#UserInfo ul li.LiLeft{left:18px;position:absolute;top:2px;width: 62px;}
+#UserInfo ul li.LiSide{padding-left:80px}
+#UserInfo ul li.LiSide div img{padding-right:8px}
+#UserInfoHead{background:#EDEDED;padding:4px 0 4px 18px;border-bottom:1px solid #D8D8D8;font-size:14px}
+#UserInfoFoot{background:#EDEDED;padding:2px 0 2px 18px;border-top:1px solid #D8D8D8}
+.font_gray{color:#808080}
+.btn_gray{border:1px solid #CCC;color:#808080;background:#F7F7F7}
+.input_main{border:1px solid #CCC}
+#DescShow{padding:10px;word-wrap:break-word;word-break:break-all}
+#CommendSecond,#auction_list{margin-top:16px}
+.DescShow{padding:20px}
+.shopSell{height:20px}
+.shopPrize{color:#ff4e00;font-weight:bold;height:17px;padding-top:3px}
+.shopTitle{height:50px;overflow:hidden;padding:0 5px;word-break:break-all;word-wrap:break-word}
+.shopImg{height:85px}
+#DiscountSpan1 {color:red;font-size:14px;font-weight:bold;padding-left:15px}
+#DiscountSpan2 {color:red}
+#showAttitute{margin:10px;border:1px dashed #8BA2CB;height:1px;background:#f6f6f6}
+#ClassAttituteListUL{padding:20px;float:left;}
+#ClassAttituteListUL li{float:left;white-space:nowrap;margin:0 10px 10px 0;width:210px;text-align:left;height:16px}
+#ClassAttituteListUL li.newLine{border-top:1px solid transparent !important;border-top:0;clear:both}
+#buyMore{margin:10px;border:1px solid #FFD488;height:1px;background:#FFFFE6}
+#buyMore td{padding-top:10px}
+#buyMore div{padding-bottom:10px}
+#moreNow div{border-right:1px dashed #D8D8D8}

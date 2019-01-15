@@ -1,0 +1,30 @@
+package com.sxt.request;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.sxt.serice.LoginOperate;
+import com.sxt.vo.Users;
+
+/**
+ * 客户端运行入口
+ * @author Administrator
+ *
+ */
+public class StartApp {
+	private static List<Users> list=new ArrayList<>();
+	
+    public static List<Users> getList() {
+		return list;
+	}
+
+	public  void setList(List<Users> list) {
+		this.list = list;
+	}
+
+	public static void main(String[] args)  {
+		//启动登录界面
+    	new LoginOperate();
+	}
+
+}

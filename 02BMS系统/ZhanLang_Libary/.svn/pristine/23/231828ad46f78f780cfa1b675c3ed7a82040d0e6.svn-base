@@ -1,0 +1,119 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+
+public class M_AddBook extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField;
+	private JTextField textField_3;
+	private JTextField textField_4;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UserMenu frame = new UserMenu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public M_AddBook(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 815, 468);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton button_4 = new JButton("返回");
+		button_4.setBounds(272, 329, 93, 23);
+		contentPane.add(button_4);
+		
+		JButton button_5 = new JButton("添加");
+		button_5.setBounds(126, 330, 93, 21);
+		contentPane.add(button_5);
+		
+		JLabel label_2 = new JLabel("请输入图书编号：");
+		label_2.setBounds(126, 136, 133, 24);
+		contentPane.add(label_2);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(272, 138, 114, 21);
+		contentPane.add(textField_1);
+		
+		JLabel label_3 = new JLabel("请输入图书作者 ：");
+		label_3.setBounds(126, 204, 133, 24);
+		contentPane.add(label_3);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(272, 206, 114, 21);
+		contentPane.add(textField_2);
+		
+		JLabel label_1 = new JLabel("请输入入库时间 ：");
+		label_1.setBounds(126, 268, 133, 24);
+		contentPane.add(label_1);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(272, 270, 114, 21);
+		contentPane.add(textField);
+		
+		JLabel label_4 = new JLabel("请输入图书名称：");
+		label_4.setBounds(126, 170, 133, 24);
+		contentPane.add(label_4);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(272, 175, 114, 21);
+		contentPane.add(textField_3);
+		
+		JLabel label_5 = new JLabel("请输入图书出版社");
+		label_5.setBounds(126, 238, 133, 24);
+		contentPane.add(label_5);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(272, 239, 114, 21);
+		contentPane.add(textField_4);
+		
+		JLabel label = new JLabel("添加图书");
+		label.setFont(new Font("华文行楷", Font.PLAIN, 25));
+		label.setBounds(174, 36, 214, 103);
+		contentPane.add(label);
+		
+		JLabel label_6 = new JLabel("");
+		label_6.setIcon(new ImageIcon(M_AddBook.class.getResource("/bgimg/timg (14).jpg")));
+		label_6.setBounds(0, 0, 799, 429);
+		contentPane.add(label_6);
+	}
+}

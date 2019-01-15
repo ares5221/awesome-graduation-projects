@@ -1,0 +1,66 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.Imple.UserDAOImple;
+import zhanlang.entity.Book;
+
+import javax.swing.JTextArea;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class M_ShowBorrowMessage extends JFrame {
+
+	private JPanel contentPane;
+	private JTextArea textArea;
+
+	/**
+	 * Create the frame.
+	 */
+	public M_ShowBorrowMessage() {
+		setTitle("借阅信息");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 573, 406);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		textArea = new JTextArea();
+		textArea.setBounds(0, 0, 557, 315);
+		contentPane.add(textArea);
+		
+		JButton button = new JButton("返回");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.ShowBorrowMessage.dispose();
+			}
+		});
+		button.setBounds(464, 325, 93, 23);
+		contentPane.add(button);
+		
+		
+/*		UserDAOImple userImple = new UserDAOImple();
+		Boolean flage = userImple.borrowById("borrowById", new Book(textField.getText()));
+		if(flage){
+			
+			//借书成功
+			if(bookList != null){
+				System.out.println(sbf.length());
+				sbf.replace(0, sbf.length(), "");
+				System.out.println(sbf.length());
+				for (Book book : bookList) {
+					sbf.append("    "+book.getID()+"\t"+book.getbName()+"\t"+book.getAuthor() +"\t"
+				+book.getPress()+"\t"+book.getInTime()+ "\r\n");
+					sbf.append("---------------------------------------------------------------------------------------------------\r\n");
+				}
+			}
+			textArea.setText(sbf.toString());*/
+	}
+}

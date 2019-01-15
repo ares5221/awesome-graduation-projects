@@ -1,0 +1,5 @@
+ mysql用户名密码都是root
+Class.forName("com.mysql.jdbc.Driver");
+Connection conn1 = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/crm", "root", "root");
+所有servlet继承自BaseServlet，需要传method参数，通过反射调用自己的servlet
+申明说在前面:所有代码必须写注释!

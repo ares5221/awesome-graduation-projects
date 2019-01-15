@@ -1,0 +1,183 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JMenuBar;
+import javax.swing.JPasswordField;
+import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
+
+public class U_ModifyMessage extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JPasswordField passwordField;
+	private JPasswordField passwordField_1;
+	private JPasswordField passwordField_2;
+
+	/**
+	 * Create the frame.
+	 */
+	public U_ModifyMessage(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 534, 447);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu menu_3 = new JMenu("查看");
+		menuBar.add(menu_3);
+		
+		JMenuItem menuItem_3 = new JMenuItem("可借书籍");
+		menu_3.add(menuItem_3);
+		
+		JMenuItem menuItem_4 = new JMenuItem("已借书籍");
+		menu_3.add(menuItem_4);
+		
+		JMenu menu = new JMenu("借还");
+		menuBar.add(menu);
+		
+		JMenuItem menuItem = new JMenuItem("借书");
+		menu.add(menuItem);
+		
+		JMenuItem menuItem_1 = new JMenuItem("还书");
+		menu.add(menuItem_1);
+		
+		JMenu menu_1 = new JMenu("用户");
+		menuBar.add(menu_1);
+		
+		JMenuItem menuItem_2 = new JMenuItem("修改信息");
+		menu_1.add(menuItem_2);
+		
+		JMenu menu_2 = new JMenu("退出");
+		menuBar.add(menu_2);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(676, 10, 93, 77);
+		contentPane.add(label);
+		
+		JButton button_4 = new JButton("提交");
+		button_4.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_4.setBackground(new Color(211, 211, 211));
+		button_4.setBounds(140, 307, 93, 23);
+		contentPane.add(button_4);
+		
+		JLabel label_5 = new JLabel("修改个人信息");
+		label_5.setFont(new Font("Dialog", Font.BOLD, 25));
+		label_5.setBounds(126, -16, 214, 103);
+		contentPane.add(label_5);
+		
+		JButton button = new JButton("返回");
+		button.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.userMenuFrame = new UserMenu();
+				Client.userMenuFrame .setVisible(true);	
+				Client.uModifyMessageFrame.dispose();
+			}
+		});
+		button.setBounds(270, 307, 93, 23);
+		contentPane.add(button);
+		
+		JLabel label_1 = new JLabel("用户名：");
+		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_1.setBounds(65, 71, 99, 18);
+		contentPane.add(label_1);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(141, 77, 93, 21);
+		contentPane.add(textField);
+		
+		JLabel label_2 = new JLabel("姓名：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_2.setBounds(275, 71, 55, 18);
+		contentPane.add(label_2);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(322, 71, 129, 21);
+		contentPane.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(322, 112, 129, 21);
+		contentPane.add(textField_2);
+		
+		JLabel label_3 = new JLabel("年龄：");
+		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_3.setBounds(275, 112, 55, 18);
+		contentPane.add(label_3);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(141, 112, 93, 21);
+		contentPane.add(passwordField);
+		
+		JLabel label_4 = new JLabel("联系方式：");
+		label_4.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_4.setBounds(65, 112, 85, 18);
+		contentPane.add(label_4);
+		
+		JLabel label_6 = new JLabel("城市：");
+		label_6.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_6.setBounds(65, 158, 55, 18);
+		contentPane.add(label_6);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(140, 158, 93, 21);
+		contentPane.add(comboBox);
+		
+		JLabel label_7 = new JLabel("性别：");
+		label_7.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_7.setBounds(275, 159, 55, 18);
+		contentPane.add(label_7);
+		
+		JRadioButton radioButton = new JRadioButton("男");
+		radioButton.setBounds(341, 158, 42, 23);
+		contentPane.add(radioButton);
+		
+		JRadioButton radioButton_1 = new JRadioButton("女");
+		radioButton_1.setBounds(392, 158, 42, 23);
+		contentPane.add(radioButton_1);
+		
+		JLabel label_8 = new JLabel("输入密码：");
+		label_8.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_8.setBounds(65, 206, 85, 18);
+		contentPane.add(label_8);
+		
+		passwordField_1 = new JPasswordField();
+		passwordField_1.setBounds(140, 206, 129, 21);
+		contentPane.add(passwordField_1);
+		
+		JLabel label_9 = new JLabel("重复密码：");
+		label_9.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_9.setBounds(65, 250, 75, 18);
+		contentPane.add(label_9);
+		
+		passwordField_2 = new JPasswordField();
+		passwordField_2.setBounds(140, 250, 129, 21);
+		contentPane.add(passwordField_2);
+	}
+}

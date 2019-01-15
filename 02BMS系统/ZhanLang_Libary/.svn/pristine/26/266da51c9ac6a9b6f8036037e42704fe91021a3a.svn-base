@@ -1,0 +1,60 @@
+package zhanlang.view;
+
+import java.awt.EventQueue;
+import java.util.List;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.UserDAO;
+import zhanlang.DAO.Imple.UserDAOImple;
+import zhanlang.entity.Book;
+
+public class U_ShowCanAll extends JFrame {
+	List<Book> bookList = null;
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					U_ShowCanAll frame = new U_ShowCanAll();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public U_ShowCanAll() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 609, 392);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		//创建框框
+		JTextArea canBook = new JTextArea();
+		canBook.setBounds(51, 22, 470, 271);
+		contentPane.add(canBook);
+		//添加
+		UserDAO userImple = new UserDAOImple();
+		bookList = userImple.showAlready("showAlready", new LoginMenu().userlogin);
+		if(bookList != null){
+			for (Book book : bookList) {
+				canBook.append(book.toString() + "\r\n");
+			}
+		}
+	}
+}

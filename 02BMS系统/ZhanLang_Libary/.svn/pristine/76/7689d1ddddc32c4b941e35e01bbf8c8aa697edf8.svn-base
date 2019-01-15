@@ -1,0 +1,40 @@
+package zhanlang.view;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+public class Client {
+	static LoginMenu loginMenuFrame;
+	static ManagerMenu managerMenuFrame;
+	static M_AddBook mAddBookFrame;
+	static M_AddUser mAddUserFrame;
+	static M_DeleteBook mDeleteBookFrame;
+	static M_DeleteUser mDeleteUserFrame;
+	static M_ModifyUserPwd mModifyUserPwdFrame;
+	
+	static UserMenu userMenuFrame;
+	static U_RegesterUser uRegesterFrame;
+	static U_ModifyMessage uModifyMessageFrame;
+	static U_BorrowBook uBorrowbookFrame;
+	static U_BookMessage uBookMessageFrame;
+	
+	
+	public static Socket socket;
+	static{
+		try {
+			socket = new Socket("192.168.143.142", 8888);
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		loginMenuFrame=new LoginMenu();
+		loginMenuFrame.setVisible(true);
+	}
+}

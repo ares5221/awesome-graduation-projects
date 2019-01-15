@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person>
+	<Users ID = "001">
+		<user ID = "30000">
+			<userID>10001</userID>
+			<uname>张涛</uname>
+			<userName>zhangtao001</userName>
+			<password>1234</password>
+		</user>
+		
+		<user ID = "30001">
+			<userID>10002</userID>
+			<pname>李四</pname>
+			<userName>lisi001</userName>
+			<password>1234</password>
+		</user>
+		
+		<user ID = "30002">
+			<userID>10003</userID>
+			<pname>李四</pname>
+			<userName>111</userName>
+			<password>111</password>
+		</user>
+	</Users>
+	
+	<Managers ID = "002">
+		<manager ID = "30003">
+			<userID>20001</userID>
+			<userName>王五</userName>
+			<password>2345</password>
+		</manager>	
+		
+	<manager ID = "30004">
+		<userID>20002</userID>
+		<userName>刘能</userName>
+		<password>2345</password>
+	</manager>	
+	</Managers>
+</person>

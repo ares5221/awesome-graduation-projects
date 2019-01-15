@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>Estate</display-name>
+  
+  	<servlet>
+     <servlet-name>ServletConfigurator</servlet-name>
+     <servlet-class>
+     org.logicalcobwebs.proxool.configuration.ServletConfigurator
+     </servlet-class>
+     <init-param>
+      <param-name>propertyFile</param-name>
+      <param-value>WEB-INF/classes/proxool.properties</param-value>
+     </init-param>
+     <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!--  监控 proxool 连接池 -->
+  
+    <servlet>
+	   <servlet-name>ProxoolServlet</servlet-name>
+	   <servlet-class>org.logicalcobwebs.proxool.admin.servlet.AdminServlet</servlet-class>
+	</servlet>
+  <servlet>
+    <servlet-name>EmployeeServlet</servlet-name>
+    <servlet-class>com.hd.servlet.EmployeeServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>AdminServlet</servlet-name>
+  	<servlet-class>com.hd.servlet.AdminServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>CustomerServlet</servlet-name>
+  	<servlet-class>com.hd.servlet.CustomerServlet</servlet-class>
+  </servlet>
+  
+  
+  <servlet-mapping>
+  	<servlet-name>CustomerServlet</servlet-name>
+  	<url-pattern>/servlet/CustomerServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet-mapping>
+  	<servlet-name>AdminServlet</servlet-name>
+  	<url-pattern>/servlet/AdminServlet</url-pattern>
+  </servlet-mapping>
+
+
+	<servlet-mapping>
+	   <servlet-name>ProxoolServlet</servlet-name>
+	   <url-pattern>/admin.jsp</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EmployeeServlet</servlet-name>
+    <url-pattern>/servlet/EmployeeServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>CustomerConditionServlet</servlet-name>
+    <servlet-class>com.hd.servlet.CustomerConditionServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>HouseTypeList</servlet-name>
+    <servlet-class>com.hd.servlet.HouseTypeList</servlet-class>
+  </servlet>
+
+
+  <servlet>
+    <servlet-name>CustomerSourceServlet</servlet-name>
+    <servlet-class>com.hd.servlet.CustomerSourceServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ReportServlet</servlet-name>
+    <servlet-class>com.hd.servlet.ReportServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>HouseTypeServlet</servlet-name>
+    <servlet-class>com.hd.servlet.HouseTypeServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>HouseInfoServlet</servlet-name>
+    <servlet-class>com.hd.servlet.HouseInfoServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>DepartmentServlet</servlet-name>
+    <servlet-class>com.hd.servlet.DepartmentServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>CustomerCareServlet</servlet-name>
+    <servlet-class>com.hd.servlet.CustomerCareServlet</servlet-class>
+  </servlet>
+
+  
+  <servlet>
+    <servlet-name>NoticeServlet</servlet-name>
+    <servlet-class>com.hd.servlet.NoticeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CustomerTypeServlet</servlet-name>
+    <servlet-class>com.hd.servlet.CustomerTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CustomerUpdateAllNoAdmeasureServlet</servlet-name>
+    <servlet-class>com.hd.servlet.CustomerUpdateAllNoAdmeasureServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>CustomerConditionServlet</servlet-name>
+    <url-pattern>/servlet/CustomerConditionServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>HouseTypeList</servlet-name>
+    <url-pattern>/servlet/HouseTypeList</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>CustomerSourceServlet</servlet-name>
+    <url-pattern>/servlet/CustomerSourceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ReportServlet</servlet-name>
+    <url-pattern>/servlet/ReportServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>HouseTypeServlet</servlet-name>
+    <url-pattern>/servlet/HouseTypeServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>HouseInfoServlet</servlet-name>
+    <url-pattern>/servlet/HouseInfoServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DepartmentServlet</servlet-name>
+    <url-pattern>/servlet/DepartmentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CustomerCareServlet</servlet-name>
+    <url-pattern>/servlet/CustomerCareServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>NoticeServlet</servlet-name>
+    <url-pattern>/servlet/NoticeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CustomerTypeServlet</servlet-name>
+    <url-pattern>/servlet/CustomerTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CustomerUpdateAllNoAdmeasureServlet</servlet-name>
+    <url-pattern>/servlet/CustomerUpdateAllNoAdmeasureServlet</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>com.hd.filter.EncodingFilter</filter-class>
+	</filter>
+	
+	<filter>
+		<filter-name>SecurityFilter</filter-name>
+		<filter-class>com.hd.filter.SecurityFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/servlet/*</url-pattern>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/servlet/*</url-pattern>
+	</filter-mapping>
+	
+ 
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

@@ -1,0 +1,15 @@
+package zhanlang.entity;
+
+
+import java.io.IOException;
+
+import zhanlang.service.operate.ServerListen;
+
+public class Service {
+	public static void main(String[] args) throws IOException {
+		ServerListen sl=new ServerListen();
+		Thread t=new Thread(sl);
+		t.start();
+		System.out.println("服务器启动成功！");
+	}
+}

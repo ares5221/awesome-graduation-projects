@@ -1,0 +1,378 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import java.awt.SystemColor;
+import javax.swing.JSplitPane;
+import javax.swing.JScrollPane;
+import java.awt.Toolkit;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JTabbedPane;
+
+public class U_BorrowBook2 extends JFrame {
+	
+
+	private JPanel contentPane;
+	private JTextField inputID;
+	private JLabel b1;
+	private JLabel b2;
+	private JLabel b3;
+	private JLabel b4;
+	private JLabel b5;
+	private JLabel b6;
+	private JLabel b7;
+	private JLabel b8;
+	static String bookID;
+	private JButton button_5;
+	String flag="1";
+	/**
+	 * Create the frame.
+	 */
+	public U_BorrowBook2() {
+		setTitle("浏览页面");
+		/***/
+		setBackground(new Color(189, 183, 107));
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		/**创建用户页面窗体，大小900*600  */
+		setBounds(100, 100,900, 600);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(140, 298, 576, 2);
+		contentPane.add(scrollPane);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(140, 482, 576, 2);
+		contentPane.add(scrollPane_1);
+	
+		/**
+		 * 当前用户头像模块。
+		 */
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(UserMenu.class.getResource("/img/333.jpg")));
+		label.setBounds(779, 22, 70, 90);
+		contentPane.add(label);
+		
+		JLabel label_8 = new JLabel("请输入编号：");
+		label_8.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+		label_8.setBounds(236, 89, 108, 23);
+		contentPane.add(label_8);
+		
+		inputID = new JTextField();
+		inputID.setBounds(343, 89, 149, 21);
+		contentPane.add(inputID);
+		inputID.setColumns(10);
+		
+		JButton button = new JButton("搜索");
+		button.setBackground(SystemColor.menu);
+		button.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				bookID = inputID.getText();
+				System.out.println("=============:" + bookID);
+				Client.uBookMessageFrame = new U_BookMessage();
+				Client.uBookMessageFrame.setVisible(true);	
+				Client.uBookMessageFrame.setLocationRelativeTo(null);
+				Client.uBorrowbookFrame.dispose();
+			}
+		});
+		button.setBounds(523, 88, 93, 23);
+		contentPane.add(button);
+		
+		b1 = new JLabel("1");
+		b1.setFont(new Font("黑体", Font.BOLD, 14));
+		b1.setBounds(136, 147, 16, 15);
+		contentPane.add(b1);
+		
+		b2 = new JLabel("2");
+		b2.setFont(new Font("黑体", Font.BOLD, 14));
+		b2.setBounds(280, 147, 16, 15);
+		contentPane.add(b2);
+		
+		b5 = new JLabel("5");
+		b5.setFont(new Font("黑体", Font.BOLD, 14));
+		b5.setBounds(136, 332, 16, 15);
+		contentPane.add(b5);
+		
+		b6 = new JLabel("6");
+		b6.setFont(new Font("黑体", Font.BOLD, 14));
+		b6.setBounds(280, 332, 16, 15);
+		contentPane.add(b6);
+		
+		b3 = new JLabel("3");
+		b3.setFont(new Font("黑体", Font.BOLD, 14));
+		b3.setBounds(434, 147, 16, 15);
+		contentPane.add(b3);
+		
+		b4 = new JLabel("4");
+		b4.setFont(new Font("黑体", Font.BOLD, 14));
+		b4.setBounds(586, 147, 16, 15);
+		contentPane.add(b4);
+		
+		b7 = new JLabel("7");
+		b7.setFont(new Font("黑体", Font.BOLD, 14));
+		b7.setBounds(434, 332, 16, 15);
+		contentPane.add(b7);
+		
+		b8 = new JLabel("8");
+		b8.setFont(new Font("黑体", Font.BOLD, 14));
+		b8.setBounds(586, 332, 16, 15);
+		contentPane.add(b8);
+		
+		JMenuItem menuItem = new JMenuItem("");
+		menuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				Client.uBookMessageFrame = new U_BookMessage();
+				Client.uBookMessageFrame.setVisible(true);	
+				Client.uBookMessageFrame.setLocationRelativeTo(null);
+				
+				
+				U_BookMessage.booklable.setIcon(new ImageIcon(UserMenu.class.getResource("/img/1.png")));
+				Client.uBorrowbookFrame2.dispose();
+				
+			}
+		});
+		menuItem.setIcon(new ImageIcon(U_BorrowBook2.class.getResource("/img/1.png")));
+		menuItem.setBounds(150, 147, 95, 120);
+		contentPane.add(menuItem);
+		
+		JMenuItem menuItem_1 = new JMenuItem("");
+		menuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.uBookMessageFrame = new U_BookMessage();
+				Client.uBookMessageFrame.setVisible(true);	
+				Client.uBookMessageFrame.setLocationRelativeTo(null);
+				U_BookMessage.booklable.setIcon(new ImageIcon(UserMenu.class.getResource("/img/2.png")));
+				Client.uBorrowbookFrame2.dispose();
+			}
+		});
+		menuItem_1.setIcon(new ImageIcon(U_BorrowBook2.class.getResource("/img/2.png")));
+		menuItem_1.setBounds(295, 147, 95, 120);
+		contentPane.add(menuItem_1);
+		
+		JMenuItem menuItem_2 = new JMenuItem("");
+		menuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.uBookMessageFrame = new U_BookMessage();
+				Client.uBookMessageFrame.setVisible(true);	
+				Client.uBookMessageFrame.setLocationRelativeTo(null);
+				U_BookMessage.booklable.setIcon(new ImageIcon(UserMenu.class.getResource("/img/3.png")));
+				Client.uBorrowbookFrame2.dispose();
+			}
+		});
+		menuItem_2.setIcon(new ImageIcon(U_BorrowBook2.class.getResource("/img/3.png")));
+		menuItem_2.setBounds(454, 147, 95, 120);
+		contentPane.add(menuItem_2);
+		
+		JMenuItem menuItem_3 = new JMenuItem("");
+		menuItem_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.uBookMessageFrame = new U_BookMessage();
+				Client.uBookMessageFrame.setVisible(true);	
+				Client.uBookMessageFrame.setLocationRelativeTo(null);
+				U_BookMessage.booklable.setIcon(new ImageIcon(UserMenu.class.getResource("/img/4.png")));
+				Client.uBorrowbookFrame2.dispose();
+			}
+		});
+		menuItem_3.setIcon(new ImageIcon(U_BorrowBook2.class.getResource("/img/4.png")));
+		menuItem_3.setBounds(603, 147, 95, 120);
+		contentPane.add(menuItem_3);
+		
+		JMenuItem menuItem_4 = new JMenuItem("");
+		menuItem_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.uBookMessageFrame = new U_BookMessage();
+				Client.uBookMessageFrame.setVisible(true);	
+				Client.uBookMessageFrame.setLocationRelativeTo(null);
+				U_BookMessage.booklable.setIcon(new ImageIcon(UserMenu.class.getResource("/img/5.png")));
+				Client.uBorrowbookFrame2.dispose();
+			}
+		});
+		menuItem_4.setIcon(new ImageIcon(U_BorrowBook2.class.getResource("/img/5.png")));
+		menuItem_4.setBounds(150, 332, 95, 120);
+		contentPane.add(menuItem_4);
+		
+		JMenuItem menuItem_5 = new JMenuItem("");
+		menuItem_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.uBookMessageFrame = new U_BookMessage();
+				Client.uBookMessageFrame.setVisible(true);	
+				Client.uBookMessageFrame.setLocationRelativeTo(null);
+				U_BookMessage.booklable.setIcon(new ImageIcon(UserMenu.class.getResource("/img/6.png")));
+				Client.uBorrowbookFrame2.dispose();
+			}
+		});
+		menuItem_5.setIcon(new ImageIcon(U_BorrowBook2.class.getResource("/img/6.png")));
+		menuItem_5.setBounds(295, 332, 95, 120);
+		contentPane.add(menuItem_5);
+		
+		JMenuItem menuItem_6 = new JMenuItem("");
+		menuItem_6.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				
+				Client.uBookMessageFrame = new U_BookMessage();
+				Client.uBookMessageFrame.setVisible(true);	
+				Client.uBookMessageFrame.setLocationRelativeTo(null);
+				if(flag.equals("2")){
+					System.out.println("1");
+					U_BookMessage.booklable.setIcon(new ImageIcon(UserMenu.class.getResource("/img/11.png")));
+					
+				}else{
+					System.out.println("2");
+					U_BookMessage.booklable.setIcon(new ImageIcon(UserMenu.class.getResource("/img/7.png")));
+				}
+				Client.uBorrowbookFrame2.dispose();
+			}
+		});
+		menuItem_6.setIcon(new ImageIcon(U_BorrowBook2.class.getResource("/img/7.png")));
+		menuItem_6.setBounds(454, 332, 95, 120);
+		contentPane.add(menuItem_6);
+		
+		JMenuItem menuItem_7 = new JMenuItem("");
+		menuItem_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.uBookMessageFrame = new U_BookMessage();
+				Client.uBookMessageFrame.setVisible(true);	
+				Client.uBookMessageFrame.setLocationRelativeTo(null);
+				U_BookMessage.booklable.setIcon(new ImageIcon(UserMenu.class.getResource("/img/8.png")));
+				Client.uBorrowbookFrame2.dispose();
+			}
+		});
+		menuItem_7.setIcon(new ImageIcon(U_BorrowBook2.class.getResource("/img/8.png")));
+		menuItem_7.setBounds(596, 332, 95, 120);
+		contentPane.add(menuItem_7);
+		
+		JButton button_3 = new JButton("儿童读物");
+		button_3.setBackground(SystemColor.menu);
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		button_3.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_3.setBounds(126, 10, 83, 23);
+		contentPane.add(button_3);
+		
+		button_5 = new JButton("人文社科");
+		button_5.setBackground(SystemColor.menu);
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				flag="2";
+				
+			}
+		});
+		button_5.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_5.setBounds(222, 10, 83, 23);
+		contentPane.add(button_5);
+		
+		JButton button_7 = new JButton("青春励志");
+		button_7.setBackground(SystemColor.menu);
+		button_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				flag="3";
+			}
+		});
+		button_7.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_7.setBounds(317, 10, 83, 23);
+		contentPane.add(button_7);
+		
+		JButton button_8 = new JButton("科技生活");
+		button_8.setBackground(SystemColor.menu);
+		button_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				flag="4";
+			}
+		});
+		button_8.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_8.setBounds(414, 10, 83, 23);
+		contentPane.add(button_8);
+		
+		JButton button_9 = new JButton("文学艺术");
+		button_9.setBackground(SystemColor.menu);
+		button_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				flag="5";
+			}
+		});
+		button_9.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_9.setBounds(509, 10, 83, 23);
+		contentPane.add(button_9);
+		
+		JButton button_10 = new JButton("网络小说");
+		button_10.setBackground(SystemColor.menu);
+		button_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				flag="6";
+			}
+		});
+		button_10.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_10.setBounds(602, 10, 83, 23);
+		contentPane.add(button_10);
+		
+		JLabel book1 = new JLabel("智能时代");
+		book1.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		book1.setBounds(160, 273, 54, 15);
+		contentPane.add(book1);
+		
+		JLabel book2 = new JLabel("智能时代");
+		book2.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		book2.setBounds(305, 277, 54, 15);
+		contentPane.add(book2);
+		
+		JLabel book3 = new JLabel("智能时代");
+		book3.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		book3.setBounds(454, 277, 54, 15);
+		contentPane.add(book3);
+		
+		JLabel book4 = new JLabel("智能时代");
+		book4.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		book4.setBounds(603, 277, 54, 15);
+		contentPane.add(book4);
+		
+		JLabel book5 = new JLabel("智能时代");
+		book5.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		book5.setBounds(160, 456, 54, 15);
+		contentPane.add(book5);
+		
+		JLabel book6 = new JLabel("智能时代");
+		book6.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		book6.setBounds(305, 456, 54, 15);
+		contentPane.add(book6);
+		
+		JLabel book7 = new JLabel("智能时代");
+		book7.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		book7.setBounds(464, 456, 54, 15);
+		contentPane.add(book7);
+		
+		JLabel book8 = new JLabel("智能时代");
+		book8.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		book8.setBounds(603, 462, 54, 15);
+		contentPane.add(book8);
+		
+		
+	}
+}

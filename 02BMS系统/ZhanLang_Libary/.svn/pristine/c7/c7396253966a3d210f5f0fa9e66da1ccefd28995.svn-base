@@ -1,0 +1,46 @@
+package zhanlang.DAO;
+
+import java.util.List;
+
+import zhanlang.entity.Book;
+import zhanlang.entity.Person;
+import zhanlang.entity.User;
+
+public interface UserDAO {
+	/**
+	 * login()登录返回布尔类型
+	 * @return
+	 */
+	public User login(String command,Object o );
+	/**
+	 * 显示全部可以借阅书籍,返回list容器
+	 * @return
+	 */
+	public List<Book> showCanAll(String command,Object book);
+	/**
+	 * 显示已经借出书籍返回List容器
+	 * @return
+	 */
+	public List<Book> showAlready(String command,Person user);
+	/**
+	 * 通过id借书
+	 * @param id
+	 */
+	public Book borrowById(String command,Object book);
+	/**
+	 * 通过id还书 
+	 * @param id
+	 */
+	public boolean returnById(String command,Object book);
+	/**
+	 * 注册
+	 * @return
+	 */
+	public boolean regester(String command,Object user);
+	/**
+	 * 
+	 */
+//	public void alterInfo();
+	public Book selectById(String command,Object book);
+
+}

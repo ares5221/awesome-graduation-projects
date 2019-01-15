@@ -1,0 +1,235 @@
+package com.bjsxt.swing;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import com.bjsxt.client.Regex;
+import com.bjsxt.service.Service;
+
+public class Login extends JFrame implements ActionListener {
+
+	private Socket socket;// socket
+	private PrintWriter pw;
+	private BufferedReader br;
+
+	private JPanel contentPane;
+	private JTextField userName;
+	private JTextField password;
+	private JRadioButton student;
+	private JRadioButton teacher;
+	private JRadioButton administrator;
+	private ButtonGroup bg;
+	private JButton button;
+	private JLabel label_2;
+	private JLabel label_3;
+
+	public Login() throws IOException {
+		socket = new Socket("127.0.0.1", 8900);
+		pw = new PrintWriter(this.socket.getOutputStream());
+		br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+		setBounds(100, 100, 470, 500);
+		setTitle("告死天使学生选课系统");
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		
+		JLabel labelTitle=new JLabel("告死天使学生选课系统");
+		labelTitle.setFont(new Font("微软雅黑", 1, 30));
+		labelTitle.setBounds(85, 10, 400, 50);
+		contentPane.add(labelTitle);
+		
+		JLabel label = new JLabel("ID");
+		label.setFont(new Font("宋体", 1, 16));
+		label.setBounds(28, 67, 100, 40);
+		contentPane.add(label);
+
+		userName = new JTextField();
+		userName.setBounds(80, 75, 188, 25);
+		contentPane.add(userName);
+		userName.setColumns(10);
+		
+		label_3 = new JLabel("");
+		label_3.setBounds(300, 75, 128, 18);
+		contentPane.add(label_3);
+		
+		JLabel label_1 = new JLabel("密码");
+		label_1.setFont(new Font("宋体", 1, 16));
+		label_1.setBounds(32, 147, 100, 40);
+		contentPane.add(label_1);
+
+
+		password = new JTextField();
+		password.setBounds(80, 155, 188, 25);
+		contentPane.add(password);
+		password.setColumns(10);
+
+		label_2 = new JLabel("");
+		label_2.setBounds(300, 155, 128, 18);
+		contentPane.add(label_2);
+		
+		student = new JRadioButton("学生登录");
+		student.setBounds(43, 362, 81, 27);
+		contentPane.add(student);
+		student.setSelected(true);
+
+		teacher = new JRadioButton("教师登录");
+		teacher.setBounds(238, 362, 81, 27);
+		contentPane.add(teacher);
+
+		administrator = new JRadioButton("管理员登录");
+		administrator.setBounds(300, 362, 90, 27);
+		contentPane.add(administrator);
+		bg = new ButtonGroup();
+		bg.add(student);
+		bg.add(teacher);
+		bg.add(administrator);
+
+		button = new JButton("登录");
+		button.setBounds(206, 390, 113, 27);
+		contentPane.add(button);
+		button.addActionListener(this);
+
+		new Thread(new LogRegex()).start();
+		new Thread(new InfoListener()).start();
+	}
+
+	private String judgeLog(String str) {
+		// TODO
+		if (str.startsWith("登录")) {
+			String[] sArr = str.split(",");
+			return sArr[1];
+
+		}
+		return null;
+	}
+
+	public void sendLog() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("登录,");
+		sb.append(userName.getText() + ",");
+		sb.append(password.getText());
+		Service.send(pw, sb.toString());
+	}
+
+	private class LogRegex implements Runnable {
+
+		@Override
+		public void run() {
+			while (true) {
+				regex();
+				try {
+					Thread.sleep(1500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+	}
+
+	public void regex() {
+		Regex regex = new Regex();
+		if (!regex.passwordRegex(password.getText())) {
+			label_2.setForeground(Color.RED);
+			label_2.setText("4-10位字母数字组合");
+		} else {
+			label_2.setForeground(Color.GREEN);
+			label_2.setText("密码格式正确");
+		}
+
+		label_3.setForeground(Color.GREEN);
+		label_3.setText("ID格式正确");
+
+		if (student.isSelected())
+			if (!regex.stuRegex(userName.getText())) {
+				label_3.setForeground(Color.RED);
+				label_3.setText("学生ID6位数字");
+			}
+		if (teacher.isSelected())
+			if (!regex.teacherRegex(userName.getText())) {
+				label_3.setForeground(Color.RED);
+				label_3.setText("教师ID4位数字");
+			}
+		if (administrator.isSelected())
+			if (!regex.adminRegex(userName.getText())) {
+				label_3.setForeground(Color.RED);
+				label_3.setText("管理员ID2位数字");
+			}
+	}
+
+	
+
+	private class InfoListener implements Runnable {
+
+		@Override
+		public void run() {
+			while (true) {
+				judgeLogin(Service.listen(br));
+			}
+		}
+		private void judgeLogin(String str) {
+			// TODO
+			if (str.startsWith("登录")) {
+				if ("true".equals(dealInfo(str))){
+					if (student.isSelected()) {
+						Student stu = new Student(socket);
+						dispose();
+						stu.setVisible(true);
+						
+					}
+					if (teacher.isSelected()) {
+						Teacher teacher = new Teacher(socket);
+						teacher.setVisible(true);
+					}
+					if (administrator.isSelected()) {
+						Admin admin = new Admin(socket);
+						admin.setVisible(true);
+					}
+				}else
+					JOptionPane.showMessageDialog(null, "登录失败");
+				
+					
+				userName.setText("");
+				password.setText("");
+				
+			}
+		}
+
+		private String dealInfo(String str) {
+			String[] sArr = str.split(",");
+			return sArr[1];
+		}
+	}
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == button) {
+			if(Color.GREEN.equals(label_2.getForeground())&&Color.GREEN.equals(label_3.getForeground()))
+				sendLog();
+			else
+			JOptionPane.showMessageDialog(null, "ID或密码错误", "登录", JOptionPane.ERROR_MESSAGE);
+		}
+	}
+
+}

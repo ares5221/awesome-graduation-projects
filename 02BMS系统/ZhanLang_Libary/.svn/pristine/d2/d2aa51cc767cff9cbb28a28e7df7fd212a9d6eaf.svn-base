@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<books size="9"> 
+  <book ID="1"> 
+    <image/>  
+    <bookID>1</bookID>  
+    <bName>三国演义</bName>  
+    <author>罗贯中</author>  
+    <press>新华出版社</press>  
+    <borrow>111</borrow>  
+    <type>小说</type>  
+    <inTime>2017-06-01</inTime>  
+    <outTime>2017-08-30</outTime> 
+  </book>  
+  <book ID="2"> 
+    <image/>  
+    <bookID>2</bookID>  
+    <bName>水浒传</bName>  
+    <author>施耐庵</author>  
+    <press>新华出版社</press>  
+    <inTime>2017-06-01</inTime>  
+    <type>心理</type>  
+    <borrow>111</borrow>  
+    <outTime>null</outTime> 
+  </book>  
+  <book ID="3"> 
+    <image/>  
+    <bookID>3</bookID>  
+    <bName>红楼梦</bName>  
+    <author>曹雪芹</author>  
+    <press>新华出版社</press>  
+    <inTime>2017-06-01</inTime>  
+    <type>小说</type>  
+    <borrow>null</borrow>  
+    <outTime>null</outTime> 
+  </book> 
+</books>

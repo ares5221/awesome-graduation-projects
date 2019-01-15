@@ -1,0 +1,300 @@
+package com.sxt.swing;
+
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.border.EmptyBorder;
+
+import com.sxt.windows.PicsJWindow;
+
+import java.awt.Toolkit;
+import java.awt.Font;
+
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.JTextPane;
+import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
+import javax.swing.BoxLayout;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.awt.event.ActionEvent;
+
+/**
+ * 私聊聊天界面绘制
+ * @author pengLijun
+ *
+ */
+public class SigleChatSwing extends JFrame implements WindowListener {
+
+	private JPanel contentPane;
+
+	
+	private JLabel friendMsgLabel ;//好友信息
+	private JPanel textPane ;//聊天内容
+	private JButton fontButton ;//字体设置
+	private JButton emojiButton ;//表情设置
+	private JTextPane sendText ;//发送内容
+	private JComboBox msgComboBox ;//历史记录等操作下拉框
+	private JButton clearButton ;//清除按钮
+	private JButton sendButton ;//提交按钮
+	
+	private PicsJWindow picsJWindow;
+	
+	private JScrollPane messagePane;//聊天窗口
+
+	public JScrollPane getMessagePane() {
+		return messagePane;
+	}
+
+	public void setMessagePane(JScrollPane messagePane) {
+		this.messagePane = messagePane;
+	}
+
+	public PicsJWindow getPicsJWindow() {
+		return picsJWindow;
+	}
+
+	public void setPicsJWindow(PicsJWindow picsJWindow) {
+		this.picsJWindow = picsJWindow;
+	}
+
+	public JLabel getFriendMsgLabel() {
+		return friendMsgLabel;
+	}
+
+	public void setFriendMsgLabel(JLabel friendMsgLabel) {
+		this.friendMsgLabel = friendMsgLabel;
+	}
+
+	public JPanel getTextPane() {
+		return textPane;
+	}
+
+	public void setTextPane(JPanel textPane) {
+		this.textPane = textPane;
+	}
+
+	public JButton getFontButton() {
+		return fontButton;
+	}
+
+	public void setFontButton(JButton fontButton) {
+		this.fontButton = fontButton;
+	}
+
+	public JButton getEmojiButton() {
+		return emojiButton;
+	}
+
+	public void setEmojiButton(JButton emojiButton) {
+		this.emojiButton = emojiButton;
+	}
+
+	public JTextPane getSendText() {
+		return sendText;
+	}
+
+	public void setSendText(JTextPane sendText) {
+		this.sendText = sendText;
+	}
+
+	public JComboBox getMsgComboBox() {
+		return msgComboBox;
+	}
+
+	public void setMsgComboBox(JComboBox msgComboBox) {
+		this.msgComboBox = msgComboBox;
+	}
+
+	public JButton getClearButton() {
+		return clearButton;
+	}
+
+	public void setClearButton(JButton clearButton) {
+		this.clearButton = clearButton;
+	}
+
+	public JButton getSendButton() {
+		return sendButton;
+	}
+
+	public void setSendButton(JButton sendButton) {
+		this.sendButton = sendButton;
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public SigleChatSwing() {
+		setFont(new Font("微软雅黑 Light", Font.PLAIN, 20));
+		setTitle("突击聊天室");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(SigleChatSwing.class.getResource("/com/sxt/swing/images/imgp/weixiao.png")));
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 983, 760);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(95, 158, 160));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		friendMsgLabel= new JLabel("好友名");
+		friendMsgLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		friendMsgLabel.setFont(new Font("微软雅黑 Light", Font.BOLD, 24));
+		friendMsgLabel.setBounds(28, 0, 182, 67);
+		contentPane.add(friendMsgLabel);
+		
+		messagePane=new JScrollPane();
+		messagePane.setBounds(0, 70, 978, 418);
+		textPane= new JPanel();
+		textPane.setLayout(new BoxLayout(textPane, BoxLayout.Y_AXIS));
+		textPane.setFont(new Font("微软雅黑 Light", Font.PLAIN, 20));
+//		textPane.setBounds(0, 70, 978, 418);
+		messagePane.setViewportView(textPane);
+		contentPane.add(messagePane);
+		
+		sendText= new JTextPane();
+		sendText.setFont(new Font("微软雅黑 Light", Font.PLAIN, 20));
+		sendText.setBounds(0, 534, 978, 103);
+		contentPane.add(sendText);
+		
+		fontButton= new JButton("A");
+		fontButton.setFont(new Font("Consolas", Font.PLAIN, 30));
+		fontButton.setBackground(new Color(95, 158, 160));
+		fontButton.setBounds(0, 487, 77, 48);
+		contentPane.add(fontButton);
+		
+		emojiButton= new JButton("");
+		emojiButton.setIcon(new ImageIcon(SigleChatSwing.class.getResource("/com/sxt/swing/images/imgp/emoji.png")));
+		emojiButton.setFont(new Font("Consolas", Font.PLAIN, 30));
+		emojiButton.setBackground(new Color(95, 158, 160));
+		emojiButton.setBounds(76, 487, 77, 48);
+		contentPane.add(emojiButton);
+		
+		msgComboBox= new JComboBox();
+		msgComboBox.setBackground(new Color(95, 158, 160));
+		msgComboBox.setFont(new Font("微软雅黑 Light", Font.PLAIN, 20));
+		msgComboBox.setModel(new DefaultComboBoxModel(new String[] {"消息记录", "显示消息记录", "清屏"}));
+		msgComboBox.setBounds(847, 490, 131, 43);
+		contentPane.add(msgComboBox);
+		
+		clearButton= new JButton("清空");
+		clearButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				sendText.setText(null);
+			}
+		});
+		clearButton.setFont(new Font("微软雅黑", Font.BOLD, 24));
+		clearButton.setBackground(new Color(40, 96, 144));
+		clearButton.setBounds(658, 645, 145, 44);
+		contentPane.add(clearButton);
+		
+		sendButton= new JButton("发送");
+		sendButton.setFont(new Font("微软雅黑", Font.BOLD, 24));
+		sendButton.setBackground(new Color(40, 96, 144));
+		sendButton.setBounds(818, 645, 145, 44);
+		contentPane.add(sendButton);
+		
+		this.setVisible(true);
+		this.setLocationRelativeTo(null);
+		this.setResizable(false);
+		
+		picsJWindow = new PicsJWindow(this);
+		
+		this.addComponentListener(new ComponentAdapter(){
+
+			@Override
+			public void componentResized(ComponentEvent e) {
+				picsJWindow.dispose();
+			}
+
+			@Override
+			public void componentMoved(ComponentEvent e) {
+				picsJWindow.dispose();
+			}
+
+			@Override
+			public void componentHidden(ComponentEvent e) {
+				picsJWindow.dispose();
+			}
+			
+		});
+	}
+	
+	/**
+	 * 插入图片
+	 * 
+	 * @param icon
+	 */
+	public void insertSendPic(ImageIcon imgIc) {
+		//sigleChatSwing.getSendText().setCaretPosition(docChat.getLength()); // 设置插入位置
+		sendText.insertIcon(imgIc); // 插入图片
+		System.out.print(imgIc.toString());
+		//insert(new FontAttrib()); // 这样做可以换行
+	}
+
+
+
+	@Override
+	public void windowActivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void windowClosed(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void windowClosing(WindowEvent arg0) {
+		this.setVisible(false);
+		
+	}
+
+
+
+	@Override
+	public void windowDeactivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void windowDeiconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void windowIconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void windowOpened(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

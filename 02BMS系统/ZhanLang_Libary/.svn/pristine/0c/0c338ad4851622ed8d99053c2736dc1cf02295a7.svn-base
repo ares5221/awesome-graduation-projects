@@ -1,0 +1,108 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+
+public class M_AddUser extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UserMenu frame = new UserMenu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public M_AddUser(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 815, 468);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label_1 = new JLabel("请输入用户名 ：");
+		label_1.setBounds(125, 123, 114, 24);
+		contentPane.add(label_1);
+		
+		textField = new JTextField();
+		textField.setBounds(272, 125, 114, 21);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JButton button_4 = new JButton("提交");
+		button_4.setBounds(135, 338, 93, 23);
+		contentPane.add(button_4);
+		
+		JLabel label_2 = new JLabel("请输入用户密码 ：");
+		label_2.setBounds(125, 169, 114, 24);
+		contentPane.add(label_2);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(272, 171, 114, 21);
+		contentPane.add(textField_1);
+		
+		JLabel label_3 = new JLabel("请重复用户密码 ：");
+		label_3.setBounds(125, 220, 114, 24);
+		contentPane.add(label_3);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(272, 222, 114, 21);
+		contentPane.add(textField_2);
+		
+		JLabel label_4 = new JLabel("请输入可借数目 ：");
+		label_4.setBounds(125, 271, 114, 24);
+		contentPane.add(label_4);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(272, 273, 114, 21);
+		contentPane.add(textField_3);
+		
+		JLabel label_5 = new JLabel("添加用户");
+		label_5.setFont(new Font("华文行楷", Font.PLAIN, 25));
+		label_5.setBounds(190, 10, 214, 103);
+		contentPane.add(label_5);
+		
+		JButton button = new JButton("返回");
+		button.setBounds(282, 338, 93, 23);
+		contentPane.add(button);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(M_AddUser.class.getResource("/bgimg/timg (14).jpg")));
+		label.setBounds(0, 0, 799, 429);
+		contentPane.add(label);
+	}
+}

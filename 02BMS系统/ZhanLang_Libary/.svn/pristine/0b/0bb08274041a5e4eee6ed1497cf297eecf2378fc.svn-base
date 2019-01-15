@@ -1,0 +1,184 @@
+package zhanlang.view;
+
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.ManagerDAO;
+import zhanlang.DAO.Imple.DataExchange;
+import zhanlang.DAO.Imple.ManagerDAOImple;
+import zhanlang.entity.Manager;
+import zhanlang.entity.Person;
+import zhanlang.entity.User;
+
+public class LoginMenu extends JFrame {
+	
+	private JPanel contentPane;
+	public static Object socket;
+	private JComboBox selectPerson;
+	static User user ;
+	static Manager manager;
+
+
+	/**
+	 * Create the frame.
+	 */
+	public LoginMenu() {
+		setBackground(SystemColor.inactiveCaption);
+        
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 671, 404);
+		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.inactiveCaption);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label_1 = new JLabel("欢迎使用图书馆系统");
+		label_1.setFont(new Font("华文行楷", Font.PLAIN, 30));
+		label_1.setBounds(208, 29, 271, 54);
+		contentPane.add(label_1);
+		
+		JLabel label = new JLabel("用户名：");
+		label.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label.setBounds(218, 193, 99, 18);
+		contentPane.add(label);
+		
+		JLabel label_2 = new JLabel("密码：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_2.setBounds(218, 241, 54, 18);
+		contentPane.add(label_2);
+		
+		JTextField userName = new JTextField();
+		userName.setBounds(304, 192, 129, 21);
+		contentPane.add(userName);
+		userName.setColumns(10);
+		
+		JTextField password = new JTextField();
+		password.setBounds(304, 240, 129, 21);
+		contentPane.add(password);
+		password.setColumns(10);
+		
+		/**
+		 * 注册按钮，完成 跳转并关闭当前页面
+		 */
+		JButton button = new JButton("注册");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				/*U_RegisterUser newFrame = new U_RegisterUser();
+				newFrame.setVisible(true);	
+				frame.dispose();*/
+				Client.uRegesterFrame = new U_RegesterUser();
+				Client.uRegesterFrame.setVisible(true);	
+				Client.loginMenuFrame.dispose();
+			}
+		});
+		button.setBounds(224, 292, 82, 23);
+		contentPane.add(button);
+		
+		/**
+		 * 登录按钮，申请登录，完成验证并跳转。
+		 */
+		JButton button_1 = new JButton("登录");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//取到    登录者的身份信息，判断是用户，还是管理员。
+				String select = (String) selectPerson.getSelectedItem();
+				String command = new String ("login");
+				//为不同身份的登录者，提供同的登录页面
+				//如果是用户，则登录成功后，弹出用户页面
+				if(select.equals("用户")){
+					
+					//登录信息打包传输。
+				Person loginPerson = new User(userName.getText(),password.getText());
+					//loginPerson=new User(iD, name, sex, tel, age, address, userName, password, grade)
+					//String loginData = new String("login"+","+name.getText()+","+password.getText());
+					//创建操作类对象，调用登录方法。
+					//UserDAO user = new UserDAOImple();
+					DataExchange dataChange=new DataExchange();
+					Object obj = dataChange.interaction(command, loginPerson);
+					if(obj instanceof User){
+						User per = (User) obj;
+						user = per;
+					}
+//					System.out.println(person);
+					//判断服务器返回的信息，是否允许登录
+					/*if(user.login(command,loginPerson)){
+						Client.userMenuFrame= new UserMenu();
+						Client.userMenuFrame.setVisible(true);	
+						Client.loginMenuFrame.dispose();
+						//如果不允许登录，则弹窗提示，登录失败，请确认用户名与密码。	
+					}*/
+					if(user!=null){
+						Client.userMenuFrame= new UserMenu();
+						Client.userMenuFrame.setVisible(true);	
+						Client.loginMenuFrame.dispose();
+					}else{
+						JOptionPane.showMessageDialog(null, "用户不存在或密码错误!");
+					}
+					
+				}else if(select.equals("管理员")){
+					
+					//登录信息打包传输。
+					Manager loginPerson = new Manager(userName.getText(),password.getText());
+					//String loginData = new String("login"+","+name.getText()+","+password.getText());
+					//创建操作类对象，调用登录方法。
+//					ManagerDAO manager = new ManagerDAOImple();
+					DataExchange dataChange=new DataExchange();
+					Object obj = dataChange.interaction(command, loginPerson);
+					if(obj instanceof Manager){
+						Manager per = (Manager) obj;
+						manager = per;
+					}
+					System.out.println(manager);
+					//判断服务器返回的信息，是否允许登录
+					if(manager != null){
+						Client.managerMenuFrame = new ManagerMenu();
+						Client.managerMenuFrame.setVisible(true);	
+						Client.loginMenuFrame.dispose();
+						//如果不允许登录，则弹窗提示，登录失败，请确认用户名与密码。	
+					}else{
+						JOptionPane.showMessageDialog(null, "用户不存在或密码错误!");
+					}
+					
+				}
+			}
+
+		});
+		button_1.setBounds(351, 292, 82, 23);
+		contentPane.add(button_1);
+		
+		JLabel label_3 = new JLabel("身份：");
+		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_3.setBounds(218, 157, 54, 15);
+		contentPane.add(label_3);
+		
+		selectPerson = new JComboBox();
+		selectPerson.setModel(new DefaultComboBoxModel(new String[] {"用户", "管理员"}));
+		selectPerson.setBounds(304, 154, 129, 21);
+		contentPane.add(selectPerson);
+		
+		JLabel label_4 = new JLabel("");
+		label_4.setBounds(75, 157, 54, 15);
+		contentPane.add(label_4);
+		
+		JLabel label_5 = new JLabel("");
+		label_5.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_5.setIcon(new ImageIcon(LoginMenu.class.getResource("/bgimg/timg (18).jpg")));
+		label_5.setBounds(0, 0, 655, 366);
+		contentPane.add(label_5);
+	}
+}
+

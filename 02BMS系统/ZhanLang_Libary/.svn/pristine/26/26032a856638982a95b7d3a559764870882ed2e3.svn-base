@@ -1,0 +1,223 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import zhanlang.DAO.ManagerDAO;
+import zhanlang.DAO.Imple.DataExchange;
+import zhanlang.DAO.Imple.ManagerDAOImple;
+import zhanlang.DAO.Imple.UserDAOImple;
+import zhanlang.entity.User;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
+
+public class U_RegesterUser extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField username;
+	private JPasswordField pass;
+	private JPasswordField repeatpass;
+	private JTextField codein;
+	private JLabel code;
+	private JLabel codeinInfo;
+	private JTextField name;
+	private JRadioButton boy;
+	private JRadioButton girl;
+	private JComboBox city;
+	private JPasswordField qq;
+
+	/**
+	 * Create the frame.
+	 */
+	public U_RegesterUser() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 685, 504);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
+		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setForeground(new Color(255, 255, 255));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label_1 = new JLabel("注册页面");
+		label_1.setFont(new Font("黑体", Font.PLAIN, 24));
+		label_1.setBounds(256, 10, 271, 54);
+		contentPane.add(label_1);
+		
+		JLabel label = new JLabel("用户名：");
+		label.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label.setBounds(187, 77, 99, 18);
+		contentPane.add(label);
+		
+		JLabel label_2 = new JLabel("输入密码：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_2.setBounds(187, 275, 85, 18);
+		contentPane.add(label_2);
+		
+		username = new JTextField();
+		username.setBounds(282, 76, 129, 21);
+		contentPane.add(username);
+		username.setColumns(10);
+		
+		JButton button = new JButton("提交");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String userName=username.getText();
+				String password=pass.getText();
+				
+				String command=new String("addUser");
+				
+				User user=new User(userName,password);
+				DataExchange dataChange=new DataExchange();
+			
+				//验证码判断
+				String c=code.getText();
+				String ci=codein.getText();
+				if(!c.equalsIgnoreCase(ci)){
+					codeinInfo.setText("��֤�����");
+					return;
+				}
+				codeinInfo.setText("");
+				JOptionPane.showMessageDialog(null, "��½�ɹ�");
+				
+			}
+		});
+		button.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button.setBackground(new Color(211, 211, 211));
+		button.setBounds(192, 405, 66, 23);
+		contentPane.add(button);
+		
+		JLabel lblima = new JLabel("重复密码：");
+		lblima.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		lblima.setBounds(187, 318, 75, 18);
+		contentPane.add(lblima);
+		
+		JButton reset = new JButton("重置");
+		reset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				username.setText("");
+				name.setText("");
+				qq.setText("");
+				pass.setText("");
+				repeatpass.setText("");
+				codein.setText("");
+			}
+		});
+		reset.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		reset.setBackground(new Color(211, 211, 211));
+		reset.setBounds(269, 405, 66, 23);
+		contentPane.add(reset);
+		
+		JButton button_2 = new JButton("返回");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.loginMenuFrame= new LoginMenu();	
+				Client.loginMenuFrame.setVisible(true);	
+				Client.uRegesterFrame.dispose();
+			}
+		});
+		button_2.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_2.setBackground(new Color(211, 211, 211));
+		button_2.setBounds(345, 405, 66, 23);
+		contentPane.add(button_2);
+		
+		pass = new JPasswordField();
+		pass.setBounds(282, 275, 129, 21);
+		contentPane.add(pass);
+		
+		repeatpass = new JPasswordField();
+		repeatpass.setBounds(282, 318, 129, 21);
+		contentPane.add(repeatpass);
+		
+		JLabel label_3 = new JLabel("姓名：");
+		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_3.setBounds(187, 118, 99, 18);
+		contentPane.add(label_3);
+		
+		name = new JTextField();
+		name.setColumns(10);
+		name.setBounds(282, 117, 129, 21);
+		contentPane.add(name);
+		
+		JLabel label_4 = new JLabel("性别：");
+		label_4.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_4.setBounds(187, 157, 99, 18);
+		contentPane.add(label_4);
+		
+		boy = new JRadioButton("男");
+		boy.setBounds(282, 156, 42, 23);
+		contentPane.add(boy);
+		
+		girl = new JRadioButton("女");
+		girl.setBounds(369, 156, 42, 23);
+		contentPane.add(girl);
+		
+		JLabel label_5 = new JLabel("城市：");
+		label_5.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_5.setBounds(187, 200, 99, 18);
+		contentPane.add(label_5);
+		
+		city = new JComboBox();
+		city.setModel(new DefaultComboBoxModel(new String[] {"北京市 ", "天津市", "上海市", "重庆市", "河北省", "山西省", "辽宁省", "吉林省", "黑龙江省", "江苏省", "浙江省", "安徽省", "福建省", "江西省", "山东省", "河南省", "湖北省", "湖南省", "广东省", "海南省", "四川省", "贵州省", "云南省", "陕西省", "甘肃省", "青海省", "台湾省", "内蒙古自治区", "广西壮族自治区", "西藏自治区", "宁夏回族自治区", "新疆维吾尔自治区", "香港特别行政区", "澳门特别行政区"}));
+		city.setBounds(282, 200, 124, 21);
+		contentPane.add(city);
+		
+		JLabel lblQq = new JLabel("QQ：");
+		lblQq.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		lblQq.setBounds(187, 238, 85, 18);
+		contentPane.add(lblQq);
+		
+		qq = new JPasswordField();
+		qq.setBounds(282, 238, 129, 21);
+		contentPane.add(qq);
+		
+		JLabel label_6 = new JLabel("验证码：");
+		label_6.setFont(new Font("微软雅黑", Font.PLAIN, 15));
+		label_6.setBounds(187, 356, 75, 18);
+		contentPane.add(label_6);
+		
+		code = new JLabel("");
+		code.setFont(new Font("黑体", Font.PLAIN, 13));
+		code.setBounds(374, 359, 51, 15);
+		
+		String t=getCode();
+		code.setText(t);
+		contentPane.add(code);
+		
+		codein = new JTextField();
+		codein.setBounds(282, 356, 66, 21);
+		contentPane.add(codein);
+		codein.setColumns(10);
+		
+		codeinInfo = new JLabel("");
+		codeinInfo.setForeground(Color.RED);
+		codeinInfo.setBounds(426, 359, 101, 15);
+		contentPane.add(codeinInfo);
+	}
+	public static String getCode(){
+		String s="zxcvbnmqwertyuiopasdfghjklZXCVBNMQWERTYUIOPASDFGHJKL0123456789";
+		String code="";
+		for(int i=1;i<=4;i++){
+			int index=(int)(Math.random()*s.length());
+			code+=s.charAt(index);
+		}
+		return code;
+	}
+}

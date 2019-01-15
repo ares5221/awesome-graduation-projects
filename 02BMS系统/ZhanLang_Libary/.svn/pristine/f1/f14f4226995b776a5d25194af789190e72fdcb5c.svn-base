@@ -1,0 +1,101 @@
+package zhanlang.view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+
+public class U_ShowMessage extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Create the frame.
+	 */
+	public U_ShowMessage(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 815, 468);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(676, 10, 93, 77);
+		contentPane.add(label);
+		
+		JLabel label_1 = new JLabel("用户名：");
+		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_1.setBounds(369, 157, 114, 24);
+		contentPane.add(label_1);
+		
+		JButton button_4 = new JButton("修改");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.uModifyMessageFrame = new U_ModifyMessage();
+				Client.uModifyMessageFrame.setVisible(true);	
+			    Client.showMessageFrame.dispose();
+			}
+		});
+		button_4.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button_4.setBackground(new Color(211, 211, 211));
+		button_4.setBounds(256, 345, 93, 23);
+		contentPane.add(button_4);
+		
+		JLabel label_2 = new JLabel("昵称：");
+		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_2.setBounds(369, 203, 114, 24);
+		contentPane.add(label_2);
+		
+		JLabel label_3 = new JLabel("性别：");
+		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+		label_3.setBounds(369, 254, 114, 24);
+		contentPane.add(label_3);
+		
+		JLabel label_5 = new JLabel("个人信息");
+		label_5.setFont(new Font("Dialog", Font.BOLD, 25));
+		label_5.setBounds(337, 31, 104, 103);
+		contentPane.add(label_5);
+		
+		JButton button = new JButton("返回");
+		button.setFont(new Font("微软雅黑", Font.PLAIN, 12));
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client.userMenuFrame = new UserMenu();
+				Client.userMenuFrame .setVisible(true);	
+				Client.uModifyMessageFrame.dispose();
+			}
+		});
+		button.setBounds(413, 345, 93, 23);
+		contentPane.add(button);
+		
+		JLabel label_4 = new JLabel("");
+		label_4.setIcon(new ImageIcon(U_ShowMessage.class.getResource("/img/333.jpg")));
+		label_4.setBounds(202, 157, 104, 121);
+		contentPane.add(label_4);
+		
+		JLabel lblXxxxxxx = new JLabel("XXXXXXX");
+		lblXxxxxxx.setBounds(459, 162, 54, 15);
+		contentPane.add(lblXxxxxxx);
+		
+		JLabel label_6 = new JLabel("XXXXXXX");
+		label_6.setBounds(459, 208, 54, 15);
+		contentPane.add(label_6);
+		
+		JLabel label_7 = new JLabel("XXXXXXX");
+		label_7.setBounds(459, 259, 54, 15);
+		contentPane.add(label_7);
+	}
+}
