@@ -1,0 +1,81 @@
+BODY {
+	MARGIN: 0px; BACKGROUND-COLOR: #ffffff
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #f2f2f2; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: #999999; SCROLLBAR-SHADOW-COLOR: #999999; COLOR: #58595b; WORD-BREAK: break-all; SCROLLBAR-3DLIGHT-COLOR: #ffffff; LINE-HEIGHT: 140%; SCROLLBAR-ARROW-COLOR: #fcab3f; SCROLLBAR-TRACK-COLOR: #f2f2f2; FONT-FAMILY: 宋体; SCROLLBAR-DARKSHADOW-COLOR: #ffffff
+}
+TD {
+	SCROLLBAR-FACE-COLOR: #f2f2f2; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: #999999; SCROLLBAR-SHADOW-COLOR: #999999; COLOR: #58595b; WORD-BREAK: break-all; SCROLLBAR-3DLIGHT-COLOR: #ffffff; LINE-HEIGHT: 140%; SCROLLBAR-ARROW-COLOR: #fcab3f; SCROLLBAR-TRACK-COLOR: #f2f2f2; FONT-FAMILY: 宋体; SCROLLBAR-DARKSHADOW-COLOR: #ffffff
+}
+TH {
+	SCROLLBAR-FACE-COLOR: #f2f2f2; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: #999999; SCROLLBAR-SHADOW-COLOR: #999999; COLOR: #58595b; WORD-BREAK: break-all; SCROLLBAR-3DLIGHT-COLOR: #ffffff; LINE-HEIGHT: 140%; SCROLLBAR-ARROW-COLOR: #fcab3f; SCROLLBAR-TRACK-COLOR: #f2f2f2; FONT-FAMILY: 宋体; SCROLLBAR-DARKSHADOW-COLOR: #ffffff
+}
+A:link {
+	FONT-SIZE: 12px; COLOR: #58595b; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR: #58595b; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #f15a22; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A:active {
+	FONT-SIZE: 12px; COLOR: #58595b; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.blue12:link {
+	FONT-SIZE: 12px; COLOR: #999999; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.blue12:visited {
+	FONT-SIZE: 12px; COLOR: #999999; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.blue12:hover {
+	FONT-SIZE: 12px; COLOR: #f15a22; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.blue12:active {
+	FONT-SIZE: 12px; COLOR: #999999; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.font14:link {
+	FONT-SIZE: 14px; COLOR: #505050; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.font14:visited {
+	FONT-SIZE: 14px; COLOR: #505050; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.font14:hover {
+	FONT-SIZE: 14px; COLOR: #f15a22; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.font14:active {
+	FONT-SIZE: 14px; COLOR: #505050; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+.input {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #cccccc 1px solid; COLOR: #58595b; WORD-BREAK: break-all; LINE-HEIGHT: 140%; BORDER-BOTTOM: #cccccc 1px solid; FONT-FAMILY: Arial, Helvetica, sans-serif, 宋体
+}
+.manageinput {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #999999 1px solid; COLOR: #58595b; WORD-BREAK: break-all; LINE-HEIGHT: 140%; BORDER-BOTTOM: #999999 1px solid; FONT-FAMILY: 宋体
+}
+.tddot {
+	BACKGROUND-IMAGE: url(../imgs/zc_menu.files/images/shct10000_main08.gif); BORDER-BOTTOM: #bfbfbf 1px dotted
+}
+.listtable TD {
+	BORDER-RIGHT: #dddddd 1px solid; BORDER-TOP: #dddddd 1px solid; BORDER-LEFT: #dddddd 1px solid; BORDER-BOTTOM: #dddddd 1px solid
+}
+.listtable_noborder TD {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+.managetable TD {
+	BORDER-RIGHT: #f15a22 1px solid; BORDER-TOP: #f15a22 1px solid; BORDER-LEFT: #f15a22 1px solid; BORDER-BOTTOM: #f15a22 1px solid
+}
+TABLE.list_Title {
+	BORDER-RIGHT: #cccccc 1px; BORDER-TOP: #cccccc 1px; BORDER-LEFT: #cccccc 1px; BORDER-BOTTOM: #cccccc 1px; BORDER-COLLAPSE: collapse
+}
+TABLE.list_Title TD.t_head {
+	BACKGROUND: #e8f3ff; HEIGHT: 20px
+}
+TABLE.list_Title TD {
+	BORDER-RIGHT: #dddddd 1px solid; BORDER-TOP: #dddddd 1px solid; PADDING-LEFT: 5px; VERTICAL-ALIGN: middle; BORDER-LEFT: #dddddd 1px solid; BORDER-BOTTOM: #dddddd 1px solid; HEIGHT: 20px
+}
+.vip_table_left_line {
+	BORDER-LEFT: #cccccc 1px solid
+}
+.vip_table_leftbottom_line {
+	BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid
+}

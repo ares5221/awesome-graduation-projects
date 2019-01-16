@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Subject">
+	<typeAlias alias="subject" type="com.lhq.prj.bms.po.Subject" />
+	<insert id="save" parameterClass="subject">
+		<![CDATA[
+			INSERT INTO t_subject (subjectName,remark) VALUES (#subjectName:VARCHAR#,#remark:VARCHAR#)
+		]]>
+		<selectKey resultClass="int">
+			<![CDATA[
+				SELECT @@IDENTITY AS ID
+			]]>
+		</selectKey>
+	</insert>
+
+	<delete id="deleteById" parameterClass="integer">
+		<![CDATA[
+			delete t_subject WHERE subjectId = #subjectId:NUMBER#
+		]]>
+	</delete>
+
+	<update id="update" parameterClass="subject">
+		<![CDATA[
+			UPDATE t_subject 
+		]]>
+		<dynamic prepend="SET">
+			<isNotNull property="subjectName" prepend=",">
+					subjectName = #subjectName:VARCHAR#
+			</isNotNull>
+			<isNotNull property="remark" prepend=",">
+				<![CDATA[
+					remark = #remark:VARCHAR#
+				]]>
+			</isNotNull>
+		</dynamic>
+		<![CDATA[
+			WHERE subjectId = #subjectId:NUMBER#
+		]]>
+	</update>
+
+	<select id="findAll" resultClass="subject">
+		<![CDATA[
+			SELECT * FROM t_subject
+		]]>
+	</select>
+</sqlMap>

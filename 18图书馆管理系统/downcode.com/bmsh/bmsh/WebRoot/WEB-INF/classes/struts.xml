@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<include file="struts-default.xml" />
+	<package name="simple" extends="struts-default">
+		<!-- 图书管理[添加图书] -->
+		<action name="saveBook" class="bookAction" method="saveBook">
+			<param name="allowedTypes">image/png,image/gif,image/jpeg,image/pjpeg</param>
+			<param name="savePath">uploads/cover/</param>
+			<param name="maxWidthSize">133</param>
+			<param name="maxHeightSize">200</param>
+			<result name="success">main/out.jsp</result>
+			<result name="input">main/out.jsp</result>
+		</action>
+		<action name="updateBook" class="bookAction" method="updateBook">
+			<param name="allowedTypes">image/png,image/gif,image/jpeg,image/pjpeg</param>
+			<param name="savePath">uploads/cover/</param>
+			<param name="maxWidthSize">133</param>
+			<param name="maxHeightSize">200</param>
+			<result name="success">main/out.jsp</result>
+			<result name="input">main/out.jsp</result>
+		</action>
+	</package>
+	<package name="json" extends="json-default">
+	
+		<!-- 图书借还管理 -->
+		<action name="findAllLoanLog" class="loanLogAction" method="findLoanLogByBook">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">conditions,limit,start,success,objCondition</param>
+			</result>
+		</action>
+		<action name="saveLoanLog" class="loanLogAction" method="saveLoanLog">
+			<result type="json">
+				<param name="includeProperties">success,logId</param>
+			</result>
+		</action>
+		<action name="updateLoanLog" class="loanLogAction" method="updateLoanLog">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		
+		<!-- 图书管理 -->
+		<action name="findAllBook" class="bookAction" method="findAllBook">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">conditions,limit,start,success,objCondition</param>
+			</result>
+		</action>
+		<action name="deleteBook" class="bookAction" method="deleteBook">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="returnBook" class="bookAction" method="returnBook">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+
+		<!-- 用户管理 -->
+		<action name="saveUser" class="userAction" method="saveUser">
+			<result type="json">
+				<param name="includeProperties">success,userId</param>
+			</result>
+		</action>
+		<action name="deleteUser" class="userAction" method="deleteUser">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="updateUser" class="userAction" method="updateUser">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="findAllUser" class="userAction" method="findAllUser">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">conditions,limit,start,success,objCondition</param>
+			</result>
+		</action>
+		<action name="findUserByExample" class="userAction" method="findByExample">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">conditions,limit,start,success,objCondition</param>
+			</result>
+		</action>
+		<action name="login" class="userAction" method="login">
+			<result>main/manager_index.jsp</result>
+			<result name="input">index.jsp</result>
+		</action>
+		<action name="logout" class="userAction" method="logout">
+			<result type="redirect">index.jsp</result>
+		</action>
+
+		<!-- 科目管理 -->
+		<action name="saveSubject" class="subjectAction" method="saveSubject">
+			<result type="json">
+				<param name="includeProperties">success,dutyId</param>
+			</result>
+		</action>
+		<action name="deleteSubject" class="subjectAction" method="deleteSubject">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="updateSubject" class="subjectAction" method="updateSubject">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="findAllSubject" class="subjectAction" method="findAllSubject">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">totalProperty,conditions,limit,start,success,objCondition</param>
+			</result>
+		</action>
+
+		<!-- 分类管理 -->
+		<action name="saveCategory" class="categoryAction" method="saveCategory">
+			<result type="json">
+				<param name="includeProperties">success,deptId</param>
+			</result>
+		</action>
+		<action name="deleteCategory" class="categoryAction" method="deleteCategory">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="updateCategory" class="categoryAction" method="updateCategory">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="findAllCategory" class="categoryAction" method="findAllCategory">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">conditions,limit,start,success,objCondition</param>
+			</result>
+		</action>
+		<action name="findAllCategoryName" class="categoryAction" method="findAll">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">conditions,limit,start,success,objCondition</param>
+			</result>
+		</action>
+		<action name="findCategorBySubject" class="categoryAction" method="findCategorBySubject">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">conditions,limit,start,success,totalProperty,objCondition</param>
+			</result>
+		</action>
+
+		<!-- 职务管理 -->
+		<action name="saveDuty" class="dutyAction" method="saveDuty">
+			<result type="json">
+				<param name="includeProperties">success,dutyId</param>
+			</result>
+		</action>
+		<action name="deleteDuty" class="dutyAction" method="deleteDuty">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="updateDuty" class="dutyAction" method="updateDuty">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="findAllDuty" class="dutyAction" method="findAllDuty">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">totalProperty,conditions,limit,start,success,objCondition</param>
+			</result>
+		</action>
+
+
+		<!-- 部门管理 -->
+		<action name="saveDept" class="deptAction" method="saveDept">
+			<result type="json">
+				<param name="includeProperties">success,deptId</param>
+			</result>
+		</action>
+		<action name="deleteDept" class="deptAction" method="deleteDept">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="updateDept" class="deptAction" method="updateDept">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="findAllDept" class="deptAction" method="findAllDept">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">conditions,limit,start,success,objCondition</param>
+			</result>
+		</action>
+		<action name="findDeptByCompany" class="deptAction" method="findDeptByCompany">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">conditions,limit,start,success,totalProperty,objCondition</param>
+			</result>
+		</action>
+
+
+		<!-- 分公司管理 -->
+		<action name="saveCompany" class="companyAction" method="saveCompany">
+			<result type="json">
+				<param name="includeProperties">success,companyId</param>
+			</result>
+		</action>
+		<action name="deleteCompany" class="companyAction" method="deleteCompany">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="updateCompany" class="companyAction" method="updateCompany">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="findAllCompany" class="companyAction" method="findAllCompany">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">conditions,limit,start,success,objCondition</param>
+			</result>
+		</action>
+		<action name="findAllCompanyName" class="companyAction" method="findAll">
+			<result type="json">
+				<param name="root">page</param>
+				<param name="excludeProperties">conditions,limit,start,success,objCondition</param>
+			</result>
+		</action>
+
+	</package>
+</struts>

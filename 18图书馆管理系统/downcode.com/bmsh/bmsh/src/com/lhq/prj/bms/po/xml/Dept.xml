@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Dept">
+
+	<typeAlias alias="company" type="com.lhq.prj.bms.po.Company" />
+	<typeAlias alias="dept" type="com.lhq.prj.bms.po.Dept" />
+	<typeAlias alias="page" type="com.lhq.prj.bms.core.Page" />
+
+	<parameterMap class="dept" id="pm_dept_without_id">
+		<parameter property="deptName" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="companyId" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="companyName" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="address" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="tellPhone" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="leader" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="mobilePhone" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="remark" javaType="string" jdbcType="VARCHAR" />
+	</parameterMap>
+	<sql id="byDeptIdCondition">
+		<![CDATA[
+		   deptId = #deptId:NUMBER#
+	    ]]>
+	</sql>
+
+	<insert id="save" parameterMap="pm_dept_without_id">
+		<![CDATA[
+			INSERT INTO t_dept 
+						(deptName,companyId,companyName,address,tellPhone,leader,mobilePhone,remark) 
+				 VALUES (?,?,?,?,?,?,?,?)
+		]]>
+		<selectKey resultClass="int">
+			<![CDATA[
+				SELECT @@IDENTITY AS ID
+			]]>
+		</selectKey>
+	</insert>
+
+	<delete id="deleteById" parameterClass="integer">
+		<![CDATA[
+			delete t_dept
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="byDeptIdCondition" />
+		</dynamic>
+	</delete>
+
+	<select id="findAll" resultClass="dept">
+		<![CDATA[
+			SELECT * FROM t_dept
+		]]>
+	</select>
+
+	<update id="update" parameterClass="dept">
+		<![CDATA[
+			UPDATE t_dept
+		]]>
+		<dynamic prepend="SET">
+			<isNotNull property="deptName" prepend=",">
+				<![CDATA[
+					deptName = #deptName:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="companyId" prepend=",">
+				<![CDATA[
+					companyId = #companyId:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="companyName" prepend=",">
+				<![CDATA[
+					companyName = #companyName:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="address" prepend=",">
+				<![CDATA[
+					address = #address:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="tellPhone" prepend=",">
+				<![CDATA[
+					tellPhone = #tellPhone:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="leader" prepend=",">
+				<![CDATA[
+					leader = #leader:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="mobilePhone" prepend=",">
+				<![CDATA[
+					mobilePhone = #mobilePhone:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="remark" prepend=",">
+				<![CDATA[
+					remark = #remark:VARCHAR#
+				]]>
+			</isNotNull>
+		</dynamic>
+		<dynamic prepend="WHERE">
+			<include refid="byDeptIdCondition" />
+		</dynamic>
+	</update>
+
+	<sql id="findDeptByPageCondition">
+		<isNotEmpty property="conditions">
+			<iterate property="conditions" open="(" close=")" conjunction="OR">
+				<![CDATA[
+					upper(deptName) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(companyName) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(address) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'    
+				    OR upper(tellPhone) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'    
+				    OR upper(leader) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'    
+				    OR upper(mobilePhone) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'    
+				    OR upper(remark) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%' 
+			    ]]>
+			</iterate>
+		</isNotEmpty>
+	</sql>
+
+	<select id="findByPage" parameterClass="page" resultClass="dept">
+		<![CDATA[
+			SELECT TOP $limit$ * FROM t_dept 
+					WHERE (deptId >= (SELECT MAX(deptId) FROM (SELECT TOP $start$ deptId FROM t_dept 
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="findDeptByPageCondition" />
+		</dynamic>
+		<![CDATA[
+			ORDER BY deptId ) AS T)) 
+		]]>
+		<dynamic prepend="AND">
+			<include refid="findDeptByPageCondition" />
+		</dynamic>
+		<![CDATA[
+			ORDER BY deptId
+		]]>
+	</select>
+
+	<select id="findByCount" parameterClass="page" resultClass="int">
+		<![CDATA[
+			SELECT COUNT(*) FROM t_dept 
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="findDeptByPageCondition" />
+		</dynamic>
+	</select>
+
+	<select id="findDeptByCompany" parameterClass="company" resultClass="dept">
+		<![CDATA[
+			SELECT * FROM t_dept 
+		]]>
+		<dynamic prepend="WHERE">
+			<isNotNull property="companyId" prepend="OR">
+				<![CDATA[
+					companyId = #companyId:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="companyName" prepend="OR">
+				<![CDATA[
+					companyName like '%' +  #companyName:VARCHAR# + '%'
+				]]>
+			</isNotNull>
+		</dynamic>
+	</select>
+</sqlMap>

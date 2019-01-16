@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+	<bean id="companyDao" class="com.lhq.prj.bms.dao.impl.CompanyDao">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="deptDao" class="com.lhq.prj.bms.dao.impl.DeptDao">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="dutyDao" class="com.lhq.prj.bms.dao.impl.DutyDao">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="userDao" class="com.lhq.prj.bms.dao.impl.UserDao">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="subjectDao" class="com.lhq.prj.bms.dao.impl.SubjectDao">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="categoryDao" class="com.lhq.prj.bms.dao.impl.CategoryDao">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="bookDao" class="com.lhq.prj.bms.dao.impl.BookDao">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="loanLogDao" class="com.lhq.prj.bms.dao.impl.LoanLogDao">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+</beans>

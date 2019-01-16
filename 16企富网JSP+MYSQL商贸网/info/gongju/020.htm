@@ -1,0 +1,403 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css"><!--
+td,body {  font-size: 9pt}
+a:link{ color:#000000; text-decoration:none}     
+a:visited{COLOR: #000000; TEXT-DECORATION: none} 
+a:active{color:green;text-decoration:none}
+a:hover{color:red;text-decoration:underline} .unnamed1 {
+	line-height: 20px;
+}
+--> 
+</style>
+<STYLE type=text/css>.font {
+	FONT-SIZE: 9pt; font-line: 13pt
+}
+</STYLE>
+
+<STYLE>A:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+<!--hide from Non-JavaScript browsers
+function calculate(theForm){
+	var storea=0;
+	if(theForm.q1.value=="m"||theForm.q1.value=="M"){storea+=6;}
+	if(theForm.q2.value=="15"){storea+=6;}
+	if(theForm.q3.value=="8"){storea+=6;}
+	if(theForm.q4.value=="6"){storea+=6;}
+	if(theForm.q5.value=="5"){storea+=6;}
+	if(theForm.q6.value=="4"){storea+=6;}
+	if(theForm.q7.value=="1"){storea+=6;}
+	if(theForm.q8.value=="2"){storea+=6;}
+	if(theForm.q9[1].checked){storea+=6;}
+	if(theForm.q10[3].checked){storea+=5;}
+	if(theForm.q11[2].checked){storea+=5;}
+	if(theForm.q12[0].checked){storea+=5;}
+	if(theForm.q13[2].checked){storea+=5;}
+	if(theForm.q14[3].checked){storea+=5;}
+	if(theForm.q15[2].checked){storea+=5;}
+	if(theForm.q16[2].checked){storea+=5;}
+	if(theForm.q17[1].checked){storea+=5;}
+	if(theForm.q18[3].checked){storea+=5;}
+	if(theForm.q19[3].checked){storea+=5;}
+	if(theForm.q20[3].checked){storea+=5;}
+	if(theForm.q21[2].checked){storea+=5;}
+	if(theForm.q22[2].checked){storea+=5;}
+	if(theForm.q23[3].checked){storea+=5;}
+	if(theForm.q24[1].checked){storea+=5;}
+	if(theForm.q25[0].checked){storea+=5;}
+	if(theForm.q26[0].checked&&theForm.q26[3].checked){storea+=5;}
+	if(theForm.q27[1].checked&&theForm.q27[2].checked){storea+=5;}
+	if(theForm.q28[0].checked&&theForm.q28[3].checked){storea+=5;}
+	if(theForm.q29[1].checked&&theForm.q29[3].checked){storea+=5;}
+	if(theForm.q30[3].checked){storea+=5;}
+	if(theForm.q31[2].checked){storea+=5;}
+	if(theForm.q32[1].checked){storea+=5;}
+	if(theForm.q33[2].checked){storea+=5;}
+	var i = document.clock.face.value;
+	return confirm("谢谢你参加智商测试!\n\n"+
+		"你的智商为:"+storea+"\n\n"+
+		"您所用的时间：" +i+"\n"+
+		"===================================\n70-    --弱智\n"+
+		"70-89  --智力低下\n"+
+		"90-99  --智力中等\n"+
+		"100-109--智力中上\n"+
+		"110-119--智力优秀\n"+
+		"120-129--智力非常优秀\n"+
+		"130-139--智力非常非常优秀\n"+
+		"140+   --天才");
+
+}
+//end of the Calculator IQ Score functions
+ 
+//----begin of the timer functions----
+var timerID = null;
+var timerRunning = false;
+startday = new Date();
+clockStart = startday.getTime();
+
+function initStopwatch() { 
+	var myTime = new Date(); 
+   return((myTime.getTime() - clockStart)/1000); 
+}
+
+function stopclock (){
+	if(timerRunning)
+   	clearTimeout(timerID);
+   timerRunning = false;
+}
+
+function showtime () {
+	var tSecs = Math.round(initStopwatch()); 
+   var iSecs = tSecs % 60;
+   var iMins = Math.round((tSecs-30)/60);   
+   var sSecs ="" + ((iSecs > 9) ? iSecs : "0" + iSecs);
+   var sMins ="" + ((iMins > 9) ? iMins : "0" + iMins);
+   document.clock.face.value = sMins+":"+sSecs;
+   timerID = setTimeout("showtime()",1000);
+   timerRunning = true;
+}
+
+function startclock () {
+	// Make sure the clock is stopped
+   stopclock();
+   startday = new Date();
+   clockStart = startday.getTime();
+   showtime();
+}
+//end hide-->
+    </SCRIPT>
+<html>
+
+<head>
+<style type="text/css">
+<!--
+td,body {font-size:12px}
+a:link {color:#000000;text-decoration:none}     
+a:visited {color:#000000;text-decoration:none} 
+a:active {color:blue;text-decoration:none}
+a:hover {color:red;text-decoration:underline}
+a.title:link {color:#000000;text-decoration:underline}     
+a.title:visited {color:#000000;text-decoration:underline} 
+a.title:active {color:#0000ff;text-decoration:underline}
+a.title:hover {color:#0000ff;text-decoration:underline}
+-->
+</style>
+</head>
+<body topmargin="0"  leftmargin="0">
+<tr><td height="58">&nbsp;</td>
+    </tr><BODY bgColor=#fff5e1 topMargin=0>
+<CENTER>
+  <table width="100%" border="0" cellspacing="0">
+    <tr>
+      <td><FORM name=clock onsubmit=0>
+<DIV align=left>
+<TABLE height=30 cellSpacing=0 cellPadding=0 width=743 border=0>
+  <TBODY>
+  <TR vAlign=top align=left>
+    <TD height=2>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P><FONT color=#008000><SMALL><STRONG><SPAN 
+          class=font>这是欧洲流行的测试题，共33题，测试时间20分钟，最大IQ为174分</SPAN></STRONG></SMALL></FONT> 
+          <INPUT size=5 value=" " name=face> <INPUT onclick=startclock() type=button value=重新计时 name=B1> 
+        </P></BLOCKQUOTE></BLOCKQUOTE></TD></TR></TBODY></TABLE></DIV>
+<HR>
+</FORM>
+<FORM name="" onsubmit=calculate(this) method=post>
+<OL>
+  <BLOCKQUOTE>
+    <P><B><INPUT type=hidden name=usetime> </B></P></BLOCKQUOTE>
+  <DL>
+    <BLOCKQUOTE>
+      <OL>
+        <DL>
+          <DL>
+            <DT><SPAN class=font>第1-8 题：请从理论上或逻辑的角度在后面的空格中填入后续字母或数字；</SPAN> 
+            <DL>
+              <OL>
+                <LI>A, D, G, J<B> <INPUT size=5 name=q1> </B>
+                <LI>1, 3, 6, 10 <B><INPUT size=5 name=q2> </B>
+                <LI>1, 1, 2, 3, 5<B> <INPUT size=5 name=q3> </B>
+                <LI>21, 20, 18, 15, 11<B> <INPUT size=5 name=q4> </B>
+                <LI>8, 6, 7, 5, 6, 4<B> <INPUT size=5 name=q5> </B>
+                <LI>65536, 256, 16<B> <INPUT size=5 name=q6> </B>
+                <LI>1, 0, -1, 0<B> <INPUT size=5 name=q7> </B>
+                <LI>3968, 63, 8, 3<B> <INPUT size=5 name=q8> 
+          </B></LI></OL></DL></DT></DL></DL></OL></BLOCKQUOTE></DL>
+  <BLOCKQUOTE>
+    <HR align=center width=600 color=#0000ff SIZE=1>
+  </BLOCKQUOTE>
+  <DL>
+    <DL>
+      <DL>
+        <DL>
+          <DL>
+            <DT><SPAN class=font>第9-15 题：</SPAN><SPAN 
+            class=font>请从右边的图形中选择一个正确的(a,b,c,d)填入左边的空白处</SPAN> </DT></DL></DL></DL>
+      <DT><B>　</B> </DT></DL>
+    <BLOCKQUOTE>
+      <OL>
+        <OL>
+          <OL>
+            <OL>
+              <LI><B><IMG height=150 src="/tools/bzzc.files/iq09a.gif" width=150 
+              align=top> <IMG height=150 src="/tools/bzzc.files/iq09b.gif" 
+              width=150 align=top><BR><INPUT type=radio value=a name=q9> a 
+              <INPUT type=radio value=b name=q9> b <INPUT type=radio value=c 
+              name=q9> c <INPUT type=radio value=d name=q9> d</B> 
+              <LI><B><IMG height=150 src="/tools/bzzc.files/iq10a.gif" width=150 
+              align=top> <IMG height=150 src="/tools/bzzc.files/iq10b.gif" 
+              width=150 align=top><BR><INPUT type=radio value=a name=q10> a 
+              <INPUT type=radio value=b name=q10> b <INPUT type=radio value=c 
+              name=q10> c <INPUT type=radio value=d name=q10> d</B> 
+              <LI><B><IMG height=150 src="/tools/bzzc.files/iq11a.gif" width=150 
+              align=top> <IMG height=150 src="/tools/bzzc.files/iq11b.gif" 
+              width=150 align=top><BR><INPUT type=radio value=a name=q11> a 
+              <INPUT type=radio value=b name=q11> b <INPUT type=radio value=c 
+              name=q11> c <INPUT type=radio value=d name=q11> d</B> 
+              <LI><B><IMG height=150 src="/tools/bzzc.files/iq12a.gif" width=150 
+              align=top> <IMG height=150 src="/tools/bzzc.files/iq12b.gif" 
+              width=150 align=top><BR><INPUT type=radio value=a name=q12> a 
+              <INPUT type=radio value=b name=q12> b <INPUT type=radio value=c 
+              name=q12> c <INPUT type=radio value=d name=q12> d</B> 
+              <LI><B><IMG height=150 src="/tools/bzzc.files/iq13a.gif" width=150 
+              align=top> <IMG height=150 src="/tools/bzzc.files/iq13b.gif" 
+              width=150 align=top><BR><INPUT type=radio value=a name=q13> a 
+              <INPUT type=radio value=b name=q13> b <INPUT type=radio value=c 
+              name=q13> c <INPUT type=radio value=d name=q13> d</B> 
+              <LI><B><IMG height=150 src="/tools/bzzc.files/iq14a.gif" width=150 
+              align=top> <IMG height=150 src="/tools/bzzc.files/iq14b.gif" 
+              width=150 align=top><BR><INPUT type=radio value=a name=q14> a 
+              <INPUT type=radio value=b name=q14> b <INPUT type=radio value=c 
+              name=q14> c <INPUT type=radio value=d name=q14> d</B> 
+              <LI><B><IMG height=150 src="/tools/bzzc.files/iq15a.gif" width=150 
+              align=top> <IMG height=150 src="/tools/bzzc.files/iq15b.gif" 
+              width=150 align=top><BR><INPUT type=radio value=a name=q15> a 
+              <INPUT type=radio value=b name=q15> b <INPUT type=radio value=c 
+              name=q15> c <INPUT type=radio value=d name=q15> d</B> 
+        </LI></OL></OL></OL></OL>
+      <HR align=center width=600 color=#0000ff SIZE=1>
+    </BLOCKQUOTE>
+    <DL>
+      <DL>
+        <DL>
+          <DL>
+            <DT><SPAN class=font>第16-25 题：</SPAN> 
+            <DD><SPAN class=font></SPAN><SPAN class=font>从右边的列(A B C 
+            D)中选择图形，以满足左边的图形</SPAN><SPAN class=font>按照逻辑角</SPAN><SPAN 
+            class=font>度</SPAN> 
+            <DT><SPAN class=font>能正确排列下来</SPAN><B><SPAN class=font>。</SPAN></B> 
+            </DT></DL></DL></DL></DL>
+    <BLOCKQUOTE>
+      <P><B><FONT color=#ffffff>------------------------------- </FONT><IMG 
+      height=50 src="/tools/bzzc.files/iq16-25b.gif" 
+    width=200></B></P></BLOCKQUOTE></DL></OL>
+<BLOCKQUOTE>
+  <OL>
+    <OL>
+      <OL>
+        <OL>
+          <OL>
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq16a.gif" width=150 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq16b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q16> A <INPUT 
+            type=radio value=b name=q16> B <INPUT type=radio value=c name=q16> C 
+            <INPUT type=radio value=d name=q16> D</B> 
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq17a.gif" width=150 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq17b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q17> A <INPUT 
+            type=radio value=b name=q17> B <INPUT type=radio value=c name=q17> C 
+            <INPUT type=radio value=d name=q17> D</B> 
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq18a.gif" width=150 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq18b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q18> A <INPUT 
+            type=radio value=b name=q18> B <INPUT type=radio value=c name=q18> C 
+            <INPUT type=radio value=d name=q18> D</B> 
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq19a.gif" width=150 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq19b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q19> A <INPUT 
+            type=radio value=b name=q19> B <INPUT type=radio value=c name=q19> C 
+            <INPUT type=radio value=d name=q19> D</B> 
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq20a.gif" width=150 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq20b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q20> A <INPUT 
+            type=radio value=b name=q20> B <INPUT type=radio value=c name=q20> C 
+            <INPUT type=radio value=d name=q20> D</B> 
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq21a.gif" width=150 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq21b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q21> A <INPUT 
+            type=radio value=b name=q21> B <INPUT type=radio value=c name=q21> C 
+            <INPUT type=radio value=d name=q21> D</B> </LI></OL></OL>
+        <BLOCKQUOTE>
+          <OL>
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq22a.gif" width=150 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq22b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q22> A <INPUT 
+            type=radio value=b name=q22> B <INPUT type=radio value=c name=q22> C 
+            <INPUT type=radio value=d name=q22> D</B> 
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq23a.gif" width=150 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq23b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q23> A <INPUT 
+            type=radio value=b name=q23> B <INPUT type=radio value=c name=q23> C 
+            <INPUT type=radio value=d name=q23> D</B> 
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq24a.gif" width=150 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq24b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q24> A <INPUT 
+            type=radio value=b name=q24> B <INPUT type=radio value=c name=q24> C 
+            <INPUT type=radio value=d name=q24> D</B> 
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq25a.gif" width=150 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq25b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q25> A <INPUT 
+            type=radio value=b name=q25> B <INPUT type=radio value=c name=q25> C 
+            <INPUT type=radio value=d name=q25> D</B> 
+  </LI></OL></BLOCKQUOTE></OL></OL></OL>
+  <BLOCKQUOTE>
+    <HR align=center width=600 color=#0000ff noShade SIZE=1>
+  </BLOCKQUOTE>
+  <OL>
+    <OL>
+      <OL>
+        <BLOCKQUOTE>
+          <DL>
+            <DT><SPAN class=font>第26-29 题：</SPAN><SPAN 
+            class=font>在左边的四个图形中缺少两个图形，请从右边的一组图形</SPAN> <SPAN class=font>(a b c 
+            d e</SPAN><SPAN class=font>)</SPAN><SPAN 
+            class=font>中选出两个填入左边以使左边的图形从逻辑角度上能</SPAN><SPAN 
+            class=font>成双配对</SPAN> </DT></DL></BLOCKQUOTE></OL></OL></OL>
+  <DL>
+    <BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <P><B>1.<IMG height=50 src="/tools/bzzc.files/iq26a.gif" width=200 
+        align=top><IMG height=50 src="/tools/bzzc.files/iq26b.gif" width=250 
+        align=top><BR>&nbsp; <INPUT type=checkbox value=a name=q26> a <INPUT 
+        type=checkbox value=b name=q26> b <INPUT type=checkbox value=c name=q26> 
+        c <INPUT type=checkbox value=d name=q26> d <INPUT type=checkbox value=e 
+        name=q26> e</B></P>
+        <P><B>2.<IMG height=50 src="/tools/bzzc.files/iq27a.gif" width=200 
+        align=top> <IMG height=50 src="/tools/bzzc.files/iq27b.gif" width=250 
+        align=top><BR>&nbsp; <INPUT type=checkbox value=a name=q27> a <INPUT 
+        type=checkbox value=b name=q27> b <INPUT type=checkbox value=c name=q27> 
+        c <INPUT type=checkbox value=d name=q27> d <INPUT type=checkbox value=e 
+        name=q27> e</B></P>
+        <P><B>3.<IMG height=50 src="/tools/bzzc.files/iq28a.gif" width=200 
+        align=top> <IMG height=50 src="/tools/bzzc.files/iq28b.gif" width=250 
+        align=top><BR>&nbsp; <INPUT type=checkbox value=a name=q28> a <INPUT 
+        type=checkbox value=b name=q28> b <INPUT type=checkbox value=c name=q28> 
+        c <INPUT type=checkbox value=d name=q28> d <INPUT type=checkbox value=e 
+        name=q28> e</B></P>
+        <P><B>4.<IMG height=50 src="/tools/bzzc.files/iq29a.gif" width=200 
+        align=top> <IMG height=50 src="/tools/bzzc.files/iq29b.gif" width=250 
+        align=top> <BR>&nbsp; <INPUT type=checkbox value=a name=q29> a <INPUT 
+        type=checkbox value=b name=q29> b <INPUT type=checkbox value=c name=q29> 
+        c <INPUT type=checkbox value=d name=q29> d <INPUT type=checkbox value=e 
+        name=q29> e</B></P>
+        <HR align=center width=600 color=#0000ff SIZE=1>
+
+        <DL>
+          <DT><SPAN class=font>第30-33 题：</SPAN><SPAN 
+          class=font>在下列题目中每一行都缺少一个图，请从右边选择一个(a b c d)</SPAN><SPAN 
+          class=font>插入左边图形中以</SPAN> 
+          <DT><SPAN class=font>使左边的图形逻辑角度上能成双配对</SPAN> 
+          <DD>
+          <OL>
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq30a.gif" width=200 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq30b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q30> a <INPUT 
+            type=radio value=b name=q30> b <INPUT type=radio value=c name=q30> c 
+            <INPUT type=radio value=d name=q30> d</B> 
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq31a.gif" width=200 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq31b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q31> a <INPUT 
+            type=radio value=b name=q31> b <INPUT type=radio value=c name=q31> c 
+            <INPUT type=radio value=d name=q31> d</B> 
+            <LI><B><IMG height=50 src="/tools/bzzc.files/iq32a.gif" width=200 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq32b.gif" 
+            width=200 align=top><BR><INPUT type=radio value=a name=q32> a <INPUT 
+            type=radio value=b name=q32> b <INPUT type=radio value=c name=q32> c 
+            <INPUT type=radio value=d name=q32> d</B> 
+                        <LI><B><IMG height=50 src="/tools/bzzc.files/iq33a.gif" width=200 
+            align=top> <IMG height=50 src="/tools/bzzc.files/iq33b.gif" 
+            width=200 align=top><BR>
+                          <INPUT type=radio value=a name=q33> a <INPUT 
+            type=radio value=b name=q33> b <INPUT type=radio value=c name=q33> c 
+            <INPUT type=radio value=d name=q33> d</B> 
+    </LI></OL></DD></DL></BLOCKQUOTE></BLOCKQUOTE></DL></BLOCKQUOTE>
+<HR align=center>
+
+<DIV align=center>
+<CENTER>
+<P><B><SPAN class=font><INPUT type=submit value=看看我的得分（IQ值）> <INPUT type=reset value=擦除重做> </SPAN></B></P></CENTER></DIV></FORM>
+<DIV align=center>
+<CENTER>
+<P>&nbsp;</P>
+<P>&nbsp;</P></CENTER></DIV></td>
+    </tr>
+  </table>
+</CENTER></SCRIPT>
+<p> <p> <p>
+<p> <p> <p>
+
+
+<CENTER><TABLE BORDER=0 WIDTH="70%" >
+<TR>
+
+
+</TR>
+</TABLE></CENTER>
+
+</BODY>
+</html>

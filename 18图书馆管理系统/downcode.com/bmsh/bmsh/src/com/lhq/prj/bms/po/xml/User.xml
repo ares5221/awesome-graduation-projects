@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="User">
+
+	<typeAlias alias="user" type="com.lhq.prj.bms.po.User" />
+	<typeAlias alias="page" type="com.lhq.prj.bms.core.Page" />
+
+	<parameterMap class="user" id="pm_user_without_id">
+		<parameter property="emplName" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="emplNo" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="mobilePhone" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="sex" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="age" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="userName" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="password" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="companyId" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="companyName" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="deptId" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="deptName" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="dutyId" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="dutyName" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="manager" javaType="boolean" jdbcType="BIT" />
+		<parameter property="remark" javaType="string" jdbcType="VARCHAR" />
+	</parameterMap>
+	<sql id="byUserIdCondition">
+		<![CDATA[
+		   userId = #userId:NUMBER#
+	    ]]>
+	</sql>
+
+	<insert id="save" parameterMap="pm_user_without_id">
+		<![CDATA[
+			INSERT INTO t_user 
+						(emplName,emplNo,mobilePhone,sex,age,userName,password,companyId,companyName,deptId,deptName,dutyId,dutyName,manager,remark) 
+				 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+		]]>
+		<selectKey resultClass="int">
+			<![CDATA[
+				SELECT @@IDENTITY AS ID
+			]]>
+		</selectKey>
+	</insert>
+
+	<delete id="deleteById" parameterClass="integer">
+		<![CDATA[
+			delete t_user
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="byUserIdCondition" />
+		</dynamic>
+	</delete>
+	
+	<update id="update" parameterClass="user">
+		<![CDATA[
+			UPDATE t_user
+		]]>
+		<dynamic prepend="SET">
+			<isNotNull property="emplName" prepend=",">
+				<![CDATA[
+					emplName = #emplName:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="emplNo" prepend=",">
+				<![CDATA[
+					emplNo = #emplNo:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="mobilePhone" prepend=",">
+				<![CDATA[
+					mobilePhone = #mobilePhone:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="sex" prepend=",">
+				<![CDATA[
+					sex = #sex:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="age" prepend=",">
+				<![CDATA[
+					age = #age:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="userName" prepend=",">
+				<![CDATA[
+					userName = #userName:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="password" prepend=",">
+				<![CDATA[
+					password = #password:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="companyId" prepend=",">
+				<![CDATA[
+					companyId = #companyId:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="companyName" prepend=",">
+				<![CDATA[
+					companyName = #companyName:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="deptId" prepend=",">
+				<![CDATA[
+					deptId = #deptId:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="deptName" prepend=",">
+				<![CDATA[
+					deptName = #deptName:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="dutyId" prepend=",">
+				<![CDATA[
+					dutyId = #dutyId:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="dutyName" prepend=",">
+				<![CDATA[
+					dutyName = #dutyName:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="manager" prepend=",">
+				<![CDATA[
+					manager = #manager:BIT#
+				]]>
+			</isNotNull>
+			<isNotNull property="remark" prepend=",">
+				<![CDATA[
+					remark = #remark:VARCHAR#
+				]]>
+			</isNotNull>
+		</dynamic>
+		<dynamic prepend="WHERE">
+			<include refid="byUserIdCondition" />
+		</dynamic>
+	</update>
+
+	<sql id="findUserByPageCondition">
+		<isNotEmpty property="conditions">
+			<iterate property="conditions" open="(" close=")" conjunction="OR">
+				<![CDATA[
+					upper(emplName) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+				    OR upper(emplNo) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'    
+				    OR upper(mobilePhone) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'    
+				    OR upper(sex) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'    
+				    OR upper(userName) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'    
+				    OR upper(companyName) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'    
+				    OR upper(deptName) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'    
+				    OR upper(dutyName) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'    
+				    OR upper(remark) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%' 
+		    	]]>
+			</iterate>
+		</isNotEmpty>
+	</sql>
+	
+	<select id="findByPage" parameterClass="page" resultClass="user">
+		<![CDATA[
+			SELECT TOP $limit$ * FROM t_user 
+					WHERE (userId >= (SELECT MAX(userId) FROM (SELECT TOP $start$ userId FROM t_user 
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="findUserByPageCondition" />
+		</dynamic>
+		<![CDATA[
+			ORDER BY userId ) AS T)) 
+		]]>
+		<dynamic prepend="AND">
+			<include refid="findUserByPageCondition" />
+		</dynamic>
+		<![CDATA[
+			ORDER BY userId
+		]]>
+	</select>
+
+	<select id="findByCount" parameterClass="page" resultClass="int">
+		<![CDATA[
+			SELECT COUNT(*) FROM t_user 
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="findUserByPageCondition" />
+		</dynamic>
+	</select>
+
+	<select id="login" parameterClass="user" resultClass="user">
+		<![CDATA[
+			SELECT * FROM t_user 
+					WHERE userName = #userName:VARCHAR# and password = #password:VARCHAR#
+		]]>
+	</select>
+	
+	<select id="findByExample" parameterClass="user" resultClass="user">
+		<![CDATA[
+			SELECT * FROM t_user 
+		]]>
+		<dynamic prepend="WHERE">
+			<isNotNull property="userId" prepend="AND">
+				userId = #userId:NUMBER#
+			</isNotNull>
+			<isNotNull property="emplName" prepend="AND">
+				emplName LIKE '%' + #emplName:VARCHAR# + '%'
+			</isNotNull>
+			<isNotNull property="emplNo" prepend="AND">
+				emplNo LIKE '%' + #emplNo:VARCHAR# + '%'
+			</isNotNull>
+			<isNotNull property="mobilePhone" prepend="AND">
+				mobilePhone LIKE '%' + #mobilePhone:VARCHAR# + '%'
+			</isNotNull>
+			<isNotNull property="sex" prepend="AND">
+				sex = #sex:VARCHAR#
+			</isNotNull>
+			<isNotNull property="age" prepend="AND">
+				age = #sex:NUMBER#
+			</isNotNull>
+			<isNotNull property="userName" prepend="AND">
+				userName = #userName:VARCHAR#
+			</isNotNull>
+			<isNotNull property="password" prepend="AND">
+				password = #password:VARCHAR#
+			</isNotNull>
+			<isNotNull property="companyId" prepend="AND">
+				companyId = #companyId:NUMBER#
+			</isNotNull>
+			<isNotNull property="companyName" prepend="AND">
+				companyName LIKE '%' + #companyName:VARCHAR# + '%'
+			</isNotNull>
+			<isNotNull property="deptId" prepend="AND">
+				deptId = #deptId:NUMBER#
+			</isNotNull>
+			<isNotNull property="deptName" prepend="AND">
+				deptName LIKE '%' + #deptName:VARCHAR# + '%'
+			</isNotNull>
+			<isNotNull property="dutyId" prepend="AND">
+				dutyId = #dutyId:NUMBER#
+			</isNotNull>
+			<isNotNull property="dutyName" prepend="AND">
+				dutyName LIKE '%' + #dutyName:VARCHAR# + '%'
+			</isNotNull>
+			<isNotNull property="manager" prepend="AND">
+				manager = #manager:BIT#
+			</isNotNull>
+		</dynamic>
+	</select>
+</sqlMap>

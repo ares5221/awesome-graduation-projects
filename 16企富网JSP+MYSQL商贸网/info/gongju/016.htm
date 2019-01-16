@@ -1,0 +1,205 @@
+<style type="text/css"><!--
+td,body {  font-size: 9pt}
+a:link{ color:#000000; text-decoration:none}     
+a:visited{COLOR: #000000; TEXT-DECORATION: none} 
+a:active{color:green;text-decoration:none}
+a:hover{color:red;text-decoration:underline} --> 
+</style>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css"><!--
+td,body {  font-size: 9pt}
+a:link{ color:#000000; text-decoration:none}     
+a:visited{COLOR: #000000; TEXT-DECORATION: none} 
+a:active{color:green;text-decoration:none}
+a:hover{color:red;text-decoration:underline} --> 
+</style>
+<STYLE type=text/css>TD {
+	FONT: 9pt "宋体"; COLOR: #ffffff
+}
+.Button {
+	BORDER-TOP-WIDTH: 2px; BORDER-LEFT-WIDTH: 2px; BORDER-LEFT-COLOR: #cccccc; BACKGROUND: #242424; BORDER-BOTTOM-WIDTH: 2px; BORDER-BOTTOM-COLOR: #333333; MARGIN: 4px; FONT: bold 9pt "宋体"; WIDTH: 40px; COLOR: #ffffff; BORDER-TOP-COLOR: #cccccc; HEIGHT: 20px; BORDER-RIGHT-WIDTH: 2px; BORDER-RIGHT-COLOR: #333333
+}
+.text_input {
+	BACKGROUND: #cccccc; FONT: 9pt "Verdana", "Arial", "Helvetica", "sans-serif"; COLOR: #000000; TEXT-ALIGN: right
+}
+A {
+	FONT: 9pt "宋体"; COLOR: #ffffff; TEXT-DECORATION: none
+}
+</STYLE><style type="text/css">
+<!--
+td,body {font-size:12px}
+a:link {color:#000000;text-decoration:none}     
+a:visited {color:#000000;text-decoration:none} 
+a:active {color:blue;text-decoration:none}
+a:hover {color:red;text-decoration:underline}
+a.title:link {color:#000000;text-decoration:underline}     
+a.title:visited {color:#000000;text-decoration:underline} 
+a.title:active {color:#0000ff;text-decoration:underline}
+a.title:hover {color:#0000ff;text-decoration:underline}
+-->
+</style><table width="100%" border="0" align="center" cellspacing="0">
+  <tr>
+   <FONT color=#ff0000 size=2> <P align=center></FONT> 
+    <td align="center">
+<P align=center><FONT color=#ff0000 size=3>智能计算器</FONT> 
+<FORM name=Keypad action="">
+<TABLE height=60 cellSpacing=0 cellPadding=0 width=249 bgColor=#d4d0c8 
+  border=1><TBODY>
+  <TR>
+    <TD align=middle colSpan=4><INPUT class=text_input size=30 value=0 
+      name=ReadOut width="100%"> </TD>
+    <TD width=0></TD>
+    <TD width=50><INPUT class=Button onclick=Clear() type=button value=" C " name=btnClear> 
+    </TD>
+    <TD><INPUT class=Button onclick=ClearEntry() type=button value=" CE " name=btnClearEntry2> 
+    </TD></TR>
+  <TR>
+    <TD width=50><INPUT class=Button onclick=NumPressed(7) type=button value=" 7 " name=btnSeven> 
+    </TD>
+    <TD width=50><INPUT class=Button onclick=NumPressed(8) type=button value=" 8 " name=btnEight> 
+    </TD>
+    <TD width=50><INPUT class=Button onclick=NumPressed(9) type=button value=" 9 " name=btnNine> 
+    </TD>
+    <TD width=50><INPUT class=Button onclick=hexchange() type=button value=HEX name=btnHex> 
+    </TD>
+    <TD width=0></TD>
+    <TD width=50><INPUT class=Button onclick=Neg() type=button value=" +/- " name=btnNeg> 
+    </TD>
+    <TD><INPUT class=Button onclick=Percent() type=button value=" % " name=btnPercent> 
+    </TD></TR>
+  <TR>
+    <TD width=50><INPUT class=Button onclick=NumPressed(4) type=button value=" 4 " name=btnFour> 
+    </TD>
+    <TD width=50><INPUT class=Button onclick=NumPressed(5) type=button value=" 5 " name=btnFive> 
+    </TD>
+    <TD width=50><INPUT class=Button onclick=NumPressed(6) type=button value=" 6 " name=btnSix> 
+    </TD>
+    <TD width=50><INPUT class=Button onclick=octchange() type=button value=OCT name=btnClearEntry222> 
+    </TD>
+    <TD width=0></TD>
+    <TD align=middle width=50><INPUT class=Button onclick="Operation('+')" type=button value=" + " name=btnPlus> 
+    </TD>
+    <TD align=middle>
+      <P align=center><INPUT class=Button onclick="Operation('-')" type=button value=" - " name=btnMinus> 
+      </P></TD></TR>
+  <TR>
+    <TD width=50><INPUT class=Button onclick=NumPressed(1) type=button value=" 1 " name=btnOne> 
+    </TD>
+    <TD width=50><INPUT class=Button onclick=NumPressed(2) type=button value=" 2 " name=btnTwo> 
+    </TD>
+    <TD width=50><INPUT class=Button onclick=NumPressed(3) type=button value=" 3 " name=btnThree> 
+    </TD>
+    <TD width=50><INPUT class=Button onclick=binchange() type=button value=BIN name=btnClearEntry223> 
+    </TD>
+    <TD width=0></TD>
+    <TD align=middle width=50><INPUT class=Button onclick="Operation('*')" type=button value=" * " name=btnMultiply> 
+    </TD>
+    <TD align=middle><INPUT class=Button onclick="Operation('/')" type=button value=" / " name=btnDivide> 
+    </TD></TR>
+  <TR>
+    <TD width=50><INPUT class=Button onclick=NumPressed(0) type=button value=" 0 " name=btnZero> 
+    </TD>
+    <TD width=50><INPUT class=Button onclick=Decimal() type=button value=" . " name=btnDecimal> 
+    </TD>
+    <TD colSpan=4>
+      <DIV align=center><FONT color=#3399ff>www.laba.cn </FONT></A></DIV></TD>
+    <TD colSpan=5><INPUT class=Button onclick="Operation('=')" type=button value=" = " name=btnEquals> 
+    </TD></TR></TBODY></TABLE></FORM>
+<SCRIPT language=JavaScript>
+var FKeyPad = document.Keypad;
+var Accum = 0;
+var FlagNewNum = false;
+var PendingOp = "";
+function NumPressed (Num) {
+if (FlagNewNum) {
+FKeyPad.ReadOut.value  = Num;
+FlagNewNum = false;
+}
+else {
+if (FKeyPad.ReadOut.value == "0")
+FKeyPad.ReadOut.value = Num;
+else
+FKeyPad.ReadOut.value += Num;
+}
+}
+function Operation (Op) {
+var Readout = FKeyPad.ReadOut.value;
+if (FlagNewNum && PendingOp != "=");
+else
+{
+FlagNewNum = true;
+if ( '+' == PendingOp )
+Accum += parseFloat(Readout);
+else if ( '-' == PendingOp )
+Accum -= parseFloat(Readout);
+else if ( '/' == PendingOp )
+Accum /= parseFloat(Readout);
+else if ( '*' == PendingOp )
+Accum *= parseFloat(Readout);
+else
+Accum = parseFloat(Readout);
+FKeyPad.ReadOut.value = Accum;
+PendingOp = Op;
+}
+}
+function Decimal () {
+var curReadOut = FKeyPad.ReadOut.value;
+if (FlagNewNum) {
+curReadOut = "0.";
+FlagNewNum = false;
+}
+else
+{
+if (curReadOut.indexOf(".") == -1)
+curReadOut += ".";
+}
+FKeyPad.ReadOut.value = curReadOut;
+}
+function ClearEntry () {
+FKeyPad.ReadOut.value = "0";
+FlagNewNum = true;
+}
+function Clear () {
+Accum = 0;
+PendingOp = "";
+ClearEntry();
+}
+function Neg () {
+FKeyPad.ReadOut.value = parseFloat(FKeyPad.ReadOut.value) * -1;
+}
+function Percent () {
+FKeyPad.ReadOut.value = (parseFloat(FKeyPad.ReadOut.value) / 100) * parseFloat(Accum);
+}
+function hexchange()
+{
+var hex,dec;
+dec = parseFloat(FKeyPad.ReadOut.value);
+hex = dec.toString(16);
+window.alert("该十进制数转成十六进制数为："+ hex);
+}
+function octchange()
+{
+var oct,dec;
+dec = parseFloat(FKeyPad.ReadOut.value);
+oct = dec.toString(8);
+window.alert("该十进制数转成八进制数为："+ oct);
+}
+function binchange()
+{
+var bin,dec;
+dec = parseFloat(FKeyPad.ReadOut.value);
+bin = dec.toString(2);
+window.alert("该十进制数转成二进制数为："+ bin);
+}
+
+</SCRIPT>
+
+<TABLE>
+  <TBODY>
+    <TR> 
+      <TD align=middle width="726" height=6> <SCRIPT language=JavaScript src=""></SCRIPT> 
+      </TD>
+    </TR>
+  </TBODY>
+</table>

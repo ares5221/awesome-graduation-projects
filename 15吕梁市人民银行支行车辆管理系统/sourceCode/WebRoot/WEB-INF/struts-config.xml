@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+  <data-sources />
+  <form-beans>
+    <form-bean name="RegisterForm" type="web.form.RegisterForm" />
+    <form-bean name="LoginForm" type="web.form.LoginForm" />
+    <form-bean name="modifyUserInfoForm" type="web.form.ModifyUserInfoForm" />
+    <form-bean name="addCarForm" type="web.form.AddCarForm" />
+    <form-bean name="addEmployeeForm" type="web.form.AddEmployeeForm" />
+    <form-bean name="findCarsForm" type="web.form.FindCarsForm" />
+    <form-bean name="appRecordForm" type="web.form.AppRecordForm" />
+    <form-bean name="checkAppForm" type="web.form.CheckAppForm" />
+    <form-bean name="addOutRecordForm" type="web.form.AddOutRecordForm" />
+    <form-bean name="addBackRecordForm" type="web.form.AddBackRecordForm" />
+    <form-bean name="FindMissingPasswordForm" type="web.form.FindMissingPasswordForm" />
+    <form-bean name="findDriverByConditionForm" type="web.form.FindDriverByConditionForm" />
+  </form-beans>
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="RegisterForm"
+      input="/pages/register.jsp"
+      name="RegisterForm"
+      path="/registerAction"
+      scope="request"
+      type="web.action.RegisterAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/login.jsp"
+        redirect="true" />
+      <forward name="failure" path="/pages/register.jsp" redirect="true" />
+    </action>
+    <action
+      attribute="LoginForm"
+      input="/pages/login.jsp"
+      name="LoginForm"
+      path="/loginAction"
+      scope="request"
+      type="web.action.LoginAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/member/activity.jsp"
+        redirect="true" />
+      <forward
+        name="failure"
+        path="/pages/login.jsp"
+        redirect="true" />
+    </action>
+    <action path="/autoLogin"
+    attribute="LoginForm" 
+    name="LoginForm"
+    scope="request"
+    type="web.action.AutoLoginAction">
+      <forward name="success" path="/loginAction.do" />
+      <forward
+        name="failure"
+        path="/pages/login.jsp" />
+    </action>
+    <action
+      path="/logout"
+      type="web.action.LogoutAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/login.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="modifyUserInfoForm"
+      input="/pages/member/modify.jsp"
+      name="modifyUserInfoForm"
+      path="/modifyUserInfo"
+      scope="request"
+      type="web.action.ModifyUserInfoAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/member/frame/rightframe.jsp"
+        redirect="true" />
+      <forward
+        name="failure"
+        path="/pages/member/modify.jsp"
+        redirect="true" />
+    </action>
+    <action path="/findAllUser" type="web.action.FindAllUserAction">
+      <forward
+        name="success"
+        path="/pages/member/powermanage.jsp"
+        redirect="true" />
+      <forward
+        name="failure"
+        path="/pages/member/frame/rightframe.jsp"
+        redirect="true" />
+    </action>
+    <action path="/changePower" type="web.action.ChangePowerAction">
+      <forward
+        name="success"
+        path="/findAllUser.do"/>
+    </action>
+    <action
+      attribute="addCarForm"
+      input="/pages/car/addcar.jsp"
+      name="addCarForm"
+      path="/addCar"
+      scope="request"
+      type="web.action.AddCarAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/addcar.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="addEmployeeForm"
+      input="/pages/member/addemployee.jsp"
+      name="addEmployeeForm"
+      path="/addEmployee"
+      scope="request"
+      type="web.action.AddEmployeeAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/member/addemployee.jsp"
+        redirect="true" />
+    </action>
+    <action path="/findAllCar" type="web.action.FindAllCarAction">
+      <forward
+        name="success"
+        path="/pages/car/carstatus.jsp"
+        redirect="true" />
+    </action>
+    <action
+      path="/findOneCar"
+      type="web.action.FindOneCarAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/carinfo.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="findCarsForm"
+      input="/pages/car/carstatus.jsp"
+      name="findCarsForm"
+      path="/findCarsByCondition"
+      scope="request"
+      type="web.action.FindCarsByConditionAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/carstatus.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="appRecordForm"
+      input="/pages/car/application.jsp"
+      name="appRecordForm"
+      path="/addAppRecord"
+      scope="request"
+      type="web.action.AddAppRecordAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/application.jsp"
+        redirect="true" />
+    </action>
+    <action
+      path="/findAppRecord"
+      type="web.action.FindAppRecordAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/applist.jsp"
+        redirect="true" />
+        <forward
+        name="failure"
+        path="/pages/member/frame/rightframe.jsp"
+        redirect="true" />
+    </action>
+    <action
+      path="/findOneApp"
+      type="web.action.FindOneAppAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/endorsement.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="checkAppForm"
+      input="/pages/car/endorsement.jsp"
+      name="checkAppForm"
+      path="/checkApp"
+      scope="request"
+      type="web.action.CheckAppAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/findAppRecord.do"
+        redirect="true" />
+    </action>
+    <action
+      input="/pages/member/activity.jsp"
+      path="/findCheckApp"
+      type="web.action.FindCheckAppAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/outlist.jsp"
+        redirect="true" />
+        <forward
+        name="failure"
+        path="/pages/member/frame/rightframe.jsp"
+        redirect="true" />
+    </action>
+    <action
+      path="/outInfo"
+      type="web.action.OutInfoAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/outrecord.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="addOutRecordForm"
+      input="/pages/car/outrecord.jsp"
+      name="addOutRecordForm"
+      path="/addOutRecord"
+      scope="request"
+      type="web.action.AddOutRecordAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/findCheckApp.do"
+        redirect="true" />
+        <forward
+        name="failure"
+        path="/pages/car/outrecord.jsp"
+        redirect="true" />
+      </action>
+    <action
+      input="/pages/member/activity.jsp"
+      path="/findOutCar"
+      type="web.action.FindOutCarAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/backlist.jsp"
+        redirect="true" />
+        <forward
+        name="failure"
+        path="/pages/member/frame/rightframe.jsp"
+        redirect="true" />
+    </action>
+    <action
+      input="/pages/car/backlist.jsp"
+      path="/backRecordInfo"
+      type="web.action.BackRecordInfoAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/backrecord.jsp"
+        redirect="true" />
+      <forward
+        name="failure"
+        path="/pages/car/backlist.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="addBackRecordForm"
+      input="/pages/car/backrecord.jsp"
+      name="addBackRecordForm"
+      path="/addBackRecord"
+      scope="request"
+      type="web.action.AddBackRecordAction"
+      validate="false">
+      <forward
+        name="failure"
+        path="/pages/car/backrecord.jsp"
+        redirect="true" />
+      <forward
+        name="success"
+        path="/findOutCar.do"
+        redirect="true" />
+    </action>
+    <action
+      input="/pages/member/frame/rightframe.jsp"
+      path="/findAllEmployees"
+      type="web.action.FindAllEmployeesAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/member/driverlist.jsp"
+        redirect="true" />
+      <forward
+        name="failure"
+        path="/pages/member/frame/rightframe.jsp"
+        redirect="true" />
+    </action>
+    
+    <action path="/findBackRecordList" type="web.action.FindBackRecordListAction">
+      <forward
+        name="success"
+        path="/pages/car/backrecordlist.jsp"
+        redirect="true" />
+    </action>
+    <action path="/findDriverInfo" type="web.action.FindDriverInfoAction">
+      <forward
+        name="success"
+        path="/pages/member/driverinfo.jsp"
+        redirect="true" />
+    </action>
+    <action
+      path="/lookBackRecordInfo"
+      type="web.action.LookBackRecordInfoAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/backrecordinfo.jsp"
+        redirect="true" />
+    </action>
+    <action
+      path="/findAllOutRecord"
+      type="web.action.FindAllOutRecordAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/outrecordlist.jsp"
+        redirect="true" />
+    </action>
+    <action
+      path="/lookOutRecordInfo"
+      type="web.action.LookOutRecordInfoAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/car/outrecordinfo.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="FindMissingPasswordForm"
+      input="/pages/passwd_missing.jsp"
+      name="FindMissingPasswordForm"
+      path="/findMissingPassword"
+      scope="request"
+      type="web.action.FindMissingPasswordAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/login.jsp"
+        redirect="true" />
+      <forward
+        name="failure"
+        path="/pages/passwd_missing.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="findDriverByConditionForm"
+      input="/pages/member/driverlist.jsp"
+      name="findDriverByConditionForm"
+      path="/findDriverByCondition"
+      scope="request"
+      type="web.action.FindDriverByConditionAction"
+      validate="false">
+      <forward
+        name="success"
+        path="/pages/member/driverlist.jsp"
+        redirect="true" />
+    </action>
+  </action-mappings>
+  <message-resources parameter="web.ApplicationResources" />
+</struts-config>
+

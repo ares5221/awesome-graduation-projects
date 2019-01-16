@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Book">
+
+	<typeAlias alias="book" type="com.lhq.prj.bms.po.Book" />
+	<typeAlias alias="page" type="com.lhq.prj.bms.core.Page" />
+
+	<parameterMap class="book" id="pm_book_without_id">
+		<parameter property="bookName" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="author" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="press" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="publicationDate" javaType="java.util.Date" jdbcType="DATETIME" />
+		<parameter property="price" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="editionNo" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="isbn" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="categoryId" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="categoryName" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="wordCount" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="pageCount" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="bookSize" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="paper" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="pack" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="imageUrl" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="address" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="editorRecommend" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="description" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="authorDesc" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="state" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="currentReaderId" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="currentReader" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="logId" javaType="integer" jdbcType="NUMBER" />
+	</parameterMap>
+	<sql id="byBookIdCondition">
+		<![CDATA[
+		   bookId = #bookId:NUMBER#
+	    ]]>
+	</sql>
+
+	<insert id="save" parameterMap="pm_book_without_id">
+		<![CDATA[
+			INSERT INTO t_book 
+						(bookName,author,press,publicationDate,price,editionNo,isbn,categoryId,categoryName,wordCount,pageCount,
+						 bookSize,paper,pack,imageUrl,address,editorRecommend,description,authorDesc,state,currentReaderId,currentReader,logId) 
+				 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+		]]>
+		<selectKey resultClass="int">
+			<![CDATA[
+				SELECT @@IDENTITY AS ID
+			]]>
+		</selectKey>
+	</insert>
+
+	<delete id="deleteById" parameterClass="integer">
+		<![CDATA[
+			delete t_book
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="byBookIdCondition" />
+		</dynamic>
+	</delete>
+
+
+	<update id="update" parameterClass="book">
+		<![CDATA[
+			UPDATE t_book
+		]]>
+		<dynamic prepend="SET">
+			<isNotNull property="bookName" prepend=",">
+				<![CDATA[
+					bookName = #bookName:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="author" prepend=",">
+				<![CDATA[
+					author = #author:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="press" prepend=",">
+				<![CDATA[
+					press = #press:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="publicationDate" prepend=",">
+				<![CDATA[
+					publicationDate = #publicationDate:DATETIME#
+				]]>
+			</isNotNull>
+			<isNotNull property="price" prepend=",">
+				<![CDATA[
+					price = #price:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="editionNo" prepend=",">
+				<![CDATA[
+					editionNo = #editionNo:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="isbn" prepend=",">
+				<![CDATA[
+					isbn = #isbn:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="categoryId" prepend=",">
+				<![CDATA[
+					categoryId = #categoryId:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="categoryName" prepend=",">
+				<![CDATA[
+					categoryName = #categoryName:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="wordCount" prepend=",">
+				<![CDATA[
+					wordCount = #wordCount:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="pageCount" prepend=",">
+				<![CDATA[
+					pageCount = #pageCount:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="bookSize" prepend=",">
+				<![CDATA[
+					bookSize = #bookSize:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="paper" prepend=",">
+				<![CDATA[
+					paper = #paper:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="pack" prepend=",">
+				<![CDATA[
+					pack = #pack:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="imageUrl" prepend=",">
+				<![CDATA[
+					imageUrl = #imageUrl:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="address" prepend=",">
+				<![CDATA[
+					address = #address:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="editorRecommend" prepend=",">
+				<![CDATA[
+					editorRecommend = #editorRecommend:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="description" prepend=",">
+				<![CDATA[
+					description = #description:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="authorDesc" prepend=",">
+				<![CDATA[
+					authorDesc = #authorDesc:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="state" prepend=",">
+				<![CDATA[
+					state = #state:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="currentReaderId" prepend=",">
+				<![CDATA[
+					currentReaderId = #currentReaderId:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="currentReader" prepend=",">
+				<![CDATA[
+					currentReader = #currentReader:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="logId" prepend=",">
+				<![CDATA[
+					logId = #logId:NUMBER#
+				]]>
+			</isNotNull>
+		</dynamic>
+		<dynamic prepend="WHERE">
+			<include refid="byBookIdCondition" />
+		</dynamic>
+	</update>
+
+	<sql id="findBookByPageCondition">
+		<isNotEmpty property="conditions">
+			<iterate property="conditions" open="(" close=")" conjunction="OR">
+				<![CDATA[
+					upper(bookName) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(author) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(press) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(price) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(editionNo) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(isbn) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(categoryName) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(bookSize) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(paper) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(pack) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(address) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(currentReader) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+			    ]]>
+			</iterate>
+		</isNotEmpty>
+	</sql>
+
+	<select id="findByPage" parameterClass="page" resultClass="book">
+		<![CDATA[
+			SELECT TOP $limit$ * FROM t_book 
+					WHERE (bookId >= (SELECT MAX(bookId) FROM (SELECT TOP $start$ bookId FROM t_book 
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="findBookByPageCondition" />
+		</dynamic>
+		<![CDATA[
+			ORDER BY bookId ) AS T)) 
+		]]>
+		<dynamic prepend="AND">
+			<include refid="findBookByPageCondition" />
+		</dynamic>
+		<![CDATA[
+			ORDER BY bookId
+		]]>
+	</select>
+
+	<select id="findByCount" parameterClass="page" resultClass="int">
+		<![CDATA[
+			SELECT COUNT(*) FROM t_book 
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="findBookByPageCondition" />
+		</dynamic>
+	</select>
+
+	<select id="findById" parameterClass="int" resultClass="book">
+		<![CDATA[
+			SELECT * FROM t_book	
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="byBookIdCondition" />
+		</dynamic>
+	</select>
+
+</sqlMap>

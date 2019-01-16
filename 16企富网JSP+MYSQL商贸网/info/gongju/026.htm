@@ -1,0 +1,274 @@
+<!--
+td,body {font-size:12px}
+a:link {color:#000000;text-decoration:none}     
+a:visited {color:#000000;text-decoration:none} 
+a:active {color:blue;text-decoration:none}
+a:hover {color:red;text-decoration:underline}
+a.title:link {color:#000000;text-decoration:underline}     
+a.title:visited {color:#000000;text-decoration:underline} 
+a.title:active {color:#0000ff;text-decoration:underline}
+a.title:hover {color:#0000ff;text-decoration:underline}
+-->
+</style>
+<SCRIPT language=JavaScript>
+//Stock Query.
+function callpage(htmlurl,theform) {
+  var newhtmlurl
+  newhtmlurl = htmlurl + "?STYLE=SSQX&STKNO=" + theform.STKNO.value + "&MT=GET"
+  var newwin=window.open(newhtmlurl,"stockWin","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=605,height=500");
+  return false;
+}
+</SCRIPT>
+<SCRIPT language=JavaScript>
+
+<!--
+var timerID = null;
+var timerRunning = false;
+var _area = 0;
+
+function stopclock(){
+    if(timerRunning)
+        clearTimeout(timerID);
+    timerRunning = false;
+}
+
+function startclock(){
+    stopclock();
+    showlocaltime();
+}
+
+function showlocaltime(){
+    var now = new Date();
+ var _day = new Array(7);
+ _day[0]='日';
+ _day[1]='一';
+ _day[2]='二';
+ _day[3]='三';
+ _day[4]='四';
+ _day[5]='五';
+ _day[6]='六';
+
+ var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var timezone= now.getTimezoneOffset()/60;
+ if (timezone == 0)
+  { var timeValue = "格林尼治";}
+ else 
+  { var timeValue = ((timezone < 0)? " 东"+(-1)*timezone : "  西"+timezone) +'区';}
+
+    timeValue  += '时间：'
+  +now.getYear()+'年'
+  +eval(now.getMonth()+1)+'月'
+  +now.getDate()+'日 星期'
+  +_day[now.getDay()]+' '+hours;
+
+    timeValue  += ((minutes < 10) ? ":0" : ":") + minutes;
+    timeValue  += ((seconds < 10) ? ":0" : ":") + seconds+" ";
+    document.clock.face.value = timeValue ;
+ timerID = setTimeout("showlocaltime()",1000);
+    timerRunning = true;
+}
+
+
+function showareatime(_area)
+ {
+    var now = new Date();
+ var timezone = now.getTimezoneOffset()/60;
+ if (_area != Math.round(_area))
+  {
+  _area = Math.floor(_area);
+  var minutes = now.getMinutes()+30;
+  if (minutes >=60)
+   {
+   minutes = minutes%60;
+   var hours = now.getHours()+eval(timezone+_area + 1);
+   }
+  else
+   {
+   var hours = now.getHours()+eval(timezone+_area) ;
+   }
+  }
+ else
+  {
+  var hours = now.getHours()+timezone+_area;
+  var minutes = now.getMinutes();
+  }
+ if (hours < 0)
+  hours = '昨天'+ eval(24 + hours);
+ else
+  if (hours < 24 )
+   hours = '今天'+hours;
+  else
+   hours = '明天'+hours%24;
+
+    var seconds = now.getSeconds();
+    var timeValue = hours;
+    timeValue  += ((minutes < 10) ? ":0" : ":") + minutes;
+    timeValue  += ((seconds < 10) ? ":0" : ":") + seconds+" ";
+ return timeValue;
+ }
+
+function worldtime(_area)
+ {
+ _address = new Array(28);
+ _address[0]='西12区：埃尼威托克岛，夸贾林岛';
+ _address[1]='西11区：中途岛，东萨摩亚';
+ _address[2]='西10区：夏威夷';
+ _address[3]='西9区：阿拉斯加';
+ _address[4]='西8区：太平洋时间（美国和加拿大），蒂华纳';
+ _address[5]='西7区：山地时间（美国和加拿大），亚利桑那';
+ _address[6]='西6区：中部时间（美国和加拿大），墨西哥城，特古西加尔巴，萨斯喀彻温省';
+ _address[7]='西5区：东部时间（美国和加拿大），印第安那州（东部），波哥大，利马，基多';
+ _address[8]='西4区：大西洋时间（加拿大），加拉加斯，拉巴斯';
+ _address[9]='西3区：巴西利亚，布宜诺斯艾利斯，乔治敦';
+ _address[10]='西2区：中大西洋';
+ _address[11]='西1区：亚速尔群岛，佛得角群岛';
+ _address[12]='格林尼治平均时：伦敦，都柏林，爱丁堡，里斯本，卡萨布兰卡，蒙罗维亚';
+ _address[13]='东1区：阿姆斯特丹，柏林，伯尔尼，罗马，斯德哥尔摩，维也纳，贝尔格莱德，布拉迪斯拉发，布达佩斯，卢布尔雅那，布拉格，布鲁赛尔，哥本哈根，马德里，巴黎，萨拉热窝，斯科普里，索非亚，华沙，萨格勒布';
+ _address[14]='东2区：布加勒斯特，哈拉雷，比勒陀尼亚，赫尔辛基，里加，塔林，开罗，雅典，伊斯坦布尔，明斯克，以色列';
+ _address[15]='东3区：巴格达，科威特，利雅得，莫斯科，圣彼得堡，伏尔加格勒，内罗毕';
+ _address[16]='东4区：阿布扎比，马斯喀特，巴库，第比利斯';
+ _address[17]='东5区：叶卡特琳堡，伊斯兰堡，卡拉奇，塔什干';
+ _address[18]='东6区：阿拉木图，达卡，科伦坡';
+ _address[19]='东7区：曼谷，河内，雅加达';
+ _address[20]='东8区：北京，重庆，广州，上海，香港，乌鲁木齐，台北，新加坡，佩思';
+ _address[21]='东9区：平壤，汉城，东京，大阪，札幌，雅库茨克';
+ _address[22]='东10区：布里斯班，关岛，莫尔兹比港，霍巴特，堪培拉，墨尔本，悉尼';
+ _address[23]='东11区：马加丹，所罗门群岛，新喀里多尼亚';
+ _address[24]='东12区：奥克兰，惠灵顿，斐济，堪察加半岛，马绍尔群岛';
+ _address[25]='西3:30区：纽芬兰';
+ _address[26]='东3:30区：德黑兰';
+ _address[27]='东4:30区：喀布尔';  
+ _address[28]='东5:30区：孟买，加尔各答，马德拉斯，新德里'; 
+ _address[29]='东9:30区：阿得莱德，达尔文';
+ 
+ if (_area == -3.5) alert(showareatime(_area)+_address[25]);
+ if (_area == 3.5) alert(showareatime(_area)+_address[26]);
+ if (_area == 4.5) alert(showareatime(_area)+_address[27]); 
+ if (_area == 5.5) alert(showareatime(_area)+_address[28]); 
+ if (_area == 9.5) alert(showareatime(_area)+_address[29]); 
+ if (_area == Math.round(_area))
+  {alert(showareatime(_area)+_address[eval(_area+12)]);
+  }
+ }
+//-->
+</SCRIPT>
+</head>
+
+<body leftmargin="0" topmargin="0">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="770">
+  <center></center>
+  <tr>
+    <FORM class=_form method=post name=clock>
+    <td class="_form">
+      <table border="0" width="760" align="center">
+        <tbody>
+          <tr>
+            <td width="92%" style="font-size: 14px"><input name="face" size="42" style="FONT-SIZE: 14px" class="input3"> 
+              点击目标地区，即可得到相应城市时间！</td>
+          </tr>
+        </tbody>
+      </table>
+      <b><font color="#ff0000"><u></u></font></b></td>
+    </FORM>
+  </tr>
+  <tr>
+    <td align="center">
+      <p style="LINE-HEIGHT: 100%" aglin="center"><font color="#000080"><map name="Map">
+      <area coords="380,84,433,117" onclick="worldtime(12);" shape="RECT">
+      <area coords="361,14,401,82" onclick="worldtime(11);" shape="RECT">
+      <area coords="330,20,362,132" onclick="worldtime(10);" shape="RECT">
+      <area coords="296,80,329,132" onclick="worldtime(9);" shape="RECT">
+      <area coords="283,4,328,79" onclick="worldtime(9);" shape="RECT">
+      <area coords="99,31,93,75,106,75,107,32" onclick="worldtime(2);" shape="POLY">
+      <area coords="69,105,59,27,101,27,92,105" onclick="worldtime(1);" shape="POLY">
+      <area coords="332,227,350,279" onclick="worldtime(9);" shape="RECT">
+      <area coords="308,244,331,283" onclick="worldtime(8);" shape="RECT">
+      <area coords="393,251,441,328" onclick="worldtime(11);" shape="RECT">
+      <area coords="404,12,459,54,405,88" onclick="worldtime(12);" shape="POLY">
+      <area coords="395,341,449,390" onclick="worldtime(12);" shape="RECT">
+      <area coords="350,251,392,377" onclick="worldtime(10);" shape="RECT">
+      <area coords="325,281,350,358" onclick="worldtime(9.5);" shape="RECT">
+      <area coords="303,133,362,169" onclick="worldtime(9);" shape="RECT">
+      <area coords="288,291,324,360" onclick="worldtime(8);" shape="RECT">
+      <area coords="278,187,341,227" onclick="worldtime(8);" shape="RECT">
+      <area coords="249,168,326,187" onclick="worldtime(8);" shape="RECT">
+      <area coords="219,3,280,78" onclick="worldtime(7);" shape="RECT">
+      <area coords="219,80,302,168" onclick="worldtime(8);" shape="RECT">
+      <area coords="256,241,308,260" onclick="worldtime(8);" shape="RECT">
+      <area coords="256,262,305,286" onclick="worldtime(7);" shape="RECT">
+      <area coords="271,226,320,242" onclick="worldtime(7);" shape="RECT">
+      <area coords="240,208,279,225" onclick="worldtime(7);" shape="RECT">
+      <area coords="198,169,249,184" onclick="worldtime(6);" shape="RECT">
+      <area coords="237,186,268,207" onclick="worldtime(6);" shape="RECT">
+      <area coords="197,232,249,252" onclick="worldtime(6);" shape="RECT">
+      <area coords="190,183,238,230" onclick="worldtime(5.5);" shape="RECT">
+      <area coords="158,173,188,191" onclick="worldtime(5);" shape="RECT">
+      <area coords="163,154,216,169" onclick="worldtime(5);" shape="RECT">
+      <area coords="174,138,216,154" onclick="worldtime(4.5);" shape="RECT">
+      <area coords="163,133,173,154" onclick="worldtime(4);" shape="RECT">
+      <area coords="123,160,165,172" onclick="worldtime(3.5);" shape="RECT">
+      <area coords="160,3,216,32" onclick="worldtime(5);" shape="RECT">
+      <area coords="177,33,219,137" onclick="worldtime(5);" shape="RECT">
+      <area coords="111,36,172,76" onclick="worldtime(3);" shape="RECT">
+      <area coords="137,78,176,132" onclick="worldtime(3);" shape="RECT">
+      <area coords="140,190,182,194,214,317,156,342,144,313" onclick="worldtime(3);" shape="POLY">
+      <area coords="121,171,157,185" onclick="worldtime(3);" shape="RECT">
+      <area coords="641,293,684,374" onclick="worldtime(-4);" shape="RECT">
+      <area coords="55,193,109,294" onclick="worldtime(1);" shape="RECT">
+      <area coords="45,157,96,179" onclick="worldtime(1);" shape="RECT">
+      <area coords="55,296,109,361" onclick="worldtime(2);" shape="RECT">
+      <area coords="110,196,140,363" onclick="worldtime(2);" shape="RECT">
+      <area coords="97,161,121,192" onclick="worldtime(2);" shape="RECT">
+      <area coords="95,133,162,160" onclick="worldtime(2);" shape="RECT">
+      <area coords="95,77,134,134" onclick="worldtime(2);" shape="RECT">
+      <area coords="38,106,96,157" onclick="worldtime(1);" shape="RECT">
+      <area coords="14,178,81,193" onclick="worldtime(0);" shape="RECT">
+      <area coords="53,242,52,201,52,195,14,193,12,245" onclick="worldtime(0);" shape="POLY">
+      <area coords="41,50,68,91,67,106,3,108,4,83" onclick="worldtime(0);" shape="POLY">
+      <area coords="755,151,17" onclick="worldtime(-3.5);" shape="CIRCLE">
+      <area coords="684,291,763,372" onclick="worldtime(-3);" shape="RECT">
+      <area coords="432,5,464,5,461,50" onclick="worldtime(-12);" shape="POLY">
+      <area coords="461,62,453,165,431,136,439,78" onclick="worldtime(-12);" shape="POLY">
+      <area coords="433,155,436,254,416,233,416,155" onclick="worldtime(-12);" shape="POLY">
+      <area coords="467,5,493,5,493,23,467,33" onclick="worldtime(-11);" shape="POLY">
+      <area coords="461,111,480,110,480,175,458,174" onclick="worldtime(-11);" shape="POLY">
+      <area coords="444,200,468,204,467,248,443,244" onclick="worldtime(-11);" shape="POLY">
+      <area coords="442,304,464,304,465,367,450,343,440,340" onclick="worldtime(-11);" shape="POLY">
+      <area coords="438,171,498,182,500,211,438,195" onclick="worldtime(-10);" shape="POLY">
+      <area coords="470,209,497,369" onclick="worldtime(-10);" shape="RECT">
+      <area coords="483,101,498,177" onclick="worldtime(-10);" shape="RECT">
+      <area coords="493,26,465,41,464,101,499,93" onclick="worldtime(-9);" shape="POLY">
+      <area coords="497,5,524,35" onclick="worldtime(-9);" shape="RECT">
+      <area coords="501,83,523,369" onclick="worldtime(-9);" shape="RECT">
+      <area coords="499,37,568,77" onclick="worldtime(-8);" shape="RECT">
+      <area coords="526,3,552,32" onclick="worldtime(-8);" shape="RECT">
+      <area coords="522,84,565,83,591,197,577,198,524,197" onclick="worldtime(-8);" shape="POLY">
+      <area coords="526,198,567,302" onclick="worldtime(-8);" shape="RECT">
+      <area coords="525,330,561,367" onclick="worldtime(-8);" shape="RECT">
+      <area coords="571,6,594,104" onclick="worldtime(-7);" shape="RECT">
+      <area coords="574,109,611,137,612,155,582,158" onclick="worldtime(-7);" shape="POLY">
+      <area coords="597,2,641,129" onclick="worldtime(-6);" shape="RECT">
+      <area coords="614,132,614,159,639,160,638,131" onclick="worldtime(-6);" shape="POLY">
+      <area coords="641,162,641,169,592,171,595,160" onclick="worldtime(-6);" shape="POLY">
+      <area coords="639,174,639,229,593,229,592,189,606,172" onclick="worldtime(-6);" shape="POLY">
+      <area coords="524,303,565,329" onclick="worldtime(-6);" shape="RECT">
+      <area coords="641,3,688,291" onclick="worldtime(-5);" shape="RECT">
+      <area coords="689,66,714,168" onclick="worldtime(-4);" shape="RECT">
+      <area coords="689,236,713,291" onclick="worldtime(-6);" shape="RECT">
+      <area coords="689,4,723,81,762,40,761,7" onclick="worldtime(-3);" shape="POLY">
+      <area coords="715,240,715,291,758,295,746,243" onclick="worldtime(-3);" shape="POLY"></map></font></p>
+      <table width="778" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td><img border="0" src="http://www.265.com/2650001/world_map.gif" usemap="#Map" class="hand" width="778" height="376"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

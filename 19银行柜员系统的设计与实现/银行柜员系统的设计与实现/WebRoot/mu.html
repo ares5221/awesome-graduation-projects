@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>mune</title>
+<STYLE type=text/css>BODY {
+    MARGIN-TOP: 0px; FONT-SIZE: 9pt; MARGIN-LEFT: 4px; MARGIN-RIGHT: 0px; FONT-FAMILY: "宋体"
+}
+A {
+    FONT-WEIGHT: 400; FONT-SIZE: 9pt; COLOR: black; TEXT-DECORATION: none
+}
+A:hover {
+    FONT-WEIGHT: 400; FONT-SIZE: 9pt; COLOR: red; TEXT-DECORATION: underline
+}
+A:active {
+    FONT: 9pt "宋体"; CURSOR: hand; COLOR: #ff0033
+}
+</STYLE>
+<script language="JavaScript1.2">
+scores = new Array(20);var numTotal=0;NS4 = (document.layers) ? 1 : 0;IE4 = (document.all) ? 1 : 0;ver4 = (NS4 || IE4) ? 1 : 0;if (ver4) {    with (document) {        write("<STYLE TYPE='text/css'>");        if (NS4) {            write(".parent {position:absolute; visibility:visible}");            write(".child {position:absolute; visibility:visible}");            write(".regular {position:absolute; visibility:visible}")        }        else {            write(".child {display:none}")        }        write("</STYLE>");    }}function getIndex(el) {    ind = null;    for (i=0; i<document.layers.length; i++) {        whichEl = document.layers[i];        if (whichEl.id == el) {            ind = i;            break;        }    }    return ind;}function arrange() {    nextY = document.layers[firstInd].pageY +document.layers[firstInd].document.height;    for (i=firstInd+1; i<document.layers.length; i++) {        whichEl = document.layers[i];        if (whichEl.visibility != "hide") {            whichEl.pageY = nextY;            nextY += whichEl.document.height;        }    }}function initIt(){    if (!ver4) return;    if (NS4) {        for (i=0; i<document.layers.length; i++) {            whichEl = document.layers[i];            if (whichEl.id.indexOf("Child") != -1) whichEl.visibility = "hide";       }        arrange();    }    else {        divColl = document.all.tags("DIV");        for (i=0; i<divColl.length; i++) {            whichEl = divColl(i);            if (whichEl.className == "child") whichEl.style.display = "none";        }    }}function expandIt(el) {    if (!ver4) return;    if (IE4) {        whichEl1 = eval(el + "Child");        for(i=1;i<=numTotal;i++){            whichEl = eval(scores[i] + "Child");            if(whichEl!=whichEl1) {                whichEl.style.display = "none";            }        }        whichEl1 = eval(el + "Child");        if (whichEl1.style.display == "none") {            whichEl1.style.display = "block";        }        else {            whichEl1.style.display = "none";        }    }    else {        whichEl = eval("document." + el + "Child");        for(i=1;i<=numTotal;i++){            whichEl = eval("document." + scores[i] + "Child");            if(whichEl!=whichEl1) {                whichEl.visibility = "hide";            }        }        if (whichEl.visibility == "hide") {            whichEl.visibility = "show";        }        else {            whichEl.visibility = "hide";        }        arrange();    }}onload = initIt;
+</script>
+</head>
+
+<body  bgColor=#4F71B8>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+        <TBODY>
+        <TR> 
+        <P align=left><IMG border=0 
+          src="images/logo2.gif"  href="#"></P>
+</table>
+<TABLE align=center bgColor=#000000 border=0 cellPadding=0 cellSpacing=0 
+      width="100%">
+        <TBODY>
+        
+          <TD width="100%" height="25"><EM><STRONG><font color="#ffffff" size="2">项目申报管理系统</font></STRONG></EM></TD>
+          <TD height="25"> 
+            <P align=right>&nbsp;</P>
+          </TR>
+       </TBODY>
+</TABLE>
+<br>          
+<div id='KB1Parent' class='parent'><a href="#" onClick="expandIt('KB1'); return false">
+<IMG SRC='images/jieshao.gif' BORDER=0></a></div><div id='KB1Child' class='parent'>
+<a href='jieshao/index5.jsp' target="right"> 系统介绍</a><br></div>
+<div id='KB2Parent' class='parent'><a href="#" onClick="expandIt('KB2'); return false">
+<IMG SRC='images/zhinan.gif' BORDER=0> </a></div><div id='KB2Child' class='child'>
+<a href='zhinan/index6.jsp' target="right"> 申报指南 </a><br></div>
+<div id='KB3Parent' class='parent'><a href="#" onClick="expandIt('KB3'); return false">
+<IMG SRC='images/shenbao.gif' BORDER=0> </a></div><div id='KB3Child' class='child'>
+<a href='shenbao/index2.jsp' target="right"> 申报登录 </a><br>
+<a href='shenbao/s_showInfo.jsp' target="right"> 单位信息 </a><br>
+<a href='shenbao/s_item.jsp' target="right"> 项目申报 </a><br>
+<a href='shenbao/s_expert.jsp' target="right"> 推荐专家 </a><br>
+<a href='shenbao/s_changePw.jsp' target="right"> 修改密码 </a></div>
+<div id='KB4Parent' class='parent'><a href="#" onClick="expandIt('KB4'); return false">
+<IMG SRC='images/pingshen.gif' BORDER=0> </a></div><div id='KB4Child' class='child'>
+<a href='pingshen/index3.jsp' target="right"> 专家登录 </a><br>
+<a href='pingshen/p_showInfo.jsp' target="right"> 专家信息 </a><br>
+<a href='pingshen/p_item.jsp' target="right"> 项目评审 </a><br>
+<a href='pingshen/p_changePw.jsp' target="right"> 修改密码 </a></div>
+<div id='KB5Parent' class='parent'><a href="#" onClick="expandIt('KB5'); return false">
+<IMG SRC='images/zongping.gif' BORDER=0> </a></div><div id='KB5Child' class='child'>
+<a href='zongping/index4.jsp' target="right"> 管理登录 </a><br>
+<a href='zongping/z_unit.jsp' target="right"> 单位信息 </a><br>
+<a href='zongping/z_expert.jsp' target="right"> 专家信息 </a><br>
+<a href='zongping/z_item.jsp?SubSort=0000' target="right"> 项目信息</a><br>
+<a href='zongping/z_itemSetup.jsp' target="right"> 项目设置 </a><br>
+<a href='zongping/z_scoreCheck.jsp?SubSort=0000' target="right"> 分配浏览</a><br>
+<a href='zongping/z_changePw.jsp' target="right"> 修改密码 </a><br></div>
+<div id='KB6Parent' class='parent'><a href="#" onClick="expandIt('KB6'); return false">
+<IMG SRC='images/lianxi.gif' BORDER=0> </a></div><div id='KB6Child' class='child'>
+<a href='email/index.JSP' target="right"> 联系我们 </a></div>
+<SCRIPT>numTotal=6;scores[1]='KB1';scores[2]='KB1';scores[3]='KB2';scores[4]='KB3';scores[5]='KB4';scores[6]='KB5'</SCRIPT>
+
+
+</body>
+
+</html>

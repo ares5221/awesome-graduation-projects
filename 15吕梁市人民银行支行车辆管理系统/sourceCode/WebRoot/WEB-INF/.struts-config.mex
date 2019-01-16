@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/registerAction.do" location="50,50" dimension="233,100" />
+  <StrutsActivity path="/loginAction.do" location="950,50" dimension="178,100" />
+  <StrutsActivity path="/autoLogin.do" location="350,250" dimension="205,100" />
+  <StrutsActivity path="/logout.do" location="650,250" dimension="186,100" />
+  <StrutsActivity path="/modifyUserInfo.do" location="950,250" dimension="236,100" />
+  <StrutsActivity path="/findAllUser.do" location="350,450" dimension="215,100" />
+  <StrutsActivity path="/changePower.do" location="50,650" dimension="229,100" />
+  <StrutsActivity path="/addCar.do" location="350,650" dimension="191,100" />
+  <StrutsActivity path="/addEmployee.do" location="950,650" dimension="228,100" />
+  <StrutsActivity path="/findAllCar.do" location="50,850" dimension="208,100" />
+  <StrutsActivity path="/findOneCar.do" location="50,1050" dimension="217,100" />
+  <StrutsActivity path="/findCarsByCondition.do" location="650,1050" dimension="271,100" />
+  <StrutsActivity path="/addAppRecord.do" location="1250,250" dimension="235,100" />
+  <StrutsActivity path="/findAppRecord.do" location="1250,750" dimension="237,100" />
+  <StrutsActivity path="/findOneApp.do" location="1250,1150" dimension="219,100" />
+  <StrutsActivity path="/checkApp.do" location="350,1250" dimension="208,100" />
+  <StrutsActivity path="/findCheckApp.do" location="650,1250" dimension="233,100" />
+  <StrutsActivity path="/outInfo.do" location="50,1450" dimension="190,100" />
+  <StrutsActivity path="/addOutRecord.do" location="1550,550" dimension="233,100" />
+  <StrutsActivity path="/findOutCar.do" location="1550,750" dimension="214,100" />
+  <StrutsActivity path="/backRecordInfo.do" location="1550,350" dimension="202,88" />
+  <StrutsActivity path="/addBackRecord.do" location="1550,1150" dimension="201,88" />
+  <StrutsActivity path="/findAllEmployees.do" location="1550,1350" dimension="208,88" />
+  <StrutsActivity path="/findBackRecordList.do" location="650,1550" dimension="218,88" />
+  <StrutsActivity path="/findDriverInfo.do" location="1550,1550" dimension="195,88" />
+  <StrutsActivity path="/lookBackRecordInfo.do" location="950,1450" dimension="224,88" />
+  <StrutsActivity path="/findAllOutRecord.do" location="1850,650" dimension="209,88" />
+  <StrutsActivity path="/lookOutRecordInfo.do" location="1850,350" dimension="220,88" />
+  <StrutsActivity path="/findMissingPassword.do" location="1850,1050" dimension="226,88" />
+  <StrutsActivity path="/findDriverByCondition.do" location="1850,1350" dimension="232,88" />
+  <StrutsActivity path="/pages/login.jsp" location="350,50" dimension="123,52" />
+  <StrutsActivity path="/pages/register.jsp" location="650,50" dimension="139,52" />
+  <StrutsActivity path="/pages/member/activity.jsp" location="50,250" dimension="189,52" />
+  <StrutsActivity path="/pages/member/frame/rightframe.jsp" location="950,450" dimension="242,52" />
+  <StrutsActivity path="/pages/member/modify.jsp" location="50,450" dimension="186,52" />
+  <StrutsActivity path="/pages/member/powermanage.jsp" location="650,450" dimension="228,52" />
+  <StrutsActivity path="/pages/car/addcar.jsp" location="650,650" dimension="157,52" />
+  <StrutsActivity path="/pages/member/addemployee.jsp" location="950,850" dimension="224,52" />
+  <StrutsActivity path="/pages/car/carstatus.jsp" location="650,850" dimension="172,52" />
+  <StrutsActivity path="/pages/car/carinfo.jsp" location="350,1050" dimension="157,52" />
+  <StrutsActivity path="/pages/car/application.jsp" location="1250,550" dimension="180,52" />
+  <StrutsActivity path="/pages/car/applist.jsp" location="1250,950" dimension="156,52" />
+  <StrutsActivity path="/pages/car/endorsement.jsp" location="50,1250" dimension="193,52" />
+  <StrutsActivity path="/pages/car/outlist.jsp" location="1250,1350" dimension="153,52" />
+  <StrutsActivity path="/pages/car/outrecord.jsp" location="350,1450" dimension="172,52" />
+  <StrutsActivity path="/pages/car/backlist.jsp" location="1550,950" dimension="163,52" />
+  <StrutsActivity path="/pages/car/backrecord.jsp" location="950,1250" dimension="182,52" />
+  <StrutsActivity path="/pages/member/driverlist.jsp" location="650,1450" dimension="167,49" />
+  <StrutsActivity path="/pages/car/backrecordlist.jsp" location="1250,1550" dimension="169,49" />
+  <StrutsActivity path="/pages/member/driverinfo.jsp" location="650,1950" dimension="172,49" />
+  <StrutsActivity path="/pages/car/backrecordinfo.jsp" location="50,1650" dimension="174,49" />
+  <StrutsActivity path="/pages/car/outrecordlist.jsp" location="1850,850" dimension="163,49" />
+  <StrutsActivity path="/pages/car/outrecordinfo.jsp" location="1850,950" dimension="168,49" />
+  <StrutsActivity path="/pages/passwd_missing.jsp" location="1850,1250" dimension="160,49" />
+  <StrutsActivity path="/pages/car/carlist.jsp" location="350,850" dimension="153,52" />
+  <StrutsTransition id="/findOneApp.do,success,/pages/car/endorsement.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,1200" />
+      <AbsolutePoint location="146,1200" />
+      <AbsolutePoint location="146,1250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findAllUser.do,failure,/pages/member/frame/rightframe.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="565,517" />
+      <AbsolutePoint location="1041,517" />
+      <AbsolutePoint location="1041,502" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/member/frame/rightframe.jsp,null,/findAllEmployees.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1041,450" />
+      <AbsolutePoint location="1041,425" />
+      <AbsolutePoint location="-75,425" />
+      <AbsolutePoint location="-75,2074" />
+      <AbsolutePoint location="1779,2074" />
+      <AbsolutePoint location="1779,1394" />
+      <AbsolutePoint location="1758,1394" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/car/addcar.jsp,null,/addCar.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,657" />
+      <AbsolutePoint location="541,657" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/changePower.do,success,/findAllUser.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="164,700" />
+      <AbsolutePoint location="457,500" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findOutCar.do,failure,/pages/member/frame/rightframe.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1764,800" />
+      <AbsolutePoint location="2134,800" />
+      <AbsolutePoint location="2134,517" />
+      <AbsolutePoint location="1101,517" />
+      <AbsolutePoint location="1101,502" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findDriverByCondition.do,success,/pages/member/driverlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1996,1438" />
+      <AbsolutePoint location="1996,1893" />
+      <AbsolutePoint location="395,1893" />
+      <AbsolutePoint location="395,1517" />
+      <AbsolutePoint location="733,1517" />
+      <AbsolutePoint location="733,1499" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/car/backlist.jsp,null,/backRecordInfo.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1627,950" />
+      <AbsolutePoint location="1627,917" />
+      <AbsolutePoint location="893,917" />
+      <AbsolutePoint location="893,365" />
+      <AbsolutePoint location="1550,365" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findOutCar.do,success,/pages/car/backlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1657,850" />
+      <AbsolutePoint location="1657,950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findAllEmployees.do,failure,/pages/member/frame/rightframe.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,1417" />
+      <AbsolutePoint location="1207,1417" />
+      <AbsolutePoint location="1207,395" />
+      <AbsolutePoint location="1101,395" />
+      <AbsolutePoint location="1101,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/modifyUserInfo.do,success,/pages/member/frame/rightframe.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1071,350" />
+      <AbsolutePoint location="1071,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/lookBackRecordInfo.do,success,/pages/car/backrecordinfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1062,1538" />
+      <AbsolutePoint location="1062,1674" />
+      <AbsolutePoint location="224,1674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/checkApp.do,success,/findAppRecord.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="522,1250" />
+      <AbsolutePoint location="522,800" />
+      <AbsolutePoint location="1250,800" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addEmployee.do,success,/pages/member/addemployee.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findAppRecord.do,failure,/pages/member/frame/rightframe.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1445,750" />
+      <AbsolutePoint location="1445,476" />
+      <AbsolutePoint location="1192,476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/registerAction.do,failure,/pages/register.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="283,147" />
+      <AbsolutePoint location="749,147" />
+      <AbsolutePoint location="749,102" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/register.jsp,null,/registerAction.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="719,102" />
+      <AbsolutePoint location="719,117" />
+      <AbsolutePoint location="283,117" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addOutRecord.do,success,/findCheckApp.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1779,650" />
+      <AbsolutePoint location="1779,1330" />
+      <AbsolutePoint location="883,1330" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/loginAction.do,success,/pages/member/activity.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findCheckApp.do,success,/pages/car/outlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="766,1350" />
+      <AbsolutePoint location="766,1376" />
+      <AbsolutePoint location="1250,1376" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/autoLogin.do,failure,/pages/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="411,250" />
+      <AbsolutePoint location="411,102" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/passwd_missing.jsp,null,/findMissingPassword.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1993,1250" />
+      <AbsolutePoint location="1993,1138" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/member/activity.jsp,null,/findOutCar.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="144,250" />
+      <AbsolutePoint location="144,207" />
+      <AbsolutePoint location="1502,207" />
+      <AbsolutePoint location="1502,800" />
+      <AbsolutePoint location="1550,800" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/backRecordInfo.do,success,/pages/car/backrecord.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1752,394" />
+      <AbsolutePoint location="2074,394" />
+      <AbsolutePoint location="2074,1017" />
+      <AbsolutePoint location="1011,1017" />
+      <AbsolutePoint location="1011,1250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findMissingPassword.do,success,/pages/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2076,1094" />
+      <AbsolutePoint location="2164,1094" />
+      <AbsolutePoint location="2164,-210" />
+      <AbsolutePoint location="441,-210" />
+      <AbsolutePoint location="441,50" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findAllUser.do,success,/pages/member/powermanage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="565,487" />
+      <AbsolutePoint location="650,487" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findOneCar.do,success,/pages/car/carinfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="267,1087" />
+      <AbsolutePoint location="350,1087" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findBackRecordList.do,success,/pages/car/backrecordlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="868,1584" />
+      <AbsolutePoint location="1250,1584" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findAllCar.do,success,/pages/car/carstatus.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="258,917" />
+      <AbsolutePoint location="706,917" />
+      <AbsolutePoint location="706,902" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/backRecordInfo.do,failure,/pages/car/backlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1752,425" />
+      <AbsolutePoint location="1809,425" />
+      <AbsolutePoint location="1809,976" />
+      <AbsolutePoint location="1713,976" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/member/modify.jsp,null,/modifyUserInfo.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addBackRecord.do,failure,/pages/car/backrecord.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1650,1238" />
+      <AbsolutePoint location="1650,1276" />
+      <AbsolutePoint location="1132,1276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/lookOutRecordInfo.do,success,/pages/car/outrecordinfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findCarsByCondition.do,success,/pages/car/carstatus.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="736,1050" />
+      <AbsolutePoint location="736,902" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addBackRecord.do,success,/findOutCar.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1728,1150" />
+      <AbsolutePoint location="1728,850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/member/addemployee.jsp,null,/addEmployee.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/car/outrecord.jsp,null,/addOutRecord.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="436,1502" />
+      <AbsolutePoint location="436,1713" />
+      <AbsolutePoint location="1532,1713" />
+      <AbsolutePoint location="1532,587" />
+      <AbsolutePoint location="1550,587" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findAllOutRecord.do,success,/pages/car/outrecordlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1954,738" />
+      <AbsolutePoint location="1954,850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/login.jsp,null,/loginAction.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="411,50" />
+      <AbsolutePoint location="411,-75" />
+      <AbsolutePoint location="1039,-75" />
+      <AbsolutePoint location="1039,50" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/car/backrecord.jsp,null,/addBackRecord.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1041,1250" />
+      <AbsolutePoint location="1041,1095" />
+      <AbsolutePoint location="1650,1095" />
+      <AbsolutePoint location="1650,1150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/logout.do,success,/pages/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,300" />
+      <AbsolutePoint location="600,300" />
+      <AbsolutePoint location="600,76" />
+      <AbsolutePoint location="473,76" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addAppRecord.do,success,/pages/car/application.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findAppRecord.do,success,/pages/car/applist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1368,850" />
+      <AbsolutePoint location="1368,950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/member/activity.jsp,null,/findCheckApp.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="144,302" />
+      <AbsolutePoint location="144,395" />
+      <AbsolutePoint location="630,395" />
+      <AbsolutePoint location="630,1270" />
+      <AbsolutePoint location="650,1270" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findMissingPassword.do,failure,/pages/passwd_missing.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1963,1138" />
+      <AbsolutePoint location="1963,1250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/autoLogin.do,success,/loginAction.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="488,250" />
+      <AbsolutePoint location="488,-135" />
+      <AbsolutePoint location="1069,-135" />
+      <AbsolutePoint location="1069,50" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/loginAction.do,failure,/pages/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1039,150" />
+      <AbsolutePoint location="1039,177" />
+      <AbsolutePoint location="452,177" />
+      <AbsolutePoint location="452,102" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/car/carstatus.jsp,null,/findCarsByCondition.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="779,902" />
+      <AbsolutePoint location="779,1050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addOutRecord.do,failure,/pages/car/outrecord.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,617" />
+      <AbsolutePoint location="328,617" />
+      <AbsolutePoint location="328,1457" />
+      <AbsolutePoint location="350,1457" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findDriverInfo.do,success,/pages/member/driverinfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addCar.do,success,/pages/car/addcar.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="541,687" />
+      <AbsolutePoint location="650,687" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/car/application.jsp,null,/addAppRecord.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/outInfo.do,success,/pages/car/outrecord.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="240,1487" />
+      <AbsolutePoint location="350,1487" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findCheckApp.do,failure,/pages/member/frame/rightframe.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,1300" />
+      <AbsolutePoint location="600,1300" />
+      <AbsolutePoint location="600,565" />
+      <AbsolutePoint location="1071,565" />
+      <AbsolutePoint location="1071,502" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/registerAction.do,success,/pages/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="283,87" />
+      <AbsolutePoint location="350,87" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/car/endorsement.jsp,null,/checkApp.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="243,1276" />
+      <AbsolutePoint location="350,1276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findAllEmployees.do,success,/pages/member/driverlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,1387" />
+      <AbsolutePoint location="1434,1387" />
+      <AbsolutePoint location="1434,1833" />
+      <AbsolutePoint location="630,1833" />
+      <AbsolutePoint location="630,1474" />
+      <AbsolutePoint location="650,1474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pages/member/driverlist.jsp,null,/findDriverByCondition.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="733,1450" />
+      <AbsolutePoint location="733,1417" />
+      <AbsolutePoint location="600,1417" />
+      <AbsolutePoint location="600,1773" />
+      <AbsolutePoint location="1966,1773" />
+      <AbsolutePoint location="1966,1438" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/modifyUserInfo.do,failure,/pages/member/modify.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

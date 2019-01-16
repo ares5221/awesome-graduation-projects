@@ -1,0 +1,14 @@
+╭══════════════════════════════════════════╮
+║                              源易网--中国源码下载站                                ║
+║                                                                                    ║
+║              源码下载:www.downcode.com  源码论坛:www.downcode.net                  ║
+║                                                                                    ║
+║                       如有转载请勿删除以上信息，谢谢合作                           ║
+╰══════════════════════════════════════════╯
+╭══════════════════════════════════════════╮
+║ 　　　　　　　　　　　　　　　　程序相关使用说明　　　　　　　　　　  　　　　　　 ║
+╰══════════════════════════════════════════╯
+
+
+
+ExtJS 2.2+Java写的图书管理系统，TOMCAT5.0以上版本，数据库MSSQL2000+SP4，源文件件最好用eclipse打开，本套图片管理系统初次完工，主要是结合EXTJS技术，JSP的朋友可以很容易就调试起来，不管是学习可是使用都可以。

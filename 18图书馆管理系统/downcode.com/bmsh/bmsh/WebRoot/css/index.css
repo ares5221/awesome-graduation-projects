@@ -1,0 +1,88 @@
+a {
+	color: #15428B;
+}
+
+a:link,a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+#header {
+	background: #7F99BE url(/bmsh/images/layout-browser-hd-bg.gif) repeat-x
+		center;
+	visibility: hidden;
+}
+
+#header h1 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	padding: 5px 10px;
+}
+
+.start-bg {
+	background-image: url(/bmsh/images/bg.jpg);
+}
+
+.icon-nav {
+	background-image: url(/bmsh/images/folder_go.png) !important;
+}
+
+.icon-settings {
+	background-image: url(/bmsh/images/folder_wrench.png) !important;
+}
+
+.icon-add {
+	background-image: url(/bmsh/images/add.gif) !important;
+}
+
+.icon-edit {
+	background-image: url(/bmsh/images/edit.gif) !important;
+}
+
+.icon-del {
+	background-image: url(/bmsh/images/del.gif) !important;
+}
+
+.icon-del-gray {
+	background-image: url(/bmsh/images/del_gray.gif) !important;
+}
+
+.icon-search {
+	background-image: url(/bmsh/images/search.gif) !important;
+}
+
+.icon-grid {
+	background-image: url(/bmsh/images/grid.png) !important;
+}
+
+.icon-plugin {
+	background-image: url(/bmsh/images/plugin.gif) !important;
+}
+
+.icon-delete {
+	background-image: url(/bmsh/images/delete.gif) !important;
+}
+
+.icon-info {
+	background-image: url(/bmsh/images/info.gif) !important;
+}
+
+.upload-icon {
+	background: url('/bmsh/image_add.png') no-repeat 0 0 !important;
+}
+
+/*-----------*/
+.x-grid3-row-body p {
+	margin: 5px 5px 10px 5px !important;
+}
+
+body,td,th {
+	font-family:
+		'Geneva, Arial, Helvetica, sans-serif,lucida grande, tahoma, arial, sans-serif'
+		;
+	font-size: 12px;
+}

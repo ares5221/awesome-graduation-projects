@@ -1,0 +1,161 @@
+添加员工表单 模块当中由类AddEmployeeForm.class实现:其中该类继承了ActionForm.class类,该类的数据域成员有：电话（phone）、性别（gender）、汽车类型（carType）、年龄（age）、详细介绍（descripe）、许可证号（licenseNumber）、教育水平（educationLevel）、位置（position）、地址（address）、名（name）、该类的常规方法成员有：getPhone()无形参表列，方法setPhone(String类型#phone,)形参表列详细有电话、等形参输入，getGender()无形参表列，方法setGender(String类型#gender,)形参表列详细有性别、等形参输入，getCartype()无形参表列，方法setCarType(String类型#carType,)形参表列详细有汽车类型、等形参输入，getAge()无形参表列，方法setAge(long类型#age,)形参表列详细有年龄、等形参输入，getDescripe()无形参表列，方法setDescripe(String类型#descripe,)形参表列详细有详细介绍、等形参输入，getLicenseNumber()无形参表列，方法setLicenseNumber(String类型#licenseNumber,)形参表列详细有许可证号、等形参输入，getEducationLevel()无形参表列，方法setEducationLevel(String类型#educationLevel,)形参表列详细有教育水平、等形参输入，getPosition()无形参表列，方法setPosition(String类型#position,)形参表列详细有位置、等形参输入，getAddress()无形参表列，方法setAddress(String类型#address,)形参表列详细有地址、等形参输入，getName()无形参表列，方法setName(String类型#name,)形参表列详细有名、等形参输入。
+查找所有员工事件 模块当中由类FindAllEmployeesAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+添加员工事件 模块当中由类AddEmployeeAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+4.3.3	车辆登记管理
+
+加入汽车Form 模块当中由类AddCarForm.class实现:其中该类继承了ActionForm.class类,该类的数据域成员有：容量（capacity）、汽车号码（carNumber）、汽车类型（carType）、详细介绍（descripe）、登记日期（registerDate）、司机（driver）、注册人（registerMan）、该类的常规方法成员有：getCapacity()无形参表列，方法setCapacity(long类型#capacity,)形参表列详细有容量、等形参输入，getCarNumber()无形参表列，方法setCarNumber(String类型#carNumber,)形参表列详细有汽车号码、等形参输入，getCarType()无形参表列，方法setCarType(String类型#carType,)形参表列详细有汽车类型、等形参输入，getDescripe()无形参表列，方法setDescripe(String类型#descripe,)形参表列详细有详细介绍、等形参输入，getRegisterDate()无形参表列，方法setRegisterDate(String类型#registerDate,)形参表列详细有登记日期、等形参输入，getDriver()无形参表列，方法setDriver(String类型#driver,)形参表列详细有司机、等形参输入，getRegisterMan()无形参表列，方法setRegisterMan(String类型#registerMan,)形参表列详细有注册人、等形参输入。
+
+ 
+图 4.6 车辆信息录入
+
+4.3.4	车辆状态查询
+查询车辆现在的使用情况，以及车辆自身的状态。界面如下图：
+ 
+图 4.7 车辆状态查询
+寻找汽车表 模块当中由类FindCarsForm.class实现:其中该类继承了ActionForm.class类,该类的数据域成员有：汽车类型（carType）、状态（status）、该类的常规方法成员有：getCarType()无形参表列，方法setCarType(String类型#carType,)形参表列详细有汽车类型、等形参输入，getStatus()无形参表列，方法setStatus(String类型#status,)形参表列详细有状态、等形参输入。
+
+4.4	车辆调度
+4.4.1	用车申请
+用车申请系统界面如下图： 
+图 4.8 用车申请
+申请程序记录表 模块当中由类ApplicationRecordForm.class实现:其中该类继承了ActionForm.class类,该类的数据域成员有：电话（phone）、顾客（customer）、重量（weight）、des_address（des_address）、res_address（res_address）、调度（scheduler）、日（date）、预测天（predictDay）、ID（id）、该类的常规方法成员有：方法validate(ActionMapping类型#mapping,)HttpServletRequest类型#request,)形参表列详细有映射、要求、等形参输入，方法reset(ActionMapping类型#mapping,)HttpServletRequest类型#request,)形参表列详细有映射、要求、等形参输入，getPhone()无形参表列，方法setPhone(String类型#phone,)形参表列详细有电话、等形参输入，getCustomer()无形参表列，方法setCustomer(String类型#customer,)形参表列详细有顾客、等形参输入，getWeight()无形参表列，方法setWeight(long类型#weight,)形参表列详细有重量、等形参输入，getDes_address()无形参表列，方法setDes_address(String类型#des_address,)形参表列详细有des_address、等形参输入，getRes_address()无形参表列，方法setRes_address(String类型#res_address,)形参表列详细有res_address、等形参输入，getScheduler()无形参表列，方法setScheduler(String类型#scheduler,)形参表列详细有调度、等形参输入，getDate()无形参表列，方法setDate(String类型#date,)形参表列详细有日、等形参输入，getPredictDay()无形参表列，方法setPredictDay(Long类型#predictDay,)形参表列详细有预测天、等形参输入，getId()无形参表列，方法setId(Long类型#id,)形参表列详细有ID、等形参输入。
+
+添加记录表 模块当中由类AddOutRecordForm.class实现:其中该类继承了ActionForm.class类,该类的数据域成员有：汽车号码（carNumber）、其它驾驶员名称（drvierName）、申请序列号（applicationSerialNumber）、退房日期（outDate）、该类的常规方法成员有：getCarNumber()无形参表列，方法setCarNumber(String类型#carNumber,)形参表列详细有汽车号码、等形参输入，getDrvierName()无形参表列，方法setDrvierName(String类型#drvierName,)形参表列详细有其它驾驶员名称、等形参输入，getApplicationSerialNumber()无形参表列，方法setApplicationSerialNumber(Long类型#applicationSerialNumber,)形参表列详细有申请序列号、等形参输入，getOutDate()无形参表列，方法setOutDate(String类型#outDate,)形参表列详细有退房日期、等形参输入。
+
+查找一个申请程序操作 模块当中由类FindOneApplicationAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+添加申请程序记录事件 模块当中由类AddApplicationRecordAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+查找申请纪录事件 模块当中由类FindApplicationRecordAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+4.4.2	调度审批
+ 
+图4.9 调度审批
+调度申请表 模块当中由类CheckApplicationForm.class实现:其中该类继承了ActionForm.class类,该类的数据域成员有：状态（status）、ID（id）、该类的常规方法成员有：getStatus()无形参表列，方法setStatus(Long类型#status,)形参表列详细有状态、等形参输入，getId()无形参表列，方法setId(Long类型#id,)形参表列详细有ID、等形参输入。
+查找审批应用程序操作 模块当中由类FindCheckAppAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+调度审批程序操作 模块当中由类CheckApplicationAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+
+
+
+4.4.3	出车登记管理
+出车等级管理界面如下图；
+ 
+图4.9 出车登记管理
+
+出车信息操作 模块当中由类OutInformationAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+查找出车记录信息事件 模块当中由类LookOutRecordInformationAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+查找所有出车纪录事件 模块当中由类FindAllOutRecordAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+添加出车记录操作 模块当中由类AddOutRecordAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#f,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、f、要求、响应、等形参输入。
+申请纪录 模块当中由类ApplicationRecord.class实现:实现了javaioSerializable接口，等接口该类的数据域成员有：ID（id）、用户（user）、稽核员（auditor）、申请日期（applicationDate）、资源地址（resourceAddress）、DES地址（desAddress）、容量（capacity）、predictday（predictday）、顾客（customer）、电话（phone）、状态（status）、该类的构造方法成员（构造方式）有：
+
+ApplicationRecord()无形参表列，ApplicationRecord(User类型#user,String类型#appdate,String类型#resAddress,String类型#desAddress,long类型#capacity,String类型#customer,String类型#phone,)形参表列详细有用户、appdate、水库地址、DES地址、容量、顾客、电话、等形参输入，ApplicationRecord(User类型#user,User类型#auditor,String类型#appdate,String类型#resAddress,String类型#desAddress,long类型#capacity,long类型#predictday,String类型#customer,String类型#phone,long类型#status,)形参表列详细有用户、稽核员、appdate、水库地址、DES地址、容量、predictday、顾客、电话、状态、等形参输入，该类的常规方法成员有：getId()无形参表列，方法setId(long类型#id,)形参表列详细有ID、等形参输入，getUser()无形参表列，方法setUser(User类型#user,)形参表列详细有用户、等形参输入，getAuditor()无形参表列，方法setAuditor(User类型#auditor,)形参表列详细有稽核员、等形参输入，getApplicationDate()无形参表列，方法setApplicationDate(String类型#applicationDate,)形参表列详细有申请日期、等形参输入，getResourceAddress()无形参表列，方法setResourceAddress(String类型#resourceAddress,)形参表列详细有资源地址、等形参输入，getDesAddress()无形参表列，方法setDesAddress(String类型#desAddress,)形参表列详细有DES地址、等形参输入，getCapacity()无形参表列，方法setCapacity(long类型#capacity,)形参表列详细有容量、等形参输入，getPredictday()无形参表列，方法setPredictday(long类型#predictday,)形参表列详细有predictday、等形参输入，getCustomer()无形参表列，方法setCustomer(String类型#customer,)形参表列详细有顾客、等形参输入，getPhone()无形参表列，方法setPhone(String类型#phone,)形参表列详细有电话、等形参输入，getStatus()无形参表列，方法setStatus(long类型#status,)形参表列详细有状态、等形参输入。
+
+出车纪录 模块当中由类OutRecord.class实现:实现了javaioSerializable接口，等接口该类的数据域成员有：ID（id）、应用记录（applicationRecord）、用户（user）、摩托车汽车（motorbikeCar）、退房日期（outDate）、状态（status）、该类的构造方法成员（构造方式）有：OutRecord()无形参表列，OutRecord(ApplicationRecord类型#applicationRecord,User类型#user,MotorbikeCar类型#motorbikeCar,String类型#outDate,)形参表列详细有应用记录、用户、摩托车汽车、退房日期、等形参输入，该类的常规方法成员有：getId()无形参表列，方法setId(long类型#id,)形参表列详细有ID、等形参输入，getApplicationRecord()无形参表列，方法setApprecord(ApplicationRecord类型#applicationRecord,)形参表列详细有应用记录、等形参输入，getUser()无形参表列，方法setUser(User类型#user,)形参表列详细有用户、等形参输入，getMotorbikeCar()无形参表列，方法setMotorcar(MotorbikeCar类型#motorbikeCar,)形参表列详细有摩托车汽车、等形参输入，getOutDate()无形参表列，方法setOutDate(String类型#outDate,)形参表列详细有退房日期、等形参输入，getStatus()无形参表列，方法setStatus(long类型#status,)形参表列详细有状态、等形参输入。
+
+
+4.4.4	回车登记管理
+回车登记管理系统界面如下图：
+ 
+图 4.10 回车登记管理
+添加回车登记记录表 模块当中由类AddBackRecordForm.class实现:其中该类继承了ActionForm.class类,该类的数据域成员有：天（day）、背部日期（backDate）、成本（cost）、ID（id）、该类的常规方法成员有：getDay()无形参表列，方法setDay(Long类型#day,)形参表列详细有天、等形参输入，getBackDate()无形参表列，方法setBackDate(String类型#backDate,)形参表列详细有背部日期、等形参输入，getCost()无形参表列，方法setCost(Long类型#cost,)形参表列详细有成本、等形参输入，getId()无形参表列，方法setId(Long类型#id,)形参表列详细有ID、等形参输入。
+审查回车记录信息操作 模块当中由类LookBackRecordInformationAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+找回记录清单事件 模块当中由类FindBackRecordListAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+回车记录信息事件 模块当中由类BackRecordInformationAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+加回车记录事件 模块当中由类AddBackRecordAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#f,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、f、要求、响应、等形参输入。
+
+返回记录 模块当中由类BackRecord.class实现:实现了javaioSerializable接口，等接口该类的数据域成员有：出序列号（outSerialNumber）、出记录（outRecord）、背部日期（backDate）、天（day）、成本（cost）、该类的构造方法成员（构造方式）有：BackRecord()无形参表列，BackRecord(OutRecord类型#outRecord,String类型#backDate,)形参表列详细有出记录、背部日期、等形参输入，BackRecord(OutRecord类型#outRecord,String类型#backDate,long类型#day,long类型#cost,)形参表列详细有出记录、背部日期、天、成本、等形参输入，该类的常规方法成员有：getOutSerialNumber()无形参表列，方法setOutSerialNumber(long类型#outSerialNumber,)形参表列详细有出序列号、等形参输入，getOutRecord()无形参表列，方法setOutRecord(OutRecord类型#outRecord,)形参表列详细有出记录、等形参输入，getBackDate()无形参表列，方法setBackDate(String类型#backDate,)形参表列详细有背部日期、等形参输入，getDay()无形参表列，方法setDay(long类型#day,)形参表列详细有天、等形参输入，getCost()无形参表列，方法setCost(long类型#cost,)形参表列详细有成本、等形参输入。
+
+4.5	报表统计功能
+4.5.1	员工信息
+ 
+图4.12 员工信息表
+修改用户信息表 模块当中由类ModifyUserInformationForm.class实现:其中该类继承了ActionForm.class类,该类的数据域成员有：旧密码（oldPassword）、新密码（newPassword）、性别（gender）、密码问题（passwordQuestion）、密码问题答案（passwordAnswer）、年龄（age）、电话（phone）、地址（address）、图标（icon）、该类的常规方法成员有：getAddress()无形参表列，方法setAddress(String类型#address,)形参表列详细有地址、等形参输入，getAge()无形参表列，方法setAge(Long类型#age,)形参表列详细有年龄、等形参输入，getGender()无形参表列，方法setGender(String类型#gender,)形参表列详细有性别、等形参输入，getIcon()无形参表列，方法setIcon(FormFile类型#icon,)形参表列详细有图标、等形参输入，getNewPassword()无形参表列，方法setNewPassword(String类型#newPassword,)形参表列详细有新密码、等形参输入，getOldPassword()无形参表列，方法setOldPassword(String类型#oldPassword,)形参表列详细有旧密码、等形参输入，getPasswordAnswer()无形参表列，方法setPasswordAnswer(String类型#passwordAnswer,)形参表列详细有密码问题答案、等形参输入，getPasswordQuestion()无形参表列，方法setPasswordQuestion(String类型#passwordQuestion,)形参表列详细有密码问题、等形参输入，getPhone()无形参表列，方法setPhone(String类型#phone,)形参表列详细有电话、等形参输入。
+
+添加员工表单 模块当中由类AddEmployeeForm.class实现:其中该类继承了ActionForm.class类,该类的数据域成员有：电话（phone）、性别（gender）、汽车类型（carType）、年龄（age）、详细介绍（descripe）、许可证号（licenseNumber）、教育水平（educationLevel）、位置（position）、地址（address）、名（name）、该类的常规方法成员有：getPhone()无形参表列，方法setPhone(String类型#phone,)形参表列详细有电话、等形参输入，getGender()无形参表列，方法setGender(String类型#gender,)形参表列详细有性别、等形参输入，getCartype()无形参表列，方法setCarType(String类型#carType,)形参表列详细有汽车类型、等形参输入，getAge()无形参表列，方法setAge(long类型#age,)形参表列详细有年龄、等形参输入，getDescripe()无形参表列，方法setDescripe(String类型#descripe,)形参表列详细有详细介绍、等形参输入，getLicenseNumber()无形参表列，方法setLicenseNumber(String类型#licenseNumber,)形参表列详细有许可证号、等形参输入，getEducationLevel()无形参表列，方法setEducationLevel(String类型#educationLevel,)形参表列详细有教育水平、等形参输入，getPosition()无形参表列，方法setPosition(String类型#position,)形参表列详细有位置、等形参输入，getAddress()无形参表列，方法setAddress(String类型#address,)形参表列详细有地址、等形参输入，getName()无形参表列，方法setName(String类型#name,)形参表列详细有名、等形参输入。
+
+查找所有员工事件 模块当中由类FindAllEmployeesAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+添加员工事件 模块当中由类AddEmployeeAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+4.5.2	车辆详细信息
+ 
+图 4.13 车辆详细信息
+加入汽车Form 模块当中由类AddCarForm.class实现:其中该类继承了ActionForm.class类,该类的数据域成员有：容量（capacity）、汽车号码（carNumber）、汽车类型（carType）、详细介绍（descripe）、登记日期（registerDate）、司机（driver）、注册人（registerMan）、该类的常规方法成员有：getCapacity()无形参表列，方法setCapacity(long类型#capacity,)形参表列详细有容量、等形参输入，getCarNumber()无形参表列，方法setCarNumber(String类型#carNumber,)形参表列详细有汽车号码、等形参输入，getCarType()无形参表列，方法setCarType(String类型#carType,)形参表列详细有汽车类型、等形参输入，getDescripe()无形参表列，方法setDescripe(String类型#descripe,)形参表列详细有详细介绍、等形参输入，getRegisterDate()无形参表列，方法setRegisterDate(String类型#registerDate,)形参表列详细有登记日期、等形参输入，getDriver()无形参表列，方法setDriver(String类型#driver,)形参表列详细有司机、等形参输入，getRegisterMan()无形参表列，方法setRegisterMan(String类型#registerMan,)形参表列详细有注册人、等形参输入。
+
+汽车事件 模块当中由类FindOutCarAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+寻找一个汽车事件 模块当中由类FindOneCarAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+找车的状态事件 模块当中由类FindCarsByConditionAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+查找所有汽车事件 模块当中由类FindAllCarAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+汽车事件 模块当中由类AddCarAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+方法addMotorbikeCar(MotorbikeCar类型#car,)形参表列详细有汽车、等形参输入，抛出的异常有：MotorbikeCarException、等异常，findAllCar()无形参表列，抛出的异常有：MotorbikeCarException、等异常，方法addApplicationRecord(ApplicationRecord类型#record,)形参表列详细有记录、等形参输入，抛出的异常有：MotorbikeCarException、等异常，方法endorsement(ApplicationRecord类型#record,)形参表列详细有记录、等形参输入，抛出的异常有：MotorbikeCarException、等异常，方法addOutRecord(OutRecord类型#record,)形参表列详细有记录、等形参输入，抛出的异常有：MotorbikeCarException、等异常，方法addBackRecord(BackRecord类型#record,)形参表列详细有记录、等形参输入，抛出的异常有：MotorbikeCarException、等异常，listMotorbikeCar()无形参表列，抛出的异常有：MotorbikeCarException、等异常，listOutRecord()无形参表列，抛出的异常有：MotorbikeCarException、等异常，listBackRecord()无形参表列，抛出的异常有：MotorbikeCarException、等异常，方法findOneCar(long类型#id,)形参表列详细有ID、等形参输入，抛出的异常有：MotorbikeCarException、等异常。
+
+摩托车租车服务实现的 模块当中由类MotorbikeCarServiceImplementation.class实现:实现了InsertMotorbikeCarService接口，等接口该类的数据域成员有：cardao（cardao）、该类的常规方法成员有：方法addBackRecord(BackRecord类型#record,)形参表列详细有记录、等形参输入，抛出的异常有：MotorbikeCarException、等异常，方法addMotorbikeCar(MotorbikeCar类型#car,)形参表列详细有汽车、等形参输入，抛出的异常有：MotorbikeCarException、等异常，方法addOutRecord(OutRecord类型#record,)形参表列详细有记录、等形参输入，抛出的异常有：MotorbikeCarException、等异常，方法addApplicationRecord(ApplicationRecord类型#record,)形参表列详细有记录、等形参输入，抛出的异常有：MotorbikeCarException、等异常，方法endorsement(ApplicationRecord类型#record,)形参表列详细有记录、等形参输入，抛出的异常有：MotorbikeCarException、等异常，findAllCar()无形参表列，抛出的异常有：MotorbikeCarException、等异常。
+
+方法saveOrUpdate(MotorbikeCar类型#car,)形参表列详细有汽车、等形参输入，抛出的异常有：MotorbikeCarException、等异常。
+
+方法saveOrUpate(User类型#user,)形参表列详细有用户、等形参输入，抛出的异常有：UserException、等异常，方法addDriver(Driver类型#driver,)形参表列详细有司机、等形参输入，抛出的异常有：UserException、等异常，方法findUser(String类型#nickname,)形参表列详细有昵称、等形参输入，抛出的异常有：UserException、等异常，setIsOnline()无形参表列，抛出的异常有：UserException、等异常。
+摩托车汽车 模块当中由类MotorbikeCar.class实现:实现了javaioSerializable接口，等接口该类的数据域成员有：ID（id）、司机（driver）、汽车号码（carNumber）、汽车类型（carType）、容量（capacity）、登记日期（registerDate）、状态（status）、详细介绍（descripe）、该类的构造方法成员（构造方式）有：MotorbikeCar()无形参表列，MotorbikeCar(Driver类型#driver,String类型#carNumber,String类型#carType,long类型#capacity,String类型#registerdate,)形参表列详细有司机、汽车号码、汽车类型、容量、registerdate、等形参输入，MotorbikeCar(Driver类型#driver,String类型#carNmber,String类型#carType,long类型#capacity,String类型#registerDate,String类型#status,String类型#descripe,)形参表列详细有司机、汽车NMBER、汽车类型、容量、登记日期、状态、详细介绍、等形参输入，该类的常规方法成员有：getId()无形参表列，方法setId(long类型#id,)形参表列详细有ID、等形参输入，getDriver()无形参表列，方法setDriver(Driver类型#driver,)形参表列详细有司机、等形参输入，getCarnumber()无形参表列，方法setCarNumber(String类型#carNumber,)形参表列详细有汽车号码、等形参输入，getCarType()无形参表列，方法setCarType(String类型#carType,)形参表列详细有汽车类型、等形参输入，getCapacity()无形参表列，方法setCapacity(long类型#capacity,)形参表列详细有容量、等形参输入，getRegisterDate()无形参表列，方法setRegisterDate(String类型#registerDate,)形参表列详细有登记日期、等形参输入，getStatus()无形参表列，方法setStatus(String类型#status,)形参表列详细有状态、等形参输入，getDescripe()无形参表列，方法setDescripe(String类型#descripe,)形参表列详细有详细介绍、等形参输入。
+
+摩托车汽车异常 模块当中由类MotorbikeCarException.class实现:其中该类继承了Exception.class类,该类的构造方法成员（构造方式）有：MotorbikeCarException()无形参表列，MotorbikeCarException(String类型#message,Throwable类型#cause,)形参表列详细有信息、导致、等形参输入，MotorbikeCarException(String类型#message,)形参表列详细有信息、等形参输入，MotorbikeCarException(Throwable类型#cause,)形参表列详细有导致、等形参输入。
+
+4.6	其他底层辅助功能
+啊寻找丢失的密码表单 模块当中由类FindMissingPasswordForm.class实现:其中该类继承了ActionForm.class类,该类的数据域成员有：用户名（userName）、密码问题（passwordQuestion）、密码问题答案（passwordAnswer）、该类的常规方法成员有：getUserName()无形参表列，方法setUserName(String类型#userName,)形参表列详细有用户名、等形参输入，getPasswordQuestion()无形参表列，方法setPasswordQuestion(String类型#passwordQuestion,)形参表列详细有密码问题、等形参输入，getPasswordAnswer()无形参表列，方法setPasswordAnswer(String类型#passwordAnswer,)形参表列详细有密码问题答案、等形参输入。
+
+找到驾驶员程序的状态表 模块当中由类FindDriverByConditionForm.class实现:其中该类继承了ActionForm.class类,该类的数据域成员有：性别（gender）、汽车类型（carType）、年龄（age）、该类的常规方法成员有：getGender()无形参表列，方法setGender(String类型#gender,)形参表列详细有性别、等形参输入，getCarType()无形参表列，方法setCarType(String类型#carType,)形参表列详细有汽车类型、等形参输入，getAge()无形参表列，方法setAge(String类型#age,)形参表列详细有年龄、等形参输入。
+编码过滤器 模块当中由类EncodingFilter.class实现:实现了Filter接口，等接口该类的常规方法成员有：destroy()无形参表列，方法doFilter(ServletRequest类型#arg0,)ServletResponse类型#arg1,)FilterChain类型#arg2,)形参表列详细有为arg0、ARG1、ARG2、等形参输入，抛出的异常有：IOException、ServletException、等异常，方法init(FilterConfig类型#arg0,)形参表列详细有为arg0、等形参输入，抛出的异常有：ServletException、等异常。
+
+注册事件 模块当中由类RegisterAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+修改用户信息事件 模块当中由类ModifyUserInformationAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+查找失踪密码事件 模块当中由类FindMissingPasswordAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#f,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、f、要求、响应、等形参输入。
+
+查找驾驶员程序信息事件 模块当中由类FindDriverInformationAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+找到驾驶员程序的状态事件 模块当中由类FindDriverByConditionAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#f,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、f、要求、响应、等形参输入。
+
+查找所有用户操作 模块当中由类FindAllUserAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+更换电源操作 模块当中由类ChangePowerAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+自动登录操作 模块当中由类AutoLoginAction.class实现:其中该类继承了Action.class类,该类的常规方法成员有：方法execute(ActionMapping类型#mapping,)ActionForm类型#form,)HttpServletRequest类型#request,)HttpServletResponse类型#response,)形参表列详细有映射、形式、要求、响应、等形参输入。
+
+方法register(User类型#user,)形参表列详细有用户、等形参输入，抛出的异常有：UserException、等异常，方法logOut(User类型#user,)形参表列详细有用户、等形参输入，抛出的异常有：UserException、等异常，方法modify(User类型#user,)形参表列详细有用户、等形参输入，抛出的异常有：UserException、等异常，findAllUser()无形参表列，抛出的异常有：UserException、等异常，方法findByNickName(String类型#nickname,)形参表列详细有昵称、等形参输入，抛出的异常有：UserException、等异常，方法login(String类型#nickname,)String类型#passwd,)形参表列详细有昵称、passwd文件、等形参输入，抛出的异常有：UserException、等异常，setAllIsOnline()无形参表列，抛出的异常有：UserException、等异常，方法addDriver(Driver类型#driver,)形参表列详细有司机、等形参输入，抛出的异常有：UserException、等异常，方法findDriverById(long类型#id,)形参表列详细有ID、等形参输入，抛出的异常有：UserException、等异常，方法findDriver(String类型#name,)形参表列详细有名、等形参输入，抛出的异常有：UserException、等异常。
+
+用户的道impl 模块当中由类UserDaoImpl.class实现:实现了InsertUserDatabaseAccessObject接口，等接口该类的常规方法成员有：方法addDriver(Driver类型#driver,)形参表列详细有司机、等形参输入，抛出的异常有：UserException、等异常，方法findUser(String类型#nickName,)形参表列详细有昵称、等形参输入，抛出的异常有：UserException、等异常，方法saveOrUpate(User类型#user,)形参表列详细有用户、等形参输入，抛出的异常有：UserException、等异常，setIsOnline()无形参表列，抛出的异常有：UserException、等异常，findAllUser()无形参表列，抛出的异常有：UserException、等异常，方法findDriver(String类型#name,)形参表列详细有名、等形参输入，抛出的异常有：UserException、等异常，findAllDrivers()无形参表列，抛出的异常有：UserException、等异常，方法findDriverById(long类型#id,)形参表列详细有ID、等形参输入，抛出的异常有：UserException、等异常，方法findDriverByCondition(String类型#gender,)long类型#maxage,)long类型#minage,)String类型#cartype,)形参表列详细有性别、MAXAGE、MINAGE、适用车型、等形参输入，抛出的异常有：UserException、等异常。
+
+用户 模块当中由类User.class实现:实现了javaioSerializable接口，等接口该类的数据域成员有：ID（id）、昵称（nickName）、密码（password）、名（name）、身分证（identityCard）、密码问题（passwordQuestion）、密码问题答案（passwordAnswer）、性别（gender）、年龄（age）、地址（address）、电话（phone）、功率（power）、是或不在线（isOrNotOnline）、图标（icon）、该类的常规方法成员有：getIcon()无形参表列，方法setIcon(String类型#icon,)形参表列详细有图标、等形参输入，getIsonline()无形参表列，方法setIsOrNotOnline(long类型#isOrNotOnline,)形参表列详细有是或不在线、等形参输入，该类的构造方法成员（构造方式）有：User()无形参表列，User(String类型#nickName,String类型#password,String类型#name,String类型#identityCard,String类型#passwordQuestion,String类型#passwordAnswer,String类型#gender,String类型#address,String类型#phone,)形参表列详细有昵称、密码、名、身分证、密码问题、密码问题答案、性别、地址、电话、等形参输入，User(String类型#nickName,String类型#password,String类型#name,String类型#identityCard,String类型#passwordQuestion,String类型#passwordAnswer,String类型#gender,long类型#age,String类型#address,String类型#phone,long类型#power,)形参表列详细有昵称、密码、名、身分证、密码问题、密码问题答案、性别、年龄、地址、电话、功率、等形参输入，getId()无形参表列，方法setId(long类型#id,)形参表列详细有ID、等形参输入，getNickName()无形参表列，方法setNickName(String类型#nickName,)形参表列详细有昵称、等形参输入，getPassword()无形参表列，方法setPassword(String类型#password,)形参表列详细有密码、等形参输入，getName()无形参表列，方法setName(String类型#name,)形参表列详细有名、等形参输入，getIdentityCard()无形参表列，方法setIdentityCard(String类型#identityCard,)形参表列详细有身分证、等形参输入，getPasswordQuestion()无形参表列，方法setPasswordQuestion(String类型#passwordQuestion,)形参表列详细有密码问题、等形参输入，getPasswordAnswer()无形参表列，方法setPasswordAnswer(String类型#passwordAnswer,)形参表列详细有密码问题答案、等形参输入，getGender()无形参表列，方法setGender(String类型#gender,)形参表列详细有性别、等形参输入，getAge()无形参表列，方法setAge(long类型#age,)形参表列详细有年龄、等形参输入，getAddress()无形参表列，方法setAddress(String类型#address,)形参表列详细有地址、等形参输入，getPhone()无形参表列，方法setPhone(String类型#phone,)形参表列详细有电话、等形参输入，getPower()无形参表列，方法setPower(long类型#power,)形参表列详细有功率、等形参输入。
+Hibernate会话工厂 模块当中由类HibernateSessionFactory.class实现:该类的数据域成员有：C O N F我G_ F I L O?E_?A T我O N（CONFIG_FILE_LOCATION）、详细代码如下：
+
+司机 模块当中由类Driver.class实现:实现了javaioSerializable接口，等接口该类的数据域成员有：ID（id）、名（name）、性别（gender）、年龄（age）、教育水平（educationLevel）、位置（position）、许可证号（licenseNumber）、汽车类型（carType）、地址（address）、电话（phone）、详细介绍（descripe）、该类的构造方法成员（构造方式）有：Driver()无形参表列，Driver(String类型#name,String类型#gender,long类型#age,String类型#licenseNumber,String类型#cartype,String类型#address,String类型#phone,)形参表列详细有名、性别、年龄、许可证号、适用车型、地址、电话、等形参输入，Driver(String类型#name,String类型#gender,long类型#age,String类型#educationLevel,String类型#position,String类型#licenseNumber,String类型#cartype,String类型#address,String类型#phone,String类型#descripe,)形参表列详细有名、性别、年龄、教育水平、位置、许可证号、适用车型、地址、电话、详细介绍、等形参输入，该类的常规方法成员有：getId()无形参表列，方法setId(long类型#id,)形参表列详细有ID、等形参输入，getName()无形参表列，方法setName(String类型#name,)形参表列详细有名、等形参输入，getGender()无形参表列，方法setGender(String类型#gender,)形参表列详细有性别、等形参输入，getAge()无形参表列，方法setAge(long类型#age,)形参表列详细有年龄、等形参输入，getEducationLevel()无形参表列，方法setEducationlevel(String类型#educationLevel,)形参表列详细有教育水平、等形参输入，getPosition()无形参表列，方法setPosition(String类型#position,)形参表列详细有位置、等形参输入，getLicensenum()无形参表列，方法setLicensenum(String类型#licenseNumber,)形参表列详细有许可证号、等形参输入，getCartype()无形参表列，方法setCarType(String类型#carType,)形参表列详细有汽车类型、等形参输入，getAddress()无形参表列，方法setAddress(String类型#address,)形参表列详细有地址、等形参输入，getPhone()无形参表列，方法setPhone(String类型#phone,)形参表列详细有电话、等形参输入，getDescripe()无形参表列，方法setDescripe(String类型#descripe,)形参表列详细有详细介绍、等形参输入。
+基地Hibernate的数据库访问对象 模块当中由类BaseHibernateDatabaseAccessObject.class实现:实现了IBaseHibernateDAO接口，等接口该类的常规方法成员有：getSession()无形参表列。
+MD5 模块当中由类MD5.class实现:该类的数据域成员有：MD5（md5）、S11（S11）、S12（S12）、S13（S13）、S14（S14）、S21（S21）、S22（S22）、S23（S23）、S24（S24）、S31（S31）、S32（S32）、S33（S33）、S34（S34）、S41（S41）、S42（S42）、S43（S43）、S44（S44）、P A D D我N G []（PADDING[]）、国家[]（state[]）、数[]（count[]）、缓冲[]（buffer[]）、消化六角STR（digestHexStr）、摘要[]（digest[]）、该类的常规方法成员有：getInstance()无形参表列，方法getMD5ofStr(String类型#s,)形参表列详细有?、等形参输入，该类的构造方法成员（构造方式）有：MD5()无形参表列，md5Init()无形参表列，方法F(long类型#l,)long类型#l1,)long类型#l2,)形参表列详细有升、L1、12、等形参输入，方法G(long类型#l,)long类型#l1,)long类型#l2,)形参表列详细有升、L1、12、等形参输入，方法H(long类型#l,)long类型#l1,)long类型#l2,)形参表列详细有升、L1、12、等形参输入，方法I(long类型#l,)long类型#l1,)long类型#l2,)形参表列详细有升、L1、12、等形参输入，方法FF(long类型#l,)long类型#l1,)long类型#l2,)long类型#l3,)long类型#l4,)long类型#l5,)long类型#l6,)形参表列详细有升、L1、12、13、L4、15、L6、等形参输入，方法GG(long类型#l,)long类型#l1,)long类型#l2,)long类型#l3,)long类型#l4,)long类型#l5,)long类型#l6,)形参表列详细有升、L1、12、13、L4、15、L6、等形参输入，方法HH(long类型#l,)long类型#l1,)long类型#l2,)long类型#l3,)long类型#l4,)long类型#l5,)long类型#l6,)形参表列详细有升、L1、12、13、L4、15、L6、等形参输入，方法II(long类型#l,)long类型#l1,)long类型#l2,)long类型#l3,)long类型#l4,)long类型#l5,)long类型#l6,)形参表列详细有升、L1、12、13、L4、15、L6、等形参输入，方法md5Update(byte类型#abyte0[],)int类型#i,)形参表列详细有abyte0 []、我、等形参输入，md5Final()无形参表列，方法md5Memcpy(byte类型#abyte0[],)byte类型#abyte1[],)int类型#i,)int类型#j,)int类型#k,)形参表列详细有abyte0 []、abyte1 []、我、?、?、等形参输入，方法md5Transform(byte类型#abyte0[],)形参表列详细有abyte0 []、等形参输入，方法Encode(byte类型#abyte0[],)long类型#al[],)int类型#i,)形参表列详细有abyte0 []、人[]、我、等形参输入，方法Decode(long类型#al[],)byte类型#abyte0[],)int类型#i,)形参表列详细有人[]、abyte0 []、我、等形参输入，方法b2iu(byte类型#byte0,)形参表列详细有BYTE0、等形参输入，方法byteHEX(byte类型#byte0,)形参表列详细有BYTE0、等形参输入，方法getMD5Str(String类型#string,)形参表列详细有串、等形参输入，方法main(String类型#args[],)形参表列详细有参数[]、等形参输入。
+
+Hibernate会话工厂 模块当中由类HibernateSessionFactory.class实现:该类的数据域成员有：C O N F我G_ F I L O?E_?A T我O N（CONFIG_FILE_LOCATION）、详细代码如下：
+Bean工厂 模块当中由类BeanFactory.class实现:该类的数据域成员有：用户道（userDao）、用户服务（userService）、机动车道（motorcarDao）、汽车服务（motorcarService）、该类的常规方法成员有：方法getBean(String类型#beanName,)形参表列详细有bean的名称、等形参输入，getUserDao()无形参表列，getUserService()无形参表列，getMotorCarDao()无形参表列，getMotorCarService()无形参表列。
+
+效用 模块当中由类Utility.class实现:该类的数据域成员有：我P_ F I L E（IP_FILE）、字符串生成器（stringBuilder）、该类的常规方法成员有：方法getIpStringFromBytes(byte[]类型#ip,)形参表列详细有IP、等形参输入，方法getIpByteArrayFromString(String类型#ip,)形参表列详细有IP、等形参输入，方法getString(String类型#s,)String类型#srcEncoding,)String类型#destEncoding,)形参表列详细有?、SRC编码方式、目的编码、等形参输入，方法getString(byte[]类型#b,)int类型#offset,)int类型#len,)String类型#encoding,)形参表列详细有b、抵消、LEN、编码、等形参输入。
+Hibernate的Transaction 模块当中由类HibernateTransaction.class实现:实现了Transaction接口，等接口该类的数据域成员有：交易（transaction）、该类的常规方法成员有：beginTransaction()无形参表列，commit()无形参表列，rollback()无形参表列。
+
+用户异常 模块当中由类UserException.class实现:其中该类继承了Exception.class类,该类的构造方法成员（构造方式）有：UserException()无形参表列，UserException(String类型#message,Throwable类型#cause,)形参表列详细有信息、导致、等形参输入，UserException(String类型#message,)形参表列详细有信息、等形参输入，UserException(Throwable类型#cause,)形参表列详细有导致、等形参输入。
+
+
+ 
+第5章	系统测试
+由于该系统是轻量级组件构建的网站，所以在配置一般的个人PC机上面完全可以进行测试工作，从而保证系统在恶劣的硬件环境下也能保证良好的性能。系统测试包括了Tomcat服务器性能测试，数据库响应测试，页面跳转和浏览展示速度测试，并发访问页面测试。经过测试发现系统在以上各项指标都表现良好。
+（1）Tomcat服务器性能测试，通过不断重新启动服务器和关闭服务器，统计Tomcat服务器载入网站和编译JSP文件速度，以此来测试服务器系统对文件的载入效率。
+（2）数据库响应测试，频繁的进行网站各个网页的下载测试，统计网页的下载速度，以及数据库响应，java代码打印提交到浏览器的速度，以此来测试数据库MYSQL的性能，文件配置的健康状况。
+（3）页面跳转及浏览展示速度测试，通过网络爬虫对网页链接进行“链式”访问，测试网页跳转性能，结合人工点击页面，综合测试网页页面跳转性能，排除网页之间数据传输量大以至于跳转困难的情况。在跳转成功到页面完全展示之间进行测试来发现图片载入慢的部分，进行系统文件修改达到提高浏览速度的目的。
+（4）并发访问页面测试，在局域网络环境下，多个用户同时在线访问网站，包括同时和异步访问网站同一个网页，进行并发性能测试，进行并发问题发现，通过并发模型的建模，通过形式化的方法检测有没有存在系统死锁的可能。

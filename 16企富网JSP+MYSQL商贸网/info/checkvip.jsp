@@ -1,0 +1,1 @@
+<%if (Integer.parseInt((String) session.getAttribute("vip"))==0){response.sendRedirect("../novip.jsp");}%>

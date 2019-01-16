@@ -1,0 +1,541 @@
+<style type="text/css">
+<!--
+td,body {font-size:12px}
+a:link {color:#000000;text-decoration:none}     
+a:visited {color:#000000;text-decoration:none} 
+a:active {color:blue;text-decoration:none}
+a:hover {color:red;text-decoration:underline}
+a.title:link {color:#000000;text-decoration:underline}     
+a.title:visited {color:#000000;text-decoration:underline} 
+a.title:active {color:#0000ff;text-decoration:underline}
+a.title:hover {color:#0000ff;text-decoration:underline}
+-->
+</style>
+</head>
+<body topmargin="0" leftmargin="0">
+<SCRIPT language=javascript>
+
+
+
+<!--
+    function formsubmit()
+       {
+         var num="";     //申请（专利）号
+         var num_str="";
+         var zldate="";  //公开（公告）日
+         var zldate_str="";
+         var op_num="";  // 公开（公告）号
+         var op_num_str="";
+         var man="";     //申请（专利权）人
+         var man_str="";
+         var cate_num=""; //分类号
+         var cate_num_str="";
+         var zaiyao="";   //摘要
+         var zaiyao_str="";
+         var address="";  //地址
+         var address_str="";
+         var name="";     //名称
+         var name_str="";
+         var cd_num="";   //说明书光盘号
+         var cd_num_str="";
+         var design_man=""; //发明设计人
+         var design_man_str="";
+         var zcate_num=""; //主分类号
+         var zcate_num_str="";
+         var sqdate="";      //申请日
+         var sqdate_str="";
+         var bzdate="";      //颁证日
+         var bzdate_str="";
+         var dl_orga="";     //专利代理机构
+         var dl_orga_str="";
+         var priority="";    //优先权
+         var priority_str="";
+         var ysq_num="";     //分案原申请号
+         var ysq_num_str="";
+         var dl_man="";      //代理人
+         var dl_man_str="";
+   var gjgb="";     //国际公布
+         var zqx="";  //主权项
+         var zqx_str="";
+         var multi_str=new String();   //用户写的检索表达式
+         var temp_str=new String();  
+         var str="";         //检索表达式
+         var str_leng;
+         var leng;
+         var mulleng;
+         //var flzt="";
+         //var flzt_str="";
+         //cd_num=document.forms[0].textfield1.value;
+         cate_num=document.forms[0].textfield2.value;
+         num=document.forms[0].textfield3.value;
+         zldate=document.forms[0].textfield4.value;
+         op_num=document.forms[0].textfield5.value;
+         
+         man=document.forms[0].textfield6.value;
+         design_man=document.forms[0].textfield7.value;
+         address=document.forms[0].textfield8.value;
+         name=document.forms[0].textfield9.value;
+         zhaiyao=document.forms[0].textfield10.value;
+         
+         zcate_num=document.forms[0].textfield11.value;
+         sqdate=document.forms[0].textfield12.value;
+         bzdate=document.forms[0].textfield13.value;
+         dl_orga=document.forms[0].textfield141.value;
+         dl_man=document.forms[0].textfield142.value;
+         gjgb=document.forms[0].gjgb.value;
+   
+         priority=document.forms[0].textfield143.value;
+         //ysq_num=document.forms[0].textfield144.value;
+         //zqx=document.forms[0].textfield17.value;
+         //multi_str=document.forms[0].textfield15.value;
+         
+         //flzt=document.forms[0].textfield66.value;         //法律状态
+                  
+         leng=num.length;
+         mulleng=multi_str.length;
+         var myreg=/@/;
+    if(mulleng==0){       
+        
+         if (cd_num!="") {str=str +  "说明书光盘号=" + cd_num + "% and ";}
+         if (cate_num!="") { 
+              cate_num=cate_num.replace("/","\\/");
+              cate_num=cate_num.replace("-","?");
+              cate_num=cate_num.replace("-","?");        
+              str=str + "分类号=" + cate_num + "% and ";         
+              }
+         if (num!=""){str=str + "申请（专利）号=(" + num + "%" + ") and ";}
+         if (zldate!="") {str=str + "公开（公告）日=(" + zldate + ") and ";}
+         if (op_num!="") {str=str + "公开（公告）号=(" + op_num + "%) and ";}
+         
+         if (man!="") {str=str + "申请（专利权）人=(" + man + "%) and ";}
+         if (design_man!="") {str=str + "发明（设计）人=(" + design_man + "%) and ";}
+         if (address!="") {str=str + "地址=(" + address + "%) and ";}
+         if (name!="") { str=str + "名称=(" + name + ") and "; }
+         if (zhaiyao!="") {str=str + "摘要=(" + zhaiyao + ") and ";}
+         
+         if (zcate_num!="") { zcate_num=zcate_num.replace("/","\\/");
+              zcate_num=zcate_num.replace("-","?");
+              zcate_num=zcate_num.replace("-","?");
+                str=str + "主分类号=" + zcate_num + "% and ";
+                            }       
+         if (sqdate!="") {str=str + "申请日=(" + sqdate + ") and ";}
+         if (bzdate!="") {str=str + "颁证日=(" + bzdate + ") and ";}
+         if (dl_orga!="") {str=str + "专利代理机构=(" + dl_orga + "%) and ";}
+         if (dl_man!="") {str=str + "代理人=(" + dl_man + "%) and ";}
+   if (gjgb!="") {
+   //gjgb=gjgb.replace(".","\\*");
+   //gjgb=gjgb.replace(".","\\.");
+   
+   str=str + "国际公布=(%" + gjgb + "%) and ";
+         str=str.replace("/","\\/");
+         str=str.replace("-","\\-");
+         str=str.replace(",","\\,");
+         str=str.replace(".","\\*");
+         str=str.replace(".","\\.");
+         str=str.replace("\\*","\\.");
+          }
+    
+         if (priority!="") { 
+              str=str + "优先权=" + priority + " and ";
+             
+                
+         str=str.replace("/","\\/");
+         str=str.replace("-","\\-");
+         str=str.replace(",","\\,");
+         str=str.replace(".","\\*");
+         str=str.replace(".","\\.");
+         str=str.replace("\\*","\\.");
+         
+         }
+         
+         //if(flzt!="") { str=str + "法律状态=%" + flzt+ "% and ";} 
+         
+         if (zqx!="") {str=str + "主权项=(" + zqx + ") and ";}
+         if (ysq_num!="") { str=str + "分案原申请号=" + ysq_num + "% and "; }
+          str_leng=str.length;
+           if (str_leng==0){
+                str="";}
+           else
+                {str=str.substring(0,str_leng-4);}}  
+   else if(1==1) 
+       {
+        
+        if (cd_num!="") { 
+                 //str=str +  "说明书光盘号=" + cd_num + "% and ";
+                 cd_num_str="说明书光盘号=" + cd_num + "%";}
+         if (cate_num!="") { 
+              cate_num=cate_num.replace("/","\\/");
+              cate_num=cate_num.replace("-","?");
+              cate_num=cate_num.replace("-","?");
+        
+              //str=str + "分类号=" + cate_num + "% and ";
+              cate_num_str="分类号=" + cate_num + "%";
+         
+              }
+         
+         if (num!=""){
+              //str=str + "申请（专利）号=(" + num + "%" + ") and ";
+              num_str="申请（专利）号=(" + num + "%" + ") ";}
+         if (zldate!="") { 
+              //str=str + "公开（公告）日=(" + zldate + ") and ";
+              zldate_str="公开（公告）日=(" + zldate + ") ";}
+         if (op_num!="") { 
+              //str=str + "公开（公告）号=(" + op_num + "%) and ";
+              op_num_str="公开（公告）号=(" + op_num + "%) ";
+              }
+         
+         if (man!="") { 
+              //str=str + "申请（专利权）人=(" + man + ") and ";
+              man_str="申请（专利权）人=(" + man + ") ";}
+         if (design_man!="") {
+              //str=str + "发明（设计）人=(" + design_man + ") and ";
+              design_man_str="发明（设计）人=(" + design_man + ") ";}
+         if (address!="") { 
+              //str=str + "地址=(" + address + ") and ";
+              address_str="地址=(" + address + ") ";}
+         if (name!="") { 
+              //str=str + "名称=(" + name + ") and ";
+              name_str="名称=(" + name + ") ";}
+         if (zhaiyao!="") { 
+              //str=str + "摘要=(" + zhaiyao + ") and ";
+              zhaiyao_str="摘要=(" + zhaiyao + ") ";}
+         
+        //if(flzt!="") { flzt_str="法律状态=%" + flzt+ "%";}        
+        
+         if (zcate_num!="") { 
+              zcate_num=zcate_num.replace("/","\\/");
+              zcate_num=zcate_num.replace("-","?");
+              zcate_num=zcate_num.replace("-","?");
+                //str=str + "主分类号=" + zcate_num + "% and ";
+                zcate_num_str="主分类号=" + zcate_num + "% ";
+                }       
+         if (sqdate!="") { 
+              //str=str + "申请日=(" + sqdate + ") and ";
+              sqdate_str="申请日=(" + sqdate + ") ";}
+              
+         if (zqx!="") { 
+              
+              zqx_str="主权项=(" + zqx + ") ";}     
+         if (bzdate!="") { 
+              //str=str + "颁证日=(" + bzdate + ") and ";
+              bzdate_str="颁证日=(" + bzdate + ") ";}
+         if (dl_orga!="") {
+              //str=str + "专利代理机构=(" + dl_orga + ") and ";
+              dl_orga_str="专利代理机构=(" + dl_orga + ") ";}
+         if (dl_man!="") {
+              //str=str + "代理人=(" + dl_man + ") and ";
+              dl_man_str="代理人=(" + dl_man + ") ";}
+         if (priority!="") { 
+              //str=str + "优先权=" + priority + " and ";
+              priority_str="优先权=" + priority + " ";
+         priority_str=priority_str.replace("/","\\/");
+         priority_str=priority_str.replace("-","\\-");
+         priority_str=priority_str.replace(",","\\,");
+         priority_str=priority_str.replace(".","\\*");
+         priority_str=priority_str.replace(".","\\.");
+         priority_str=priority_str.replace("\\*","\\.");
+                  
+         }
+         if (ysq_num!="") {
+           //str=str + "分案原申请号=" + ysq_num + "% and ";
+           ysq_num_str="分案原申请号=" + ysq_num + "% ";}
+           
+         var reg;
+         reg=/@a/gi;
+         
+         if(cd_num_str!="")
+            {multi_str=multi_str.replace(reg,cd_num_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+                  
+         reg=/@b/gi;
+         if(cate_num_str!="")
+            {multi_str=multi_str.replace(reg,cate_num_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+                  
+         reg=/@c/gi;
+         if(num_str!="")
+            {multi_str=multi_str.replace(reg,num_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+         
+         
+         reg=/@d/gi;
+         if(zldate_str!="")
+            {multi_str=multi_str.replace(reg,zldate_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+                 
+         reg=/@e/gi;
+         if(op_num_str!="")
+            {multi_str=multi_str.replace(reg,op_num_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+                  
+         reg=/@f/gi;
+         if(man_str!="")
+            {multi_str=multi_str.replace(reg,man_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+                  
+         reg=/@g/gi;
+         if(design_man_str!="")
+            {multi_str=multi_str.replace(reg,design_man_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+          
+         
+         reg=/@h/gi;
+         if(address_str!="")
+            {multi_str=multi_str.replace(reg,address_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+          
+         
+         reg=/@i/gi;
+         if(name_str!="")
+            {multi_str=multi_str.replace(reg,name_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+         
+         
+         reg=/@j/gi;
+         if(zaiyao_str!="")
+            {multi_str=multi_str.replace(reg,zaiyao_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+         
+         
+         reg=/@k/gi;
+         if(zcate_num_str!="")
+            {multi_str=multi_str.replace(reg,zcate_num_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+        
+         
+         reg=/@l/gi;
+         if(sqdate_str!="")
+            {multi_str=multi_str.replace(reg,sqdate_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+         
+         
+         reg=/@m/gi;
+         if(bzdate_str!="")
+            {multi_str=multi_str.replace(reg,bzdate_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+        
+         
+         reg=/@n/gi;
+         if(dl_orga_str!="")
+            {multi_str=multi_str.replace(reg,dl_orga_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+         
+         
+         reg=/@o/gi;
+         if(dl_man_str!="")
+            {multi_str=multi_str.replace(reg,dl_man_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+         
+         reg=/@p/gi;
+         if(priority_str!="")
+            {multi_str=multi_str.replace(reg,priority_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+         
+         
+         reg=/@q/gi;
+         if(ysq_num_str!="")
+            {multi_str=multi_str.replace(reg,ysq_num_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+         
+         
+         reg=/@r/gi;
+         if(zqx_str!="")
+            {multi_str=multi_str.replace(reg,zqx_str);}
+         else
+           {multi_str=multi_str.replace(reg,"%");}
+         
+                 
+         str=multi_str;    
+       }      
+   else{
+   /* 注释
+    var re
+    re=/E51/g;
+    multi_str=multi_str.replace(re,"主分类号");
+    re=/11/g;
+    multi_str=multi_str.replace(re,"公开（公告）号");
+    multi_str=multi_str.replace("22","申请日");
+    multi_str=multi_str.replace("43","公开（公告）日");
+    multi_str=multi_str.replace("30","优先权");
+   
+    multi_str=multi_str.replace("86","国际申请");
+    multi_str=multi_str.replace("87","国际公布");
+    multi_str=multi_str.replace("85","进入国家日期");
+    multi_str=multi_str.replace("71","申请（专利权）人");
+    multi_str=multi_str.replace("DZ","地址");
+    
+    multi_str=multi_str.replace("72","发明（设计）人");
+    multi_str=multi_str.replace("74","专利代理机构");
+    multi_str=multi_str.replace("DL","代理人");
+    multi_str=multi_str.replace("54","名称");
+    multi_str=multi_str.replace("FA","分案原申请号");
+    
+    multi_str=multi_str.replace("BZ","颁证日");
+    multi_str=multi_str.replace("GP","说明书光盘号");
+    re=/21/g;    
+   multi_str=multi_str.replace(re,"申请（专利）号");
+    re=/51/g;
+   multi_str=multi_str.replace(re,"分类号");
+   multi_str=multi_str.replace("57","摘要");
+  */
+   
+   str=multi_str;}
+         
+         if(str==""){
+           alert("检索条件不能为空");
+           return false;}
+           //alert(str);
+         document.forms[0].searchword.value=str;
+        
+   }
+   //-->
+ function openwin()
+ {
+ window.open('wzsm.htm','','toolbar=no,location=no,status=no,menubar=no,width=400,height=250');
+ }  
+</SCRIPT><TBODY>
+              <TR bgColor=#f1f8fc>
+                <TD align=middle width="25%" height=35>
+                  <TABLE 
+                  width="90%" border=0 align="center" cellPadding=0 cellSpacing=1 bgColor=#0098c8 style="FONT-SIZE: 14px">
+                    <FORM language=javascript name=form1 
+                    onsubmit="return formsubmit()" 
+                    action=http://211.157.104.67/sipoasp/zljs/hyjs-jieguo.asp?flag3=1 
+                    method=post target=_blank>
+                    <TBODY>
+                    <TR bgColor=#a8d4ff height=32>
+                      <TD align=middle colSpan=4 height=22><INPUT type=radio 
+                        CHECKED value=0 name=selectbase> 全部专利 <INPUT type=radio 
+                        value=11 name=selectbase> 发明专利 <INPUT type=hidden 
+                        value=10 name=recshu> <INPUT type=radio value=22 
+                        name=selectbase> 实用新型 <INPUT type=radio value=33 
+                        name=selectbase> 外观设计　　 <SELECT 
+                        onchange=javascript:window.open(this.options[this.selectedIndex].value) 
+                        size=1 name=D1> <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm 
+                          selected>帮 助</OPTION> <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#sqh>申请（专利）号</OPTION> 
+                          <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#mc>名 
+                          称</OPTION> <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#zy>摘 
+                          要</OPTION> <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#flh>分 
+                          类 号</OPTION> <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#zflh>主分类号</OPTION> 
+                          <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#gkr>公开（告）日</OPTION> 
+                          <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#gkh>公开（告）号</OPTION> 
+                          <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#sqr>申请（专利权）人</OPTION> 
+                          <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#fmr>发明（设计）人</OPTION> 
+                          <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#dz>地 
+                          址</OPTION> <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#sqri>申 
+                          请 日</OPTION> <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#bzr>颁 
+                          证 日</OPTION> <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#zldljg>专利代理机构</OPTION> 
+                          <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#dlr>代 
+                          理 人</OPTION> <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#yxq>优 
+                          先 权</OPTION> <OPTION 
+                          value=http://www.sipo.gov.cn/sipo/zljs/jsbz.htm#gjgb>国际公布</OPTION></SELECT> 
+                      </TD>
+                    <TR bgColor=#ffffcc height=32>
+                      <TD align=middle width="22%" height=27>申请（专利）号</TD>
+                      <TD align=middle width="28%" height=27><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield3></TD>
+                      <TD align=middle width="22%" height=27>名　　　　　称</TD>
+                      <TD align=middle width="28%" height=27><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield9></TD></TR>
+                    <TR bgColor=#ffffcc height=32>
+                      <TD align=middle width="22%">摘　　　　　要</TD>
+                      <TD align=middle width="28%"><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield10></TD>
+                      <TD align=middle width="22%">申　　请　　日 </TD>
+                      <TD align=middle width="28%"><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield12> </TD></TR>
+                    <TR bgColor=#ffffcc height=32>
+                      <TD align=middle width="22%">公 开（告） 日</TD>
+                      <TD align=middle width="28%"><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield4></TD>
+                      <TD align=middle width="22%">公&nbsp;开（告）&nbsp;号</TD>
+                      <TD align=middle width="28%"><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield5></TD></TR>
+                    <TR bgColor=#ffffcc height=32>
+                      <TD align=middle width="22%">分　　类　　号</TD>
+                      <TD align=middle width="28%"><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield2></TD>
+                      <TD align=middle width="22%">主　分　类　号</TD>
+                      <TD align=middle width="28%"><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield11></TD></TR>
+                    <TR bgColor=#ffffcc height=32>
+                      <TD align=middle width="22%">申请(专利权)人</TD>
+                      <TD align=middle width="28%"><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield6></TD>
+                      <TD align=middle width="22%">发明（设计）人</TD>
+                      <TD align=middle width="28%"><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield7></TD></TR>
+                    <TR bgColor=#ffffcc height=32>
+                      <TD align=middle width="22%" height=24>地　　　　　址</TD>
+                      <TD align=middle width="28%" height=24><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield8></TD>
+                      <TD align=middle width="22%" height=24>国　际　公　布</TD>
+                      <TD align=middle width="28%" height=24><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=gjgb></TD></TR>
+                    <TR bgColor=#ffffcc height=32>
+                      <TD align=middle width="22%">颁　　证　　日</TD>
+                      <TD align=middle width="28%"><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield13></TD>
+                      <TD align=middle width="22%">专利 代理 机构</TD>
+                      <TD align=middle width="28%"><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield141></TD></TR>
+                    <TR bgColor=#ffffcc height=32>
+                      <TD align=middle width="22%">代　　理　　人</TD>
+                      <TD align=middle width="28%"><FONT size=3><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield142> </FONT></TD>
+                      <TD align=middle width="22%">优　　先　　权</TD>
+                      <TD align=middle width="28%"><INPUT 
+                        style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: 宋体" 
+                        size=17 name=textfield143></TD></TR>
+                    <TR align=middle bgColor=#ffffff>
+                      <TD colSpan=4 height=32><INPUT style="BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #ffffff 1px solid; BORDER-BOTTOM: #ffffff 1px solid; FONT-FAMILY: 宋体" type=submit value="确  定" name=submit1> 
+                  &nbsp;&nbsp; <INPUT type=hidden 
+                    name=searchword></TD></TR></FORM></TBODY></TABLE>

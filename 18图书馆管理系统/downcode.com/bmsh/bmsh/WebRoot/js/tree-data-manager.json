@@ -1,0 +1,40 @@
+[{
+    text:'图书管理',
+    expanded: true,
+    children:[{
+        text:'图书信息管理',
+        id:'book-manage',
+        leaf:true
+    }]
+},{
+    text:'系统管理',
+    expanded: true,
+    children:[{
+        text:'分公司管理',
+        id:'company-manage',
+        leaf:true
+    },{
+        text:'部门管理',
+        id:'dept-manage',
+        leaf:true
+    },{
+        text:'用户管理',
+        id:'user-manage',
+        leaf:true
+    },{
+        text:'职务管理',
+        id:'duty-manage',
+        leaf:true
+    }]
+},{
+    text:'科目 & 分类管理',
+    children:[{
+        text:'科目管理',
+        id:'subject-manage',
+        leaf:true
+    },{
+        text:'分类管理',
+        id:'category-manage',
+        leaf:true
+    }]
+}]

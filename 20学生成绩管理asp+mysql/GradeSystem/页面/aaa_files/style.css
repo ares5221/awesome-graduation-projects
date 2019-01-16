@@ -1,0 +1,126 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #dee3e7; FONT-SIZE: 9pt; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; CURSOR: url('http://www.scweitai.com/images/birthday/2.cur'); SCROLLBAR-SHADOW-COLOR: #dee3e7; COLOR: #666666; SCROLLBAR-3DLIGHT-COLOR: #d1d7dc; SCROLLBAR-ARROW-COLOR: #006699; SCROLLBAR-TRACK-COLOR: #efefef; FONT-FAMILY: verdana,??им?; SCROLLBAR-DARKSHADOW-COLOR: #98aab1
+}
+.font-12 {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 120%; TEXT-DECORATION: none
+}
+A:link {
+	FONT-SIZE: 12px; COLOR: #3399ff; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR: #3399ff; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #ff6666; TEXT-DECORATION: underline
+}
+.input-1 {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; BORDER-LEFT: #000000 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 18px; BACKGROUND-COLOR: #ffffff
+}
+A.1:link {
+	FONT-SIZE: 12px; COLOR: #009966; TEXT-DECORATION: none
+}
+A.1:visited {
+	FONT-SIZE: 12px; COLOR: #009966; TEXT-DECORATION: none
+}
+A.1:hover {
+	FONT-SIZE: 12px; COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.2:link {
+	FONT-SIZE: 12px; COLOR: #00b7b7; TEXT-DECORATION: none
+}
+A.2:visited {
+	FONT-SIZE: 12px; COLOR: #00b7b7; TEXT-DECORATION: none
+}
+A.2:hover {
+	FONT-SIZE: 12px; COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.3:link {
+	FONT-SIZE: 12px; COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.3:visited {
+	FONT-SIZE: 12px; COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.3:hover {
+	FONT-SIZE: 12px; COLOR: #ff6600; TEXT-DECORATION: underline
+}
+.css-150 {
+	FONT-SIZE: 12px; LINE-HEIGHT: 250%
+}
+A.4:link {
+	FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.4:visited {
+	FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.4:hover {
+	FONT-SIZE: 12px; COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.5:link {
+	FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.5:visited {
+	FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.5:hover {
+	FONT-SIZE: 12px; COLOR: #009966; TEXT-DECORATION: none
+}
+A.6:link {
+	FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none
+}
+A.6:visited {
+	FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none
+}
+A.6:hover {
+	FONT-SIZE: 12px; COLOR: #ff6600; TEXT-DECORATION: none
+}
+.button-1 {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; CURSOR: hand; PADDING-TOP: 1px; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 18px; BACKGROUND-COLOR: #f7f7f7
+}
+.css_150 {
+	FONT-SIZE: 12px; LINE-HEIGHT: 150%
+}
+A.7:link {
+	FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.7:visited {
+	FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.7:hover {
+	FONT-SIZE: 12px; COLOR: #ff33ff; TEXT-DECORATION: none
+}
+.input-2 {
+	BORDER-RIGHT: #ececec 1px solid; BORDER-TOP: #999999 1px solid; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; BORDER-LEFT: #999999 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #ececec 1px solid; HEIGHT: 18px; BACKGROUND-COLOR: #ffffff
+}
+.textarea-1 {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #999999 1px solid; BORDER-BOTTOM: #999999 1px solid
+}
+A.8:link {
+	FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.8:visited {
+	FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.8:hover {
+	FONT-SIZE: 12px; COLOR: #0099ff; TEXT-DECORATION: none
+}
+.textarea-2 {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid
+}
+.border_1 {
+	BORDER-RIGHT: #66ccff 1px solid; BORDER-TOP: #66ccff 1px solid; BORDER-LEFT: #66ccff 1px solid; BORDER-BOTTOM: #66ccff 1px solid
+}
+.input_3 {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 3px; FONT-SIZE: 12px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; BACKGROUND-COLOR: #ffffff
+}
+A.9:link {
+	FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.9:visited {
+	FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.9:hover {
+	FONT-SIZE: 12px; COLOR: #999933; TEXT-DECORATION: none
+}
+.border_2 {
+	BORDER-RIGHT: #ff6666 1px solid; BORDER-TOP: #ff6666 1px solid; BORDER-LEFT: #ff6666 1px solid; BORDER-BOTTOM: #ff6666 1px solid
+}

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Category">
+
+	<typeAlias alias="subject" type="com.lhq.prj.bms.po.Subject" />
+	<typeAlias alias="category" type="com.lhq.prj.bms.po.Category" />
+	<typeAlias alias="page" type="com.lhq.prj.bms.core.Page" />
+
+	<parameterMap class="category" id="pm_category_without_id">
+		<parameter property="categoryName" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="subjectId" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="subjectName" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="remark" javaType="string" jdbcType="VARCHAR" />
+	</parameterMap>
+	<sql id="byCategoryIdCondition">
+		<![CDATA[
+		   categoryId = #categoryId:NUMBER#
+	    ]]>
+	</sql>
+
+	<insert id="save" parameterMap="pm_category_without_id">
+		<![CDATA[
+			INSERT INTO t_category 
+						(categoryName,subjectId,subjectName,remark) 
+				 VALUES (?,?,?,?)
+		]]>
+		<selectKey resultClass="int">
+			<![CDATA[
+				SELECT @@IDENTITY AS ID
+			]]>
+		</selectKey>
+	</insert>
+
+	<delete id="deleteById" parameterClass="integer">
+		<![CDATA[
+			delete t_category
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="byCategoryIdCondition" />
+		</dynamic>
+	</delete>
+
+	<select id="findAll" resultClass="category">
+		<![CDATA[
+			SELECT * FROM t_category
+		]]>
+	</select>
+
+	<update id="update" parameterClass="category">
+		<![CDATA[
+			UPDATE t_category
+		]]>
+		<dynamic prepend="SET">
+			<isNotNull property="categoryName" prepend=",">
+				<![CDATA[
+					categoryName = #categoryName:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="subjectId" prepend=",">
+				<![CDATA[
+					subjectId = #subjectId:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="subjectName" prepend=",">
+				<![CDATA[
+					subjectName = #subjectName:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="remark" prepend=",">
+				<![CDATA[
+					remark = #remark:VARCHAR#
+				]]>
+			</isNotNull>
+		</dynamic>
+		<dynamic prepend="WHERE">
+			<include refid="byCategoryIdCondition" />
+		</dynamic>
+	</update>
+
+	<sql id="findCategoryByPageCondition">
+		<isNotEmpty property="conditions">
+			<iterate property="conditions" open="(" close=")" conjunction="OR">
+				<![CDATA[
+					upper(categoryName) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+					OR upper(subjectName) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%'
+				    OR upper(remark) LIKE '%' + upper(#conditions[]:VARCHAR#) + '%' 
+			    ]]>
+			</iterate>
+		</isNotEmpty>
+	</sql>
+
+	<select id="findByPage" parameterClass="page" resultClass="category">
+		<![CDATA[
+			SELECT TOP $limit$ * FROM t_category 
+					WHERE (categoryId >= (SELECT MAX(categoryId) FROM (SELECT TOP $start$ categoryId FROM t_category 
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="findCategoryByPageCondition" />
+		</dynamic>
+		<![CDATA[
+			ORDER BY categoryId ) AS T)) 
+		]]>
+		<dynamic prepend="AND">
+			<include refid="findCategoryByPageCondition" />
+		</dynamic>
+		<![CDATA[
+			ORDER BY categoryId
+		]]>
+	</select>
+
+	<select id="findByCount" parameterClass="page" resultClass="int">
+		<![CDATA[
+			SELECT COUNT(*) FROM t_category 
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="findCategoryByPageCondition" />
+		</dynamic>
+	</select>
+
+	<select id="findCategoryBySubject" parameterClass="subject" resultClass="category">
+		<![CDATA[
+			SELECT * FROM t_category 
+		]]>
+		<dynamic prepend="WHERE">
+			<isNotNull property="subjectId" prepend="OR">
+				<![CDATA[
+					subjectId = #subjectId:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="subjectName" prepend="OR">
+				<![CDATA[
+					subjectName like '%' +  #subjectName:VARCHAR# + '%'
+				]]>
+			</isNotNull>
+		</dynamic>
+	</select>
+</sqlMap>

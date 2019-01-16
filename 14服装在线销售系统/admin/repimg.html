@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>图片管理</title>
+<style>
+body{text-align:center;margin:10px auto;}
+body,td{font-size:12px;}
+</style>
+<script language="javascript" type="text/javascript">
+var fromid="";
+function returnstr()
+{
+	var wname = "",obj=document.getElementById("d_fromfile");
+	if(d_checkfromfile.checked==true)
+	{
+		if(obj.value=="")
+		{
+			alert("没有选择上传文件！");
+			return false;
+		}
+		else
+		{
+			document.getElementById("act").value=fromid;
+			if(document.getElementById("act").value!="")
+			{
+				formimg.submit();
+			}
+		}
+	}
+	if(d_checkfromurl.checked==true)
+	{
+		wname=d_fromurl.value;
+		if(window.opener && fromid!="")
+			window.opener.document.getElementById(fromid).value = wname;
+		window.close();
+	}
+}
+function selstyle(s)
+{
+	if(s=="file")
+	{
+		d_checkfromfile.checked=true;
+		d_checkfromurl.checked=false;
+		d_fromurl.disabled=true;
+		document.getElementById("d_fromfile").disabled=false;
+	}
+	else
+	{
+		d_checkfromfile.checked=false;
+		d_checkfromurl.checked=true;
+		d_fromurl.disabled=false;
+		document.getElementById("d_fromfile").disabled=true;
+	}
+}
+function geturlfrom(s,id)
+{
+	var url = window.location.search;
+	var i = url.indexOf(s+"=");
+	var end=i+s.length+1;
+	var j = url.indexOf("&",end);
+	if(j==-1)
+	{
+		j=url.length;
+	}
+	var from="";
+	if(i>=0)
+	{
+		from = j>i?url.substring(end,j):url.substring(end);	
+	}
+	if(id!="")
+		document.getElementById("act").value= from;
+	fromid=from;
+}
+
+</script>
+</head>
+<body onLoad="selstyle('file');geturlfrom('act','act');">
+<fieldset style="width:350px;">
+	<legend>图片来源</legend>
+	<table border=0 cellpadding=0 cellspacing=0 width="350">
+	<tr><td colspan=9 height=5></td></tr>
+	<tr>
+		<td width=7></td>
+		<td width=54 align=right onClick="selstyle('file');"><input type=radio id="d_checkfromfile" value="1" onClick="selstyle('file');">上传:</td>
+		<td width=5></td>
+		<td colspan=5><form action="fromfile.asp?action=headpic" method="post" enctype="multipart/form-data" name="formimg" target="_top"><input name="d_fromfile" id="d_fromfile" type="file">
+		    <input name="act" type="hidden" id="act" value="">
+		</form>
+		</td>
+		<td width=7></td>
+	</tr>
+	<tr><td colspan=9 height=5></td></tr>
+	<tr>
+		<td width=7></td>
+		<td width=54 align=right onClick="selstyle('url');"><input type=radio id="d_checkfromurl" value="1" onClick="selstyle('url');">网络:</td>
+		<td width=5></td>
+		<td colspan=5><input type=text id="d_fromurl" style="width:243px" size=30 value=""></td>
+		<td width=7></td>
+	</tr>
+	<tr><td colspan=9 height=5></td></tr>
+	<tr><td height=25 colspan=9 align="center" valign="middle">
+	  <input name="Submit" type="button" onClick="returnstr();" value="提交">
+	</td>
+	</tr>
+</table>
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,15 @@
+SMAP
+_indexbook__jsp.java
+JSP
+*S JSP
+*F
++ 1 conn.jsp
+book/../conn/conn.jsp
++ 2 indexbook.jsp
+book/indexbook.jsp
+*L
+6#1:32
+7#2:44
+20:54,3
+22:58
+*E

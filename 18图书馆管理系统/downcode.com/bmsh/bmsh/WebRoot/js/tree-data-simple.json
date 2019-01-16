@@ -1,0 +1,9 @@
+[{
+	text : '图书相关',
+	expanded: true,
+	children : [{
+		text : '图书信息查阅',
+		id:'simple_book-manage',
+        leaf:true
+	}]
+}]

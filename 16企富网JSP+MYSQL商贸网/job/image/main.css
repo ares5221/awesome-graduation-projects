@@ -1,0 +1,48 @@
+STYLE typetextcss BODY {
+	COLOR: #000; FONT-FAMILY: 宋体; FONT-SIZE: 12px
+}
+TD {
+	COLOR: #000; FONT-FAMILY: 宋体; FONT-SIZE: 12px
+}
+A:link {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #65038e; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+.GR {
+	COLOR: #666
+}
+.GR:link {
+	COLOR: #666
+}
+.GR:visited {
+	COLOR: #666
+}
+.M {
+	FONT: bold 14px 宋体
+}
+.C {
+	FONT-SIZE: 13px
+}
+.S {
+	FONT-SIZE: 12px
+}
+.LM {
+	LINE-HEIGHT: 130%
+}
+.LL {
+	LINE-HEIGHT: 150%
+}
+SELECT {
+	FONT-SIZE: 12px
+}
+INPUT {
+	FONT-SIZE: 12px
+}
+.Subject1 {
+	FONT-FAMILY: 宋体,楷体,黑体,幼圆, sans-serif; FONT-SIZE: 11pt; LINE-HEIGHT: 16pt
+}

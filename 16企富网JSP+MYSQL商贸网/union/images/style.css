@@ -1,0 +1,34 @@
+BODY {
+	MARGIN-TOP: 0px; FONT-SIZE: 12px; BACKGROUND: #ffffff
+}
+td,select,input,.p1{font-size:12px;}
+p,div,.p2{font-size:12px;line-height:130%;}
+.vip{color:ffffff;font-size:12px}
+.p3{font-size:14.8px;}
+.p4{font-size:14.8px;line-height:130%;}
+.p5{font-size:10px;font-family:arial}
+.p6{line-height:160%}
+.p7{line-height:180%}
+.p8{line-height:200%}
+.submit{font-size:12px;height:18px}
+
+.title{color:ffffff;text-decoration:none}
+a.title:link,a.title:visited{color:ffffff;text-decoration:none}
+a.title:hover{color:FFFF99;text-decoration:none}
+
+.title1{font-size:14.8px;color:0066CC}
+
+a.title2:link,a.title2:visited{font-size:14.8px;color:ffffff;text-decoration:none}
+a.title2:hover{font-size:14.8px;color:FFFF99;text-decoration:none}
+
+a.title3:link,a.title3:visited{color:ffffff}
+a.title3:hover{color:FFFF99}
+
+a.nl:hover{color:0066CC;text-decoration:none}
+a.nl:link,a.nl:visited{color:0066CC;text-decoration:none}
+a.nl:hover{color:red;text-decoration:none}
+a:link{color:0066CC}
+a:visited{color:0066CC}
+a:hover{color:red}
+
+.ibox {font-size:12px;height:21px;border-left:solid 1px #3D73C6;border-top:solid 1px #3D73C6;border-right:solid 0px;border-bottom:solid 1px #3D73C6;}

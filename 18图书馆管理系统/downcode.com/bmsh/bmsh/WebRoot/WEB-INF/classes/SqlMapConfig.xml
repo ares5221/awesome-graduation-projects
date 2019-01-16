@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	<settings cacheModelsEnabled="true" enhancementEnabled="true" lazyLoadingEnabled="true"
+		maxRequests="32" maxSessions="10" maxTransactions="5" useStatementNamespaces="true" />
+	<sqlMap resource="com/lhq/prj/bms/po/xml/Company.xml" />
+	<sqlMap resource="com/lhq/prj/bms/po/xml/Dept.xml" />
+	<sqlMap resource="com/lhq/prj/bms/po/xml/Duty.xml" />
+	<sqlMap resource="com/lhq/prj/bms/po/xml/User.xml" />
+	<sqlMap resource="com/lhq/prj/bms/po/xml/Book.xml" />
+	<sqlMap resource="com/lhq/prj/bms/po/xml/LoanLog.xml" />
+	<sqlMap resource="com/lhq/prj/bms/po/xml/Subject.xml" />
+	<sqlMap resource="com/lhq/prj/bms/po/xml/Category.xml" />
+</sqlMapConfig>

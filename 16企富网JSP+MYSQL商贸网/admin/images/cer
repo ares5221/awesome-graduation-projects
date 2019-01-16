@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>时代互联域名证书打印</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../share/std.css" rel="stylesheet" type="text/css">
+<script language=javascript>
+function check(form)
+{
+  if(form.chrDomain.value==""){alert("请输入您想打印证书的域名!");form.chrDomain.focus();return(false);}
+  var domain=form.chrDomain.value.toLowerCase();
+  /*if(/^[0-9a-z-]{1,}\.{1,1}[0-9a-z]{2,}\.{0,1}[0-9a-z]{0,}/.test(domain)==false){
+     alert("域名格式不正确!");form.chrDomain.focus();return(false);
+  }*/
+  if(domain.indexOf(".")==-1){ alert("请输入正确的域名!");form.chrDomain.focus();return(false);}
+  var start=domain.lastIndexOf(".");
+  var isChDomain=false;
+  if(domain.charCodeAt(0)>127) isChDomain=true;
+  var Suffix=domain.substring(start,domain.length);
+  if(isChDomain) form.action="cer_ch.net"
+  else if(Suffix==".cn"){
+     form.action="cer_cn.net"
+  }else{
+     form.action="cer.net"
+  }
+}
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" height="84" border="0" cellpadding="0" cellspacing="0" background="/user/images/v6/user_topback.jpg">
+  <tr> 
+    <td width="300" height="57" align="left" valign="top" background="/user/images/v6/user_top.jpg"> 
+    </td>
+    <td align="left" valign="top" background="/user/images/v6/topback.gif" background="/user/images/v6/user_top.jpg"></td>
+    <td width="180" valign="bottom" background="/user/images/v6/user_toparrow.jpg">
+<table width="180" height="15" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="50%" height="25" align="right">&nbsp; <a href="/user/session_d.net" target=_parent class=top>退出管理</a></td>
+          <td>　<font color="#FFFFFF">|</font>　<a href="/user/panel.net" class=top>产品管理</a> 
+          </td>
+        </tr>
+    </table></td>
+    <td width="200" valign="bottom"><table width="200" height="15" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="22" align="left">&nbsp; <font color="#FFFFFF"><strong>用户号:&nbsp;</strong>61597</font></td>
+        </tr>
+    </table> </td>
+  </tr>
+  <tr valign="top"> 
+    <td colspan="4"> <table width="100%" height="25" border="0" cellpadding="0" cellspacing="0">
+        <tr align="center"> 
+          <td height="20"><a href="/user/switch.net" class=top>域名列表</a></td>
+          <td><img src="/user/images/text_block.gif" width="1" height="11"></td>
+          <td><a href="/user/panel.net" class=top><font color="#FFFF00">产品管理</font></a></td>
+          <td><img src="/user/images/text_block.gif" width="1" height="11"></td>
+          <td><a href="/product/listi.net" class=top>产品订购</a></td>
+          <td><img src="/user/images/text_block.gif" width="1" height="11"></td>
+          <td><a href="/user/add_register.net" class=top>注册域名</a></td>
+          <td><img src="/user/images/text_block.gif" width="1" height="11"></td>
+          <td> 
+                        <a href=/user/switch.net class=top>VDNS管理</a></td>
+          <td><img src="/user/images/text_block.gif" width="1" height="11"></td>
+          <td><a href="/user/statusfull.net" class=top>主机管理</a></td>
+          <td><img src="/user/images/text_block.gif" width="1" height="11"></td>
+          <td><a href="/user/mail.net" class=top>EMAIL管理</a></td>
+          <td><img src="/user/images/text_block.gif" width="1" height="11"></td>
+          <td><a href="/user/db.net" class=top>数据库管理</a></td>
+          <td><img src="/user/images/text_block.gif" width="1" height="11"></td>
+          <td><a href="/user/account.net" class=top>财务管理</a></td>
+          <td><img src="/user/images/text_block.gif" width="1" height="11"></td>
+          <td><a href="/user/ContactModify.net" class=top>联系人信息</a></td>
+          <td><img src="/user/images/text_block.gif" width="1" height="11"></td>
+          <td><a href="/user/chpasswd.net" class=top>修改密码</a></td>
+          <td><img src="/user/images/text_block.gif" width="1" height="11"></td>
+          <td><a href="/user/MessageCenter.net" class=top>信息中心</a></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td colspan="4" bgcolor="#999999"><img src="../images/spacer.gif" width="650" height="1"></td>
+  </tr>
+</table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="0">
+  <!-- fwtable fwsrc="digital.png" fwbase="print.jpg" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+  <tr> 
+    <td><img src="yanzi/webpage/resource/print/spacer.gif" alt="" name="undefined_2" width="162" height="1" border="0"></td>
+    <td><img src="yanzi/webpage/resource/print/spacer.gif" alt="" name="undefined_2" width="470" height="1" border="0"></td>
+    <td><img src="yanzi/webpage/resource/print/spacer.gif" alt="" name="undefined_2" width="128" height="1" border="0"></td>
+    <td><img src="yanzi/webpage/resource/print/spacer.gif" alt="" name="undefined_2" width="1" height="1" border="0"></td>
+  </tr>
+  <tr> 
+    <td colspan="3"><img name="print_r1_c1" src="images/print_r1_c1.jpg" width="760" height="23" border="0" alt=""></td>
+    <td><img src="yanzi/webpage/resource/print/spacer.gif" alt="" name="undefined_2" width="1" height="23" border="0"></td>
+  </tr>
+  <tr> 
+    <td rowspan="3"><img name="print_r2_c1" src="images/print_r2_c1.jpg" width="162" height="79" border="0" alt=""></td>
+    <td>&nbsp;</td>
+    <td rowspan="2"><img name="print_r2_c3" src="images/print_r2_c3.jpg" width="128" height="51" border="0" alt=""></td>
+    <td><img src="yanzi/webpage/resource/print/spacer.gif" alt="" name="undefined_2" width="1" height="26" border="0"></td>
+  </tr>
+  <tr> 
+    <td><img name="print_r3_c2" src="images/print_r3_c2.jpg" width="470" height="25" border="0" alt=""></td>
+    <td><img src="yanzi/webpage/resource/print/spacer.gif" alt="" name="undefined_2" width="1" height="25" border="0"></td>
+  </tr>
+  <tr> 
+    <td colspan="2">&nbsp;</td>
+    <td><img src="yanzi/webpage/resource/print/spacer.gif" alt="" name="undefined_2" width="1" height="28" border="0"></td>
+  </tr>
+</table>
+<table cellspacing=0 cellpadding=0 width=760 align=center>
+  <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="2%" valign="middle"> <p align="center">&nbsp;</p></td>
+          <td colspan="2" valign="top"> <hr size="1"  color="#D5E2F2"noshade> 
+            <table width="100%" border="0" cellspacing="2" cellpadding="5">
+              <form name="form1" method="post" action="" onSubmit="return check(this)" target="_blank">
+                <tr> 
+                  <td colspan="2"><font color="#003399"><img src="../images/arrow_v.gif" width="6" height="10"> 
+                    通过时代互联注册的国际、国内域名都能通过本页面获得由本站颁发的域名证书！</font></td>
+                </tr>
+                <tr> 
+                  <td width="28%">要打印证书的域名：</td>
+                  <td width="72%"><span class="entext"><strong>www</strong></span>. 
+                    <input type="text" name="chrDomain"> </td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><input name="Submit" type="submit" class="button" value=" 确 定 "> </td>
+                </tr>
+                <tr> 
+                  <td colspan="2"><hr size="1"  color="#D5E2F2"noshade></td>
+                </tr>
+                <tr> 
+                  <td colspan="2"><img src="../images/arrow_v.gif" width="6" height="10"><font color="#003399"> 
+                    若要打印证书，请先对浏览器进行设置(具体操作以IE5为例)：</font></td>
+                </tr>
+                <tr> 
+                  <td colspan="2" class="standard"> <ol>
+                      <li>打开<font color="#003399"><font color="#FF0000">工具</font></font>菜单<font color="#003399"> 
+                        </font></li>
+                      <li>点击<font color="#003399"><font color="#FF0000">Internet选项 
+                        </font></font></li>
+                      <li>选择<font color="#003399"><font color="#FF0000">高级</font></font>选项卡<font color="#003399"> 
+                        </font></li>
+                      <li>拖动滚动条至<font color="#003399"><font color="#FF0000">打印</font> 
+                        </font></li>
+                      <li>选中<font color="#003399"><font color="#FF0000">打印背景颜色和图像</font> 
+                        </font></li>
+                      <li>点击<font color="#003399"><font color="#FF0000">确定</font> 
+                        </font></li>
+                    </ol></td>
+                </tr>
+              </form>
+            </table>
+            </td>
+          <td width="2%">&nbsp;</td>
+          <td width="33%" valign="bottom"> <img src="images/print_pic2.jpg" width="210" height="276"></td>
+        </tr>
+      </table>
+</table>
+ 
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="2" bgcolor="#333333"><img src="images/space.gif" width="1" height="1"><img src="images/space.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="40" align="center"> 
+            <strong>Today's Network </strong><img src="/images/v6/logo_tiny.gif" width="29" height="24" align="absmiddle"> 
+      <strong>时代互联</strong> <font color="#666666">版权所有 </font><strong>&copy;2000-2004</strong> 
+          </td>
+  </tr>
+</table>
+</body>
+</html>

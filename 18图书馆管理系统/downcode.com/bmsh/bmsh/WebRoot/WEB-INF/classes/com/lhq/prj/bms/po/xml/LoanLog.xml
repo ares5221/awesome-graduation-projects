@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="LoanLog">
+
+	<typeAlias alias="loanlog" type="com.lhq.prj.bms.po.LoanLog" />
+	<typeAlias alias="page" type="com.lhq.prj.bms.core.Page" />
+
+	<parameterMap class="loanlog" id="pm_loanlog_without_id">
+		<parameter property="bookId" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="bookName" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="loanTime" javaType="java.util.Date" jdbcType="DATETIME" />
+		<parameter property="loanDays" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="preReturnTime" javaType="java.util.Date" jdbcType="DATETIME" />
+		<parameter property="returnTime" javaType="java.util.Date" jdbcType="DATETIME" />
+		<parameter property="readerId" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="reader" javaType="string" jdbcType="VARCHAR" />
+		<parameter property="loannerId" javaType="integer" jdbcType="NUMBER" />
+		<parameter property="loanner" javaType="string" jdbcType="VARCHAR" />
+	</parameterMap>
+	<sql id="byLogIdCondition">
+		<![CDATA[
+		   logId = #logId:NUMBER#
+	    ]]>
+	</sql>
+
+	<insert id="save" parameterMap="pm_loanlog_without_id">
+		<![CDATA[
+			INSERT INTO t_loanlog
+						(bookId,bookName,loanTime,loanDays,preReturnTime,returnTime,readerId,reader,loannerId,loanner) 
+				 VALUES (?,?,?,?,?,?,?,?,?,?)
+		]]>
+		<selectKey resultClass="int">
+			<![CDATA[
+				SELECT @@IDENTITY AS ID
+			]]>
+		</selectKey>
+	</insert>
+
+	<delete id="deleteById" parameterClass="integer">
+		<![CDATA[
+			delete t_loanlog
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="byLogIdCondition" />
+		</dynamic>
+	</delete>
+
+	<update id="update" parameterClass="loanlog">
+		<![CDATA[
+			UPDATE t_loanlog
+		]]>
+		<dynamic prepend="SET">
+			<isNotNull property="bookId" prepend=",">
+				<![CDATA[
+					bookId = #bookId:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="bookName" prepend=",">
+				<![CDATA[
+					bookName = #bookName:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="loanTime" prepend=",">
+				<![CDATA[
+					loanTime = #loanTime:DATETIME#
+				]]>
+			</isNotNull>
+			<isNotNull property="loanDays" prepend=",">
+				<![CDATA[
+					loanDays = #loanDays:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="preReturnTime" prepend=",">
+				<![CDATA[
+					preReturnTime = #preReturnTime:DATETIME#
+				]]>
+			</isNotNull>
+			<isNotNull property="returnTime" prepend=",">
+				<![CDATA[
+					returnTime = #returnTime:DATETIME#
+				]]>
+			</isNotNull>
+			<isNotNull property="readerId" prepend=",">
+				<![CDATA[
+					readerId = #readerId:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="reader" prepend=",">
+				<![CDATA[
+					reader = #reader:VARCHAR#
+				]]>
+			</isNotNull>
+			<isNotNull property="loannerId" prepend=",">
+				<![CDATA[
+					loannerId = #loannerId:NUMBER#
+				]]>
+			</isNotNull>
+			<isNotNull property="loanner" prepend=",">
+				<![CDATA[
+					loanner = #loanner:VARCHAR#
+				]]>
+			</isNotNull>
+		</dynamic>
+		<dynamic prepend="WHERE">
+			<include refid="byLogIdCondition" />
+		</dynamic>
+	</update>
+	<sql id="findLoanLogByPageCondition">
+		<isNotNull property="objCondition">
+			<![CDATA[
+				bookId = #objCondition.bookId:NUMBER#
+		    ]]>
+		</isNotNull>
+	</sql>
+
+	<select id="findByPage" parameterClass="page" resultClass="loanlog">
+		<![CDATA[
+			SELECT TOP $limit$ * FROM t_loanlog 
+					WHERE (logId >= (SELECT MAX(logId) FROM (SELECT TOP $start$ logId FROM t_loanlog 
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="findLoanLogByPageCondition" />
+		</dynamic>
+		<![CDATA[
+			ORDER BY logId) AS T)) 
+		]]>
+		<dynamic prepend="AND">
+			<include refid="findLoanLogByPageCondition" />
+		</dynamic>
+		<![CDATA[
+			ORDER BY logId
+		]]>
+	</select>
+
+	<select id="findByCount" parameterClass="page" resultClass="int">
+		<![CDATA[
+			SELECT COUNT(*) FROM t_loanlog 
+		]]>
+		<dynamic prepend="WHERE">
+			<include refid="findLoanLogByPageCondition" />
+		</dynamic>
+	</select>
+
+</sqlMap>

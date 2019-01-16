@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+
+<table name="USER_ZH" schema="RUNJD0801A" class="User">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="APPRECORD" schema="RUNJD0801A" class="AppRecord">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="OUTRECORD" schema="RUNJD0801A" class="OutRecord">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="MOTORCAR" schema="RUNJD0801A" class="MotorCar">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="BACKRECORD" schema="RUNJD0801A" class="BackRecord">
+		<primary-key>
+			<generator class="foreign"></generator>
+		</primary-key>
+	</table>
+<table name="DRIVER_ZH" schema="RUNJD0801A" class="Driver">
+	<primary-key>
+		<generator class="sequence"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>

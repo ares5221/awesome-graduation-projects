@@ -1,0 +1,1 @@
+<%if ((String) session.getAttribute("login")==null){%><%@ include file="indexguest.jsp"%><%}else{%><%@ include file="indexinfo.jsp"%><%}%>

@@ -1,0 +1,23 @@
+#
+#Sat Jul 20 11:02:37 CST 2013
+genBasicCompId=true
+sessionFactoryName=dao.bean.HibernateSessionFactory
+profile=
+daoSFId=
+version=3.0
+jndiPath=
+detectM2M=false
+reStrategyClass=
+springDaoFile=
+useJavaTypes=false
+keyGenerator=sequence
+libInstallFolder=
+addLibs2Project=false
+genVersionTag=true
+sessionFactoryId=
+basePersistenceClass=
+reSettingsFile=/design_graduate/hibernate.reveng.xml
+configFile=/design_graduate/src/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=false
+baseDaoClass=BaseHibernateDAO

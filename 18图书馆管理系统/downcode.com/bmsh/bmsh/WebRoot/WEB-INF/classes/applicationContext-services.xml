@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+	<bean id="companyService" class="com.lhq.prj.bms.service.impl.CompanyService">
+		<property name="companyDao" ref="companyDao" />
+	</bean>
+	<bean id="deptService" class="com.lhq.prj.bms.service.impl.DeptService">
+		<property name="deptDao" ref="deptDao" />
+	</bean>
+	<bean id="dutyService" class="com.lhq.prj.bms.service.impl.DutyService">
+		<property name="dutyDao" ref="dutyDao" />
+	</bean>
+	<bean id="userService" class="com.lhq.prj.bms.service.impl.UserService">
+		<property name="userDao" ref="userDao" />
+	</bean>
+	<bean id="subjectService" class="com.lhq.prj.bms.service.impl.SubjectService">
+		<property name="subjectDao" ref="subjectDao" />
+	</bean>
+	<bean id="categoryService" class="com.lhq.prj.bms.service.impl.CategoryService">
+		<property name="categoryDao" ref="categoryDao" />
+	</bean>
+	<bean id="bookService" class="com.lhq.prj.bms.service.impl.BookService">
+		<property name="bookDao" ref="bookDao" />
+		<property name="loanLogDao" ref="loanLogDao" />
+	</bean>
+	<bean id="loanLogService" class="com.lhq.prj.bms.service.impl.LoanLogService">
+		<property name="loanLogDao" ref="loanLogDao" />
+		<property name="bookDao" ref="bookDao"/>
+	</bean>
+</beans>

@@ -1,0 +1,25 @@
+#MyEclipse Hibernate Properties
+#Sat Aug 17 21:33:49 CST 2013
+sessionFactoryName=com.lubo4551.www.HibernateSessionFactory
+genBasicCompId=false
+profile=
+DatabaseAccessObjectSFId=
+version=4.1
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDatabaseAccessObjectFile=
+useJavaTypes=true
+keyGenerator=
+libInstallFolder=WebRoot/WEB-INF/lib
+addLibs2Project=false
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=
+configFile=/\u5218\u9ECE\u9ECE/src/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=false
+baseDatabaseAccessObjectClass=BaseHibernateDatabaseAccessObject

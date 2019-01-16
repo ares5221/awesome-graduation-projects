@@ -1,0 +1,114 @@
+BODY {
+	FONT-SIZE: 14px; COLOR: #000; FONT-FAMILY: 宋体
+}
+TD {
+	FONT-SIZE: 14px; COLOR: #000; FONT-FAMILY: 宋体
+}
+A:link {
+	COLOR: #3d362b
+}
+A:visited {
+	COLOR: #3d362b
+}
+A:hover {
+	COLOR: #f60
+}
+.blk:link {
+	FONT: 14px 宋体; COLOR: #000
+}
+.blk:visited {
+	FONT: 14px 宋体; COLOR: #000
+}
+.blk:hover {
+	FONT: 14px 宋体; COLOR: #f60
+}
+.blk_1:link {
+	FONT: 12px 宋体; COLOR: #000
+}
+.blk_1:visited {
+	FONT: 12px 宋体; COLOR: #000
+}
+.blk_1:hover {
+	FONT: 12px 宋体; COLOR: #f60
+}
+#smallbutton {
+	BACKGROUND: url(http://img.china.alibaba.com/images/cn/common/button/button_small_bg.gif); WIDTH: 65px; CURSOR: hand; HEIGHT: 22px
+}
+#smallbuttonword {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; LEFT: 22px; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; POSITION: relative; TOP: 4px; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+#small4button {
+	BACKGROUND: url(http://img.china.alibaba.com/images/cn/common/button/button_small4_bg.gif); WIDTH: 95px; CURSOR: hand; HEIGHT: 22px
+}
+#small4buttonword {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; LEFT: 22px; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; POSITION: relative; TOP: 4px; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.tb_0 {
+	BORDER-TOP: #3fac08 5px solid; FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #ffffff; BACKGROUND-COLOR: #339900
+}
+.tb_1 {
+	BORDER-RIGHT: #b0b0b0 1px solid; PADDING-RIGHT: 7px; PADDING-LEFT: 14px; FONT-SIZE: 12px; PADDING-BOTTOM: 8px; BORDER-LEFT: #b0b0b0 1px solid; COLOR: #333333; LINE-HEIGHT: 150%; PADDING-TOP: 8px; BORDER-BOTTOM: #d2d2d2 1px solid
+}
+.tb_2 {
+	BORDER-RIGHT: #b0b0b0 1px solid; BORDER-TOP: #ffffff 5px solid; BORDER-LEFT: #b0b0b0 1px solid; BORDER-BOTTOM: #d2d2d2 1px solid; BACKGROUND-COLOR: #f1f1f1
+}
+.button {
+	BORDER-RIGHT: #d2d2d2 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #d2d2d2 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 14px; BORDER-LEFT: #d2d2d2 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #d2d2d2 1px solid
+}
+.title {
+	BORDER-TOP: #d2d2d2 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #ff6600; LINE-HEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: #fff0e4; FONT-VARIANT: normal
+}
+.S {
+	FONT-SIZE: 12px
+}
+.C {
+	FONT-SIZE: 14px
+}
+.M {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.L {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.N {
+	FONT-WEIGHT: bold; FONT-SIZE: 20px; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.B {
+	FONT-WEIGHT: bold; FONT-SIZE: 24px; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+SELECT {
+	FONT-SIZE: 12px
+}
+INPUT {
+	FONT-SIZE: 12px
+}
+.lh13 {
+	LINE-HEIGHT: 130%
+}
+.lh13a {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 15px; LINE-HEIGHT: 130%
+}
+.lh15 {
+	LINE-HEIGHT: 150%
+}
+.NOL {
+	teāxt-decoration: none
+}
+.white {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.gray {
+	COLOR: #ccc
+}
+.headborder {
+	BORDER-RIGHT: #ff7300 1px solid; BORDER-TOP: #ff7300 1px solid; FONT-WEIGHT: bold; BORDER-LEFT: #ff7300 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #ff7300 3px solid; HEIGHT: 31px; TEXT-ALIGN: center
+}
+.headonborder {
+	BORDER-RIGHT: #ff7300 1px solid; BORDER-TOP: #ff7300 1px solid; FONT-WEIGHT: bold; BACKGROUND: #ff7300; BORDER-LEFT: #ff7300 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #ff7300 3px solid; HEIGHT: 31px; TEXT-ALIGN: center
+}
+.prmtopborder {
+	BORDER-TOP: #f1f1f1 4px solid; PADDING-LEFT: 18px; BACKGROUND: #e7e7e7; VERTICAL-ALIGN: middle; BORDER-BOTTOM: #cccccc 3px solid
+}
+.border {
+	BORDER-RIGHT: #b0b0b0 1px solid; BORDER-TOP: #b0b0b0 1px solid; BORDER-LEFT: #b0b0b0 1px solid; BORDER-BOTTOM: #b0b0b0 1px solid
+}

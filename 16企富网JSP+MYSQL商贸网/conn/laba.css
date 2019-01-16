@@ -1,0 +1,278 @@
+BODY {
+	FONT-SIZE: 14px; COLOR: #000; FONT-FAMILY: ËÎÌו
+}
+TD {
+	FONT-SIZE: 14px; COLOR: #000; FONT-FAMILY: ËÎÌו
+}
+
+
+
+#float0 {
+	LEFT: 0px; POSITION: relative; TOP: 0px
+}
+#float1 {
+	LEFT: -120px; VISIBILITY: visible; POSITION: absolute; TOP: 0px
+}
+#float2 {
+	LEFT: 770px; VISIBILITY: visible; POSITION: absolute; TOP: 0px
+}
+
+
+
+
+
+
+
+
+
+SELECT {
+	FONT-SIZE: 12px
+}
+INPUT {
+	FONT-SIZE: 12px
+}
+A:link {
+	COLOR: #3d362b
+}
+A:visited {
+	COLOR: #3d362b
+}
+A:hover {
+	COLOR: #f60
+}
+.AW:link {
+	COLOR: #3d362b
+}
+.AW:visited {
+	COLOR: #3d362b
+}
+.AW:hover {
+	COLOR: #fff
+}
+.NOL {
+	TEXT-DECORATION: none
+}
+.S {
+	FONT-SIZE: 12px
+}
+.C {
+	FONT-SIZE: 14px
+}
+.M {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.white {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.white14 {
+	FONT-WEIGHT: normal; FONT-SIZE: 14px; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal; TEXT-DECORATION: underline
+}
+.gray {
+	COLOR: #ccc
+}
+.nopic {
+	FONT-WEIGHT: normal; FONT-SIZE: 14px; COLOR: #333; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.listtopwd {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #666; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.red {
+	FONT-WEIGHT: bold; COLOR: #cc3300
+}
+.red:link {
+	COLOR: #cc3300
+}
+.red:visited {
+	COLOR: #cc3300
+}
+.red:hover {
+	COLOR: #f60
+}
+.orange {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ff7300; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal; TEXT-DECORATION: underline
+}
+.HEAD {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; FILTER: progid:DXImageTransform.Microsoft.Glow(color=000000,strength=2); WIDTH: 70%; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.clubwd {
+	FONT-WEIGHT: bold; FILTER: progid:DXImageTransform.Microsoft.Glow(color=FFFFFF,strength=2); VERTICAL-ALIGN: middle; WIDTH: 90%; TEXT-ALIGN: center
+}
+#smallbutton {
+	BACKGROUND: url(http://img.china.alibaba.com/images/cn/common/button/button_small_bg.gif); WIDTH: 65px; CURSOR: hand; HEIGHT: 22px
+}
+#smallbuttonword {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; LEFT: 22px; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; POSITION: relative; TOP: 4px; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+#smallbuttonnew {
+	BORDER-TOP-WIDTH: 0px; PADDING-LEFT: 12px; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 14px; BACKGROUND: url(http://img.china.alibaba.com/images/cn/common/button/button_small_bg.gif) no-repeat; BORDER-BOTTOM-WIDTH: 0px; COLOR: #fff; PADDING-TOP: 2px; BORDER-RIGHT-WIDTH: 0px
+}
+#small4button {
+	BACKGROUND: url(http://img.china.alibaba.com/images/cn/common/button/button_small4_bg.gif); WIDTH: 95px; CURSOR: hand; HEIGHT: 22px
+}
+#small4buttonword {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; LEFT: 22px; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; POSITION: relative; TOP: 4px; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+#small6button {
+	BACKGROUND: url(http://img.china.alibaba.com/images/cn/common/button/button_small6_bg.gif); WIDTH: 125px; CURSOR: hand; HEIGHT: 22px
+}
+#small6buttonword {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; LEFT: 22px; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; POSITION: relative; TOP: 4px; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+#bigbutton {
+	BACKGROUND: url(http://img.china.alibaba.com/images/cn/common/button/button_big_bg.gif); WIDTH: 112px; CURSOR: hand; HEIGHT: 30px
+}
+#bigbuttonword {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; LEFT: 30px; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; POSITION: relative; TOP: 7px; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+#big6button {
+	BACKGROUND: url(http://img.china.alibaba.com/images/cn/common/button/button_big6_bg.gif); WIDTH: 146px; CURSOR: hand; HEIGHT: 30px
+}
+#big6buttonword {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; LEFT: 30px; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; POSITION: relative; TOP: 7px; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+#small4glaybutton {
+	BACKGROUND: url(http://img.china.alibaba.com/images/cn/common/button/button_glay4_bg.gif); WIDTH: 144px; CURSOR: hand; HEIGHT: 30px
+}
+#small4glaybuttonword {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; LEFT: 30px; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; POSITION: relative; TOP: 8px; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.lh13 {
+	LINE-HEIGHT: 130%
+}
+.lh15 {
+	LINE-HEIGHT: 150%
+}
+.textindex {
+	TEXT-INDENT: 24px
+}
+.porductborder {
+	BORDER-RIGHT: #333333 1px solid; BORDER-TOP: #333333 1px solid; BORDER-LEFT: #333333 1px solid; BORDER-BOTTOM: #333333 1px solid
+}
+.outborder {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; BORDER-LEFT: #999999 1px solid; BORDER-BOTTOM: #999999 1px solid
+}
+.dlborder {
+	BORDER-RIGHT: #ffdf01 1px solid; BORDER-TOP: #ffdf01 1px solid; BORDER-LEFT: #ffdf01 1px solid; BORDER-BOTTOM: #ffdf01 1px solid
+}
+.headborder {
+	BORDER-RIGHT: #ff7300 1px solid; BORDER-TOP: #ff7300 1px solid; FONT-WEIGHT: bold; BORDER-LEFT: #ff7300 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #ff7300 3px solid; HEIGHT: 31px; TEXT-ALIGN: center
+}
+.headonborder {
+	BORDER-RIGHT: #ff7300 1px solid; BORDER-TOP: #ff7300 1px solid; FONT-WEIGHT: bold; BACKGROUND: #ff7300; BORDER-LEFT: #ff7300 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #ff7300 3px solid; HEIGHT: 31px; TEXT-ALIGN: center
+}
+.buttonbar {
+	BORDER-TOP: #767676 4px solid; PADDING-LEFT: 12px; BACKGROUND: #666666; HEIGHT: 29px
+}
+.downborder {
+	BORDER-BOTTOM: #333333 3px solid
+}
+.blackborder {
+	BORDER-RIGHT: #b0b0b0 1px solid; BORDER-LEFT: #b0b0b0 1px solid; BORDER-BOTTOM: #b0b0b0 1px solid
+}
+.blackbordernobottom {
+	BORDER-RIGHT: #b0b0b0 1px solid; BORDER-LEFT: #b0b0b0 1px solid
+}
+.companybar {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(http://img.china.alibaba.com/images/cn/common/others/search_bg.gif); BORDER-LEFT: #999999 1px solid; LINE-HEIGHT: normal; PADDING-TOP: 4px; BORDER-BOTTOM: #666666 3px solid; FONT-STYLE: normal; HEIGHT: 29px; TEXT-ALIGN: center; FONT-VARIANT: normal
+}
+.midbar {
+	BORDER-BOTTOM: #666666 3px solid
+}
+.paddleft {
+	PADDING-LEFT: 25px; FONT-SIZE: 14px; PADDING-BOTTOM: 3px; LINE-HEIGHT: 130%
+}
+.padd {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 25px; FONT-SIZE: 12px; PADDING-BOTTOM: 8px; LINE-HEIGHT: 130%
+}
+.norightbuttonborder {
+	BORDER-TOP: #ffffff 5px solid; FONT-SIZE: 12px; BACKGROUND: #f1f1f1; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 2px solid; HEIGHT: 25px; TEXT-ALIGN: center
+}
+.nobianbuttonborder {
+	BORDER-TOP: #ffffff 5px solid; FONT-SIZE: 12px; BACKGROUND: #f1f1f1; BORDER-BOTTOM: #cccccc 2px solid; HEIGHT: 25px; TEXT-ALIGN: center
+}
+.buttoncolor {
+	BORDER-TOP: #ffa55b 4px solid; FONT-WEIGHT: normal; FONT-SIZE: 12px; BACKGROUND: #ff7300; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; HEIGHT: 25px; TEXT-ALIGN: center; FONT-VARIANT: normal
+}
+.buttonbottomborder {
+	BORDER-BOTTOM: #cccccc 1px solid
+}
+.FFnobianbuttonborder {
+	FONT-SIZE: 12px; BACKGROUND: #ffffff; HEIGHT: 25px; TEXT-ALIGN: center
+}
+.FFnorightbuttonborder {
+	FONT-SIZE: 12px; BACKGROUND: #ffffff; BORDER-LEFT: #cccccc 1px solid; HEIGHT: 25px; TEXT-ALIGN: center
+}
+.prmtopborder {
+	BORDER-TOP: #f1f1f1 4px solid; PADDING-LEFT: 18px; FONT-SIZE: 12px; BACKGROUND: #e7e7e7; VERTICAL-ALIGN: middle; BORDER-BOTTOM: #cccccc 3px solid
+}
+.prmbg {
+	BACKGROUND: #f1f1f1
+}
+.prmcontentborder {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; BACKGROUND: #ffffff; BORDER-LEFT: #999999 1px solid; BORDER-BOTTOM: #999999 1px solid; HEIGHT: 43px; TEXT-ALIGN: center; vertical-aligcn: middle
+}
+.searchbar {
+	BORDER-TOP: #f1f1f1 4px solid; PADDING-LEFT: 10px; BACKGROUND: #e7e7e7
+}
+
+
+
+
+.dlsearchbar {
+	BORDER-TOP: #f1f1f1 4px solid; PADDING-LEFT: 10px; BACKGROUND: #e7e7e7
+}
+.dlborder {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid
+}
+
+
+
+
+.searchdown {
+	BORDER-TOP: #df6100 3px solid; BACKGROUND: #ff7300; BORDER-LEFT: #df6100 4px solid; HEIGHT: 24px
+}
+.redbar {
+	BORDER-TOP: #ff9d4d 4px solid; PADDING-LEFT: 15px; BACKGROUND: #ff7300; PADDING-TOP: 4px; HEIGHT: 42px
+}
+.redbarword {
+	FONT-WEIGHT: bold; FONT-SIZE: 25px; COLOR: #fff; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.graybar {
+	BORDER-TOP: #666666 3px solid; FONT-WEIGHT: bold; BACKGROUND: #cccccc; HEIGHT: 29px
+}
+.smalltoppad {
+	PADDING-TOP: 10px
+}
+.smallbottompad {
+	PADDING-BOTTOM: 10px
+}
+.smallleftpad {
+	PADDING-LEFT: 6px
+}
+.middleleftpad {
+	PADDING-LEFT: 10px
+}
+.largeleftpad {
+	PADDING-LEFT: 18px
+}
+.smallrightpad {
+	PADDING-RIGHT: 6px
+}
+.middlerightpad {
+	PADDING-RIGHT: 10px
+}
+.largerightpad {
+	PADDING-RIGHT: 18px
+}
+.prmleftpad {
+	PADDING-LEFT: 10px; PADDING-BOTTOM: 5px
+}
+A.nav:link {
+	FONT-SIZE: 14px; COLOR: #ffffff
+}
+A.nav:visited {
+	FONT-SIZE: 14px; COLOR: #ffffff
+}
+A.nav:active {
+	COLOR: #ffffff
+}

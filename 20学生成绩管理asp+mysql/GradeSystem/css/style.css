@@ -1,0 +1,95 @@
+/* CSS Document */
+body {
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+td {
+	font-family: Tahoma,Verdana;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+input,select,textarea	
+{
+	 font: 9pt Tahoma, Verdana;
+	 color: #000000; 
+	 font-weight: normal; 
+  }
+
+.body_td
+{
+	background-color: #ffffff;
+	font-family: Tahoma,Verdana;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+A{
+	COLOR: #003366 ; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.header {
+	FONT: bold 9pt Tahoma, Verdana; COLOR: #ffffff; BACKGROUND-COLOR: #aaaaaa
+}
+.nav {
+	FONT: bold 9pt Tahoma, Verdana; COLOR: #000000
+}
+.nav A {
+	COLOR: #000000
+}
+.header A {
+	COLOR: #ffffff
+}
+.category {
+	FONT: 9pt Tahoma, Verdana; COLOR: #000000; BACKGROUND-COLOR: #efefef
+}
+.tableborder {
+	BORDER-RIGHT: #aaaaaa 1px solid; BORDER-TOP: #aaaaaa 1px solid; BACKGROUND: #e0e0e0; BORDER-LEFT: #aaaaaa 1px solid; BORDER-BOTTOM: #aaaaaa 1px solid
+}
+.singleborder {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 0px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 1px; PADDING-TOP: 0px; BACKGROUND-COLOR: #f8f8f8
+}
+.smalltxt {
+	FONT: 9pt Tahoma, Verdana
+}
+.outertxt {
+	FONT: 9pt Tahoma, Verdana; COLOR: #000000
+}
+.outertxt A {
+	COLOR: #000000
+}
+.bold {
+	FONT-WEIGHT: bold;
+	FONT-FAMILY:Tahoma,Verdana;
+}
+#over {
+	background-color: #f8f8f8;
+}
+#out {
+	background-color: #ffffff;
+}
+online
+{
+	font-size:12px;
+	font-family:Tahoma, Verdana;
+}
+.poststr {
+	line-height: 17px;
+    word-break:break-all;
+}
+.white{
+	color:#FFFFFF
+}
+.redd{
+        FONT-WEIGHT: bold;
+	COLOR: #FF0000 ; 
+}.while {
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
