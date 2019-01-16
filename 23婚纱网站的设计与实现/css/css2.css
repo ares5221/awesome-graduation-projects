@@ -1,0 +1,17 @@
+BODY {margin-top: 0px;margin-bottom: 0px;margin-left: 0px;margin-right: 0px;background:#000000;}
+Td,table,body,textarea,select,input{font-size:12px;FONT-FAMILY: "Arial";color: #000000;}
+.Input {border:1 solid #000000; FONT-SIZE: 12px; FONT-FAMILY: "Arial"; HEIGHT: 20px; BACKGROUND-COLOR: #ffffff;}
+
+a:link {text-decoration: none;color: #000000;}
+a:visited {text-decoration: none;color: #00000;}
+a:hover {text-decoration: underline;color: #cccccc;}
+a:active {text-decoration: underline;color: #cccccc;}
+
+.mar_table{margin-top:4px;border-collapse:collapse;}
+.pd_table{margin-top:4px;}
+.Text_cont{font-size: 12px;FONT-FAMILY: "Arial";color: #AAAAAA;}
+.Text{font-size: 12px;FONT-FAMILY: "Arial";line-height: 24px;color: #000000;}
+.Text_bai{font-size: 12px;color: #ffffff;font-weight: bold;}
+.title {font-size: 14px;font-weight: bold;color: ffffff;line-height: 26px;}
+.title_cont {font-size: 16px;font-weight: bold;color: #B70000;line-height: 26px;}
+.Text_cont{font-size: 14px;FONT-FAMILY: "Arial";line-height: 26px;color: #000000;}

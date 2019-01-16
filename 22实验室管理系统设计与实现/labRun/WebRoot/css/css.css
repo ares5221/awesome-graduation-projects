@@ -1,0 +1,190 @@
+body {
+	font-family: 宋体,Helvetica,Helv,Arial;
+	font-size: 12px;
+	line-height: 20px;
+	color: #000000;
+	margin: 0px;
+}
+p { font-family: 宋体,simsun,Helvetica,Helv,Arial; font-size: 12px; line-height: 20px}
+td { font-family: 宋体,simsun,Helvetica,Helv,Arial; font-size: 12px}
+ul { font-family: 宋体,simsun,Helvetica,Helv,Arial; font-size: 12px; line-height: 20px}
+ol { font-family: 宋体,simsun,Helvetica,Helv,Arial; font-size: 12px; line-height: 20px}
+INPUT,select,option,textarea {font-family: 宋体,Helvetica,Helv,Arial; font-size: 12px; color:black}
+.f9 {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 12px; color:black}
+.f9blue {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 12px; color:#004CB8}
+.f9y {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 12px; color:#ECC309}
+.f9red {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 12px; color:#D0080A}
+.f9white {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 12px; color:#ffffff}
+.f11red {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 14.7px; color:#D0080A}
+.f11y {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 14.7px; color:#EDE401}
+.f11black {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 14.7px; color:black}
+.f11blue {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 14.7px; color:#004CB8}
+.f11white {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 14.7px; color:#ffffff}
+.f12red {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 18px; color:#D0080A}
+.f12y {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 18px; color:#EDE401}
+.f12black {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 18px; color:black}
+.f12blue {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 18px; color:#004CB8}
+.f12white {  font-family: 宋体,Helvetica,Helv,Arial; font-size: 18px; color:#ffffff}
+.ff {text-decoration: none;}
+
+.ftgray {
+	color: #595959;
+	text-indent: 1em;
+	font-family: "Arial", "宋体", "Helvetica", "sans-serif";
+	font-size: 12px;
+}
+.fgray {
+	color: #AAAAAA;
+}
+.fgray a:link {
+	color: #AAAAAA;
+	text-decoration: underline;
+
+}
+.fgray a:visited {
+	color: #AAAAAA;
+	text-decoration: underline;
+
+}
+.fgray a:hover {
+	color: #AAAAAA;
+	text-decoration: underline;
+
+}
+.fgray a:active {
+	color: #AAAAAA;
+	text-decoration: underline;
+
+}
+#leftmenu {
+	color: #737373;
+}
+#leftmenu a:link {
+	color: #737373;
+	text-decoration: none;
+
+}
+#leftmenu a:visited {
+	color: #737373;
+	text-decoration: none
+
+}
+#leftmenu a:hover {
+	color: #D30006;
+	text-decoration: none
+
+}
+#leftmenu a:active {
+	color: #737373;
+	text-decoration: none
+
+}
+.title1 {
+	font-family: "宋体", "Arial", "Helvetica", "sans-serif";
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+	letter-spacing: 0.2em;
+}
+.status1 {
+	font-family: "宋体", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #5888C6;
+}
+.inputtitle {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+	padding-left: 0.5em;
+
+
+}
+.inputcont {
+	color: #595959;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 0.5em;
+}
+.inputcontl {
+	color: #595959;
+}
+.button {
+	color: #595959;
+	background-color: #DEEAF6;
+	border: 1px solid #D3D3D3;
+	padding-top: 2px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+
+
+}
+HR {
+	color: #D3D3D3;
+}
+.title2 {
+
+	font-family: "宋体", "Arial", "Helvetica", "sans-serif";
+	font-size: 14px;
+	font-weight: bold;
+	color: #595959;
+}
+.title3 {
+	font-family: "宋体", "Arial", "Helvetica", "sans-serif";
+	font-size: 14px;
+	font-weight: bold;
+	color: #5888C6;
+	text-indent: 0.5em;
+	letter-spacing: 0.2em;
+
+
+}
+form {
+	margin: 0px;
+}
+.text {
+	border: 1px solid #6F6F6F;
+}
+.info {
+	font-size: 24px;
+	color: #6E9EE7;
+	font-weight: bold;
+	padding: 7px;
+
+}
+.flogin {
+	font-size: 14px;
+	color: #FFFFFF;
+}
+.tabletitle {
+	font-size: 13px;
+	font-weight: bold;
+	color: #000000;
+}
+.tabletitle a:link{
+	font-size: 13px;
+	font-weight: bold;
+	color: #000000;
+}
+.tabletitle a:visited{
+	font-size: 13px;
+	font-weight: bold;
+	color: #000000;
+}
+.tabletitle a:hover{
+	font-size: 13px;
+	font-weight: bold;
+	color: #000000;
+}
+.tabletitle a:active{
+	font-size: 13px;
+	font-weight: bold;
+	color: #000000;
+}
+.floatdiv {
+	position: static;
+	float: right;
+	vertical-align: middle;
+	line-height: 20px;
+}
+

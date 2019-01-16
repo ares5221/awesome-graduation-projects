@@ -1,0 +1,18 @@
+body{
+	margin:0px;
+}
+td,body,input {
+	font-size: 12px;
+}
+.mainFrame_title{
+	font-size:14px;
+	font-weight:600;
+	color:#990000;
+}
+a:link,a:visited{
+	color:#006699;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}

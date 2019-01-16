@@ -1,0 +1,86 @@
+@charset "gb2312";
+A:visited {
+	COLOR: #666666; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #FF7125; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; 
+}
+A:link {
+	COLOR: #666666; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+A.a01:visited {
+	COLOR: #666666; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+A.a01:hover {
+	COLOR: #FF7125; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: underline
+}
+A.a01:link {
+	COLOR: #333333; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+.unnamed1 {
+	COLOR: #333333; FONT-SIZE: 12px; LINE-HEIGHT: 200%; TEXT-DECORATION: none
+}
+.unnamed2 {
+	COLOR: #333333; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; LINE-HEIGHT: 220%; TEXT-DECORATION: none
+}
+.unnamed3 {
+	COLOR: #333333; FONT-SIZE: 12px; LINE-HEIGHT: 140%; TEXT-DECORATION: none
+}
+.unnamed4 {
+	COLOR: #FFFFFF; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; LINE-HEIGHT: 140%; TEXT-DECORATION: none
+}
+.unnamed4 {
+	COLOR: #FFFFFF; FONT-SIZE: 12px; LINE-HEIGHT: 140%; TEXT-DECORATION: none
+}
+.body2 {
+	FONT: 12px/16px courier
+}
+A{text-decoration:none;color:black}
+A:hover {COLOR: #ff0000; TEXT-DECORATION: underline}
+body{  font-size: 9pt;COLOR:  #666666}
+ td{font-size:9pt;; line-height: 14pt; font-family: "??им?", "D???им?"}
+INPUT.buttonface{BACKGROUND: #FFFFFF; border:1 solid black; COLOR: #000000; FONT-SIZE: 9pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 18px; LINE-HEIGHT: normal}
+input.smallInput{
+	border:1 solid black;
+	FONT-SIZE: 9pt;
+	FONT-STYLE: normal;
+	FONT-VARIANT: normal;
+	FONT-WEIGHT: 200;
+	HEIGHT: 18px;
+	LINE-HEIGHT: normal;
+	color: #999999;
+	background-color: #FFFFFF;
+}
+
+.tt {
+	BORDER-BOTTOM-STYLE: double; BORDER-LEFT-STYLE: double; BORDER-RIGHT-STYLE: double; BORDER-TOP-STYLE: double; COLOR: #FF0000; FILTER: Alpha(Opacity=100, FinishOpacity=0, Style=1, StartX=0, StartY=0, FinishX=90, FinishY=100); FONT-SIZE: 1.1em; FONT-WEIGHT: 700; HEIGHT: 1.2em
+}
+TEXTAREA {
+	BACKGROUND-COLOR: #ffffff; BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #101010 1px solid; COLOR: #000000
+; line-height: 14pt
+}
+
+.3dfont {
+	FILTER: glow(color=ffffff,strength=0) shadow(color=aaaaaa,direction; color: #CC0000:135); POSITION: relative; WIDTH: 100%
+}.clo {
+	background-color: #FF5C00;
+	margin: 0px;
+	padding: 0px;
+	border: #FF5C00;
+	color: #FFFFFF;
+	line-height: 12px;
+
+}
+.FFF {
+	background-color: #F7F7F7;
+	border: 1px inset #CCCCCC;
+}
+.ss {
+	font-size: 10pt;
+}
+.u {
+	background-color: #DDFFFF;
+}
+.AAAA {
+	font-size: 9px;
+}

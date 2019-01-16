@@ -1,0 +1,167 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+input, td, tr, table, fieldset, textarea, select, body {
+    font-size: 9pt;
+    color: #000000;
+}
+
+a:link {
+    color: #AEAEAE;
+    text-decoration: none;
+}
+
+a:active {
+    color: #AEAEAE;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #AEAEAE;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFCF31;
+    text-decoration: none;
+}
+
+a.black_menu:link {
+    font-size: 9pt;
+    text-decoration: none;
+    color: #000000;
+}
+
+a.black_menu:active {
+    font-size: 9pt;
+    text-decoration: none;
+    color: #000000;
+}
+
+a.black_menu:visited {
+    font-size: 9pt;
+    text-decoration: none;
+    color: #000000;
+}
+
+a.black_menu:hover {
+    font-size: 9pt;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+a.white_menu:link {
+    font-size: 9pt;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a.white_menu:active {
+    font-size: 9pt;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a.white_menu:visited {
+    font-size: 9pt;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a.white_menu:hover {
+    font-size: 9pt;
+    color: #F7941D;
+    text-decoration: none;
+}
+
+a.gray_menu:link {
+    color: #AEAEAE;
+    text-decoration: none;
+}
+
+a.gray_menu:active {
+    color: #AEAEAE;
+    text-decoration: none;
+}
+
+a.gray_menu:visited {
+    color: #AEAEAE;
+    text-decoration: none;
+}
+
+a.gray_menu:hover {
+    color: #FFCF31;
+    text-decoration: none;
+}
+
+.input_community {
+    font-size: 9pt;
+    border: solid 1px #666666;
+    background-color: #999999;
+    color: #000000;
+}
+
+.button_community {
+    font-size: 9pt;
+    border: solid 1px #999999;
+    background-color: #666666;
+    color: #000000;
+    height: 18px;
+}
+
+.club_input {
+    background-color: #464646;
+    border: solid 0px;
+    color: #9B9B9B;
+}
+
+.club_button {
+    background-color: #373737;
+    border: solid 1px #434343;
+    color: #737373;
+}
+
+.club_link:link {
+    color: #FD9D00;
+    text-decoration: none;
+}
+
+.club_link:active {
+    color: #FD9D00;
+    text-decoration: none;
+}
+
+.club_link:visited {
+    color: #FD9D00;
+    text-decoration: none;
+}
+
+.club_link:hover {
+    color: #FD9D00;
+    text-decoration: none;
+}
+
+.club_link1:link {
+    color: #939393;
+    text-decoration: none;
+}
+
+.club_link1:active {
+    color: #939393;
+    text-decoration: none;
+}
+
+.club_link1:visited {
+    color: #939393;
+    text-decoration: none;
+}
+
+.club_link1:hover {
+    color: #939393;
+    text-decoration: none;
+}
+

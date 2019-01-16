@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/labAction.do" location="50,50" dimension="214,84" />
+  <StrutsActivity path="/login.jsp" location="350,150" dimension="100,48" />
+  <StrutsActivity path="/empManager.jsp" location="650,150" dimension="130,48" />
+  <StrutsActivity path="/labUpDate2.jsp" location="650,450" dimension="130,48" />
+  <StrutsActivity path="/labPeopleManager.jsp" location="650,550" dimension="166,48" />
+  <StrutsActivity path="/labInformManager.jsp" location="350,350" dimension="166,48" />
+  <StrutsActivity path="/labUpdate3.jsp" location="950,450" dimension="130,48" />
+  <StrutsActivity path="/labUpdate.jsp" location="350,250" dimension="124,48" />
+  <StrutsActivity path="/labUpDate4.jsp" location="350,550" dimension="130,48" />
+  <StrutsActivity path="/labBorrowManager.jsp" location="50,550" dimension="166,48" />
+  <StrutsActivity path="/labDemoManager.jsp" location="650,350" dimension="154,48" />
+  <StrutsActivity path="/labUpDate5.jsp" location="950,550" dimension="130,48" />
+  <StrutsActivity path="/labMain.jsp" location="50,350" dimension="112,48" />
+  <StrutsActivity path="/labInsert.jsp" location="950,150" dimension="124,48" />
+  <StrutsActivity path="login.jsp" location="350,50" dimension="94,48" />
+  <StrutsActivity path="empManager.jsp" location="650,50" dimension="124,48" />
+  <StrutsActivity path="labInsert.jsp" location="950,50" dimension="118,48" />
+  <StrutsActivity path="/success.jsp" location="50,250" dimension="112,48" />
+  <StrutsActivity path="labInformManager.jsp" location="650,250" dimension="160,48" />
+  <StrutsActivity path="labMain.jsp" location="950,250" dimension="106,48" />
+  <StrutsActivity path="labIpDate2" location="950,350" dimension="100,48" />
+  <StrutsActivity path="labUpDate2" location="50,450" dimension="100,48" />
+  <StrutsActivity path="/labUpDate2" location="350,450" dimension="106,48" />
+  <StrutsTransition id="/labAction.do,labPeopleManager,/labPeopleManager.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="147,134" />
+      <AbsolutePoint location="147,213" />
+      <AbsolutePoint location="591,213" />
+      <AbsolutePoint location="591,574" />
+      <AbsolutePoint location="650,574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,labPeoplrManager,/labPeopleManager.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="147,134" />
+      <AbsolutePoint location="147,213" />
+      <AbsolutePoint location="591,213" />
+      <AbsolutePoint location="591,574" />
+      <AbsolutePoint location="650,574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,toupdate4,/labUpDate4.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="157,92" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,labInformManager,/labInformManager.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="157,92" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,update,/empManager.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="157,92" />
+      <AbsolutePoint location="715,174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,toupdate3,/labUpdate3.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="157,92" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,toupdate,/labUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="157,92" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,login,/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="247,134" />
+      <AbsolutePoint location="247,174" />
+      <AbsolutePoint location="350,174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,labMain,/labMain.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="177,134" />
+      <AbsolutePoint location="177,374" />
+      <AbsolutePoint location="162,374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,empManager,/empManager.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="264,113" />
+      <AbsolutePoint location="715,113" />
+      <AbsolutePoint location="715,150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,labBorrowManager,/labBorrowManager.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="207,134" />
+      <AbsolutePoint location="207,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,labDemoManager,/labDemoManager.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="157,92" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,toupdate5,/labUpDate5.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="157,92" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/labAction.do,toupdate2,/labUpDate2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="157,92" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

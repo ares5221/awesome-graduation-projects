@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="labForm" type="com.umt.lab.form.labForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action path="/labAction" type="com.umt.lab.action.labAction" name="labForm" parameter="domethod">
+   <!--登陆跳转  -->
+   <forward name="labMain" path="/labMain.jsp"></forward>
+   
+   <!--分组实验  -->
+    <forward name="empManager" path="/empManager.jsp"></forward>
+    <forward name="login" path="/login.jsp"></forward>
+    <forward name="toupdate" path="/labUpdate.jsp"></forward>
+    <forward name="update" path="/empManager.jsp"></forward>
+    <!-- 最新实验信息 -->
+    <forward name="labInformManager" path="/labInformManager.jsp"></forward>
+    <forward name="toupdate2" path="/labUpDate2.jsp"></forward>
+    <!--演示实验  -->
+    <forward name="labDemoManager" path="/labDemoManager.jsp"></forward>
+    <forward name="toupdate3" path="/labUpdate3.jsp"></forward>
+    <!--物品借还信息 -->
+    <forward name="labBorrowManager" path="/labBorrowManager.jsp"></forward>
+    <forward name="toupdate4" path="/labUpDate4.jsp"></forward>
+    <!--用户信息管理  -->
+    <forward name="labPeopleManager" path="/labPeopleManager.jsp"></forward>
+    <forward name="toupdate5" path="/labUpDate5.jsp"></forward>
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="com.yourcompany.struts.ApplicationResources" />
+</struts-config>
+

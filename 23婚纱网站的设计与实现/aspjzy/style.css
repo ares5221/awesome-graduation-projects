@@ -1,0 +1,55 @@
+body
+{
+margin:0px;
+background-color:#DBE6FF;
+margin-top:20px;
+}
+body,td,input{font-size:12px;}
+.padding-left-10{padding-left:10px}
+.table_bg{background-image:url(images/table_bg.jpg);height:25px;}
+.table_bg_n{background-color:#E4EDF9;}
+.table_bg_n1{background-color:#F0F4F9;}
+.table_border{border:1px solid #183789;}
+.padding_1{padding:1px;}
+.table_bg_size{font-weight:bold;color:#FFFFFF;}
+.bottom_bg{background-image:url(images/bottom_bj.jpg);background-position:top;background-repeat:repeat-x;padding-top:20px;}
+.huang{color:#666666;}
+a:link{
+	color:#000000;
+	text-decoration:none;
+}
+a:visited{
+	color:#000000;
+	text-decoration:none;
+}
+a:hover{
+	color:#990000;
+	text-decoration:underline;
+}
+
+a.link_red:link{
+	color:#990000;
+	text-decoration:none;
+}
+a.link_red:visited{
+	color:#990000;
+	text-decoration:none;
+}
+a.link_red:hover{
+	color:#FF0000;
+	text-decoration:underline;
+}
+
+a.hui:link{
+	color:#666666;
+	text-decoration:none;
+}
+a.hui:visited{
+	color:#666666;
+	text-decoration:none;
+}
+a.hui:hover{
+	color:#990000;
+	text-decoration:underline;
+}
+.padding-left-20{padding-left:20px;}
