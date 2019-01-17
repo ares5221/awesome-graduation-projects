@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<title>表单</title>
+		<script language=JavaScript src="script/regcheckdata.js"></script>
+	</head>
+	<body>
+		<form name="form" action="userRegOK.html" method="get" onSubmit="return checkdata()" target="detail">
+			<table width="750" align="center" border="2">
+				<tr>
+					<td colspan="2" align="center">用户注册</td>
+				</tr>
+				<tr>
+					<td>用户名：</td>
+					<td>
+						<input type=text name="username" size="30" maxlength="10">
+					</td>
+				</tr>
+				<tr>
+					<td>密码：</td>
+					<td>
+						<input type=password name="pwd" size="15" maxlength="12">
+					</td>
+				</tr>
+				<tr>
+					<td>密码确认</td>
+					<td>
+						<input type=password name="pwd2" size="15" maxlength="12">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>性别</td>
+					<td>
+						<input type=radio name="sex" value="male">男
+						<input type=radio name="sex" value="female">女
+					</td>
+				</tr>
+				
+				<tr>
+					<td>你感兴趣</td>
+					<td>
+						<input type="checkbox" name="interest" value="vc" checked>VC
+						<input type="checkbox" name="interest" value="vb">VB
+						<input type="checkbox" name="interest" value="vfoxpro">VF
+						<input type="checkbox" name="interest" value="vjava">VJ
+						<br>
+						<input type="checkbox" name="interest" value="bc">BC
+						<input type="checkbox" name="interest" value="cobol">CO
+						<input type="checkbox" name="interest" value="java">JA
+						<input type="checkbox" name="interest" value="delphi">Delphi
+					</td>
+				</tr>
+				
+				<!--必须选中JSP-->
+				<input type="hidden" name="interest" value="jsp">
+				
+				<tr>
+					<td>你感兴趣</td>
+					<td>
+						<select name="interest2" size=8 multiple>
+							<option value="vc" selected>VC</option>
+							<option value="vb">VB</option>
+							<option value="vfoxpro">VF</option>
+							<option value="vjava">VJ</option>
+							<option value="bc">BC</option>
+							<option value="cobol">CO</option>
+							<option value="java">JA</option>
+							<option value="delphi">Delphi</option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>你来自</td>
+					<td>
+						<select name="province">
+							<option value=0 selected>请选择</option>
+							<option value=34>安徽</option>
+							<option value=11>北京</option>
+							<option value=50>重庆</option>
+							<option value=35>福建</option>
+							<option value=62>甘肃</option>
+							<option value=44>广东</option>
+							<option value=45>广西</option>
+							<option value=52>贵州</option>
+							<option value=46>海南</option>
+							<option value=13>河北</option>
+							<option value=23>黑龙江</option>
+							<option value=41>河南</option>
+							<option value=42>湖北</option>
+							<option value=43>湖南</option>
+							<option value=32>江苏</option>
+							<option value=36>江西</option>
+							<option value=22>吉林</option>
+							<option value=21>辽宁</option>
+							<option value=64>宁夏</option>
+							<option value=15>内蒙古</option>
+							<option value=63>青海</option>
+							<option value=31>上海</option>
+							<option value=14>山西</option>
+							<option value=37>山东</option>
+							<option value=51>四川</option>
+							<option value=61>陕西</option>
+							<option value=12>天津</option>
+							<option value=54>西藏</option>
+							<option value=65>新疆</option>
+							<option value=53>云南</option>
+							<option value=33>浙江</option>
+							<option value=71>台湾</option>
+							<option value=81>香港</option>
+							<option value=82>澳门</option>
+							<option value=0>其他</option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>自我介绍</td>
+					<td>
+						<textarea rows="12" cols="80" name="intro"></textarea>
+					</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td>
+						<input type="submit" value="提交">
+						<input type="reset" value="重置">
+					</td>
+				</tr>
+				
+			</table>
+		</form>
+	</body>
+</html>

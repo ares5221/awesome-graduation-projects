@@ -1,0 +1,29 @@
+.f9 {  font-family: "宋体"; font-size: 9pt}
+body {  margin-top: 0px; margin-left: 0px; margin-right: 0px; margin-bottom: 0px;
+		SCROLLBAR-HIGHLIGHT-COLOR: buttonface; 
+		SCROLLBAR-SHADOW-COLOR: buttonface;
+		SCROLLBAR-3DLIGHT-COLOR: buttonhighlight; 
+		SCROLLBAR-TRACK-COLOR: #eeeeee;
+		SCROLLBAR-DARKSHADOW-COLOR: buttonshadow 
+}
+.textinput {
+	BACKGROUND-COLOR: #FFFFFF;
+	BORDER-BOTTOM-COLOR: #F1EEE6;
+	BORDER-LEFT-COLOR: #F1EEE6;
+	BORDER-RIGHT-COLOR: #F1EEE6;
+	BORDER-TOP-COLOR: #F1EEE6;
+	FONT-SIZE: 9pt;
+	border-width : 1px;
+; font-family: "宋体"
+; width: 160px
+}.textinputshort { BACKGROUND-COLOR: #FFFFFF; BORDER-BOTTOM-COLOR: #F1EEE6; BORDER-LEFT-COLOR: #F1EEE6; BORDER-RIGHT-COLOR: #F1EEE6; BORDER-TOP-COLOR: #F1EEE6; FONT-SIZE: 9pt; border-width : 1px; ; font-family: "宋体" }
+.p2{font-size:12px;line-height:14pt;}
+.tr_d_gray {  background-color: #E6E6E6; font-size: 12px; line-height: 14px}
+.tr_l_gray {  background-color: #F5F5F5; font-size: 12px; line-height: 14px}
+.header {  font-family: "宋体"; font-size: 9pt; background-color: #0096e1; color: #FFFFFF; font-style: normal; font-weight: bold}
+a:hover {  font-family: "宋体"; font-size: 9pt; color: #0099FF; text-decoration: none}
+a:active {  font-family: "宋体"; font-size: 9pt; color: #6699CC; text-decoration: none }
+a:link {  font-family: "宋体"; font-size: 9pt; color: #6699cc; text-decoration: none}
+a:visited {  font-family: "宋体"; font-size: 9pt; color: #6699cc; text-decoration: none}
+select{	font-size: 12px;}
+.s02 {font-family: "宋体"; font-size: 9pt; border-left:1 ridge #ffffff;border-top:1 ridge

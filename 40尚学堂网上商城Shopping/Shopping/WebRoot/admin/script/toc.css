@@ -1,0 +1,47 @@
+BODY
+{
+    background-color:	#eeeeee;
+    color:          	#000000;
+    font-family:    	"ËÎÌו";
+    font-weight:    	500;
+; font-size: 9pt
+}
+
+A
+{    
+    color:          	#000000;
+	text-decoration:	none;
+}
+
+A:hover
+{    
+	color:				#0066CC;
+}
+
+.level0
+{
+    font-size:      	11pt /*medium*/;
+    padding-top:    	8;
+    line-height:    	14pt;
+}
+
+.level1
+{
+    font-size:      	10pt /*small*/;
+    padding:        	2;
+}
+
+.level2
+{
+    font-size:      	9pt /*x-small*/;
+    color:          	#FFFFFF;     
+}
+
+LI
+{
+    line-height:    	14pt;
+}
+.OUTDENT 
+{
+	margin-left:		-16;
+}

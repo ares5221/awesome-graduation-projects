@@ -1,0 +1,217 @@
+body, td, th {
+	line-height: 18px;
+	color: #555555;
+	text-decoration: none;
+	font-size: 12px;
+	font-family: Tahoma, Helvetica, sans-serif;
+}
+.form {
+	font-size: 12px;
+	color: 808080;
+}
+.twoji {
+	font-size: 12px;
+	color: #555555;
+	line-height: 18px;
+	text-decoration: none;
+}
+.twoji:link {
+	font-size: 12px;
+	color: #555555;
+	text-decoration: none;
+	line-height: 18px;
+}
+.twoji:visited {
+	font-size: 12px;
+	color: #555555;
+	text-decoration: none;
+	line-height: 18px;
+}
+.twoji:hover {
+	font-size: 12px;
+	color: #0099FF;
+	text-decoration: underline;
+	line-height: 18px;
+}
+.twoji:active {
+	font-size: 12px;
+	color: #993300;
+	text-decoration: none;
+	line-height: 18px;
+}
+.white {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	line-height: 18px;
+}
+.12px999999 {
+	font-size: 10px;
+	color: #999999;
+	text-decoration: none;
+}
+.mail:link {
+	font-size: 12px;
+	color: #696CB2;
+	text-decoration: none;
+}
+.mail:visited {
+	font-size: 12px;
+	text-decoration: none;
+	color: #696CB2;
+}
+.mail:hover {
+	font-size: 12px;
+	color: #999999;
+	text-decoration: none;
+}
+.white:link {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.white:visited {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.white:hover {
+	font-size: 12px;
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+a:link {
+	font-size: 12px;
+	color: #555555;
+	line-height: 18px;
+	text-decoration: none;
+}
+a:visited {
+	font-size: 12px;
+	line-height: 18px;
+	color: #555555;
+	text-decoration: none;
+}
+a:hover {
+	font-size: 12px;
+	color: #0099FF;
+	text-decoration: underline;
+	line-height: 18px;
+}
+a:active {
+	font-size: 12px;
+	color: #993300;
+	text-decoration: none;
+	line-height: 18px;
+}
+.wenjuan {
+	background-image: url(wen_bg.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+}
+.2jibg {
+	background-image: url(2ji_bg.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-indent: 20px;
+}
+.3jibg {
+	background-image: url(3jibg.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-indent: 25px;
+}
+.4jibg {
+	background-image: url(3jibg.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-indent: 40px;
+}
+.jfbg {
+	background-image: url(2ji_bg_2.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-indent: 20px;
+}
+.mingcheng {
+	font-size: 14px;
+	line-height: 25px;
+	color: 595FB0;
+	text-decoration: none;
+	font-weight: bold;
+}
+.mingcheng:link {
+	font-size: 14px;
+	line-height: 25px;
+	color: 595FB0;
+	text-decoration: none;
+	font-weight: bold;
+}
+.mingcheng:visited {
+	font-size: 14px;
+	line-height: 25px;
+	color: 595FB0;
+	text-decoration: none;
+	font-weight: bold;
+}
+.mingcheng:hover {
+	font-size: 14px;
+	line-height: 25px;
+	color: #CC0000;
+	text-decoration: none;
+	font-weight: bold;
+}
+.mingcheng1 {
+	font-size: 12px;
+	line-height: 20px;
+	color: 595FB0;
+	text-decoration: none;
+}
+.mingcheng1:link {
+	font-size: 12px;
+	line-height: 20px;
+	color: 595FB0;
+	text-decoration: none;
+	font-weight: bold;
+}
+.mingcheng1:visited {
+	font-size: 12px;
+	line-height: 20px;
+	color: 595FB0;
+	text-decoration: none;
+	font-weight: bold;
+}
+.mingcheng1:hover {
+	font-size: 12px;
+	line-height: 20px;
+	color: #CC0000;
+	text-decoration: none;
+	font-weight: bold;
+}
+.jieshaobg {
+	background-image: url(jieshao_bg.gif);
+	background-repeat: no-repeat;
+	text-indent: 15px;
+	background-position: bottom;
+}
+.th:link {
+	font-size: 12px;
+	line-height: 18px;
+	color: #3366CC;
+	text-decoration: underline;
+	font-weight: normal;
+}
+.th:visited {
+	font-size: 12px;
+	line-height: 18px;
+	color: #3366CC;
+	text-decoration: underline;
+	font-weight: normal;
+}
+.th:hover {
+	font-size: 12px;
+	line-height: 18px;s
+	color: #3366CC;
+	text-decoration: none;
+	font-weight: normal;
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<servlet>
+		<description>upload a file to server</description>
+		<display-name>FileUpload</display-name>
+		<servlet-name>FileUpload</servlet-name>
+		<servlet-class>
+			com.bjsxt.shopping.util.servlet.FileUpload
+		</servlet-class>
+		<init-param>
+			<param-name>uploadPath</param-name>
+			<param-value>
+				D:\\share\\JavaProjects\\Shopping\\WebRoot\\images\\product\\
+			</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<description>count the sales</description>
+		<display-name>SalesCountSatistics</display-name>
+		<servlet-name>SalesCountServlet</servlet-name>
+		<servlet-class>
+			com.bjsxt.shopping.stat.SalesCountServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<description>Context Parameter Test</description>
+		<display-name>Context Parameter Test</display-name>
+		<servlet-name>TestContextParamServlet</servlet-name>
+		<servlet-class>TestContextParamServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FileUpload</servlet-name>
+		<url-pattern>/servlet/FileUpload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SalesCountServlet</servlet-name>
+		<url-pattern>/servlet/SalesCountServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TestContextParamServlet</servlet-name>
+		<url-pattern>/servlet/TestContextParamServlet</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>a</param-name>
+		<param-value>b</param-value>
+	</context-param>
+	
+	<filter>
+		<filter-name>AuthFilter</filter-name>
+		<filter-class>
+			com.bjsxt.shopping.util.filter.AuthFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AuthFilter</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>IPFilter</filter-name>
+		<filter-class>
+			com.bjsxt.shopping.util.filter.IPFilter
+		</filter-class>
+		<init-param>
+			<param-name>IPBlackList</param-name>
+			<param-value>192.168.0.16,192.168.0.165</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>IPFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>com.bjsxt.shopping.util.listener.LoggedUserCounter</listener-class>
+	</listener>
+	<welcome-file-list>
+		<welcome-file>Index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+
+</web-app>
