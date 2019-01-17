@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="GB"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="classes"/>
+</launchConfiguration>

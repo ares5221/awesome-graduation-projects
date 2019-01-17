@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GBK"?>
+<Edit_Style>
+	<!--相关的风格-->
+	<style name="standard">
+		<sid>14</sid>
+		<sdir>standard</sdir>
+		<scss>office</scss>
+		<suploaddir>admin/upload/</suploaddir>
+		<swidth>450</swidth>
+		<sheight>350</sheight>
+		<smemo>Office标准风格，部分常用按钮，标准适合界面宽度</smemo>
+		<sissys>1</sissys>
+		<sfileext>rar|zip|exe|doc|xls|chm|hlp</sfileext>
+		<sflashext>swf</sflashext>
+		<sremoteext>gif|jpg|jpeg|bmp</sremoteext>
+		<simageext>gif|jpg|jpeg|bmp</simageext>
+		<smediaext>rm|mp3|wav|mid|midi|ra|avi|mpg|mpeg|asf|asx|wma|mov</smediaext>
+		<sfilesize>500</sfilesize>
+		<sflashsize>500</sflashsize>
+		<sremotesize>500</sremotesize>
+		<simagesize>500</simagesize>
+		<smediasize>500</smediasize>
+		<sstateflag>1</sstateflag>
+		<sdetectfromword>true</sdetectfromword>
+		<sinitmod>EDIT</sinitmod>
+		<sbaseurl>1</sbaseurl>
+		<scontentpath/>
+		<sautoremote>1</sautoremote>
+		<stoolbar1>TBHandle|FormatBlock|FontName|FontSize|ZoomSelect|Bold|Italic|UnderLine|TBSep|JustifyLeft|JustifyCenter|JustifyRight|JustifyFull|TBSep|RemoveFormat|StrikeThrough|SuperScript|SubScript|SelectAll|TBSep|UnSelect</stoolbar1>
+		<stoolbar2>TBHandle|Image|Flash|Media|File|TBSep|TableMenu|TBSep|Fieldset|Iframe|HorizontalRule|Marquee|TBSep|UnDo|ReDo|TBSep|CreateLink|Unlink|TBSep|Symbol|Emot|NowDate|NowTime|TBSep|Quote|Code|TBSep|TBSep|OrderedList|UnOrderedList|TBSep|ForeColor|BgColor|BackColor|BackImage</stoolbar2>
+	</style>
+</Edit_Style>

@@ -1,0 +1,15 @@
+<%@ page contentType="text/html;charset=gb2312"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="/aqu" prefix="aqu"%>
+<html>
+<body>
+<c:set value="${aqu:loginValidate(param.userName,param.userPassword)}" var="login"/>
+<c:if test="${login=='ok'}">
+	µÇÂ¼³É¹¦
+</c:if>
+<c:if test="${login=='error'}">
+	µÇÂ¼Ê§°Ü
+</c:if>
+</body>
+</html>
+

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+  <display-name>Welcome to Tomcat</display-name>
+  <description>
+     Welcome to Tomcat
+  </description>
+ 
+  <servlet> <!--ÕâÀïÒªÃèÊöServlet±ÈÈçActionÊ²Ã´µÄ,ÒÔ¼°Ïà¹ØµÄ³õÊ¼»¯Öµ,-->
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+
+  <!-- Standard Action Servlet Mapping -->
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- The Usual Welcome File List -->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+
+  <!-- Struts Tag Library Descriptors --> <!--ÕâÀïÔÚÃèÊötagÐÅÏ¢,ºÍÆÕÍ¨µÄ×Ô¶¨ÒåTagÃ»Ê²Ã´Á½Ñù-->
+  <taglib>
+    <taglib-uri>/struts-bean</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts-bean.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/struts-html</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts-html.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/struts-logic</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts-logic.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/struts-nested</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts-nested.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/struts-tiles</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts-tiles.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/aqu</taglib-uri>
+    <taglib-location>/WEB-INF/tld/aqu.tld</taglib-location>
+  </taglib>
+  <display-name>defaultroot</display-name>
+  <servlet>
+    <servlet-name>download</servlet-name>
+    <servlet-class>net.fiyu.edit.download</servlet-class>
+  </servlet>
+
+</web-app>

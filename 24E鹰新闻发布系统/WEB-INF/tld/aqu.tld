@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.0">
+    <description>A tag library exercising SimpleTag handlers.</description>
+    <tlib-version>1.0</tlib-version>
+		<jsp-version>1.2</jsp-version>
+    <short-name>examples</short-name>
+    <uri>/aqu</uri>
+    <description>
+	¹ÅÉ²·ÉÓ¥
+</description>
+
+<!--µÃµ½·þÎñÆ÷µ±Ç°µÄÏµÍ³Ê±¼ä-->
+<tag>
+	<description>get now dat and time</description>
+	<name>getNow</name>
+	<tag-class>com.v246.tag.DateTime</tag-class>
+	<body-content>empty</body-content>
+</tag>
+
+<!--µÃµ½×Ô¶¨Òå±êÇ©Ëù´ú±íµÄÄÚÈÝ-->
+<function>
+	<name>getContent</name>
+	<function-class>com.v246.ShowDynamicCustom_bean</function-class>
+	<function-signature>java.lang.String getContent(java.lang.String)</function-signature>
+</function>
+
+<!--µÃµ½Ö¸¶¨ÎÄÕÂµÄµã»÷Êý-->
+<function>
+	<name>getClickNumber</name>
+	<function-class>com.v246.ShowClickNumber</function-class>
+	<function-signature>java.lang.String getClickNumber(java.lang.String)</function-signature>
+</function>
+
+<!--µÃµ½ËùÓÐÄ£°å·µ»ØµÄÊÇÒ»¶ÎHTML-->
+<function>
+	<name>getManage</name>
+	<function-class>com.v246.TemplateManage</function-class>
+	<function-signature>java.lang.String getManage(java.lang.String)</function-signature>
+</function>
+
+<!--É¾³ýÖ¸¶¨µÄÄ£°å-->
+<function>
+	<name>deleteData</name>
+	<function-class>com.v246.MDDTemplate</function-class>
+	<function-signature>void deleteData(java.lang.String)</function-signature>
+</function>
+
+<!--½«Ö¸¶¨±êÇ©ÉèÖÃÎªÄ¬ÈÏ-->
+<function>
+	<name>setDefault</name>
+	<function-class>com.v246.MDDTemplate</function-class>
+	<function-signature>void setDefault(java.lang.String)</function-signature>
+</function>
+
+<!--µÃµ½ÍøÕ¾µÄ°²×°Ä¿Â¼-->
+<function>
+	<name>getUrl</name>
+	<function-class>com.v246.Url</function-class>
+	<function-signature>java.lang.String getUrl()</function-signature>
+</function>
+
+<!--ÐÞ¸ÄÖ¸¶¨±êÇ©-->
+<function>
+	<name>modifyTemplate</name>
+	<function-class>com.v246.MDDTemplate</function-class>
+	<function-signature>java.lang.String[] modifyTemplate(java.lang.String)</function-signature>
+</function>
+
+<!--·µ»ØËùÓÐÀ¸Ä¿Ãû³Æ-->
+<function>
+	<name>getAllType</name>
+	<function-class>com.v246.TemplateManage</function-class>
+	<function-signature>java.lang.String getAllTemplateType()</function-signature>
+</function>
+
+<!--³õÊ¼»¯ÎÄÕÂ¹ÜÀí,ÄãµÃ½«²éÕÒµÄ±íµÄÃû³Æ×÷Îª²ÎÊý´«½øÈ¥-->
+<function>
+	<name>initArticleManage</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>void initArticleManage(java.lang.String)</function-signature>
+</function>
+
+
+<!--·µ»Ø×ÜÒ³Êý-->
+<function>
+	<name>getPageCount</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>java.lang.String getPageCount()</function-signature>
+</function>
+
+<!--ÉèÖÃ·ÖÒ³´óÐ¡-->
+<function>
+	<name>setPageSize</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>void setPageSize(int)</function-signature>
+</function>
+
+<!--·µ»Ø×Ü¼ÇÂ¼ÌõÊý-->
+<function>
+	<name>getRowsCount</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>java.lang.String getRowsCount()</function-signature>
+</function>
+
+<!--·µ»Ø·ÖÒ³´óÐ¡-->
+<function>
+	<name>getPageSize</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>java.lang.String getPageSize()</function-signature>
+</function>
+
+<!--·µ»Øµ±Ò³Âë-->
+<function>
+	<name>getCurPage</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>java.lang.String getCurPage()</function-signature>
+</function>
+
+<!--×ªµ½Ö¸¶¨Ò³-->
+<function>
+	<name>gotoPage</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>void gotoPage(java.lang.String)</function-signature>
+</function>
+
+<!--´ÓÊý¾Ý¿âÖÐÒªµÃµ½Êý¾Ý,Òª°Ñ×Ö¶Î×÷Îª²ÎÊý´«½øÈ¥-->
+<function>
+	<name>getString</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>java.lang.String getString(java.lang.String)</function-signature>
+</function>
+
+<!--´ÓÊý¾Ý¿âÖÐÒªµÃµ½Êý¾Ý,Òª°Ñ×Ö¶Î×÷Îª²ÎÊý´«½øÈ¥-->
+<function>
+	<name>getInt</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>java.lang.String getInt(java.lang.String)</function-signature>
+</function>
+
+<!--´ÓÊý¾Ý¿âÖÐÒªµÃµ½Êý¾Ý,Òª°Ñ×Ö¶Î×÷Îª²ÎÊý´«½øÈ¥,ÕâÀïÖ»ÉèÖÃÁËÈý¸ö³£ÓÃµÄÀàÐÍ-->
+<function>
+	<name>getBoolean</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>java.lang.String getBoolean(java.lang.String)</function-signature>
+</function>
+
+<!--×ªµ½µ±Ç°Ò³µÄµÚÒ»Ìõ¼ÇÂ¼-->
+<function>
+	<name>pageFirst</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>void pageFirst()</function-signature>
+</function>
+
+<!--×ªµ½µ±Ç°Ò³µÄ×îºóÒ»Ìõ¼ÇÂ¼-->
+<function>
+	<name>pageLast</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>void pageLast()</function-signature>
+</function>
+
+<!--ÊÇ·ñÓÐÏÂÒ»Ìõ¼ÇÂ¼-->
+<function>
+	<name>next</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>java.lang.String next()</function-signature>
+</function>
+
+<!--µÃµ½ÎÄÕÂËùÔÚÀ¸Ä¿µÄÃû³Æ-->
+<function>
+	<name>getParentName</name>
+	<function-class>com.v246.ArticleManage</function-class>
+	<function-signature>java.lang.String getParentName(java.lang.String)</function-signature>
+</function>
+
+<!--É¾³ýÎÄÕÂ-->
+<function>
+	<name>deleteArticle</name>
+	<function-class>com.v246.MDDArticle</function-class>
+	<function-signature>void deleteArticle(java.lang.String)</function-signature>
+</function>
+
+<!--µÇÂ¼ÑéÖ¤-->
+<function>
+	<name>loginValidate</name>
+	<function-class>com.v246.LoginValidate</function-class>
+	<function-signature>java.lang.String loginValidate(java.lang.String,java.lang.String)</function-signature>
+</function>
+
+<!--ÐÞ¸Ä¹ÜÀíÔ±ÃÜÂë-->
+<function>
+	<name>modifyPassword</name>
+	<function-class>com.v246.ModifyPassword</function-class>
+	<function-signature>java.lang.String modifyPassword(java.lang.String,java.lang.String)</function-signature>
+</function>
+
+<!--Éú³ÉÍøÕ¾Ê×Ò³-->
+<function>
+	<name>writeIndex</name>
+	<function-class>com.v246.WriteIndex</function-class>
+	<function-signature>java.lang.String writeIndex()</function-signature>
+</function>
+
+<!--Éú³ÉÀ¸Ä¿Ò³Ê×Ò³-->
+<function>
+	<name>writeClassIndex</name>
+	<function-class>com.v246.WriteClassIndex</function-class>
+	<function-signature>void writeAll()</function-signature>
+</function>
+
+<!--Éú³ÉÓÃÓÚÏÔÊ¾µ¼º½ÌõµÄJSÎÄ¼þ-->
+<function>
+	<name>writeNavigationJS</name>
+	<function-class>com.v246.WriteNavigationJS</function-class>
+	<function-signature>void writeNavigationJS()</function-signature>
+</function>
+
+<!--É¾³ýÀ¸Ä¿-->
+<function>
+	<name>deleteClass</name>
+	<function-class>com.v246.MDDClass</function-class>
+	<function-signature>void deleteClass(java.lang.String)</function-signature>
+</function>
+
+<!--µÃµ½×Ô¶¨Òå±êÇ©µÄÊýÄ¿-->
+<function>
+	<name>getCustomCount</name>
+	<function-class>com.v246.MDDCustom</function-class>
+	<function-signature>int getCount()</function-signature>
+</function>
+
+<!--¶Ü¿´ÊÇ·ñ»¹ÓÐÒ»Ìõ¼ÇÂ¼£¨±êÇ©£©-->
+<function>
+	<name>customNext</name>
+	<function-class>com.v246.MDDCustom</function-class>
+	<function-signature>boolean next()</function-signature>
+</function>
+
+<!--ÔÚ×Ô¶¨Òå±êÇ©±íÄÚµÃµ½Ò»¸ö×Ö·û´®-->
+<function>
+	<name>getCustomString</name>
+	<function-class>com.v246.MDDCustom</function-class>
+	<function-signature>java.lang.String getString(java.lang.String)</function-signature>
+</function>
+
+<!--ÔÚ×Ô¶¨Òå±êÇ©±íÄÚµÃµ½Ò»¸öINTÐÍÊý¾Ý-->
+<function>
+	<name>getCustomInt</name>
+	<function-class>com.v246.MDDCustom</function-class>
+	<function-signature>int getString(java.lang.String)</function-signature>
+</function>
+
+<!--ÔÚ×Ô¶¨Òå±êÇ©±íÄÚµÃµ½Ò»¸öbooleanÅªÊý¾Ý-->
+<function>
+	<name>getCustomBoolean</name>
+	<function-class>com.v246.MDDCustom</function-class>
+	<function-signature>boolean getString(java.lang.String)</function-signature>
+</function>
+
+<!--³õÊ¼»¯±êÇ©RS£¬STMµÈ-->
+<function>
+	<name>initMDDCustom</name>
+	<function-class>com.v246.MDDCustom</function-class>
+	<function-signature>void initMDDCustom()</function-signature>
+</function>
+
+<!--É¾³ý×Ô¶¨Òå±êÇ©-->
+<function>
+	<name>deleteCustom</name>
+	<function-class>com.v246.MDDCustom</function-class>
+	<function-signature>void deleteCustom(java.lang.String)</function-signature>
+</function>
+
+<!--×Ô¶¨Òå±êÇ©¹Ø±ÕÊý¾Ý¿âÏà¹ØÁ¬½Ó-->
+<function>
+	<name>customClose</name>
+	<function-class>com.v246.MDDCustom</function-class>
+	<function-signature>void close()</function-signature>
+</function>
+
+<!--ÐÞ¸Ä×Ô¶¨Òå±êÇ©-->
+<function>
+	<name>modifyCustom</name>
+	<function-class>com.v246.MDDCustom</function-class>
+	<function-signature>void customModify(java.lang.String)</function-signature>
+</function>
+
+<!--È¡³ö±êÇ©Ãû³Æ-->
+<function>
+	<name>subLable</name>
+	<function-class>com.v246.MDDCustom</function-class>
+	<function-signature>java.lang.String subLable(java.lang.String)</function-signature>
+</function>
+
+<!--Éú³ÉÒ»ÆªÖ¸¶¨IDµÄÎÄÕÂ-->
+<function>
+	<name>writeOne</name>
+	<function-class>com.v246.WriteArticle</function-class>
+	<function-signature>void writeOne(java.lang.String)</function-signature>
+</function>
+
+<!--Éú³ÉËùÓÐÎÄÕÂ-->
+<function>
+	<name>writeAll</name>
+	<function-class>com.v246.WriteArticle</function-class>
+	<function-signature>void writeAll()</function-signature>
+</function>
+</taglib>

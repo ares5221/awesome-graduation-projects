@@ -1,0 +1,54 @@
+BODY {
+	FONT-SIZE: 12px; MARGIN: 0px; SCROLLBAR-HIGHLIGHT-COLOR: #970000; SCROLLBAR-ARROW-COLOR: #cccccc; SCROLLBAR-BASE-COLOR: #6c0000
+}
+A:link {
+	FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A:active {
+	TEXT-DECORATION: none
+}
+A.hompage:link {
+	FONT-SIZE: 12px; LINE-HEIGHT: 20px
+}
+.tdlins {
+	BORDER-BOTTOM: #ffffff 1px dotted; HEIGHT: 25px
+}
+A.homepage:visited {
+	FONT-SIZE: 12px; LINE-HEIGHT: 20px
+}
+A.homepage:hover {
+	FONT-SIZE: 12px; LINE-HEIGHT: 20px
+}
+A.homepage:active {
+	FONT-SIZE: 12px; LINE-HEIGHT: 20px
+}
+.tdlins2 {
+	BORDER-BOTTOM: #ffffff 1px dotted; HEIGHT: 25px
+}
+TD {
+	
+}
+.bgbg {
+	BACKGROUND-POSITION: 50% bottom; BACKGROUND-IMAGE: url(images/s_left_bg_1.gif); BACKGROUND-REPEAT: no-repeat
+}
+A.dh:link {
+	FONT-SIZE: 12px; COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.dh:visited {
+	FONT-SIZE: 12px; COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.dh:hover {
+	FONT-SIZE: 12px; COLOR: #ff0000; TEXT-DECORATION: none
+}
+A.dh:active {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+ice {
+	SCROLLBAR-HIGHLIGHT-COLOR: #970000; SCROLLBAR-ARROW-COLOR: #cccccc; SCROLLBAR-BASE-COLOR: #6c0000
+}

@@ -1,0 +1,69 @@
+<%@ page contentType="text/html;charset=gb2312"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="/aqu" prefix="aqu"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0043)http://127.0.0.1/admin/Admin_Index_Left.asp -->
+<HTML><HEAD><TITLE>管理导航菜单</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+
+<META content="MSHTML 6.00.2800.1505" name=GENERATOR></HEAD>
+<BODY>
+<TABLE cellSpacing=0 cellPadding=0 width=158 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top height=50><IMG src="./images/title.gif"> 
+  </TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=158 align=center>
+  <!--DWLayoutTable-->
+  <TBODY>
+    <TR> 
+      <TD width="168" height="164" valign="top"> <TABLE cellSpacing=0 cellPadding=0 width=132 align=center>
+          <!--DWLayoutTable-->
+          <TBODY>
+            <TR> 
+              <TD width="166" height=20><A 
+            href="http://127.0.0.1/admin/Admin_Article.asp?ChannelID=1&amp;Action=Add&amp;AddType=1" 
+            target=main>添加文章</A></TD>
+            </TR>
+            <TR> 
+              <TD height=20><a 
+            href="http://127.0.0.1/admin/Admin_Article.asp?ChannelID=1&amp;Action=Manage&amp;Passed=All" 
+            target=main>文章管理</a></TD>
+            </TR>
+            <TR> 
+              <TD height=20><a 
+            href="http://127.0.0.1/admin/Admin_Class.asp?ChannelID=1" 
+            target=main>栏目管理</a></TD>
+            </TR>
+            <TR> 
+              <TD height=20><a 
+            href="http://127.0.0.1/admin/Admin_Template.asp?ChannelID=1" 
+            target=main>模板管理</a> </TD>
+            </TR>
+            <TR> 
+              <TD height=20>自定义标签管理</TD>
+            </TR>
+            <TR> 
+              <TD height=20>生成导航</TD>
+            </TR>
+            <TR> 
+              <TD height=20>生成首页</TD>
+            </TR>
+            <TR> 
+              <TD height=4></TD>
+            </TR>
+            <TR> 
+              <TD height=16 valign="top">=====================</TD>
+            </TR>
+            <TR> 
+              <TD height=3></TD>
+            </TR>
+          </TBODY>
+        </TABLE></TD>
+    </TR>
+    <TR>
+      <TD height="232">&nbsp;</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY></HTML>

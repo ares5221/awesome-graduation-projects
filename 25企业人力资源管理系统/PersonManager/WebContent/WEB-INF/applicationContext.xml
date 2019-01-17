@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- 数据库连接的取得 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://localhost:3306/db_personManager</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>123456</value>
+		</property>
+	</bean>
+	<!-- Spring支持Hibernate框架的配置，得到SessionFactory-->
+	<bean id="localSessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/wy/form/ManagerForm.hbm.xml</value>
+				<value>com/wy/form/DepartmentForm.hbm.xml</value>
+				<value>com/wy/form/InviteJopForm.hbm.xml</value>	
+				<value>com/wy/form/EmployeeForm.hbm.xml</value>
+				<value>com/wy/form/PayForm.hbm.xml</value>
+				<value>com/wy/form/TrainForm.hbm.xml</value>
+				<value>com/wy/form/CjForm.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="objectDao" class="com.wy.dao.ObjectDao">
+		<property name="sessionFactory">
+			<ref bean="localSessionFactory" />
+		</property>
+	</bean>
+
+	<bean name="/manager" class="com.wy.action.ManagerAction"
+		singleton="false">
+		<property name="objectDao">
+			<ref bean="objectDao" />
+		</property>
+	</bean>
+	
+	<bean name="/department" class="com.wy.action.DepartmentAction"
+		singleton="false">
+		<property name="objectDao">
+			<ref bean="objectDao" />
+		</property>
+	</bean>
+	
+	<bean name="/inviteJob" class="com.wy.action.InviteJobAction"
+		singleton="false">
+		<property name="objectDao">
+			<ref bean="objectDao" />
+		</property>
+	</bean>
+	
+	<bean name="/employee" class="com.wy.action.EmployeeAction"
+		singleton="false">
+		<property name="objectDao">
+			<ref bean="objectDao" />
+		</property>
+	</bean>
+	
+	<bean name="/pay" class="com.wy.action.PayAction"
+		singleton="false">
+		<property name="objectDao">
+			<ref bean="objectDao" />
+		</property>
+	</bean>
+	
+     <bean name="/train" class="com.wy.action.TrainAction"
+		singleton="false">
+		<property name="objectDao">
+			<ref bean="objectDao" />
+		</property>
+	</bean>
+	
+	 <bean name="/cj" class="com.wy.action.CjAction"
+		singleton="false">
+		<property name="objectDao">
+			<ref bean="objectDao" />
+		</property>
+	</bean>
+	
+</beans>

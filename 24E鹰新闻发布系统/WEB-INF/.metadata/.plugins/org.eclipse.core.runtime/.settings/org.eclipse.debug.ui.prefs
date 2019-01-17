@@ -1,0 +1,4 @@
+#Tue Oct 25 20:47:42 CST 2005
+eclipse.preferences.version=1
+org.eclipse.debug.ui.opened_views=org.eclipse.debug.ui.VariableView,org.eclipse.debug.ui.BreakpointView,
+org.eclipse.debug.ui.views_to_not_open=org.eclipse.debug.ui.DebugView,

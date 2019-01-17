@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0079)http://www.chinahongker.com/index/news.asp?id=83&upid=64&title=病毒公告&new=558 -->
+<HTML>
+<HEAD>
+<TITLE>CSDN 文档中心：[算法]Java中的位运算优化：位域、位</TITLE>
+<LINK href="/images/css.css" type=text/css 
+rel=stylesheet>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<STYLE type=text/css>BODY {
+	MARGIN: 0px; BACKGROUND-COLOR: #930000
+}
+.youhei {
+	BORDER-TOP-WIDTH: 1px; BORDER-RIGHT: #333333 1px solid; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 12px; BORDER-LEFT-COLOR: #333333; BORDER-BOTTOM-WIDTH: 1px; BORDER-BOTTOM-COLOR: #333333; COLOR: #000000; BORDER-TOP-COLOR: #333333; TEXT-DECORATION: none
+}
+.baizi {
+	FONT-SIZE: 12px; COLOR: #ffffff; TEXT-DECORATION: none
+}
+.cuzi {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none
+}
+.baiheicu {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; TEXT-DECORATION: none
+}
+.shier {
+	FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none
+}
+.lanzi {
+	FONT-SIZE: 12px; COLOR: #2d7066; TEXT-DECORATION: none
+}
+.zi {
+	FONT-SIZE: 12px; COLOR: #333333; TEXT-DECORATION: none
+}
+.zi1 {
+	FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none
+}
+.style1 {
+	FONT-SIZE: 9px; COLOR: #690102
+}
+A.baazi:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.baazi:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.baazi:hover {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.haazi:link {
+	COLOR: #690102; TEXT-DECORATION: none
+}
+A.haazi:visited {
+	COLOR: #690102; TEXT-DECORATION: none
+}
+A.haazi:hover {
+	COLOR: #690102; TEXT-DECORATION: none
+}
+</STYLE>
+<META content="MSHTML 6.00.3790.2541" name=GENERATOR>
+</HEAD>
+<BODY ><TBODY>
+<TR> 
+  <TD> <div align="center">
+        <table width="800" border="0">
+          <!--DWLayoutTable-->
+          <tr> 
+          <td width="196" height="18" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <!--DWLayoutTable-->
+              <tr> 
+                <td width="196" height="16" background="/images/index_13.jpg">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td width="667" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <!--DWLayoutTable-->
+              <tr> 
+                <td width="594" height="16" valign="top" background="/images/index_13.jpg"><script language='JavaScript' type='text/JavaScript' src='/Article/js/menu.js'></script> <script type='text/javascript' language='JavaScript1.2' src='/Article/js/stm31.js'></script> <script language='JavaScript1.2' type='text/JavaScript' src='/Article/js/ShowClass_Menu.js'></script></td>
+              </tr>
+            </table></td>
+          </tr>
+      </table>
+    </div>
+    <div align="center"> </div>
+    <TABLE cellSpacing=0 cellPadding=0 width=800 align=center bgColor=#ffffff 
+      border=0>
+      <!--DWLayoutTable-->
+      <TBODY>
+      <tr> 
+        <TD height="742" colSpan=10 vAlign=top background=/images/bg_1.jpg> 
+          <TABLE cellSpacing=3 cellPadding=0 width="100%" border=0>
+            <!--DWLayoutTable-->
+            <TBODY>
+              <TR> 
+                <TD width="252" height="736">&nbsp;</TD>
+              </TR>
+          </TABLE></TD>
+        <TD width="6">&nbsp;</TD>
+        <TD vAlign=top> <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+            <TBODY>
+              <TR> 
+                <TD colSpan=2 height=120><IMG height=113 alt="" 
+                  src="/images/index_43.jpg" width=607></TD>
+              </TR>
+              <TR> 
+                <TD width="50%"> <TABLE class=youhei cellSpacing=0 cellPadding=0 width="101%" 
+                  border=0>
+                    <TBODY>
+                      <TR> 
+                        <TD width="2%" background=/images/neibg.jpg><IMG 
+                        height=29 src="/images/neizuo.jpg" width=23></TD>
+                        <TD class=cuzi vAlign=center width="74%" 
+                      background=/images/neibg.jpg>您当前的位置 &gt;&gt; <a href=''>首页</a> &gt;&gt; <a href='/Article\jspjc\index.html'>JSP教程</a> &gt;&gt; 文章正文</TD>
+                      </TR>
+                      <TR> 
+                        <TD vAlign=top colSpan=3 height=200> <TABLE borderColor=#0000ff cellSpacing=4 cellPadding=0 
+                        width="100%" border=0>
+                            <TBODY>
+                              <TR> 
+                                <TD> <TABLE cellSpacing=0 cellPadding=0 width="95%" 
+                              align=center border=0>
+                                    <TBODY>
+                                      <TR> 
+                                        <TD class=tit align=middle colSpan=2 
+                                height=50><div align="center"><FONT color=#ff0000>CSDN 文档中心：[算法]Java中的位运算优化：位域、位</FONT></div></TD>
+                                      </TR>
+                                      <TR> 
+                                        <TD 
+                                style="BORDER-TOP: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid" 
+                                width="40%" height=30></TD>
+                                        <TD 
+                                style="BORDER-TOP: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid" 
+                                align=middle width="60%"></TD>
+                                      </TR>
+                                      <TR> 
+                                        <TD colSpan=2><BR> <DIV style="FONT-SIZE: 10.5pt"> 
+                                            <P>&nbsp;</P>
+                                            <P align="right">据瑞星全球反病毒监测网介绍，今日有两个病毒特别值得注意，它们是：“无奈网盗变种F（Trojan.NetSpy.f）”和“天堂木马变种WN（Trojan.PSW.Lineage.wn）”病毒。“无奈网盗变种F”病毒会试图盗取QQ、MSN、网络游戏、网上银行等的帐号和密码，给用户带来损失。“天堂木马变种WN”是专门窃取网络游戏《传奇》的木马病毒，在后台运行，把窃取的网络游戏帐号、密码等等都发送给病毒散布者。 
+                                              <BR>
+                                              <BR>
+                                              本日热门病毒： <BR>
+                                              <BR>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;“无奈网盗变种F（Trojan.NetSpy.f）”病毒：警惕程度★★★，木马，通过网络传播，依赖系统：WIN9X/NT/2000/XP。 
+                                              <BR>
+                                              <BR>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;该病毒运行后将会将自身复制到系统目录下，文件名为“SVCH0ST.EXE”，同时在注册表中添加启动项目以实现随计算机启动自动运行的目的。它会修改EXE文件的关联，使用户运行EXE可执行文件时激活病毒。该病毒会自动查找含有“密码”、“用户”、“帐号”、“登录”字样的窗口，记录用户输入的信息并发送给黑客。它还会自动终止一些国内外杀毒软件的进程，使它们无法正常使用，大大降低用户计算机的安全系数，使其更容易被其它病毒感染。 
+                                              <BR>
+                                              <BR>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;“天堂木马变种WN（Trojan.PSW.Lineage.wn）”病毒：警惕程度★★★，盗号木马，通过网络传播，依赖系统：WIN&nbsp;9X/NT/2000/XP。 
+                                              <BR>
+                                              <BR>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;病毒运行后，复制自身到系统目录中，修改注册表启动项，实现开机之后自启动。病毒会在后台悄悄运行，窃取《传奇》游戏玩家的用户名、密码、登陆服务器、用户所属区域等信息，并把这些资料发送给病毒散布者。 
+                                              <BR>
+                                              <BR>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;反病毒专家建议电脑用户采取以下措施预防该病毒：建立良好的安全习惯，不打开可疑邮件和可疑网站；关闭或删除系统中不需要的服务；很多病毒利用漏洞传播，一定要及时给系统打补丁；安装专业的防毒软件进行实时监控，平时上网的时候一定要打开防病毒软件的实时监控功能。 
+                                              <BR>
+                                              <BR>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;如遇病毒，请拨打反病毒急救电话：01082678800或访问瑞星反病毒资讯网：http://www.rising.com.cn。 
+                                              <BR>
+                                              <font color="#999999">作者：未知　发布时间:2005-11-30 00:26:05　　点击数:<font color="#FF0000"><script src='/showClickNumber.jsp?id=24'></script></font></font></P>
+                                          </DIV></TD>
+                                      </TR>
+                                      <TR align=right> 
+                                        <TD colSpan=2>&nbsp;</TD>
+                                      </TR>
+                                      <TR align=right> 
+                                        <TD 
+                          colSpan=2>&nbsp;</TD>
+                                      </TR>
+                                    </TBODY>
+                                  </TABLE></TD>
+                              </TR>
+                            </TBODY>
+                          </TABLE></TD>
+                      </TR>
+                    </TBODY>
+                  </TABLE></TD>
+              </TR>
+            </TBODY>
+          </TABLE></TD>
+      </TR>
+      <TR> 
+        <TD height="98" colSpan=12> <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+            <TBODY>
+              <TR> 
+                <TD background=/images/index_55.jpg><IMG height=98 alt="" 
+                  src="/images/index_55.jpg" width=23></TD>
+                <TD background=/images/index_55.jpg> <TABLE cellSpacing=3 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                      <TR> 
+                        <TD> <DIV align=center><IMG title=中国崛起联盟-海外华人组织 height=31 
+                        alt=中国崛起 src="%C4%DA%C8%DD%D2%B3_files/logo.jpg" width=88 
+                        border=0></DIV></TD>
+                        <TD> <DIV align=center><IMG height=31 
+                        src="/images/logo.jpg" width=88></DIV></TD>
+                        <TD> <DIV align=center><IMG height=31 
+                        src="/images/logo.jpg" width=88></DIV></TD>
+                        <TD> <DIV align=center><IMG height=31 
+                        src="/images/logo.jpg" width=88></DIV></TD>
+                        <TD> <DIV align=center><IMG height=31 
+                        src="/images/logo.jpg" width=88></DIV></TD>
+                        <TD> <DIV align=center><IMG height=31 
+                        src="/images/logo.jpg" width=88></DIV></TD>
+                      </TR>
+                      <TR> 
+                        <TD> <DIV align=center><IMG height=31 
+                        src="/images/logo.jpg" width=88></DIV></TD>
+                        <TD> <DIV align=center><IMG height=31 
+                        src="/images/logo.jpg" width=88></DIV></TD>
+                        <TD> <DIV align=center><IMG height=31 
+                        src="/images/logo.jpg" width=88></DIV></TD>
+                        <TD> <DIV align=center><IMG height=31 
+                        src="/images/logo.jpg" width=88></DIV></TD>
+                        <TD> <DIV align=center><IMG height=31 
+                        src="/images/logo.jpg" width=88></DIV></TD>
+                        <TD> <DIV align=center><IMG height=31 
+                        src="/images/logo.jpg" 
+                  width=88></DIV></TD>
+                      </TR>
+                    </TBODY>
+                  </TABLE></TD>
+                <TD background=/images/index_55.jpg><IMG height=98 alt="" 
+                  src="/images/index_55.jpg" 
+        width=23></TD>
+              </TR>
+            </TBODY>
+          </TABLE></TD>
+      </TR>
+      <TR> 
+        <TD height="89" colSpan=12> <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+            <TBODY>
+              <TR> 
+                <TD background=/images/index_57.jpg height=33> <DIV class=shier align=center>设为首页 
+                        | 关于本站 | 联系我们 | 隐私条约 | 版权声明 | 网站留言</DIV></TD>
+              </TR>
+              <TR> 
+                <TD class=baizi background=/images/index_59.jpg height=56> <DIV align=center> 
+                        <P>版权所有：Ｅ鹰网络工作室</P>
+                  </DIV></TD>
+              </TR>
+            </TBODY>
+          </TABLE></TD>
+      </TR>
+      <TR> 
+        <TD width="74" height="1"><IMG height=1 alt="" src="/images/spacer.gif" width=9></TD>
+        <TD width="2"><IMG height=1 alt="" src="/images/spacer.gif" width=2></TD>
+        <TD width="4"><IMG height=1 alt="" src="/images/spacer.gif" width=4></TD>
+        <TD width="9"><IMG height=1 alt="" src="/images/spacer.gif" width=9></TD>
+        <TD width="15"><IMG height=1 alt="" src="/images/spacer.gif" width=15></TD>
+        <TD width="9"><IMG height=1 alt="" src="/images/spacer.gif" width=9></TD>
+        <TD width="38"><IMG height=1 alt="" src="/images/spacer.gif" width=38></TD>
+        <TD width="49"><IMG height=1 alt="" src="/images/spacer.gif" width=49></TD>
+        <TD width="15"><IMG height=1 alt="" src="/images/spacer.gif" width=15></TD>
+        <TD colspan="2"><IMG height=1 alt="" src="/images/spacer.gif" width=49></TD>
+        <TD width="607"><IMG height=1 alt="" src="/images/spacer.gif" width=10></TD>
+      </TR>
+      
+    </TABLE></TD></TBODY></TABLE>
+<!-- ImageReady Slices (01 副本.psd) -->
+<!-- End ImageReady Slices -->
+</BODY>
+</HTML>

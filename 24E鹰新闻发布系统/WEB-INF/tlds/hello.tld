@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<tlglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.0">
+    <description>A tag library exercising SimpleTag handlers.</description>
+    <tlib-version>1.0</tlib-version>
+
+    <short-name>examples</short-name>
+    <uri>/demotag</uri>
+    <description>
+	¹ÅÉ²·ÉÓ¥
+    </description>
+    
+    <tag>
+        <description>Outputs Hello.World,´ÓÊµÏÖTag½Ó¿ÚÆð¿ª·¢</description>
+        <name>hello</name>
+        <tag-class>com.v246.hello</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+    <tag>
+	<description>ÓÃ¼Ì³ÐÀ´ÊµÏÖtag</description>
+	<name>hello1</name>
+	<tag-class>com.v246.hello1</tag-class>
+	<body-content>empty</body-content>
+    </tag>
+    <tag>
+	<description>ÓÐ±êÇ©ÌåµÄ</description>
+	<name>myBody</name>
+	<tag-class>com.v246.loop</tag-class>
+	<body-content>jsp</body-content>
+	<attribute>
+		<name>counts</name>
+		<required>true</required>
+		<rtexrvalue>true</rtexrvalue>
+	</attribute>
+    </tag>
+    <tag>
+	<description>This is if Tag</description>
+	<name>if</name>
+	<tag-class>com.v246.ifTag</tag-class>
+	<body-content>jsp</body-content>
+	<attribute>
+		<name>value</name>
+		<required>true</required>
+		<rtexrvalue>true</rtexrvalue>
+	</attribute>
+    </tag>
+    <tag>
+	<description>This is out</description>
+	<name>out</name>
+	<tag-class>com.v246.out</tag-class>
+	<body-content>empty</body-content>
+    </tag>
+    <tag>
+	<description>This is dd Tag</description>
+	<name>dd</name>
+	<tag-class>com.v246.dd</tag-class>
+	<body-content>empty</body-content>
+    </tag>
+    <tag>
+	<description>¼òµ¥±êÇ©</description>
+	<name>simple</name>
+	<tag-class>com.v246.Simple</tag-class>
+	<body-content>empty</body-content>
+    </tag>
+</tlglib>

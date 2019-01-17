@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<Edit_Button>
+  <!--相关的按钮文件-->
+  <bcode name="SpellCheck">
+    <btitle>拼写检查</btitle>
+    <bimage>spellcheck.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>spellCheck()</bevent>
+    <bclass>Btn</bclass>
+    <border>0</border>
+    <ballowselect>0</ballowselect>
+  </bcode>
+  <bcode name="TBSep">
+    <btitle>分隔线</btitle>
+    <bimage></bimage>
+    <bhtml></bhtml>
+    <btype>2</btype>
+    <bevent></bevent>
+    <bclass>TBSep</bclass>
+    <border>1</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TBHandle">
+    <btitle>工具栏头</btitle>
+    <bimage></bimage>
+    <bhtml></bhtml>
+    <btype>2</btype>
+    <bevent></bevent>
+    <bclass>TBHandle</bclass>
+    <border>2</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Space">
+    <btitle>空格</btitle>
+    <bimage></bimage>
+    <bhtml>&amp;nbsp;</bhtml>
+    <btype>2</btype>
+    <bevent></bevent>
+    <bclass>TBGen</bclass>
+    <border>3</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="FontName">
+    <btitle>字体</btitle>
+    <bimage></bimage>
+    <bhtml>&lt;option selected&gt;字体&lt;/option&gt; &lt;option value="宋体"&gt;宋体&lt;/option&gt; &lt;option value="黑体"&gt;黑体&lt;/option&gt; &lt;option value="楷体_GB2312"&gt;楷体&lt;/option&gt; &lt;option value="仿宋_GB2312"&gt;仿宋&lt;/option&gt; &lt;option value="隶书"&gt;隶书&lt;/option&gt; &lt;option value="幼圆"&gt;幼圆&lt;/option&gt; &lt;option value="Arial"&gt;Arial&lt;/option&gt; &lt;option value="Arial Black"&gt;Arial Black&lt;/option&gt; &lt;option value="Arial Narrow"&gt;Arial Narrow&lt;/option&gt; &lt;option value="Brush Script MT"&gt;Brush Script MT&lt;/option&gt; &lt;option value="Century Gothic"&gt;Century Gothic&lt;/option&gt; &lt;option value="Comic Sans MS"&gt;Comic Sans MS&lt;/option&gt; &lt;option value="Courier"&gt;Courier&lt;/option&gt; &lt;option value="Courier New"&gt;Courier New&lt;/option&gt; &lt;option value="MS Sans Serif"&gt;MS Sans Serif&lt;/option&gt; &lt;option value="Script"&gt;Script&lt;/option&gt; &lt;option value="System"&gt;System&lt;/option&gt; &lt;option value="Times New Roman"&gt;Times New Roman&lt;/option&gt; &lt;option value="Verdana"&gt;Verdana&lt;/option&gt; &lt;option value="Wide Latin"&gt;Wide Latin&lt;/option&gt; &lt;option value="Wingdings"&gt;Wingdings&lt;/option&gt;</bhtml>
+    <btype>1</btype>
+    <bevent>format('fontname',this[this.selectedIndex].value);this.selectedIndex=0</bevent>
+    <bclass>TBGen</bclass>
+    <border>4</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Big">
+    <btitle>字体增大</btitle>
+    <bimage>tobig.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>insert('big')</bevent>
+    <bclass>Btn</bclass>
+    <border>5</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="FontSize">
+    <btitle>字体大小</btitle>
+    <bimage></bimage>
+    <bhtml>&lt;option selected&gt;字号&lt;/option&gt; &lt;option value="7"&gt;一号&lt;/option&gt; &lt;option value="6"&gt;二号&lt;/option&gt; &lt;option value="5"&gt;三号&lt;/option&gt; &lt;option value="4"&gt;四号&lt;/option&gt; &lt;option value="3"&gt;五号&lt;/option&gt; &lt;option value="2"&gt;六号&lt;/option&gt; &lt;option value="1"&gt;七号&lt;/option&gt;</bhtml>
+    <btype>1</btype>
+    <bevent>format('fontsize',this[this.selectedIndex].value);this.selectedIndex=0</bevent>
+    <bclass>TBGen</bclass>
+    <border>6</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Small">
+    <btitle>字体减小</btitle>
+    <bimage>tosmall.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>insert('small')</bevent>
+    <bclass>Btn</bclass>
+    <border>7</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="FormatBlock">
+    <btitle>段落样式</btitle>
+    <bimage></bimage>
+    <bhtml>&lt;option selected&gt;段落样式&lt;/option&gt; &lt;option value="&amp;lt;P&amp;gt;"&gt;普通&lt;/option&gt; &lt;option value="&amp;lt;H1&amp;gt;"&gt;标题一&lt;/option&gt; &lt;option value="&amp;lt;H2&amp;gt;"&gt;标题二&lt;/option&gt; &lt;option value="&amp;lt;H3&amp;gt;"&gt;标题三&lt;/option&gt; &lt;option value="&amp;lt;H4&amp;gt;"&gt;标题四&lt;/option&gt; &lt;option value="&amp;lt;H5&amp;gt;"&gt;标题五&lt;/option&gt; &lt;option value="&amp;lt;H6&amp;gt;"&gt;标题六&lt;/option&gt; &lt;option value="&amp;lt;p&amp;gt;"&gt;段落&lt;/option&gt; &lt;option value="&amp;lt;dd&amp;gt;"&gt;定义&lt;/option&gt; &lt;option value="&amp;lt;dt&amp;gt;"&gt;术语定义&lt;/option&gt; &lt;option value="&amp;lt;dir&amp;gt;"&gt;目录列表&lt;/option&gt; &lt;option value="&amp;lt;menu&amp;gt;"&gt;菜单列表&lt;/option&gt; &lt;option value="&amp;lt;PRE&amp;gt;"&gt;已编排格式&lt;/option&gt;</bhtml>
+    <btype>1</btype>
+    <bevent>format('FormatBlock',this[this.selectedIndex].value);this.selectedIndex=0</bevent>
+    <bclass>TBGen</bclass>
+    <border>8</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Bold">
+    <btitle>粗体</btitle>
+    <bimage>bold.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('bold')</bevent>
+    <bclass>Btn</bclass>
+    <border>9</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Italic">
+    <btitle>斜体</btitle>
+    <bimage>italic.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('italic')</bevent>
+    <bclass>Btn</bclass>
+    <border>10</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="UnderLine">
+    <btitle>下划线</btitle>
+    <bimage>underline.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('underline')</bevent>
+    <bclass>Btn</bclass>
+    <border>11</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="StrikeThrough">
+    <btitle>中划线</btitle>
+    <bimage>strikethrough.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('StrikeThrough')</bevent>
+    <bclass>Btn</bclass>
+    <border>12</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="JustifyLeft">
+    <btitle>左对齐</btitle>
+    <bimage>justifyleft.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('justifyleft')</bevent>
+    <bclass>Btn</bclass>
+    <border>13</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="JustifyCenter">
+    <btitle>居中对齐</btitle>
+    <bimage>justifycenter.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('justifycenter')</bevent>
+    <bclass>Btn</bclass>
+    <border>14</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="JustifyRight">
+    <btitle>右对齐</btitle>
+    <bimage>justifyright.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('justifyright')</bevent>
+    <bclass>Btn</bclass>
+    <border>15</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="JustifyFull">
+    <btitle>两端对齐</btitle>
+    <bimage>justifyfull.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('JustifyFull')</bevent>
+    <bclass>Btn</bclass>
+    <border>16</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="OrderedList">
+    <btitle>编号</btitle>
+    <bimage>insertorderedlist.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('insertorderedlist')</bevent>
+    <bclass>Btn</bclass>
+    <border>17</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="UnOrderedList">
+    <btitle>项目符号</btitle>
+    <bimage>insertunorderedlist.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('insertunorderedlist')</bevent>
+    <bclass>Btn</bclass>
+    <border>18</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Indent">
+    <btitle>增加缩进量</btitle>
+    <bimage>indent.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('indent')</bevent>
+    <bclass>Btn</bclass>
+    <border>19</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Outdent">
+    <btitle>减少缩进量</btitle>
+    <bimage>outdent.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('outdent')</bevent>
+    <bclass>Btn</bclass>
+    <border>20</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="ForeColor">
+    <btitle>字体颜色</btitle>
+    <bimage>forecolor.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/selcolor.htm?action=forecolor', 280, 250, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>21</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="BgColor">
+    <btitle>对象背景颜色</btitle>
+    <bimage>bgcolor.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/selcolor.htm?action=bgcolor', 280, 250, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>22</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="BackColor">
+    <btitle>字体背景颜色</btitle>
+    <bimage>backcolor.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/selcolor.htm?action=backcolor', 280, 250, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>23</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="BackImage">
+    <btitle>背景图片</btitle>
+    <bimage>bgpic.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/backimage.htm', 350, 210, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>24</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="SuperScript">
+    <btitle>上标</btitle>
+    <bimage>superscript.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('superscript')</bevent>
+    <bclass>Btn</bclass>
+    <border>25</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="SubScript">
+    <btitle>下标</btitle>
+    <bimage>subscript.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('subscript')</bevent>
+    <bclass>Btn</bclass>
+    <border>26</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="UnDo">
+    <btitle>撤消</btitle>
+    <bimage>undo.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('undo')</bevent>
+    <bclass>Btn</bclass>
+    <border>27</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="ReDo">
+    <btitle>恢复</btitle>
+    <bimage>redo.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('redo')</bevent>
+    <bclass>Btn</bclass>
+    <border>28</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="SelectAll">
+    <btitle>全部选中</btitle>
+    <bimage>selectall.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('SelectAll')</bevent>
+    <bclass>Btn</bclass>
+    <border>29</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="UnSelect">
+    <btitle>取消选择</btitle>
+    <bimage>unselect.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('Unselect')</bevent>
+    <bclass>Btn</bclass>
+    <border>30</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Cut">
+    <btitle>剪切</btitle>
+    <bimage>cut.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('cut')</bevent>
+    <bclass>Btn</bclass>
+    <border>40</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Copy">
+    <btitle>复制</btitle>
+    <bimage>copy.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('copy')</bevent>
+    <bclass>Btn</bclass>
+    <border>41</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Paste">
+    <btitle>常规粘贴</btitle>
+    <bimage>paste.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('paste')</bevent>
+    <bclass>Btn</bclass>
+    <border>42</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="PasteText">
+    <btitle>纯文本粘贴</btitle>
+    <bimage>pastetext.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>PasteText()</bevent>
+    <bclass>Btn</bclass>
+    <border>43</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="PasteWord">
+    <btitle>从Word中粘贴</btitle>
+    <bimage>pasteword.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>PasteWord()</bevent>
+    <bclass>Btn</bclass>
+    <border>44</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="FindReplace">
+    <btitle>查找替换</btitle>
+    <bimage>findreplace.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>findReplace()</bevent>
+    <bclass>Btn</bclass>
+    <border>45</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Delete">
+    <btitle>删除</btitle>
+    <bimage>delete.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('delete')</bevent>
+    <bclass>Btn</bclass>
+    <border>46</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="RemoveFormat">
+    <btitle>删除文字格式</btitle>
+    <bimage>removeformat.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('RemoveFormat')</bevent>
+    <bclass>Btn</bclass>
+    <border>47</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableMenu">
+    <btitle>表格菜单</btitle>
+    <bimage>tablemenu.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>showToolMenu('table')</bevent>
+    <bclass>Btn</bclass>
+    <border>50</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableInsert">
+    <btitle>插入表格</btitle>
+    <bimage>tableinsert.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableInsert()</bevent>
+    <bclass>Btn</bclass>
+    <border>51</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableProp">
+    <btitle>修改表格属性</btitle>
+    <bimage>tableprop.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableProp()</bevent>
+    <bclass>Btn</bclass>
+    <border>52</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableCellProp">
+    <btitle>单元格属性</btitle>
+    <bimage>tablecellprop.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableCellProp()</bevent>
+    <bclass>Btn</bclass>
+    <border>53</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableCellSplit">
+    <btitle>拆分单元格</btitle>
+    <bimage>tablecellsplit.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableCellSplit()</bevent>
+    <bclass>Btn</bclass>
+    <border>54</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableRowProp">
+    <btitle>表格行属性</btitle>
+    <bimage>tablerowprop.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableRowProp()</bevent>
+    <bclass>Btn</bclass>
+    <border>55</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableRowInsertAbove">
+    <btitle>插入行（在上方）</btitle>
+    <bimage>tablerowinsertabove.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableRowInsertAbove()</bevent>
+    <bclass>Btn</bclass>
+    <border>56</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableRowInsertBelow">
+    <btitle>插入行（在下方）</btitle>
+    <bimage>tablerowinsertBelow.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableRowInsertBelow()</bevent>
+    <bclass>Btn</bclass>
+    <border>57</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableRowMerge">
+    <btitle>合并行（向下方）</btitle>
+    <bimage>tablerowmerge.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableRowMerge()</bevent>
+    <bclass>Btn</bclass>
+    <border>58</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableRowSplit">
+    <btitle>拆分行</btitle>
+    <bimage>tablerowsplit.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableRowSplit(2)</bevent>
+    <bclass>Btn</bclass>
+    <border>59</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableRowDelete">
+    <btitle>删除行</btitle>
+    <bimage>tablerowdelete.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableRowDelete()</bevent>
+    <bclass>Btn</bclass>
+    <border>60</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableColInsertLeft">
+    <btitle>插入列（在左侧）</btitle>
+    <bimage>tablecolinsertleft.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableColInsertLeft()</bevent>
+    <bclass>Btn</bclass>
+    <border>61</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableColInsertRight">
+    <btitle>插入列（在右侧）</btitle>
+    <bimage>tablecolinsertright.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableColInsertRight()</bevent>
+    <bclass>Btn</bclass>
+    <border>62</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableColMerge">
+    <btitle>合并列（向右侧）</btitle>
+    <bimage>tablecolmerge.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableColMerge()</bevent>
+    <bclass>Btn</bclass>
+    <border>63</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableColSplit">
+    <btitle>拆分列</btitle>
+    <bimage>tablecolsplit.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableColSplit(2)</bevent>
+    <bclass>Btn</bclass>
+    <border>64</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="TableColDelete">
+    <btitle>删除列</btitle>
+    <bimage>tablecoldelete.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>TableColDelete()</bevent>
+    <bclass>Btn</bclass>
+    <border>65</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="FormMenu">
+    <btitle>表单菜单</btitle>
+    <bimage>formmenu.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>showToolMenu('form')</bevent>
+    <bclass>Btn</bclass>
+    <border>70</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="FormText">
+    <btitle>插入输入框</btitle>
+    <bimage>formtext.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('InsertInputText')</bevent>
+    <bclass>Btn</bclass>
+    <border>71</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="FormTextArea">
+    <btitle>插入文字输入区</btitle>
+    <bimage>formtextarea.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('InsertTextArea')</bevent>
+    <bclass>Btn</bclass>
+    <border>72</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="FormRadio">
+    <btitle>插入单选钮</btitle>
+    <bimage>formradio.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('InsertInputRadio')</bevent>
+    <bclass>Btn</bclass>
+    <border>73</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="FormCheckbox">
+    <btitle>插入复选框</btitle>
+    <bimage>formcheckbox.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('InsertInputCheckbox')</bevent>
+    <bclass>Btn</bclass>
+    <border>74</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="FormDropdown">
+    <btitle>插入下拉框</btitle>
+    <bimage>formdropdown.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('InsertSelectDropdown')</bevent>
+    <bclass>Btn</bclass>
+    <border>75</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="FormButton">
+    <btitle>插入按钮</btitle>
+    <bimage>formbutton.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('InsertButton')</bevent>
+    <bclass>Btn</bclass>
+    <border>76</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Marquee">
+    <btitle>插入或修改字幕</btitle>
+    <bimage>marquee.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/marquee.htm', 395, 150, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>80</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="HorizontalRule">
+    <btitle>插入水平尺</btitle>
+    <bimage>inserthorizontalrule.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('InsertHorizontalRule')</bevent>
+    <bclass>Btn</bclass>
+    <border>81</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="BR">
+    <btitle>插入换行符</btitle>
+    <bimage>br.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>insert('br')</bevent>
+    <bclass>Btn</bclass>
+    <border>82</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Paragraph">
+    <btitle>插入段落</btitle>
+    <bimage>insertparagraph.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('InsertParagraph')</bevent>
+    <bclass>Btn</bclass>
+    <border>83</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="CreateLink">
+    <btitle>插入或修改超级链接</btitle>
+    <bimage>createlink.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('CreateLink')</bevent>
+    <bclass>Btn</bclass>
+    <border>84</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Unlink">
+    <btitle>取消超级链接或标签</btitle>
+    <bimage>unlink.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('UnLink')</bevent>
+    <bclass>Btn</bclass>
+    <border>85</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Fieldset">
+    <btitle>插入或修改栏目框</btitle>
+    <bimage>fieldset.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/fieldset.htm', 350, 170, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>86</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Iframe">
+    <btitle>插入或修改网页帧</btitle>
+    <bimage>iframe.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/iframe.htm', 350, 200, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>87</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Image">
+    <btitle>插入或修改图片</btitle>
+    <bimage>img.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/img.htm', 350, 315, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>90</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Flash">
+    <btitle>插入Flash动画</btitle>
+    <bimage>flash.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/flash.htm', 350, 200, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>91</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Media">
+    <btitle>插入自动播放的媒体文件</btitle>
+    <bimage>media.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/media.htm', 350, 200, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>92</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="File">
+    <btitle>插入其他文件</btitle>
+    <bimage>file.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/file.htm', 350, 150, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>93</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Excel">
+    <btitle>插入Excel表格</btitle>
+    <bimage>excel.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>insert('excel')</bevent>
+    <bclass>Btn</bclass>
+    <border>100</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Symbol">
+    <btitle>插入特殊字符</btitle>
+    <bimage>symbol.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/symbol.htm', 350, 220, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>101</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Emot">
+    <btitle>插入表情图标</btitle>
+    <bimage>emot.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/emot.htm', 300, 180, true)</bevent>
+    <bclass>Btn</bclass>
+    <border>102</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="NowDate">
+    <btitle>插入当前日期</btitle>
+    <bimage>date.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>insert('nowdate')</bevent>
+    <bclass>Btn</bclass>
+    <border>103</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="NowTime">
+    <btitle>插入当前时间</btitle>
+    <bimage>time.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>insert('nowtime')</bevent>
+    <bclass>Btn</bclass>
+    <border>104</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Quote">
+    <btitle>引用样式</btitle>
+    <bimage>quote.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>insert('quote')</bevent>
+    <bclass>Btn</bclass>
+    <border>110</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Code">
+    <btitle>代码样式</btitle>
+    <bimage>code.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>insert('code')</bevent>
+    <bclass>Btn</bclass>
+    <border>111</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="ShowBorders">
+    <btitle>显示或隐藏指导方针</btitle>
+    <bimage>showborders.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>showBorders()</bevent>
+    <bclass>Btn</bclass>
+    <border>112</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="ZoomSelect">
+    <btitle>缩放下拉框</btitle>
+    <bimage></bimage>
+    <bhtml>&lt;option value="10"&gt;10%&lt;/option&gt; &lt;option value="25"&gt;25%&lt;/option&gt; &lt;option value="50"&gt;50%&lt;/option&gt; &lt;option value="75"&gt;75%&lt;/option&gt; &lt;option value="100" selected&gt;100%&lt;/option&gt; &lt;option value="150"&gt;150%&lt;/option&gt; &lt;option value="200"&gt;200%&lt;/option&gt; &lt;option value="500"&gt;500%&lt;/option&gt;</bhtml>
+    <btype>1</btype>
+    <bevent>doZoom(this[this.selectedIndex].value)</bevent>
+    <bclass>TBGen</bclass>
+    <border>113</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="ZoomMenu">
+    <btitle>缩放菜单</btitle>
+    <bimage>zoommenu.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>showToolMenu('zoom')</bevent>
+    <bclass>Btn</bclass>
+    <border>114</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Refresh">
+    <btitle>新建</btitle>
+    <bimage>refresh.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('refresh')</bevent>
+    <bclass>Btn</bclass>
+    <border>114</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="absolutePosition">
+    <btitle>绝对或相对位置</btitle>
+    <bimage>abspos.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>absolutePosition()</bevent>
+    <bclass>Btn</bclass>
+    <border>115</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="zIndexBackward">
+    <btitle>下移一层</btitle>
+    <bimage>backward.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>zIndex('backward')</bevent>
+    <bclass>Btn</bclass>
+    <border>116</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="zIndexForward">
+    <btitle>上移一层</btitle>
+    <bimage>forward.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>zIndex('forward')</bevent>
+    <bclass>Btn</bclass>
+    <border>117</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="SizePlus">
+    <btitle>增高编辑区</btitle>
+    <bimage>sizeplus.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>sizeChange(300)</bevent>
+    <bclass>Btn</bclass>
+    <border>120</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="SizeMinus">
+    <btitle>减小编辑区</btitle>
+    <bimage>sizeminus.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>sizeChange(-300)</bevent>
+    <bclass>Btn</bclass>
+    <border>121</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Maximize">
+    <btitle>全屏编辑</btitle>
+    <bimage>maximize.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>Maximize()</bevent>
+    <bclass>Btn</bclass>
+    <border>130</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Minimize">
+    <btitle>全屏返回</btitle>
+    <bimage>minimize.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>parent.Minimize()</bevent>
+    <bclass>Btn</bclass>
+    <border>131</border>
+    <ballowselect>0</ballowselect>
+  </bcode>
+  <bcode name="ModeCode">
+    <btitle>代码状态</btitle>
+    <bimage>modecodebtn.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>setMode('CODE')</bevent>
+    <bclass>Btn</bclass>
+    <border>200</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="ModeEdit">
+    <btitle>编辑状态</btitle>
+    <bimage>modeeditbtn.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>setMode('EDIT')</bevent>
+    <bclass>Btn</bclass>
+    <border>201</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="ModeView">
+    <btitle>预览状态</btitle>
+    <bimage>modeviewbtn.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>setMode('VIEW')</bevent>
+    <bclass>Btn</bclass>
+    <border>202</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Print">
+    <btitle>打印</btitle>
+    <bimage>print.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>format('Print')</bevent>
+    <bclass>Btn</bclass>
+    <border>203</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="Help">
+    <btitle>查看使用帮助</btitle>
+    <bimage>help.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/help.htm','400','300')</bevent>
+    <bclass>Btn</bclass>
+    <border>204</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+  <bcode name="About">
+    <btitle>关于 - eWebEditor</btitle>
+    <bimage>about.gif</bimage>
+    <bhtml></bhtml>
+    <btype>0</btype>
+    <bevent>ShowDialog('dialog/about.htm','400','220')</bevent>
+    <bclass>Btn</bclass>
+    <border>205</border>
+    <ballowselect>1</ballowselect>
+  </bcode>
+</Edit_Button>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.0//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_0.dtd">
+<struts-config>
+<form-beans>
+<form-bean name="articleManage_form" type="com.v246.ArticleManage_form"/>
+<form-bean name="custom_form" type="com.v246.CustomLable_form"/>
+<form-bean name="userForm" type="com.v246.UserForm"/>
+<form-bean name="article_addArticle_form" type="com.v246.Article_addArticle_form"/>
+<form-bean name="template_addTemplate_form" type="com.v246.Template_addTemplate_form"/>
+<form-bean name="class_addClass_form" type="com.v246.Class_addClass_form"/>
+</form-beans>
+<global-forwards>  <!--×¢ÒâÕâÀï,ÕâÀïÊÇÈ«¾Ö×ª·¢-->
+</global-forwards>
+<action-mappings>
+    <action path="/admin/createUser"
+	type="com.v246.UserAction"
+	name="userForm"
+	scope="request"
+	validate="true"
+	input="/admin/createUser.jsp">
+	<forward name="userCreated" path="/admin/viewUser.jsp"/> 
+    </action>
+
+    <action path="/admin/addArticle"
+	type="com.v246.Article_addArticle_action"
+	name="article_addArticle_form"
+	scope="request"
+	validate="true"
+	input="/admin/addArticle.jsp">
+	<forward name="addArticle" path="/admin/OKArticle.jsp"/>
+    </action>
+
+    <action path="/admin/addTemplate"
+	type="com.v246.Template_addTemplate_action"
+	name="template_addTemplate_form"
+	scope="request"
+	validate="true"
+	input="/admin/addTemplate.jsp">
+	<forward name="addTemplate" path="/admin/OKTemplate.jsp"/>
+    </action>
+
+    <action path="/admin/addClass"
+	type="com.v246.Class_addClass_action"
+	name="class_addClass_form"
+	scope="request"
+	validate="true"
+	input="/admin/addClass.jsp">
+	<forward name="addClass" path="/admin/OKClass.jsp"/>
+	<forward name="alreadyHaveClassName" path="/admin/error.jsp?id=10"/>
+	<forward name="alreadyHaveClassDir" path="/admin/error.jsp?id=11"/>
+    </action>
+
+    <action path="/admin/addCustom"
+	type="com.v246.CustomLable_action"
+	name="custom_form"
+	scope="request"
+	validate="true"
+	input="/admin/addCustom.jsp">
+	<forward name="custom" path="/admin/OKCustom.jsp"/>
+	<!--ÒÔ¾­´æÔÚ¸Ã±êÇ©-->
+	<forward name="customError" path="/admin/error.jsp?id=1"/>
+    </action>
+	
+    <action path="/admin/articleManage"
+	type="com.v246.ArticleManage_action"
+	name="articleManage_form"
+	scope="request"
+	validate="true"
+	input="/admin/articleManage.jsp">
+	<forward name="articleManage" path="/admin/articleManage.jsp"/>
+    </action>
+    
+
+</action-mappings>
+	<message-resources parameter="ApplicationResources"/>
+</struts-config> 

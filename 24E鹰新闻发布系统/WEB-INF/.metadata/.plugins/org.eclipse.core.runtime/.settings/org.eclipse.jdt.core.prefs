@@ -1,0 +1,6 @@
+#Tue Oct 25 20:41:55 CST 2005
+eclipse.preferences.version=1
+org.eclipse.jdt.core.classpathVariable.MYECLIPSE_LIB_HOME=C\:/Program Files/MyEclipse/eclipse/plugins/com.genuitec.eclipse.j2eedt.core_3.8.3/data/libraryset
+org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=*.launch
+org.eclipse.jdt.core.classpathContainer.classes|org.eclipse.jdt.launching.JRE_CONTAINER=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<classpath>\r\n<classpathentry kind\="lib" path\="C\:/Program Files/Java/jre1.5.0_04/lib/rt.jar"/>\r\n<classpathentry kind\="lib" path\="C\:/Program Files/Java/jre1.5.0_04/lib/jsse.jar"/>\r\n<classpathentry kind\="lib" path\="C\:/Program Files/Java/jre1.5.0_04/lib/jce.jar"/>\r\n<classpathentry kind\="lib" path\="C\:/Program Files/Java/jre1.5.0_04/lib/charsets.jar"/>\r\n<classpathentry kind\="lib" path\="C\:/Program Files/Java/jre1.5.0_04/lib/ext/dnsns.jar"/>\r\n<classpathentry kind\="lib" path\="C\:/Program Files/Java/jre1.5.0_04/lib/ext/localedata.jar"/>\r\n<classpathentry kind\="lib" path\="C\:/Program Files/Java/jre1.5.0_04/lib/ext/sunjce_provider.jar"/>\r\n<classpathentry kind\="lib" path\="C\:/Program Files/Java/jre1.5.0_04/lib/ext/sunpkcs11.jar"/>\r\n</classpath>\r\n
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled

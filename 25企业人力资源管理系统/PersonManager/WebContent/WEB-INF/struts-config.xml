@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>	
+        <form-bean name="managerForm" type="com.wy.form.ManagerForm"/>
+        <form-bean name="departmentForm" type="com.wy.form.DepartmentForm"/>
+        <form-bean name="inviteJobForm" type="com.wy.form.InviteJobForm"/>   
+        <form-bean name="employeeForm" type="com.wy.form.EmployeeForm"/>   
+        <form-bean name="payForm" type="com.wy.form.PayForm"/>
+        <form-bean name="trainForm" type="com.wy.form.TrainForm"/>
+        <form-bean name="cjForm" type="com.wy.form.CjForm"/>
+	</form-beans>
+
+
+	<action-mappings>	
+		<action path="/manager" validate="false" parameter="method"  name="managerForm"  scope="request">
+			<forward name="checkManager" path="/dealwith.jsp" />
+			<forward name="operationManager" path="/manager_update.jsp" />
+			<forward name="queryManager" path="/manager_query.jsp" />	
+			<forward name="errorManager" path="/manager_insert.jsp" />
+		</action>
+		<action path="/department" validate="false" parameter="method"  name="departmentForm"  scope="request">
+			<forward name="queryDepartment" path="/department_query.jsp"/>
+			<forward name="operationDepartment" path="/department_deawith.jsp"/>			
+		</action>
+		<action path="/inviteJob" validate="false" parameter="method"  name="inviteJobForm"  scope="request">
+			<forward name="queryInviteJob" path="/inviteJob_query.jsp"/>
+			<forward name="operationInviteJob" path="/inviteJob_operation.jsp"/>
+			<forward name="queryOneInviteJob" path="/inviteJob_queryOne.jsp"/>
+		</action>
+		<action path="/employee" validate="false" parameter="method"  name="employeeForm"  scope="request">
+			<forward name="queryEmployee" path="/employee_query.jsp"/>
+			<forward name="forwardInsertEmployee" path="/employee_insert.jsp"/>	
+			<forward name="operationEmployee" path="/employee_deawith.jsp"/>
+			<forward name="forwardUpdateEmployee" path="/employee_update.jsp"/>	
+			<forward name="queryOneEmployee" path="/employee_queryOne.jsp"/>
+			<forward name="forwardEmploy" path="/employee_employ.jsp"/>
+		</action>
+		<action path="/pay" validate="false" parameter="method"  name="payForm"  scope="request">
+			<forward name="queryPay" path="/pay_query.jsp"/>
+			<forward name="forwardInsertPay" path="/pay_insert.jsp"/>
+			<forward name="operationPay" path="/pay_deawith.jsp"/>
+		</action>
+		<action path="/train" validate="false" parameter="method"  name="trainForm"  scope="request">
+		    <forward name="queryTrain" path="/train_query.jsp"/>
+		    <forward name="operationTrain" path="/train_deawith.jsp"/>
+		    <forward name="queryOneTrain" path="/train_queryOne.jsp"/>
+		</action>
+		<action path="/cj" validate="false" parameter="method"  name="cjForm"  scope="request">
+		    <forward name="queryCj" path="/cj_query.jsp"/>
+		    <forward name="operationCj" path="/cj_deawith.jsp"/>
+		    <forward name="queryOneCj" path="/cj_queryOne.jsp"/>
+		</action>
+		
+		
+		
+	</action-mappings>
+
+	<controller processorClass="com.wy.tool.SelfRequestProcessor" />
+	<plug-in
+		className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+			value="/WEB-INF/applicationContext.xml" />
+	</plug-in>
+</struts-config>
+

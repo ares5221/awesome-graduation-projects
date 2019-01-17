@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.0">
+    <description>A tag library exercising SimpleTag handlers.</description>
+    <tlib-version>1.0</tlib-version>
+
+    <short-name>abcdefg</short-name>
+    <uri>/aqu</uri>
+    <description>×Ô¼ºµÄTAG±êÇ©</description>
+    <tag>
+	<name>aqu01</name>
+	<tag-class>com.v246.tagg</tag-class>
+	<body-content>empty</body-content>
+    </tag>
+    <tag>
+	<name>aquLoop</name>
+	<tag-class>com.v246.tb</tag-class>
+	<body-content>jsp</body-content>]
+    </tag>
+</taglib>

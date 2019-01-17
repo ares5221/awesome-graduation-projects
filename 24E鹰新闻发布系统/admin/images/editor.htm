@@ -1,0 +1,2245 @@
+<html><head> <meta http-equiv="Content-Type" content="text/html; charset=gb2312"><title>HTML在线编辑器</title>  <link rel="STYLESHEET" type="text/css" href="editor_data/editor.css"></head><body leftmargin="0" topmargin="0" oncontextmenu="event.returnValue=false;" bgcolor="#ffffff">    <input id="ContentEdit" value="" type="hidden"><input value="" id="ModeEdit" type="hidden"><input value="" id="ContentLoad" type="hidden"><input value="0" id="ContentFlag" type="hidden">     <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">      <tbody><tr>       <td valign="top"><div class="yToolbar">
+  <div class="TBHandle"></div>
+  <div class="Btn" title="全部选择" language="javascript" onclick="format('selectall')"><img class="Ico" src="editor_data/selectall.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="删除" language="javascript" onclick="format('delete')"><img class="Ico" src="editor_data/delete.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="剪切" language="javascript" onclick="format('cut')"><img class="Ico" src="editor_data/cut.gif" height="18" width="18"></div>
+  <div class="Btn" title="复制" language="javascript" onclick="format('copy')"><img class="Ico" src="editor_data/copy.gif" height="18" width="18"></div>
+  <div class="Btn" title="粘贴" language="javascript" onclick="format('paste')"><img class="Ico" src="editor_data/paste.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="撤消" language="javascript" onclick="format('undo')"><img class="Ico" src="editor_data/undo.gif" height="18" width="18"></div>
+  <div class="Btn" title="恢复" language="javascript" onclick="format('redo')"><img class="Ico" src="editor_data/redo.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="查找 / 替换" language="javascript" onclick="findstr()"><img class="Ico" src="editor_data/find.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="计算器" language="javascript" onclick="insert('calculator')"><img class="Ico" src="editor_data/calculator.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="打印" language="javascript" onclick="format('Print')"><img class="Ico" src="editor_data/print.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="查看帮助" language="javascript" onclick="insert('help')"><img class="Ico" src="editor_data/help.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="左对齐" language="javascript" onclick="format('justifyleft')"><img class="Ico" src="editor_data/aleft.gif" height="18" width="18"></div>
+  <div class="Btn" title="居中" language="javascript" onclick="format('justifycenter')"><img class="Ico" src="editor_data/acenter.gif" height="18" width="18"></div>
+  <div class="Btn" title="右对齐" language="javascript" onclick="format('justifyright')"><img class="Ico" src="editor_data/aright.gif" height="18" width="18"></div>
+  <div class="Btn" title="两端对齐" language="javascript" onclick="format('JustifyFull')"><img class="Ico" src="editor_data/JustifyFull.gif" height="18" width="18"></div>
+  <div class="Btn" title="绝对或相对位置" language="javascript" onclick="format('absolutePosition')"><img class="Ico" src="editor_data/abspos.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="图片左环绕" language="javascript" onclick="imgalign('left')"><img class="Ico" src="editor_data/imgleft.gif" height="18" width="18"></div>
+  <div class="Btn" title="图片单行聚中" language="javascript" onclick="imgalign('center')"><img class="Ico" src="editor_data/imgcenter.gif" height="18" width="18"></div>
+  <div class="Btn" title="图片右环绕" language="javascript" onclick="imgalign('right')"><img class="Ico" src="editor_data/imgright.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="删除文字格式" language="javascript" onclick="format('RemoveFormat')"><img class="Ico" src="editor_data/clear.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="插入普通水平线" language="javascript" onclick="format('InsertHorizontalRule')"><img class="Ico" src="editor_data/line.gif" height="18" width="18"></div>
+  <div class="Btn" title="插入特殊水平线" language="javascript" onclick="insert('hr')"><img class="Ico" src="editor_data/sline.gif" height="18" width="18"></div>
+  <div class="Btn" title="插入当前日期" language="javascript" onclick="insert('nowdate')"><img class="Ico" src="editor_data/date.gif" height="18" width="18"></div>
+  <div class="Btn" title="插入当前时间" language="javascript" onclick="insert('nowtime')"><img class="Ico" src="editor_data/time.gif" height="18" width="18"></div>
+  <div class="Btn" title="插入特殊符号" language="javascript" onclick="Insertlr('editor_tsfh.asp',300,190,74732000.0001462)"><img class="Ico" src="editor_data/symbol.gif" height="18" width="18"></div>
+  <div class="Btn" title="插入超级连接" language="javascript" onclick="format('CreateLink')"><img class="Ico" src="editor_data/url.gif" height="18" width="18"></div>
+  <div class="Btn" title="取消超级链接" language="javascript" onclick="format('unLink')"><img class="Ico" src="editor_data/nourl.gif" height="18" width="18"></div>
+  <div class="Btn" title="插入换行符号" language="javascript" onclick="insert('br')"><img class="Ico" src="editor_data/chars.gif" height="18" width="18"></div>
+</div>
+<div class="yToolbar">
+  <div class="TBHandle"></div>
+<select id="formatSelect" class="TBGen" onchange="format('FormatBlock',this[this.selectedIndex].value);this.selectedIndex=0"><option selected="selected">段落格式</option><option value="&lt;P&gt;">普通</option><option value="&lt;PRE&gt;">已编排格式</option><option value="&lt;H1&gt;">标题一</option><option value="&lt;H2&gt;">标题二</option><option value="&lt;H3&gt;">标题三</option><option value="&lt;H4&gt;">标题四</option><option value="&lt;H5&gt;">标题五</option><option value="&lt;H6&gt;">标题六</option><option value="&lt;H7&gt;">标题七</option></select><select id="FontName" class="TBGen" onchange="format('fontname',this[this.selectedIndex].value);this.selectedIndex=0"><option selected="selected">字体</option><option value="宋体">宋体</option><option value="黑体">黑体</option><option value="楷体_GB2312">楷体</option><option value="仿宋_GB2312">仿宋</option><option value="隶书">隶书</option><option value="幼圆">幼圆</option><option value="Arial">Arial</option><option value="Arial Black">Arial Black</option><option value="Arial Narrow">Arial Narrow</option><option value="Brush ScriptMT">Brush Script MT</option><option value="Century Gothic">Century Gothic</option><option value="Comic Sans MS">Comic Sans MS</option><option value="Courier">Courier</option><option value="Courier New">Courier New</option><option value="MS Sans Serif">MS Sans Serif</option><option value="Script">Script</option><option value="System">System</option><option value="Times New Roman">Times New Roman</option><option value="Verdana">Verdana</option><option value="WideLatin">Wide Latin</option><option value="Wingdings">Wingdings</option></select><select id="FontSize" class="TBGen" onchange="format('fontsize',this[this.selectedIndex].value);this.selectedIndex=0"><option selected="selected">字号</option><option value="7">一号</option><option value="6">二号</option><option value="5">三号</option><option value="4">四号</option><option value="3">五号</option><option value="2">六号</option><option value="1">七号</option></select>  <div class="TBSep"></div>
+  <div class="Btn" title="字体颜色" language="javascript" onclick="insert('fgcolor')"><img class="Ico" src="editor_data/fgcolor.gif" height="18" width="18"></div>
+  <div class="Btn" title="文字背景色" language="javascript" onclick="insert('fgbgcolor')"><img class="Ico" src="editor_data/fgbgcolor.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="加粗" language="javascript" onclick="format('bold')"><img class="Ico" src="editor_data/bold.gif" height="18" width="18"></div>
+  <div class="Btn" title="斜体" language="javascript" onclick="format('italic')"><img class="Ico" src="editor_data/italic.gif" height="18" width="18"></div>
+  <div class="Btn" title="下划线" language="javascript" onclick="format('underline')"><img class="Ico" src="editor_data/underline.gif" height="18" width="18"></div>
+  <div class="Btn" title="删除线" language="javascript" onclick="format('StrikeThrough')"><img class="Ico" src="editor_data/strikethrough.gif" height="18" width="18"></div>
+  <div class="BtnMenu" title="更多文字格式" language="javascript" onclick="showToolMenu('font')"><img class="Ico" src="editor_data/arrow.gif" height="18" width="5"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="插入标签" language="javascript" onclick="insert('Label')"><img class="Ico" src="editor_data/label.gif" height="18" width="18"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="插入网页" language="javascript" onclick="insert('iframe')"><img class="Ico" src="editor_data/htm.gif" height="18" width="18"></div>
+  <div class="Btn" title="插入表格" language="javascript" onclick="TableInsert()"><img class="Ico" src="editor_data/table.gif" height="18" width="18"></div>
+  <div class="BtnMenu" title="表格操作" language="javascript" onclick="showToolMenu('table')"><img class="Ico" src="editor_data/arrow.gif" height="18" width="5"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="显示或隐藏表格虚线、按钮等显示样式" language="javascript" onclick="showBorders()"><img class="Ico" src="editor_data/showBorders.gif" height="18" width="18"></div>
+  <div class="Btn" title="插入下拉菜单" language="javascript" onclick="Insermenu('2005-9-19 20:45:32')"><img class="Ico" src="editor_data/menu.gif" height="18" width="18"></div>
+  <div class="BtnMenu" title="更多表单控件" language="javascript" onclick="showToolMenu('form')"><img class="Ico" src="editor_data/arrow.gif" height="18" width="5"></div>
+  <div class="TBSep"></div>
+  <div class="Btn" title="插入滚动文本" language="javascript" onclick="insert('insermarquee')"><img class="Ico" src="editor_data/Marquee.gif" height="18" width="18"></div>
+  <div class="BtnMenu" title="插入更多样式" language="javascript" onclick="showToolMenu('object')"><img class="Ico" src="editor_data/arrow.gif" height="18" width="5"></div>
+  <div class="Btn" title="插入图片，支持格式为：gif、jpg、bmp、png等" language="javascript" onclick="insert('pic')"><img class="Ico" src="editor_data/img.gif" height="18" width="18"></div>
+  <div class="Btn" title="插入flash多媒体文件" language="javascript" onclick="insert('swf')"><img class="Ico" src="editor_data/flash.gif" height="18" width="18"></div>
+  <div class="Btn" title="插入视频文件，支持格式为：avi、wmv、asf等" language="javascript" onclick="insert('wmv')"><img class="Ico" src="editor_data/wmv.gif" height="18" width="18"></div>
+  <div class="Btn" title="插入RealPlay文件，支持格式为：rm、ra、ram" language="javascript" onclick="insert('rm')"><img class="Ico" src="editor_data/rm.gif" height="18" width="18"></div>
+  <div class="Btn" title="上传附件" language="javascript" onclick="insert('fujian')"><img class="Ico" src="editor_data/fujian.gif" height="18" width="18"></div>
+</div>
+</td></tr>  <tr>   <td height="100%" valign="top">     <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">     <tbody><tr><td height="100%">       <iframe class="HtmlEdit" id="HtmlEdit" marginheight="1" marginwidth="1" style="" scrolling="yes"></iframe>     </td></tr>     </tbody></table>   </td>  </tr>  <tr>   <td height="25" valign="top">     <table align="center" border="0" cellpadding="0" cellspacing="0" height="20" width="100%">      <tbody><tr>       <td id="ShowObject" width="90%"></td>       <td align="right" valign="top">         <img src="Admin_Index_Main_data/sizeplus.gif" onclick="sizeChange(200)" height="20" width="20">         <img src="Admin_Index_Main_data/sizeminus.gif" onclick="sizeChange(-200)" height="20" width="20">       </td>       <td width="30"></td>     </tr>     </tbody></table><div id="HtmlEdit_Temp_HTML" style="visibility: hidden; overflow: hidden; position: absolute; width: 1px; height: 1px;"></div>       </td>      </tr></tbody></table>       
+<script type="text/javascript">
+
+// 系统初试化 和系统运用 函数组开始
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	SEP_PADDING = 5;
+	HANDLE_PADDING = 7;
+	// 改变模式：代码、编辑、文本、预览
+	var sCurrMode = 'EDIT';
+	var bEditMode = true;
+	var yanchicss= false;
+	ModeEdit.value = 'EDIT';
+
+	// 连接对象
+	var oLinkField = null;
+	// 浏览器版本检测
+	var BrowserInfo = new Object() ;
+	BrowserInfo.MajorVer = navigator.appVersion.match(/MSIE (.)/)[1] ;
+	BrowserInfo.MinorVer = navigator.appVersion.match(/MSIE .\.(.)/)[1] ;
+	BrowserInfo.IsIE55OrMore = BrowserInfo.MajorVer >= 6 || ( BrowserInfo.MajorVer >= 5 && BrowserInfo.MinorVer >= 5 ) ;
+
+	var yToolbars =   new Array();
+	var YInitialized = false;
+	var bLoad=false;
+	var pureText=true;
+	var EditMode=true;
+	var SourceMode=false;
+	var PreviewMode=false;
+	var CurrentMode=0;
+	var sLinkFieldName ="EditorContent";
+	
+	//程序处始化
+	function document.onreadystatechange(){
+		if (YInitialized) return;
+		YInitialized = true;
+		
+		var i, s, curr;
+		for (i=0; i<document.body.all.length; i++)
+		{
+			curr=document.body.all[i];
+			if (curr.className == 'yToolbar')
+			{
+				InitTB(curr);
+				yToolbars[yToolbars.length] = curr;
+			}
+		}
+		DoTemplate();
+		oLinkField = parent.document.getElementsByName(sLinkFieldName)[0];
+		if (ContentFlag.value=="0") {
+			ContentEdit.value = oLinkField.value;
+			ContentLoad.value = oLinkField.value;
+			ModeEdit.value = 'EDIT'
+			ContentFlag.value = "1";
+		}
+		window.onresize = DoTemplate;
+		  var content= "<html><head><META http-equiv=Content-Type content=text/html; charset=gb2312><link href='Skin/DefaultSkin.css' rel='stylesheet' type='text/css'></head>" +ContentEdit.value;
+
+		{
+			content = content.replace("[/textarea]", "</textarea>");
+		}
+		HtmlEdit.document.open();
+		HtmlEdit.document.write(content);
+		HtmlEdit.document.close();  HtmlEdit.document.designMode='On';
+		HtmlEdit.document.onkeydown = new Function('return onKeyDown(HtmlEdit.event);');
+		HtmlEdit.document.onmouseup = new Function('return onMouseUp(HtmlEdit.event,1);');
+		HtmlEdit.document.oncontextmenu=new Function('return showContextMenu(HtmlEdit.event);');
+	}
+	function yToolbarsCss(){
+			var i, s, curr;
+			for (i=0; i<document.body.all.length; i++)
+			{
+				curr=document.body.all[i];
+				if (curr.className == 'yToolbar')
+				{
+					InitTB(curr);
+					yToolbars[yToolbars.length] = curr;
+				}
+			}
+			DoTemplate();
+	}
+	function InitBtn(btn)
+	{		
+		btn.onmouseover = BtnMouseOver;
+		btn.onmouseout = BtnMouseOut;
+		btn.onmousedown = BtnMouseDown;
+		btn.onmouseup = BtnMouseUp;
+		btn.ondragstart = YCancelEvent;
+		btn.onselectstart = YCancelEvent;
+		btn.onselect = YCancelEvent;
+		btn.YUSERONCLICK = btn.onclick;
+		btn.onclick = YCancelEvent;
+		btn.YINITIALIZED = true;
+		return true;
+	}
+	function InitBtnMenu(BtnMenu)
+	{
+		BtnMenu.onmouseover = BtnMenuMouseOver;
+		BtnMenu.onmouseout = BtnMenuMouseOut;
+		BtnMenu.onmousedown = BtnMenuMouseDown;
+		BtnMenu.onmouseup = BtnMenuMouseUp;
+		BtnMenu.ondragstart = YCancelEvent;
+		BtnMenu.onselectstart = YCancelEvent;
+		BtnMenu.onselect = YCancelEvent;
+		BtnMenu.YUSERONCLICK = BtnMenu.onclick;
+		BtnMenu.onclick = YCancelEvent;
+		BtnMenu.YINITIALIZED = true;
+		return true;
+	}
+
+	function InitTB(y)
+	{
+		y.TBWidth = 0;
+		if (! PopulateTB(y)) return false;
+		y.style.posWidth = y.TBWidth;
+		return true;
+	}
+	function YCancelEvent()
+	{
+		event.returnValue=false;
+		event.cancelBubble=true;
+		return false;
+	}
+
+	function PopulateTB(y)
+	{
+		var i, elements, element;
+		elements = y.children;
+		for (i=0; i<elements.length; i++) {
+			element = elements[i];
+			if (element.tagName == 'SCRIPT' || element.tagName == '!') continue;
+			switch (element.className) {
+			case 'Btn':
+				if (element.YINITIALIZED == null)   {
+				if (! InitBtn(element))
+					return false;
+				}
+				element.style.posLeft = y.TBWidth;
+				y.TBWidth   += element.offsetWidth + 1;
+				break;
+			case 'BtnMenu':
+				if (element.YINITIALIZED == null)   {
+				if (! InitBtnMenu(element))
+					return false;
+				}
+				element.style.posLeft = y.TBWidth;
+				y.TBWidth   += element.offsetWidth + 1;
+				break;
+			case 'TBGen':
+				element.style.posLeft = y.TBWidth;
+				y.TBWidth   += element.offsetWidth + 1;
+				break;
+			case 'TBSep':
+				element.style.posLeft = y.TBWidth   + 2;
+				y.TBWidth   += SEP_PADDING;
+				break;
+			case 'TBHandle':
+				element.style.posLeft = 2;
+				y.TBWidth   += element.offsetWidth + HANDLE_PADDING;
+				break;
+			default:
+			return false;
+			}
+		}
+		y.TBWidth += 1;
+		return true;
+	}
+	function TemplateTBs()
+	{
+		NumTBs = yToolbars.length;
+		if (NumTBs == 0) return;
+		var i;
+		var ScrWid = (document.body.offsetWidth) - 6;
+		var TotalLen = ScrWid;
+		for (i = 0 ; i < NumTBs ; i++) {
+			TB = yToolbars[i];
+			if (TB.TBWidth > TotalLen) TotalLen = TB.TBWidth;
+		}
+		var PrevTB;
+		var LastStart = 0;
+		var RelTop = 0;
+		var LastWid, CurrWid;
+		var TB = yToolbars[0];
+		TB.style.posTop = 0;
+		TB.style.posLeft = 0;
+
+		var Start = TB.TBWidth;
+		for (i = 1 ; i < yToolbars.length ; i++) {
+			PrevTB = TB;
+			TB = yToolbars[i];
+			CurrWid = TB.TBWidth;
+
+		if ((Start + CurrWid) > ScrWid) {
+			Start = 0;
+			LastWid = TotalLen - LastStart;
+		}
+		else {
+			LastWid =    PrevTB.TBWidth;
+			RelTop -=    TB.offsetHeight;
+		}
+
+		TB.style.posTop = RelTop;
+		TB.style.posLeft = Start;
+		PrevTB.style.width = LastWid;
+
+		LastStart = Start;
+		Start += CurrWid;
+	  }
+
+	  TB.style.width = TotalLen - LastStart;
+
+	  i--;
+	  TB = yToolbars[i];
+	  var TBInd = TB.sourceIndex;
+	  var A = TB.document.all;
+	  var item;
+	  for (i in A) {
+		item = A.item(i);
+		if (! item) continue;
+		if (! item.style) continue;
+		if (item.sourceIndex <= TBInd) continue;
+		if (item.style.position == 'absolute') continue;
+		item.style.posTop = RelTop;
+	  }
+	}
+
+	function DoTemplate()
+	{
+	  TemplateTBs();
+	}
+
+	function BtnMouseOver()
+	{
+	  if (event.srcElement.tagName != 'IMG') return false;
+	  var image = event.srcElement;
+	  var element = image.parentElement;
+
+	  if (image.className == 'Ico') element.className = 'BtnMouseOverUp';
+	  else if (image.className == 'IcoDown') element.className = 'BtnMouseOverDown';
+
+	  event.cancelBubble = true;
+	}
+
+	function BtnMouseOut()
+	{
+	  if (event.srcElement.tagName != 'IMG') {
+		event.cancelBubble = true;
+		return false;
+	  }
+
+	  var image = event.srcElement;
+	  var element = image.parentElement;
+	  yRaisedElement = null;
+
+	  element.className = 'Btn';
+	  image.className = 'Ico';
+
+	  event.cancelBubble = true;
+	}
+
+	function BtnMouseDown()
+	{
+	  if (event.srcElement.tagName != 'IMG') {
+		event.cancelBubble = true;
+		event.returnValue=false;
+		return false;
+	  }
+
+	  var image = event.srcElement;
+	  var element = image.parentElement;
+
+	  element.className = 'BtnMouseOverDown';
+	  image.className = 'IcoDown';
+
+	  event.cancelBubble = true;
+	  event.returnValue=false;
+	  return false;
+	}
+
+	function BtnMouseUp()
+	{
+	  if (event.srcElement.tagName != 'IMG') {
+		event.cancelBubble = true;
+		return false;
+	  }
+
+	  var image = event.srcElement;
+	  var element = image.parentElement;
+
+	  if (element.YUSERONCLICK) eval(element.YUSERONCLICK + 'anonymous()');
+
+	  element.className = 'BtnMouseOverUp';
+	  image.className = 'Ico';
+
+	  event.cancelBubble = true;
+	  return false;
+	}
+
+	function BtnMenuMouseOver()
+	{
+	  if (event.srcElement.tagName != 'IMG') return false;
+	  var image = event.srcElement;
+	  var element = image.parentElement;
+
+	  if (image.className == 'Ico') element.className = 'BtnMenuMouseOverUp';
+	  else if (image.className == 'IcoDown') element.className = 'BtnMenuMouseOverDown';
+
+	  event.cancelBubble = true;
+	}
+
+	function BtnMenuMouseOut()
+	{
+	  if (event.srcElement.tagName != 'IMG') {
+		event.cancelBubble = true;
+		return false;
+	  }
+
+	  var image = event.srcElement;
+	  var element = image.parentElement;
+	  yRaisedElement = null;
+
+	  element.className = 'BtnMenu';
+	  image.className = 'Ico';
+
+	  event.cancelBubble = true;
+	}
+
+	function BtnMenuMouseDown()
+	{
+	  if (event.srcElement.tagName != 'IMG') {
+		event.cancelBubble = true;
+		event.returnValue=false;
+		return false;
+	  }
+
+	  var image = event.srcElement;
+	  var element = image.parentElement;
+
+	  element.className = 'BtnMenuMouseOverDown';
+	  image.className = 'IcoDown';
+
+	  event.cancelBubble = true;
+	  event.returnValue=false;
+	  return false;
+	}
+
+	function BtnMenuMouseUp()
+	{
+	  if (event.srcElement.tagName != 'IMG') {
+		event.cancelBubble = true;
+		return false;
+	  }
+
+	  var image = event.srcElement;
+	  var element = image.parentElement;
+
+	  if (element.YUSERONCLICK) eval(element.YUSERONCLICK + 'anonymous()');
+
+	  element.className = 'BtnMenuMouseOverUp';
+	  image.className = 'Ico';
+
+	  event.cancelBubble = true;
+	  return false;
+	}
+
+	// 系统初试化 和系统运用 函数组结速
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// 表格处理定义函数组开始
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// 表格相关全局变量
+	var selectedTD
+	var selectedTR
+	var selectedTBODY
+	var selectedTable
+	// 显示隐藏表格
+	var borderShown = "yes"
+
+	// 插入表格
+	function TableInsert(){
+		if (!isTableSelected()){
+			ShowDialog('Editor/editor_table.asp', 350, 410, true);
+		}
+	}
+
+	// 修改表格属性
+	function TableProp(){
+		if (isTableSelected()||isCursorInTableCell()){
+			ShowDialog('Editor/editor_table.asp?action=modify', 350, 410, true);
+		}
+	}
+
+	// 修改单元格属性
+	function TableCellProp(){
+		if (isCursorInTableCell()){
+			ShowDialog('Editor/editor_tablecell.asp', 350, 310, true);
+		}
+	}
+
+	// 拆分单元格
+	function TableCellSplit(){
+		if (isCursorInTableCell()){
+			ShowDialog('Editor/editor_tablecellsplit.asp', 200, 150, true);
+		}
+	}
+
+	// 修改表格行属性
+	function TableRowProp(){
+		if (isCursorInTableCell()){
+			ShowDialog('Editor/editor_tablecell.asp?action=row', 350, 310, true);
+		}
+	}
+
+	// 插入行（在上方）
+	function TableRowInsertAbove() {
+		if (isCursorInTableCell()){
+			var numCols = 0
+
+			allCells = selectedTR.cells
+			for (var i=0;i<allCells.length;i++) {
+				numCols = numCols + allCells[i].getAttribute('colSpan')
+			}
+
+			var newTR = selectedTable.insertRow(selectedTR.rowIndex)
+		
+			for (i = 0; i < numCols; i++) {
+				newTD = newTR.insertCell()
+				newTD.innerHTML = "&nbsp;"
+
+				if (borderShown == "yes") {
+					newTD.runtimeStyle.border = "1px dotted #330000"
+				}
+			}
+		}	
+	}
+
+	// 插入行（在下方）
+	function TableRowInsertBelow() {
+
+		if (isCursorInTableCell()){
+			
+			var numCols = 0
+
+			allCells = selectedTR.cells
+			for (var i=0;i<allCells.length;i++) {
+				numCols = numCols + allCells[i].getAttribute('colSpan')
+			}
+
+			var newTR = selectedTable.insertRow(selectedTR.rowIndex+1)
+
+			for (i = 0; i < numCols; i++) {
+				newTD = newTR.insertCell()
+				newTD.innerHTML = "&nbsp;"
+				
+				if (borderShown == "yes") {
+					newTD.runtimeStyle.border = "1px dotted #BFBFBF"
+				}
+			}
+		}
+	}
+
+	// 合并行（向下方）
+	function TableRowMerge() {
+		if (isCursorInTableCell()) {
+
+			var rowSpanTD = selectedTD.getAttribute('rowSpan')
+			allRows = selectedTable.rows
+			if (selectedTR.rowIndex +1 != allRows.length) {
+
+				var allCellsInNextRow = allRows[selectedTR.rowIndex+selectedTD.rowSpan].cells
+				var addRowSpan = allCellsInNextRow[selectedTD.cellIndex].getAttribute('rowSpan')
+				var moveTo = selectedTD.rowSpan
+
+				if (!addRowSpan) addRowSpan = 1;
+
+				selectedTD.rowSpan = selectedTD.rowSpan + addRowSpan
+				allRows[selectedTR.rowIndex + moveTo].deleteCell(selectedTD.cellIndex)
+			}
+		}
+
+	}
+
+	// 拆分行
+	function TableRowSplit(nRows){
+		if (!isCursorInTableCell()) return;
+		if (nRows<2) return;
+
+		var addRows = nRows - 1;
+		var addRowsNoSpan = addRows;
+
+		var nsLeftColSpan = 0;
+		for (var i=0; i<selectedTD.cellIndex; i++){
+			nsLeftColSpan += selectedTR.cells[i].colSpan;
+		}
+
+		var allRows = selectedTable.rows;
+
+		// rowspan>1时
+		while (selectedTD.rowSpan > 1 && addRowsNoSpan > 0){
+			var nextRow = allRows[selectedTR.rowIndex+selectedTD.rowSpan-1];
+			selectedTD.rowSpan -= 1;
+
+			var ncLeftColSpan = 0;
+			var position = -1;
+			for (var n=0; n<nextRow.cells.length; n++){
+				ncLeftColSpan += nextRow.cells[n].getAttribute('colSpan');
+				if (ncLeftColSpan>nsLeftColSpan){
+					position = n;
+					break;
+				}
+			}
+
+			var newTD=nextRow.insertCell(position);
+			newTD.innerHTML = "&nbsp;";
+
+			if (borderShown == "yes") {
+				newTD.runtimeStyle.border = "1px dotted #BFBFBF";
+			}
+				
+			addRowsNoSpan -= 1;
+		}
+
+		// rowspan=1时
+		for (var n=0; n<addRowsNoSpan; n++){
+			var numCols = 0
+
+			allCells = selectedTR.cells
+			for (var i=0;i<allCells.length;i++) {
+				numCols = numCols + allCells[i].getAttribute('colSpan')
+			}
+
+			var newTR = selectedTable.insertRow(selectedTR.rowIndex+1)
+
+			// 上方行的rowspan达到这行
+			for (var j=0; j<selectedTR.rowIndex; j++){
+				for (var k=0; k<allRows[j].cells.length; k++){
+					if ((allRows[j].cells[k].rowSpan>1)&&(allRows[j].cells[k].rowSpan>=selectedTR.rowIndex-allRows[j].rowIndex+1)){
+						allRows[j].cells[k].rowSpan += 1;
+					}
+				}
+			}
+			// 当前行
+			for (i = 0; i < allCells.length; i++) {
+				if (i!=selectedTD.cellIndex){
+					selectedTR.cells[i].rowSpan += 1;
+				}else{
+					newTD = newTR.insertCell();
+					newTD.colSpan = selectedTD.colSpan;
+					newTD.innerHTML = "&nbsp;";
+
+					if (borderShown == "yes") {
+						newTD.runtimeStyle.border = "1px dotted #BFBFBF";
+					}
+				}
+			}
+		}
+
+	}
+
+	// 删除行
+	function TableRowDelete() {
+		if (isCursorInTableCell()) {
+			selectedTable.deleteRow(selectedTR.rowIndex)
+		}
+	}
+
+	// 插入列（在左侧）
+	function TableColInsertLeft() {
+		if (isCursorInTableCell()) {
+			moveFromEnd = (selectedTR.cells.length-1) - (selectedTD.cellIndex)
+			allRows = selectedTable.rows
+			for (i=0;i<allRows.length;i++) {
+				rowCount = allRows[i].cells.length - 1
+				position = rowCount - moveFromEnd
+				if (position < 0) {
+					position = 0
+				}
+				newCell = allRows[i].insertCell(position)
+				newCell.innerHTML = "&nbsp;"
+
+				if (borderShown == "yes") {
+					newCell.runtimeStyle.border = "1px dotted #BFBFBF"
+				}
+			}
+		}
+	}
+
+	// 插入列（在右侧）
+	function TableColInsertRight() {
+		if (isCursorInTableCell()) {
+			moveFromEnd = (selectedTR.cells.length-1) - (selectedTD.cellIndex)
+			allRows = selectedTable.rows
+			for (i=0;i<allRows.length;i++) {
+				rowCount = allRows[i].cells.length - 1
+				position = rowCount - moveFromEnd
+				if (position < 0) {
+					position = 0
+				}
+				newCell = allRows[i].insertCell(position+1)
+				newCell.innerHTML = "&nbsp;"
+
+				if (borderShown == "yes") {
+					newCell.runtimeStyle.border = "1px dotted #BFBFBF"
+				}
+			}	
+		}
+	}
+
+	// 合并列
+	function TableColMerge() {
+		if (isCursorInTableCell()) {
+
+			var colSpanTD = selectedTD.getAttribute('colSpan')
+			allCells = selectedTR.cells
+
+			if (selectedTD.cellIndex + 1 != selectedTR.cells.length) {
+				var addColspan = allCells[selectedTD.cellIndex+1].getAttribute('colSpan')
+				selectedTD.colSpan = colSpanTD + addColspan
+				selectedTR.deleteCell(selectedTD.cellIndex+1)
+			}	
+		}
+
+	}
+
+	// 删除列
+	function TableColDelete() {
+		if (isCursorInTableCell()) {
+			moveFromEnd = (selectedTR.cells.length-1) - (selectedTD.cellIndex)
+			allRows = selectedTable.rows
+			for (var i=0;i<allRows.length;i++) {
+				endOfRow = allRows[i].cells.length - 1
+				position = endOfRow - moveFromEnd
+				if (position < 0) {
+					position = 0
+				}
+					
+
+				allCellsInRow = allRows[i].cells
+					
+				if (allCellsInRow[position].colSpan > 1) {
+					allCellsInRow[position].colSpan = allCellsInRow[position].colSpan - 1
+				} else { 
+					allRows[i].deleteCell(position)
+				}
+
+			}
+
+		}
+
+	}
+
+	// 拆分列
+	function TableColSplit(nCols){
+		if (!isCursorInTableCell()) return;
+		if (nCols<2) return;
+
+		var addCols = nCols - 1;
+		var addColsNoSpan = addCols;
+		var newCell;
+
+		var nsLeftColSpan = 0;
+		var nsLeftRowSpanMoreOne = 0;
+		for (var i=0; i<selectedTD.cellIndex; i++){
+			nsLeftColSpan += selectedTR.cells[i].colSpan;
+			if (selectedTR.cells[i].rowSpan > 1){
+				nsLeftRowSpanMoreOne += 1;
+			}
+		}
+
+		var allRows = selectedTable.rows
+		// colSpan>1时
+		while (selectedTD.colSpan > 1 && addColsNoSpan > 0) {
+			newCell = selectedTR.insertCell(selectedTD.cellIndex+1);
+			newCell.innerHTML = "&nbsp;"
+			if (borderShown == "yes") {
+				newCell.runtimeStyle.border = "1px dotted #BFBFBF"
+			}
+			selectedTD.colSpan -= 1;
+			addColsNoSpan -= 1;
+		}
+		// colSpan=1时
+		for (i=0;i<allRows.length;i++) {
+			var ncLeftColSpan = 0;
+			var position = -1;
+			for (var n=0; n<allRows[i].cells.length; n++){
+				ncLeftColSpan += allRows[i].cells[n].getAttribute('colSpan');
+				if (ncLeftColSpan+nsLeftRowSpanMoreOne>nsLeftColSpan){
+					position = n;
+					break;
+				}
+			}
+			
+			if (selectedTR.rowIndex!=i){
+				if (position!=-1){
+					allRows[i].cells[position+nsLeftRowSpanMoreOne].colSpan += addColsNoSpan;
+				}
+			}else{
+				for (var n=0; n<addColsNoSpan; n++){
+					newCell = allRows[i].insertCell(selectedTD.cellIndex+1)
+					newCell.innerHTML = "&nbsp;"
+					newCell.rowSpan = selectedTD.rowSpan;
+
+					if (borderShown == "yes") {
+						newCell.runtimeStyle.border = "1px dotted #BFBFBF"
+					}
+				}
+			}
+		}
+	}
+
+	// 是否选中表格
+	function isTableSelected() {
+
+		if (HtmlEdit.document.selection.type == "Control") {
+			var oControlRange = HtmlEdit.document.selection.createRange();
+			if (oControlRange(0).tagName.toUpperCase() == "TABLE") {
+				selectedTable = HtmlEdit.document.selection.createRange()(0);
+				return true;
+			}	
+		}
+	} 
+
+	// 光标是否在表格中
+	function isCursorInTableCell() {
+
+		if (HtmlEdit.document.selection.type != "Control") {
+			var elem = HtmlEdit.document.selection.createRange().parentElement()
+
+			while (elem.tagName.toUpperCase() != "TD" && elem.tagName.toUpperCase() != "TH"){
+				elem = elem.parentElement
+					if (elem == null)
+					break
+			}
+			if (elem) {
+				selectedTD = elem
+				selectedTR = selectedTD.parentElement
+				selectedTBODY =  selectedTR.parentElement
+				selectedTable = selectedTBODY.parentElement
+				return true
+			}
+		}
+	}
+
+
+	// 表格处理定义函数组结速
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// 右键菜单定义函数组开始
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// 菜单常量
+	var sMenuHr="<tr><td align=center valign=middle height=2><TABLE border=0 cellpadding=0 cellspacing=0 width=128 height=2><tr><td height=1 class=HrShadow><\/td><\/tr><tr><td height=1 class=HrHighLight><\/td><\/tr><\/TABLE><\/td><\/tr>";
+	var sMenu1="<TABLE border=0 cellpadding=0 cellspacing=0 class=Menu2 width=150><tr><td width=18 valign=bottom align=center style='background:url(Editor/images/contextmenu.gif);background-positionY: 35%; background-repeat:no-repeat;'><\/td><td width=132 class=RightBg><TABLE border=0 cellpadding=0 cellspacing=0>";
+	var sMenu2="<\/TABLE><\/td><\/tr><\/TABLE>";
+	// 菜单
+	var oPopupMenu = null;
+	if  (BrowserInfo.IsIE55OrMore){
+		oPopupMenu = window.createPopup();
+	}
+
+	// 取菜单行
+	function getMenuRow(s_Disabled, s_Event, s_Image, s_Html) {
+		var s_MenuRow = "";
+		s_MenuRow = "<tr><td align=center valign=middle><TABLE border=0 cellpadding=0 cellspacing=0 width=132><tr "+s_Disabled+"><td valign=middle height=20 class=MouseOut onMouseOver=this.className='MouseOver'; onMouseOut=this.className='MouseOut';";
+		if (s_Disabled==""){
+			s_MenuRow += " onclick=\"parent."+s_Event+";parent.oPopupMenu.hide();\"";
+		}
+		s_MenuRow += ">"
+		if (s_Image !=""){
+			s_MenuRow += "&nbsp;<img border=0 src='Editor/Images/"+s_Image+"' width=18 height=18 align=absmiddle "+s_Disabled+">&nbsp;";
+		}else{
+			s_MenuRow += "&nbsp;";
+		}
+		s_MenuRow += s_Html+"<\/td><\/tr><\/TABLE><\/td><\/tr>";
+		return s_MenuRow;
+
+	}
+
+	// 取标准的format菜单行
+	function getFormatMenuRow(menu, html, image){
+		var s_Disabled = "";
+		if (!HtmlEdit.document.queryCommandEnabled(menu)){
+			s_Disabled = "disabled";
+		}
+		var s_Event = "format('"+menu+"')";
+		var s_Image = menu+".gif";
+		if (image){
+			s_Image = image;
+		}
+		return getMenuRow(s_Disabled, s_Event, s_Image, html)
+	}
+	// 暂时解决一下 不能通用右键的问题
+	function getFormatMenuRow2(menu, html, image){
+		var s_Disabled = "";
+		if (!HtmlEdit.document.queryCommandEnabled(menu)){
+			s_Disabled = "disabled";
+		}
+		var s_Event = "format2('"+menu+"')";
+		var s_Image = menu+".gif";
+		if (image){
+			s_Image = image;
+		}
+		return getMenuRow(s_Disabled, s_Event, s_Image, html)
+	}
+	//表格菜单
+	function tableMenu(){
+		if (!bEditMode) return false;
+		var sMenu = ""
+		var width = 150;
+		var height = 0;
+
+		var lefter = event.clientX;
+		var leftoff = event.offsetX
+		var topper = event.clientY;
+		var topoff = event.offsetY;
+
+		var oPopDocument = oPopupMenu.document;
+		var oPopBody = oPopupMenu.document.body;
+
+		sMenu += getTableMenuRow("TableInsert");
+		sMenu += getTableMenuRow("TableProp");
+		sMenu += sMenuHr;
+		sMenu += getTableMenuRow("TableCell");
+		height = 306;
+	}
+	// 取表格菜单行
+	function getTableMenuRow(what){
+		var s_Menu = "";
+		var s_Disabled = "disabled";
+		switch(what){
+		case "TableInsert":
+			if (!isTableSelected()) s_Disabled="";
+			s_Menu += getMenuRow(s_Disabled, "TableInsert()", "table_cr.gif", "插入表格...")
+			break;
+		case "TableProp":
+			if (isTableSelected()||isCursorInTableCell()) s_Disabled="";
+			s_Menu += getMenuRow(s_Disabled, "TableProp()", "table_sx.gif", "表格属性...")
+			break;
+		case "TableCell":
+			if (isCursorInTableCell()) s_Disabled="";
+			s_Menu += getMenuRow(s_Disabled, "TableCellProp()", "table_sx2.gif", "单元格属性...")
+			s_Menu += getMenuRow(s_Disabled, "TableCellSplit()", "table_cf.gif", "拆分单元格...")
+			s_Menu += sMenuHr;
+			s_Menu += getMenuRow(s_Disabled, "TableRowProp()", "table_sxh.gif", "表格行属性...")
+			s_Menu += getMenuRow(s_Disabled, "TableRowInsertAbove()", "table_tr.gif", "插入行（在上方）");
+			s_Menu += getMenuRow(s_Disabled, "TableRowInsertBelow()", "table_trx.gif", "插入行（在下方）");
+			s_Menu += getMenuRow(s_Disabled, "TableRowMerge()", "table_hbx.gif", "合并行（向下方）");
+			s_Menu += getMenuRow(s_Disabled, "TableRowSplit(2)", "table_cfh.gif", "拆分行");
+			s_Menu += getMenuRow(s_Disabled, "TableRowDelete()", "table_trdel.gif", "删除行");
+			s_Menu += sMenuHr;
+			s_Menu += getMenuRow(s_Disabled, "TableColInsertLeft()", "table_td.gif", "插入列（在左侧）");
+			s_Menu += getMenuRow(s_Disabled, "TableColInsertRight()", "table_tdr.gif", "插入列（在右侧）");
+			s_Menu += getMenuRow(s_Disabled, "TableColMerge()", "table_hby.gif", "合并列（向右侧）");
+			s_Menu += getMenuRow(s_Disabled, "TableColSplit(2)", "table_cf.gif", "拆分列");
+			s_Menu += getMenuRow(s_Disabled, "TableColDelete()", "table_tddel.gif", "删除列");
+			break;
+		}
+		return s_Menu;
+	}
+	// 右键是否在编辑状态
+	function isyou(){
+		var range = HtmlEdit.document.selection.createRange();
+		var RangeType = HtmlEdit.document.selection.type;
+		if (RangeType == "Text"){
+			return true;
+		}  
+	}
+	// 右键调用类型
+	function youjiantype(){
+		if (youjian=true){
+			return true;
+		}  
+	}
+
+	// 右键菜单
+	function showContextMenu(event){
+
+		if (!bEditMode) return false;
+		var width = 150;
+		var height = 0;
+		var lefter = event.clientX;
+		var topper = event.clientY;
+
+		var oPopDocument = oPopupMenu.document;
+		var oPopBody = oPopupMenu.document.body;
+
+		var sMenu="";
+		
+		sMenu += getFormatMenuRow2("cut", "剪切");
+		sMenu += getFormatMenuRow2("copy", "复制");
+		sMenu += getFormatMenuRow2("paste", "常规粘贴");
+		sMenu += getFormatMenuRow2("delete", "删除");
+		
+		sMenu += sMenuHr;
+		sMenu += getMenuRow("", "insert('Label')", "label.gif", "添加标签...");
+		height +=22;
+		if (isControlSelected("IMG")){
+			sMenu += getMenuRow("", "insert('editLabel')", "label2.gif", "编辑标签...");
+			height+=21
+		}
+		
+		sMenu += sMenuHr;
+		height += 102;
+
+		if (HtmlEdit.document.selection.type == "Control") {
+			sMenu += getMenuRow("", "insert('Attribute')", "label3.gif", "代码属性...");	
+			height+= 19;
+		}	
+
+		if (sCurrMode=="EDIT"){
+
+			if (isyou()){
+		
+				
+				sMenu += getMenuRow("", "insert('fgcolor')", "fgcolor.gif", "文字颜色");
+				sMenu += getMenuRow("", "insert('fgbgcolor')", "fgbgcolor.gif", "文字背景色");
+				sMenu += getMenuRow("", "format('bold')", "bold.gif", "文字加粗");
+				sMenu += getMenuRow("", "format('italic')", "italic.gif", "文字斜体");
+				sMenu += getMenuRow("", "format('underline')", "underline.gif", "文字下划线");
+				sMenu += getMenuRow("", "format('StrikeThrough')", "strikethrough.gif", "文字删除线");
+				height += 119;
+			}
+
+			if (isCursorInTableCell()){
+				sMenu += getTableMenuRow("TableProp");
+				sMenu += getTableMenuRow("TableCell");
+				sMenu += sMenuHr;
+				height += 286;
+			}
+
+			if (isControlSelected("TABLE")){
+				sMenu += getTableMenuRow("TableProp");
+				sMenu += sMenuHr;
+				height += 22;
+			}
+
+			if (isControlSelected("IMG")){
+
+				sMenu += getMenuRow("", "insert('pic')", "img.gif", "图片属性...");	
+				sMenu += sMenuHr;
+				sMenu += getMenuRow("", "imgalign('left')", "imgleft.gif", "图片左环绕...");
+				sMenu += getMenuRow("", "imgalign('center')", "imgcenter.gif", "图片单行居中...");
+				sMenu += getMenuRow("", "imgalign('right')", "imgright.gif", "图片右环绕...");		
+				sMenu += sMenuHr;
+				sMenu += getMenuRow("", "zIndex('forward')", "forward.gif", "上移一层");
+				sMenu += getMenuRow("", "zIndex('backward')", "backward.gif", "下移一层");
+				sMenu += sMenuHr;
+				height+= 127;
+			}
+
+		}
+		sMenu += getFormatMenuRow2("selectall", "全选");
+		sMenu += getMenuRow("", "findstr()", "find.gif", "查找替换...");
+		height += 20;
+
+		sMenu = sMenu1 + sMenu + sMenu2;
+
+		oPopDocument.open();
+		oPopDocument.write("<head><link href=Editor/editor_dialog.css type=\"text/css\" rel=\"stylesheet\"></head><body scroll=\"no\"  leftmargin='0' topmargin='0' style='body:margin:0px;border:0px'onConTextMenu=\"event.returnValue=false;\">"+sMenu);
+		oPopDocument.close();
+
+		height+=2;
+		if(lefter+width > document.body.clientWidth) lefter=lefter-width;
+		oPopupMenu.show(lefter, topper, width, height, HtmlEdit.document.body);
+		return false;
+	}
+
+	// 右键下拉工具栏菜单
+	function showToolMenu(menu){
+
+		if (!bEditMode) return false;
+		var sMenu = ""
+		var width = 150;
+		var height = 0;
+
+		var lefter = event.clientX;
+		var leftoff = event.offsetX
+		var topper = event.clientY;
+		var topoff = event.offsetY;
+
+		var oPopDocument = oPopupMenu.document;
+		var oPopBody = oPopupMenu.document.body;
+
+		switch(menu){
+		case "font":
+			 // 字体菜单
+			sMenu += getFormatMenuRow("superscript", "上标", "sup.gif");
+			sMenu += getFormatMenuRow("subscript", "下标", "sub.gif");
+			sMenu += sMenuHr;
+			sMenu += getMenuRow("", "insert('big')", "tobig.gif", "字体增大");
+			sMenu += getMenuRow("", "insert('small')", "tosmall.gif", "字体减小");
+			sMenu += sMenuHr;
+			sMenu += getFormatMenuRow("insertorderedlist", "编号", "num.gif");
+			sMenu += getFormatMenuRow("insertunorderedlist", "项目符号", "list.gif");
+			sMenu += getFormatMenuRow("indent", "增加缩进量", "indent.gif");
+			sMenu += getFormatMenuRow("outdent", "减少缩进量", "outdent.gif");
+			sMenu += sMenuHr;
+			sMenu += getFormatMenuRow("insertparagraph", "插入段落", "paragraph.gif");
+			sMenu += getMenuRow("", "insert('br')", "chars.gif", "插入换行符");
+			height = 206;
+			break;
+		case "paragraph":// 段落菜单
+			
+			sMenu += getFormatMenuRow("JustifyLeft", "左对齐", "JustifyLeft.gif");
+			sMenu += getFormatMenuRow("JustifyCenter", "居中对齐", "JustifyCenter.gif");
+			sMenu += getFormatMenuRow("JustifyRight", "右对齐", "JustifyRight.gif");
+			sMenu += getFormatMenuRow("JustifyFull", "两端对齐", "JustifyFull.gif");
+			sMenu += sMenuHr;
+			sMenu += getFormatMenuRow("insertorderedlist", "编号", "insertorderedlist.gif");
+			sMenu += getFormatMenuRow("insertunorderedlist", "项目符号", "insertunorderedlist.gif");
+			sMenu += getFormatMenuRow("indent", "增加缩进量", "indent.gif");
+			sMenu += getFormatMenuRow("outdent", "减少缩进量", "outdent.gif");
+			sMenu += sMenuHr;
+			sMenu += getFormatMenuRow("insertparagraph", "插入段落", "insertparagraph.gif");
+			sMenu += getMenuRow("", "insert('br')", "br.gif", "插入换行符");
+			height = 204;
+			break;
+		case "gongshi":// 公式编辑器
+			sMenu += getMenuRow("","insert('InsertEQ')", "eq1.gif", "插入公式");
+			sMenu += getMenuRow("","insert('InstallEQ')", "eq2.gif", "安装公式编辑器插件");
+			height = 42;
+			break;
+		case "edit":		// 编辑菜单
+			var s_Disabled = "";
+			if (history.data.length <= 1 || history.position <= 0) s_Disabled = "disabled";
+			sMenu += getMenuRow(s_Disabled, "goHistory(-1)", "undo.gif", "撤消")
+			if (history.position >= history.data.length-1 || history.data.length == 0) s_Disabled = "disabled";
+			sMenu += getMenuRow(s_Disabled, "goHistory(1)", "redo.gif", "恢复")
+			sMenu += sMenuHr;
+			sMenu += getFormatMenuRow("Cut", "剪切", "cut.gif");
+			sMenu += getFormatMenuRow("Copy", "复制", "copy.gif");
+			sMenu += getFormatMenuRow("Paste", "常规粘贴", "paste.gif");
+			sMenu += getMenuRow("", "PasteText()", "pastetext.gif", "纯文本粘贴");
+			sMenu += getMenuRow("", "PasteWord()", "pasteword.gif", "从Word中粘贴");
+			sMenu += sMenuHr;
+			sMenu += getFormatMenuRow("delete", "删除", "del.gif");
+			sMenu += getFormatMenuRow("RemoveFormat", "删除文字格式", "removeformat.gif");
+			sMenu += sMenuHr;
+			sMenu += getFormatMenuRow("SelectAll", "全部选中", "selectall.gif");
+			sMenu += getFormatMenuRow("Unselect", "取消选择", "unselect.gif");
+			sMenu += sMenuHr;
+			sMenu += getMenuRow("", "findReplace()", "findreplace.gif", "查找替换");
+			height = 248;
+			break;
+		case "object":		// 对象效果菜单
+			sMenu += getMenuRow("", "zIndex('forward')", "forward.gif", "上移一层");
+			sMenu += getMenuRow("", "zIndex('backward')", "backward.gif", "下移一层");
+			sMenu += sMenuHr;
+			sMenu += getMenuRow("", "insert('code')", "quote.gif", "引用样式");
+			sMenu += getMenuRow("", "insert('quote')", "code.gif", "代码样式");
+			height = 86;
+			break;
+		case "table":		// 表格菜单
+			sMenu += getTableMenuRow("TableInsert");
+			sMenu += getTableMenuRow("TableProp");
+			sMenu += sMenuHr;
+			sMenu += getTableMenuRow("TableCell");
+			height = 306;
+			break;
+		case "form":		// 表单菜单
+			sMenu += getMenuRow("", "Insermenu('time')", "FormDropdown.gif", "转向菜单");
+			sMenu += getFormatMenuRow("InsertInputText", "插入输入框", "FormText.gif");
+			sMenu += getFormatMenuRow("InsertTextArea", "插入输入区", "FormTextArea.gif");
+			sMenu += getFormatMenuRow("InsertInputRadio", "插入单选钮", "FormRadio.gif");
+			sMenu += getFormatMenuRow("InsertInputCheckbox", "插入复选钮", "FormCheckBox.gif");
+			sMenu += getFormatMenuRow("InsertSelectDropdown", "插入下拉框", "FormDropdown.gif");
+			sMenu += getFormatMenuRow("InsertButton", "插入按钮", "FormButton.gif");
+			height = 150;
+			break;
+		case "zoom":		// 缩放菜单
+			for (var i=0; i<aZoomSize.length; i++){
+				if (aZoomSize[i]==nCurrZoomSize){
+					sMenu += getMenuRow("", "doZoom("+aZoomSize[i]+")", "checked.gif", aZoomSize[i]+"%");
+				}else{
+					sMenu += getMenuRow("", "doZoom("+aZoomSize[i]+")", "space.gif", aZoomSize[i]+"%");
+				}
+				height += 20;
+			}
+			break;
+		}
+		
+		sMenu = sMenu1 + sMenu + sMenu2;
+		
+		oPopDocument.open();
+		oPopDocument.write("<head><link href=Editor/editor_dialog.css type=\"text/css\" rel=\"stylesheet\"></head><body scroll=\"no\"  leftmargin='0' topmargin='0' style='body:margin:0px;border:0px'onConTextMenu=\"event.returnValue=false;\">"+sMenu);
+		oPopDocument.close();
+
+		height+=2;
+		if(lefter+width > document.body.clientWidth) lefter=lefter-width;
+		oPopupMenu.show(lefter - leftoff - 2, topper - topoff + 22, width, height, document.body);
+
+		return false;
+	}
+	// 右键菜单定义函数组结速
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+	// 编辑器设置 函数组开始
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	// 改变编辑区高度
+	function sizeChange(size){
+		if (!BrowserInfo.IsIE55OrMore){
+			alert("此功能需要IE5.5版本以上的支持！");
+			return false;
+		}
+		for (var i=0; i<parent.frames.length; i++){
+			if (parent.frames[i].document==self.document){
+				var obj=parent.frames[i].frameElement;
+				var height = parseInt(obj.offsetHeight);
+				if (height+size>=100){
+					obj.height=height+size;
+				}
+				break;
+			}
+		}
+	}
+	// 快捷键
+	function onKeyDown(event){
+		
+		//加载Html标签导航
+		UpdateToolbar();
+		
+		var key = String.fromCharCode(event.keyCode).toUpperCase();
+
+		// F2:显示或隐藏指导方针
+		if (event.keyCode==113){
+			showBorders();
+			return false;
+		}
+		if (event.ctrlKey){
+			// Ctrl+Enter:提交
+			if (event.keyCode==10){
+				doSubmit();
+				return false;
+			}
+			// Ctrl++:增加编辑区
+			if (key=="+"){
+				sizeChange(300);
+				return false;
+			}
+			// Ctrl+-:减小编辑区
+			if (key=="-"){
+				sizeChange(-300);
+				return false;
+			}
+			// Ctrl+1:设计模式
+			if (key=="1"){
+				setMode("EDIT");
+				return false;
+			}
+			// Ctrl+2:代码模式
+			if (key=="2"){
+				setMode("CODE");
+				return false;
+			}
+			// Ctrl+3:纯文本
+			if (key=="3"){
+				setMode("TEXT");
+				return false;
+			}
+			// Ctrl+4:预览
+			if (key=="4"){
+				setMode("VIEW");
+				return false;
+			}
+		}
+
+		switch(sCurrMode){
+		case "VIEW":
+			return true;
+			break;
+		case "EDIT":
+			if (event.ctrlKey){
+				// Ctrl+D:从Word粘贴
+				if (key == "D"){
+					insert('word');
+					return false;
+				}
+				// Ctrl+R:查找替换
+				if (key == "R"){
+					findstr();
+					return false;
+				}
+				// Ctrl+Z:Undo
+				if (key == "Z"){
+					format('undo');
+					return false;
+				}
+				// Ctrl+Y:Redo
+				if (key == "Y"){
+					format('redo');
+					return false;
+				}
+			}
+			if(!event.ctrlKey && event.keyCode != 90 && event.keyCode != 89) {
+				if (event.keyCode == 32 || event.keyCode == 13){
+					saveHistory()
+				}
+			}
+			return true;
+			break;
+		default:
+			if (event.keyCode==13){
+				var sel = HtmlEdit.document.selection.createRange();
+				sel.pasteHTML("<BR>");
+				event.cancelBubble = true;
+				event.returnValue = false;
+				sel.select();
+				sel.moveEnd("character", 1);
+				sel.moveStart("character", 1);
+				sel.collapse(false);
+				return false;
+			}
+			// 屏蔽事件
+			if (event.ctrlKey){
+				// Ctrl+B,I,U
+				if ((key == "B")||(key == "I")||(key == "U")){
+					return false;
+				}
+			}
+
+		}
+	}
+
+	//触发焦点事件
+	function onMouseUp(event,TemplateType){
+	
+		parent.setContent('set',TemplateType);
+		//加载Html标签导航
+		UpdateToolbar();
+	
+	}
+
+	//Html 标签导航
+	function UpdateToolbar()
+	{
+	
+		var ancestors = null;
+		ancestors=GetAllAncestors();
+		ShowObject.innerHTML='&nbsp;';
+		for (var i=ancestors.length;--i>=0;)
+		{	
+			var el = ancestors[i];
+			if (!el) continue;
+			var a=document.createElement("span");
+			a.href="#";
+			a.el=el;
+			a.editor=this;
+			if (i==0)
+			{
+				a.className='AncestorsMouseUp';
+				EditControl=a.el;
+			}
+			else a.className='AncestorsStyle';
+			a.onmouseover=function()
+			{
+				if (this.className=='AncestorsMouseUp') this.className='AncestorsMouseUpOver';
+				else if (this.className=='AncestorsStyle') this.className='AncestorsMouseOver';
+			};
+			a.onmouseout=function()
+			{
+				if (this.className=='AncestorsMouseUpOver') this.className='AncestorsMouseUp';
+				else if (this.className=='AncestorsMouseOver') this.className='AncestorsStyle';
+			};
+			a.onmousedown=function(){this.className='AncestorsMouseDown';};
+			a.onmouseup=function(){this.className='AncestorsMouseUpOver';};
+			a.ondragstart=YCancelEvent;
+			a.onselectstart=YCancelEvent;
+			a.onselect=YCancelEvent;
+			a.onclick=function()
+			{
+				this.blur();
+				SelectNodeContents(this);
+				return false;
+			};
+			if (el.tagName.toLowerCase()!='tbody'){
+				var txt='<'+el.tagName.toLowerCase();
+				a.title=el.style.cssText;
+				if (el.id) txt += "#" + el.id;
+				if (el.className) txt += "." + el.className;
+				txt=txt+'>';
+				a.appendChild(document.createTextNode(txt));		
+				ShowObject.appendChild(a);
+			}
+		}
+		
+	}
+	function GetAllAncestors()
+	{
+		var p = GetParentElement();
+		var a = [];
+		while (p && (p.nodeType==1)&&(p.tagName.toLowerCase()!='body'))
+		{
+			a.push(p);
+			p=p.parentNode;
+		}
+		a.push(HtmlEdit.document.body);
+		return a;
+	}
+	function GetParentElement()
+	{
+		var sel=GetSelection();
+		var range=CreateRange(sel);
+		switch (sel.type)
+		{
+			case "Text":
+			case "None":
+				return range.parentElement();
+			case "Control":
+				return range.item(0);
+			default:
+				return HtmlEdit.document.body;
+		}
+	}
+	function GetSelection()
+	{
+		return HtmlEdit.document.selection;
+	}
+	function CreateRange(sel)
+	{
+		return sel.createRange();
+	}
+	function SelectNodeContents(Obj,pos)
+	{
+		var node=Obj.el;
+		EditControl=node;
+		for (var i=0;i<ShowObject.children.length;i++)
+		{
+			if (ShowObject.children(i).className=='AncestorsMouseUp') ShowObject.children(i).className='AncestorsStyle';
+		}
+		HtmlEdit.focus();
+		var range;
+		var collapsed=(typeof pos!='undefined');
+		range = HtmlEdit.document.body.createTextRange();
+		range.moveToElementText(node);
+		(collapsed) && range.collapse(pos);
+		range.select();
+	}
+	// 显示无模式对话框
+	function ShowDialog(url, width, height, optValidate) {
+		if (!	validateMode())	return;
+		HtmlEdit.focus();
+		var range = HtmlEdit.document.selection.createRange();
+		var arr = showModalDialog(url, window, "dialogWidth:" + width + "px;dialogHeight:" + height + "px;help:no;scroll:yes;status:no");
+		if (arr != null){
+			range.pasteHTML(arr);
+		}
+	  HtmlEdit.focus();
+	}
+	// 显示预览
+	function cleanHtml(){
+		var fonts = HtmlEdit.document.body.all.tags("FONT");
+		var curr;
+		for (var i = fonts.length - 1; i >= 0; i--) {
+			curr = fonts[i];
+			if (curr.style.backgroundColor == "#ffffff") curr.outerHTML	= curr.innerHTML;
+		}
+	}
+	// 是否选中指定类型的控件
+	function isControlSelected(tag){
+		if (HtmlEdit.document.selection.type == "Control") {
+			var oControlRange = HtmlEdit.document.selection.createRange();
+			if (oControlRange(0).tagName.toUpperCase() == tag) {
+				return true;
+			}	
+		}
+		return false;
+	}
+	// 判断是否在编辑状态
+	function validateMode(){
+		if (EditMode) return true;
+		alert("请先点编辑器下方的“编辑”按钮，进入“编辑”状态，然后再使用系统编辑功能!");
+		HtmlEdit.focus();
+		return false;
+	}
+	// 字体处理
+	function format(what,opt){
+		if (!validateMode()) return;
+		if (opt=="removeFormat"){
+			what=opt;
+			opt=null;
+		}
+		if (opt==null) HtmlEdit.document.execCommand(what);
+		else HtmlEdit.document.execCommand(what,"",opt);
+		pureText = false;
+		HtmlEdit.focus();
+	}
+	//暂时解决一下文本源码，复制粘贴的问题。
+	function format2(what,opt){
+		if (opt=="removeFormat"){
+			what=opt;
+			opt=null;
+		}
+		if (opt==null) HtmlEdit.document.execCommand(what);
+		else HtmlEdit.document.execCommand(what,"",opt);
+		pureText = false;
+		HtmlEdit.focus();
+	}
+
+	// 修正Undo/Redo
+	var history = new Object;
+	history.data = [];
+	history.position = 0;
+	history.bookmark = [];
+	// 保存历史
+	function saveHistory() {
+		if (bEditMode){
+			if (history.data[history.position] != HtmlEdit.document.body.innerHTML){
+				var nBeginLen = history.data.length;
+				var nPopLen = history.data.length - history.position;
+				for (var i=1; i<nPopLen; i++){
+					history.data.pop();
+					history.bookmark.pop();
+				}
+
+				history.data[history.data.length] = HtmlEdit.document.body.innerHTML;
+
+				if (HtmlEdit.document.selection.type != "Control"){
+					history.bookmark[history.bookmark.length] = HtmlEdit.document.selection.createRange().getBookmark();
+				} else {
+					var oControl = HtmlEdit.document.selection.createRange();
+					history.bookmark[history.bookmark.length] = oControl[0];
+				}
+
+				if (nBeginLen!=0){
+					history.position++;
+				}
+			}
+		}
+	}
+
+	// 初始历史
+	function initHistory() {
+		history.data.length = 0;
+		history.bookmark.length = 0;
+		history.position = 0;
+	}
+
+	// 返回历史
+	function goHistory(value) {
+		saveHistory();
+		// undo
+		if (value == -1){
+			if (history.position > 0){
+				HtmlEdit.document.body.innerHTML = history.data[--history.position];
+				setHistoryCursor();
+			}
+		// redo
+		} else {
+			if (history.position < history.data.length -1){
+				HtmlEdit.document.body.innerHTML = history.data[++history.position];
+				setHistoryCursor();
+			}
+		}
+	}
+
+	// 设置当前书签
+	function setHistoryCursor() {
+		if (history.bookmark[history.position]){
+			r = HtmlEdit.document.body.createTextRange()
+			if (history.bookmark[history.position] != "[object]"){
+				if (r.moveToBookmark(history.bookmark[history.position])){
+					r.collapse(false);
+					r.select();
+				}
+			}
+		}
+	}
+	// End Undo / Redo Fix
+	function setMode(NewMode){
+			
+		if (!BrowserInfo.IsIE55OrMore){
+			if ((NewMode=="CODE") || (NewMode=="EDIT") || (NewMode=="VIEW")){
+				alert("HTML编辑模式需要IE5.5版本以上的支持！");
+				return false;
+			}
+		}
+
+		if (NewMode=="TEXT"){
+			if (sCurrMode==ModeEdit.value){
+				if (!confirm("警告！切换到纯文本模式会丢失您所有的HTML格式，您确认切换吗？")){
+					return false;
+				}
+			}
+		}
+				var sBody = "";
+		//alert(sCurrMode);
+		switch(sCurrMode){
+		case "CODE":
+			if (NewMode=="TEXT"){
+				HtmlEdit_Temp_HTML.innerHTML = HtmlEdit.document.body.innerText;
+				sBody = HtmlEdit_Temp_HTML.innerText;
+			}else{
+				
+				sBody = HtmlEdit.document.body.innerText;
+
+			}
+			break;
+		case "TEXT":
+			sBody = HtmlEdit.document.body.innerText;
+			sBody = HTMLEncode(sBody);
+			break;
+		case "EDIT":
+			if (NewMode=="TEXT"){
+				sBody = HtmlEdit.document.body.innerText;
+			}else{
+				sBody = HtmlEdit.document.body.innerHTML;
+			}
+			break;
+
+		case "VIEW":
+			if (NewMode=="TEXT"){
+				sBody = HtmlEdit.document.body.innerText;
+			}else{
+				sBody = HtmlEdit.document.body.innerHTML;
+			}
+			break;
+		default:
+				
+			sBody = ContentEdit.value;;
+			break;		
+		}
+		
+		sCurrMode = NewMode;
+		ModeEdit.value = NewMode;
+		setHTML(sBody);
+	}
+	// 替换特殊字符
+	function HTMLEncode(text){
+		text = text.replace(/&/g, "&amp;") ;
+		text = text.replace(/"/g, "&quot;") ;
+		text = text.replace(/</g, "&lt;") ;
+		text = text.replace(/>/g, "&gt;") ;
+		text = text.replace(/'/g, "&#146;") ;
+		text = text.replace(/\ /g,"&nbsp;");
+		text = text.replace(/\n/g,"<br>");
+		text = text.replace(/\t/g,"&nbsp;&nbsp;&nbsp;&nbsp;");
+		return text;
+	}
+	// 取编辑器的内容
+	function getHTML() {
+		var html;
+		if((sCurrMode=="EDIT")||(sCurrMode=="VIEW")){
+			html = HtmlEdit.document.body.innerHTML;
+		}else{
+			html = HtmlEdit.document.body.innerText;
+		}
+		if (sCurrMode!="TEXT"){
+			if ((html.toLowerCase()=="<p>&nbsp;</p>")||(html.toLowerCase()=="<p></p>")){
+				html = "";
+			}
+		}
+		return html;
+	}
+	// 设置编辑器的内容
+	function setHTML(html) {
+			
+		ContentEdit.value = html;
+		switch (sCurrMode){
+		case "CODE":
+			setMode0.src="Editor/images/Editor.gif";
+			setMode1.src="Editor/images/html2.gif";
+			setMode2.src="Editor/images/browse.gif";
+			setMode3.src="Editor/images/Text.gif";
+			HtmlEdit.document.body.innerText=html;
+			HtmlEdit.document.body.contentEditable="true";
+			CurrentMode=1;
+			EditMode=false;
+			SourceMode=true;
+			PreviewMode=false;
+			bEditMode=true;
+			break;
+		case "EDIT":
+			setMode0.src="Editor/images/Editor2.gif";
+			setMode1.src="Editor/images/html.gif";
+			setMode2.src="Editor/images/browse.gif";
+			setMode3.src="Editor/images/Text.gif";
+			HtmlEdit.document.body.innerHTML=html;
+			HtmlEdit.document.body.contentEditable="true";
+			doZoom(nCurrZoomSize);
+			CurrentMode=0;
+			EditMode=true;
+			SourceMode=false;
+			PreviewMode=false;
+			bEditMode=true;
+			break;
+			
+		case "TEXT":
+			setMode0.src="Editor/images/Editor.gif";
+			setMode1.src="Editor/images/html.gif";
+			setMode2.src="Editor/images/browse.gif";
+			setMode3.src="Editor/images/Text2.gif";
+			HtmlEdit.document.body.innerText=html;
+			HtmlEdit.document.body.contentEditable="true";
+			CurrentMode=1
+			EditMode=false;
+			SourceMode=true;
+			PreviewMode=false;
+			bEditMode=true;
+			borderShown = "0";
+			break;
+		case "VIEW":
+			setMode0.src="Editor/images/Editor.gif";
+			setMode1.src="Editor/images/html.gif";
+			setMode2.src="Editor/images/browse2.gif";
+			setMode3.src="Editor/images/Text.gif";
+			cleanHtml();
+			CurrentMode=3;
+			HtmlEdit.document.body.innerHTML=html;
+			HtmlEdit.document.body.contentEditable="false";
+			EditMode=false;
+			SourceMode=false;
+			PreviewMode=false;
+			bEditMode=false;
+			break;
+		}
+
+			HtmlEdit.document.onkeydown = new Function("return onKeyDown(HtmlEdit.event);");
+			HtmlEdit.document.oncontextmenu=new Function("return showContextMenu(HtmlEdit.event);");
+	  
+		if (borderShown != "0" && EditMode) {
+			borderShown = "0";
+			showBorders();
+		}
+		initHistory();
+		HtmlEdit.focus();
+	}
+
+	// 显示或隐藏指导方针
+	var borderShown = 0;
+	function showBorders() {
+		if (!validateMode()) return;
+		
+		var allForms = HtmlEdit.document.body.getElementsByTagName("FORM");
+		var allInputs = HtmlEdit.document.body.getElementsByTagName("INPUT");
+		var allTables = HtmlEdit.document.body.getElementsByTagName("TABLE");
+		var allLinks = HtmlEdit.document.body.getElementsByTagName("A");
+
+		// 表单
+		for (a=0; a < allForms.length; a++) {
+			if (borderShown == "0") {
+				allForms[a].runtimeStyle.border = "1px dotted #FF0000"
+			} else {
+				allForms[a].runtimeStyle.cssText = ""
+			}
+		}
+
+		// Input Hidden类
+		for (b=0; b < allInputs.length; b++) {
+			if (borderShown == "0") {
+				if (allInputs[b].type.toUpperCase() == "HIDDEN") {
+					allInputs[b].runtimeStyle.border = "1px dashed #000000"
+					allInputs[b].runtimeStyle.width = "15px"
+					allInputs[b].runtimeStyle.height = "15px"
+					allInputs[b].runtimeStyle.backgroundColor = "#FDADAD"
+					allInputs[b].runtimeStyle.color = "#FDADAD"
+				}
+			} else {
+				if (allInputs[b].type.toUpperCase() == "HIDDEN")
+					allInputs[b].runtimeStyle.cssText = ""
+			}
+		}
+
+		// 表格
+		for (i=0; i < allTables.length; i++) {
+				if (borderShown == "0") {
+					allTables[i].runtimeStyle.border = "1px dotted #BFBFBF"
+				} else {
+					allTables[i].runtimeStyle.cssText = ""
+				}
+
+				allRows = allTables[i].rows
+				for (y=0; y < allRows.length; y++) {
+					allCellsInRow = allRows[y].cells
+						for (x=0; x < allCellsInRow.length; x++) {
+							if (borderShown == "0") {
+								allCellsInRow[x].runtimeStyle.border = "1px dotted #BFBFBF"
+							} else {
+								allCellsInRow[x].runtimeStyle.cssText = ""
+							}
+						}
+				}
+		}
+
+		// 链接 A
+		for (a=0; a < allLinks.length; a++) {
+			if (borderShown == "0") {
+				if (allLinks[a].href.toUpperCase() == "") {
+					allLinks[a].runtimeStyle.borderBottom = "1px dashed #000000"
+				}
+			} else {
+				allLinks[a].runtimeStyle.cssText = ""
+			}
+		}
+
+		if (borderShown == "0") {
+			borderShown = "1"
+		} else {
+			borderShown = "0"
+		}
+
+		scrollUp()
+	}
+
+	// 返回页面最上部
+	function scrollUp() {
+		HtmlEdit.scrollBy(0,0);
+	}
+	// 保存验证
+	function save()
+	{
+		if (CurrentMode==0){
+		//编辑器嵌入其他网页时使用下面这一句（请将form1改成相应表单名）
+		parent.myform.Content.value=HtmlEdit.document.body.innerHTML;
+		//单独打开编辑器时使用下面这一句（请将form1改成相应表单名）  
+		//  self.opener.form1.content.value+=HtmlEdit.document.body.innerHTML;
+		}
+		else if(CurrentMode==1){
+		//编辑器嵌入其他网页时使用下面这一句（请将form1改成相应表单名）
+		parent.myform.Content.value=HtmlEdit.document.body.innerText;
+		//单独打开编辑器时使用下面这一句（请将form1改成相应表单名）  
+		//  self.opener.form1.content.value+=HtmlEdit.document.body.innerText;
+		}
+		else{
+			alert("预览状态不能保存！请先回到编辑状态后再保存");
+		}
+		HtmlEdit.focus();
+	}
+
+
+
+	// 检测当前是否在预览模式
+	function isModeView(){
+		if (sCurrMode=="VIEW"){
+			alert("预览时不允许设置编辑区内容。");
+			return true;
+		}
+		return false;
+	}
+	// 在当前文档位置插入.
+	function insertHTML(html) {
+		HtmlEdit.focus();
+		if (isModeView()) return false;
+		if (HtmlEdit.document.selection.type.toLowerCase() != "none"){
+			HtmlEdit.document.selection.clear() ;
+		}
+		if (sCurrMode!="EDIT"){
+			html=HTMLEncode(html);
+		}
+		HtmlEdit.document.selection.createRange().pasteHTML(html) ; 
+	}
+
+	//新加入功能
+	//插入表单表单
+	function Insergongneng(what)
+	{
+		if (!	validateMode())	return;
+		HtmlEdit.focus();
+		var range = HtmlEdit.document.selection.createRange();
+		var ran = HtmlEdit.document.selection.createRange("").text;
+		switch(what){
+		case "input":
+			range.pasteHTML('<INPUT value='+ran+'>');
+			break;
+		case "textarea":
+			range.pasteHTML('<TEXTAREA>'+ran+'</TEXTAREA>');
+			break;
+		case "radio":
+			range.pasteHTML('<INPUT type=radio>');
+			break;
+		case "checkbox":
+			range.pasteHTML('<INPUT type=checkbox>');
+			break;
+		case "bottom":
+			range.pasteHTML('<BUTTON>'+ran+'</BUTTON>');
+			break;
+		}
+		HtmlEdit.focus();
+	}
+	// 插入下拉菜单
+	function Insermenu(id)
+	{
+		HtmlEdit.focus();
+		if (!	validateMode())	return;
+		var range = HtmlEdit.document.selection.createRange();
+		var ran = HtmlEdit.document.selection.createRange("").text;
+		var arr = showModalDialog("Editor/editor_insmenu.asp?ChannelID=1&id="+id, "", "dialogWidth:285pt;dialogHeight:186pt;help:0;status:0");
+
+		if (arr != null){
+			range.pasteHTML(arr);
+		}
+		HtmlEdit.focus();
+	}
+	// 插入特殊符号
+	function Insertlr(filename,wwid,whei,myid)
+	{
+		if (!	validateMode())	return;
+		HtmlEdit.focus();
+		var range = HtmlEdit.document.selection.createRange();
+		var arr = showModalDialog("Editor/"+filename+"?ChannelID=1&id="+myid, window, "dialogWidth:"+wwid+"pt;dialogHeight:"+whei+"pt;help:0;status:0");
+		if (arr != null){
+			range.pasteHTML(arr);
+		}
+		HtmlEdit.focus();
+	}
+	// 缩放操作
+	var  nCurrZoomSize = 100;
+	var  aZoomSize = new Array(10, 25, 50, 75, 100, 150, 200, 500);
+	// 显示框架比例
+	function doZoom(size) {
+		HtmlEdit.document.body.runtimeStyle.zoom = size + "%";
+		nCurrZoomSize = size;
+	}
+	// 图片属性 上下层
+	function zIndex(action){
+		var objReference	= null;
+		var RangeType		= HtmlEdit.document.selection.type;
+		if (RangeType != "Control") return;
+		var selectedRange	= HtmlEdit.document.selection.createRange();
+		for (var i=0; i<selectedRange.length; i++){
+			objReference = selectedRange.item(i);
+			if (action=='forward'){
+				objReference.style.zIndex  +=1;
+			}else{
+				objReference.style.zIndex  -=1;
+			}
+			objReference.style.position='absolute';
+		}
+		HtmlEdit.content = false;
+	}
+	// 图片左右环绕
+	function imgalign(align){
+
+	if (!validateMode()) return;
+	HtmlEdit.focus();
+
+	var oControl;
+	var oSeletion;
+	var sRangeType;
+	oSelection = HtmlEdit.document.selection.createRange();
+	sRangeType = HtmlEdit.document.selection.type;
+
+	if (sRangeType == "Control") {
+		if (oSelection.item(0).tagName == "IMG"){
+			   
+			oControl = oSelection.item(0)
+			oControl.align = align;
+		}
+	}
+
+	HtmlEdit.focus();
+
+	}
+	// 编辑器设置 函数组结速
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// 插入文件函 数组开始
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// 插入特殊对象
+	function insert(what) {
+		if (!validateMode()) return;
+		HtmlEdit.focus();
+		var range = HtmlEdit.document.selection.createRange();
+		var RangeType = HtmlEdit.document.selection.type;
+		switch(what){
+		case "excel":		// 插入EXCEL表格
+			insertHTML("<object classid='clsid:0002E510-0000-0000-C000-000000000046' id='Spreadsheet1' codebase='file:\\Bob\software\office2000\msowc.cab' width='100%' height='250'><param name='HTMLURL' value><param name='HTMLData' value='&lt;html xmlns:x=&quot;urn:schemas-microsoft-com:office:excel&quot;xmlns=&quot;http://www.w3.org/TR/REC-html40&quot;&gt;&lt;head&gt;&lt;style type=&quot;text/css&quot;&gt;&lt;!--tr{mso-height-source:auto;}td{black-space:nowrap;}.wc4590F88{black-space:nowrap;font-family:宋体;mso-number-format:General;font-size:auto;font-weight:auto;font-style:auto;text-decoration:auto;mso-background-source:auto;mso-pattern:auto;mso-color-source:auto;text-align:general;vertical-align:bottom;border-top:none;border-left:none;border-right:none;border-bottom:none;mso-protection:locked;}--&gt;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;!--[if gte mso 9]&gt;&lt;xml&gt;&lt;x:ExcelWorkbook&gt;&lt;x:ExcelWorksheets&gt;&lt;x:ExcelWorksheet&gt;&lt;x:OWCVersion&gt;9.0.0.2710&lt;/x:OWCVersion&gt;&lt;x:Label Style='border-top:solid .5pt silver;border-left:solid .5pt silver;border-right:solid .5pt silver;border-bottom:solid .5pt silver'&gt;&lt;x:Caption&gt;Microsoft Office Spreadsheet&lt;/x:Caption&gt; &lt;/x:Label&gt;&lt;x:Name&gt;Sheet1&lt;/x:Name&gt;&lt;x:WorksheetOptions&gt;&lt;x:Selected/&gt;&lt;x:Height&gt;7620&lt;/x:Height&gt;&lt;x:Width&gt;15240&lt;/x:Width&gt;&lt;x:TopRowVisible&gt;0&lt;/x:TopRowVisible&gt;&lt;x:LeftColumnVisible&gt;0&lt;/x:LeftColumnVisible&gt; &lt;x:ProtectContents&gt;False&lt;/x:ProtectContents&gt; &lt;x:DefaultRowHeight&gt;210&lt;/x:DefaultRowHeight&gt; &lt;x:StandardWidth&gt;2389&lt;/x:StandardWidth&gt; &lt;/x:WorksheetOptions&gt; &lt;/x:ExcelWorksheet&gt;&lt;/x:ExcelWorksheets&gt; &lt;x:MaxHeight&gt;80%&lt;/x:MaxHeight&gt;&lt;x:MaxWidth&gt;80%&lt;/x:MaxWidth&gt;&lt;/x:ExcelWorkbook&gt;&lt;/xml&gt;&lt;![endif]--&gt;&lt;table class=wc4590F88 x:str&gt;&lt;col width=&quot;56&quot;&gt;&lt;tr height=&quot;14&quot;&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;'> <param name='DataType' value='HTMLDATA'> <param name='AutoFit' value='0'><param name='DisplayColHeaders' value='-1'><param name='DisplayGridlines' value='-1'><param name='DisplayHorizontalScrollBar' value='-1'><param name='DisplayRowHeaders' value='-1'><param name='DisplayTitleBar' value='-1'><param name='DisplayToolbar' value='-1'><param name='DisplayVerticalScrollBar' value='-1'> <param name='EnableAutoCalculate' value='-1'> <param name='EnableEvents' value='-1'><param name='MoveAfterReturn' value='-1'><param name='MoveAfterReturnDirection' value='0'><param name='RightToLeft' value='0'><param name='ViewableRange' value='1:65536'></object>");
+			break;
+		case "nowdate":		// 插入当前系统日期
+			var d = new Date();
+			insertHTML(d.toLocaleDateString());
+			break;
+		case "nowtime":		// 插入当前系统时间
+			var d = new Date();
+			insertHTML(d.toLocaleTimeString());
+			break;
+		case "br":			// 插入换行符		
+			insertHTML("<br>")
+			break;
+		case "code":		// 代码片段样式
+			insertHTML('<table width=95% border="0" align="Center" cellpadding="6" cellspacing="0" style="border: 1px Dotted #CCCCCC; TABLE-LAYOUT: fixed"><tr><td bgcolor=#FDFDDF style="WORD-WRAP: break-word"><font style="color: #990000;font-weight:bold">以下是代码片段：</font><br>'+HTMLEncode(range.text)+'</td></tr></table>');
+			break;
+		case "quote":		// 引用片段样式
+			insertHTML('<table width=95% border="0" align="Center" cellpadding="6" cellspacing="0" style="border: 1px Dotted #CCCCCC; TABLE-LAYOUT: fixed"><tr><td bgcolor=#F3F3F3 style="WORD-WRAP: break-word"><font style="color: #990000;font-weight:bold">以下是引用片段：</font><br>'+HTMLEncode(range.text)+'</td></tr></table>');
+			break;
+		case "big": // 字体变大
+			insertHTML("<big>" + range.text + "</big>");
+			break;
+		case "small":	// 字体变小
+			insertHTML("<small>" + range.text + "</small>");
+			break;
+		case "fgcolor": //字体颜色
+			if (RangeType != "Text"){
+				alert("请先选择一段文字！");
+				return;
+			}
+			var arr = showModalDialog("Editor/editor_selcolor.asp?ChannelID=1", "", "dialogWidth:18.5em; dialogHeight:17.5em; help: no; scroll: no; status: no");
+			if (arr != null) format('forecolor', arr);
+			else HtmlEdit.focus();
+			break;
+		case "fgbgcolor": //字体背景色
+			if (RangeType != "Text"){
+			   alert("请先选择一段文字！");
+			   return;
+			}
+			var arr = showModalDialog("Editor/editor_selcolor.asp?ChannelID=1", "", "dialogWidth:18.5em; dialogHeight:17.5em; help: no; scroll: no; status: no");
+			if (arr != null){
+				range.pasteHTML("<span style='background-color:"+arr+"'>"+range.text+"</span> ");
+				range.select();
+			}
+			HtmlEdit.focus();
+			break;
+		case "hr": // 水平线
+			var arr = showModalDialog("Editor/editor_inserthr.asp?ChannelID=1", "", "dialogWidth:30em; dialogHeight:12em; help: no; scroll: no; status: no"); 
+			if (arr != null){
+				range.pasteHTML(arr);
+			}
+			HtmlEdit.focus();
+			break;
+		case "page": //分页
+			if(range.text!=""){
+			   alert("请不要选择任何文本");
+			}
+			else{
+			   range.text="\n\n[NextPage]\n\n";
+			   parent.selectPaginationType()
+			}
+			break;
+		case "word": //word粘贴
+			HtmlEdit.document.execCommand("Paste",false);
+			var editBody=HtmlEdit.document.body;
+			for(var intLoop=0;intLoop<editBody.all.length;intLoop++){
+				el=editBody.all[intLoop];
+				el.removeAttribute("className","",0);
+				el.removeAttribute("style","",0);
+				el.removeAttribute("font","",0);
+			}
+			var html=HtmlEdit.document.body.innerHTML;
+			html=html.replace(/<o:p>&nbsp;<\/o:p>/g,"");
+			html=html.replace(/o:/g,"");
+			html=html.replace(/<font>/g, "");
+			html=html.replace(/<FONT>/g, "");
+			html=html.replace(/<span>/g, "");
+			html=html.replace(/<SPAN>/g, "");
+			html=html.replace(/<SPAN lang=EN-US>/g, "");
+			html=html.replace(/<P>/g, "");
+			html=html.replace(/<\/P>/g, "");
+			html=html.replace(/<\/SPAN>/g, "");
+			HtmlEdit.document.body.innerHTML = html;
+			format('selectall');
+			format('RemoveFormat');
+			break;
+		case "calculator": // 计算器
+			var arr = showModalDialog("Editor/editor_calculator.asp?ChannelID=1", "", "dialogWidth:205px; dialogHeight:230px; status:0;help:0");
+			if (arr != null){
+				var ss;
+				ss=arr.split("*")
+				a=ss[0];
+				b=ss[1];
+				var str1;
+				str1=""+a+""
+				range.pasteHTML(str1);
+			}
+			HtmlEdit.focus();
+			break;
+		case "help": //帮助
+			var arr = showModalDialog("Editor/editor_help.asp?ChannelID=1", "", "dialogWidth:580px; dialogHeight:460px; help: no; scroll: no; status: no");
+			break;
+		case "FIELDSET": // 栏目框
+			var arr = showModalDialog("Editor/editor_fieldset.asp?ChannelID=1", "", "dialogWidth:25em; dialogHeight:12.5em; help: no; scroll: no; status: no");
+			if (arr != null){
+				range.pasteHTML(arr);
+			}
+			HtmlEdit.focus();
+			break;
+		case "iframe": //内联页
+			var arr = showModalDialog("Editor/editor_insertiframe.asp?ChannelID=1", "", "dialogWidth:30em; dialogHeight:12em; help: no; scroll: no; status: no");  
+			if (arr != null){
+				range.pasteHTML(arr);
+			}
+			HtmlEdit.focus();
+			break;
+		case "insermarquee": // 滚动文本
+			var arr = showModalDialog("Editor/editor_marquee.asp?ChannelID=1", "", "dialogWidth:275pt;dialogHeight:100pt;help:0;status:0");  
+			if (arr != null){
+				range.pasteHTML(arr);
+			}
+			HtmlEdit.focus();
+			break;
+		case "inseremot": // 插入表情
+			var arr = showModalDialog("Editor/editor_emot.asp?ChannelID=1", "", "dialogWidth:400px;dialogHeight:400px;help:0;status:0");  
+			if (arr != null){
+				range.pasteHTML(arr);
+			}
+			HtmlEdit.focus();
+			break;
+		case "Label": // 插入标签
+			var arr = showModalDialog("Editor/editor_tree.asp?ChannelID=1", "", "dialogWidth:230pt;dialogHeight:500px;help:0;status:0");  
+			if (arr != null){
+				range.pasteHTML(arr);
+			}
+			HtmlEdit.focus();
+			break;
+		case "editLabel": // 编辑标签
+			
+			var oControl;
+			var oSeletion;
+			var sRangeType;
+			var zzz="";
+			oSelection = HtmlEdit.document.selection.createRange();
+			sRangeType = HtmlEdit.document.selection.type;
+			if (sRangeType == "Control") {
+				if (oSelection.item(0).tagName == "IMG"){
+					oControl = oSelection.item(0);
+					zzz= oControl.zzz;
+				}
+			}
+			var arr = showModalDialog("Editor/editor_label.asp?ChannelID=1&editLabel="+zzz+"", window, "dialogWidth:" + 800 + "px;dialogHeight:" + 540 + "px;help:no;scroll:yes;status:no");
+			if (arr != null){
+				oControl.zzz="\"\""+arr
+			}
+			HtmlEdit.focus();
+			break;
+		case "InsertEQ": // 公式
+			var arr = showModalDialog("Editor/editor_inserteq.asp?ChannelID=1", "", "dialogWidth:40em; dialogHeight:20em; status:0;help:0");
+			if (arr != null){
+				var ss;
+				ss=arr.split("*")
+				a=ss[0];
+				b=ss[1];
+				var str1;
+				str1="<applet codebase='./' code='webeq3.ViewerControl' WIDTH=320 HEIGHT=100>"
+				str1=str1+"<PARAM NAME='parser' VALUE='mathml'><param name='color' value='"+b+"'><PARAM NAME='size' VALUE='18'>"
+				str1=str1+"<PARAM NAME=eq id=eq VALUE='"+a+"'></applet>"
+				range.pasteHTML(str1);
+			}
+			HtmlEdit.focus();
+			break;
+		case "InstallEQ": // 安装公式
+			window.open ("Editor/editor_inserteq.asp?ChannelID=1&Action=Install", "", "height=200, width=300,left="+(screen.AvailWidth-300)/2+",top="+(screen.AvailHeight-200)/2+", toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no")
+			break;
+		case "batchpic": //批量上传图片
+			var arr = showModalDialog("Editor/editor_insertpic.asp?ChannelID=1&ShowType=1", "", "dialogWidth:800px; dialogHeight:470px; help: no; scroll: yes; status: no");  
+			if (arr != null){
+				var ss=arr.split("$$$");
+				range.pasteHTML(ss[0]);
+				for(var i=1;i<=ss[1];i++){
+					if (ss[i+1]!="None"){
+						parent.AddItem(ss[i+1]);
+					}
+				}
+			}
+			HtmlEdit.focus();
+			break;
+		case "pic": //上传图片
+			var arr = showModalDialog("Editor/editor_Modifypic.asp?ChannelID=1&ShowType=1", window, "dialogWidth:" + 500 + "px;dialogHeight:" + 540 + "px;help:no;scroll:yes;status:no");
+			if (arr != null){
+				var ss=arr.split("$$$");
+				for(var i=1;i<=ss[0];i++){
+					if (ss[i]!=""){
+						parent.AddItem(ss[i]);
+					}
+				}
+			}
+			HtmlEdit.focus();
+			break;
+		case "swf": //上传swf
+			var arr = showModalDialog("Editor/editor_insertflash.asp?ChannelID=1&ShowType=1", "", "dialogWidth:530px; dialogHeight:400px; help: no; scroll: yes; status: no"); 
+			if (arr != null){
+				var ss=arr.split("$$$");
+				range.pasteHTML(ss[0]);
+				if (ss[1]!="None"){
+					parent.AddItem(ss[1]);
+				}
+			}
+			HtmlEdit.focus();
+			break;
+		case "wmv": //上传 wmv
+			var arr = showModalDialog("Editor/editor_insertmedia.asp?ChannelID=1&ShowType=1", "", "dialogWidth:530px; dialogHeight:500px; help: no; scroll: yes; status: no");
+			if (arr != null){
+				var ss=arr.split("$$$");
+				range.pasteHTML(ss[0]);
+				if (ss[1]!="None"){
+					parent.AddItem(ss[1]);
+				}
+			}
+			HtmlEdit.focus();
+			break;
+		case "Attribute": //代码框编辑
+			var arr = showModalDialog("Editor/editor_Attribute.asp?ChannelID=1", window, "dialogWidth:" + 600 + "px;dialogHeight:" + 270 + "px;help:no;scroll:yes;status:no");
+			showBorders();
+			showBorders();
+			HtmlEdit.focus();
+			break;
+		case "rm": //上传 rm
+			var arr = showModalDialog("Editor/editor_insertrm.asp?ChannelID=1&ShowType=1", "", "dialogWidth:500px; dialogHeight:500px; help: no; scroll: yes; status: no");  
+			if (arr != null){
+				var ss=arr.split("$$$");
+				range.pasteHTML(ss[0]);
+				if (ss[1]!="None"){
+					parent.AddItem(ss[1]);
+				}
+			}
+			HtmlEdit.focus();
+			break;
+		case "fujian": //上传附件
+			var arr = showModalDialog("Editor/editor_insertfujian.asp?ChannelID=1&ShowType=1", "", "dialogWidth:31em; dialogHeight:12em; help: no; scroll: no; status: no"); 
+			if (arr != null){
+				var ss=arr.split("$$$");
+				range.pasteHTML(ss[0]);
+				if (ss[1]!="None"){
+					parent.AddItem(ss[1]);
+				}
+			}
+			HtmlEdit.focus();
+			break;
+		case "title":  // 设置标题
+			if (RangeType != "Text"){
+				alert("请先选择一段文字！");
+				return;
+			}
+			parent.document.myform.Title.value=range.text;
+			break;
+		case "keyword" :// 设置关键字
+			if (RangeType != "Text"){
+				alert("请先选择一段文字！");
+			}
+			if (parent.document.myform.Keyword.value==""){
+				parent.document.myform.Keyword.value=range.text;
+			}
+			else{
+				parent.document.myform.Keyword.value+="|"+range.text;
+			}
+			break;
+		case "ProductName":
+			if (RangeType != "Text"){
+				alert("请先选择一段文字！");
+				return;
+			}
+			parent.document.myform.ProductName.value=range.text;
+			break;
+		case "Intro":
+			if (RangeType != "Text"){
+				alert("请先选择一段文字！");
+				return;
+			}
+			parent.document.myform.Intro.value=range.text;
+			break;
+		case "ProductIntro":
+			if (RangeType != "Text"){
+				alert("请先选择一段文字！");
+				return;
+			}
+			parent.document.myform.ProductIntro.value=range.text;
+			break;
+		default:
+			alert("错误参数调用！");
+			break;
+		}
+		range=null;
+	}
+	// 暂时解决一下通用性问题 查找
+	function findstr(){
+		var arr = showModalDialog("Editor/editor_find.asp?ChannelID=1", window, "dialogWidth:320px; dialogHeight:170px; help: no; scroll: no; status: no");
+	}
+
+	parent.setstatus()
+// 插入文件函数组 函数组结速
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+</script>
+</body></html>
